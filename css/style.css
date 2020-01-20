@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .NavDefault {
   max-width: 100%;
   height: 3.5rem;
@@ -244,4 +247,80 @@ nav {
   #navt3n:hover:after {
     opacity: 1;
   }
+}
+#faq {
+  background-color: lightgrey;
+  margin: 0 auto;
+}
+#faq .faq-heading {
+  text-align: center;
+  font-size: 2rem;
+  padding: 2.5% 0;
+}
+#faq details {
+  background-color: white;
+  width: 60%;
+  margin: 0 auto 20px ;
+}
+#faq details summary {
+  font-size: 1.5rem;
+  padding: 10px 0;
+  font-weight: bold;
+}
+#faq details p {
+  margin-bottom: 30px;
+  padding: 10px 10px 40px 30px;
+  font-size: 1.1rem;
+}
+#faq details:hover {
+  margin-top: 10px;
+}
+#faq button {
+  border: 2px solid black;
+  background-color: inherit;
+  padding: 6px;
+  margin-left: auto;
+  margin-left: 47.5%;
+  margin-bottom: 5%;
+}
+#faq button:hover {
+  background-color: #252525;
+  color: white;
+  cursor: pointer;
+}
+#footer {
+  width: 100%;
+  background-color: black;
+  height: 30px;
+  display: flex;
+}
+#footer .footer-copyright {
+  color: white;
+  margin-top: 0.5%;
+  margin-left: 2%;
+  font-size: 0.5rem;
+}
+#footer .footer-socialMediaIcons {
+  display: inline-block;
+  height: 100%;
+  margin: 0.25% 0 0 30%;
+}
+#footer .footer-socialMediaIcons img {
+  background-color: black;
+  height: 70%;
+  margin-right: 10px;
+  display: inline-block;
+}
+#footer .footer-usefulLinks {
+  height: 30px;
+  margin: 0.3% 0 0 27%;
+}
+#footer .footer-usefulLinks a {
+  font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
+  margin-right: 4%;
+}
+#footer .footer-usefulLinks a:hover {
+  text-decoration: underline;
 }
