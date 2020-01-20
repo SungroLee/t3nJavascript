@@ -1,0 +1,36 @@
+@red-color : #f9423a;
+@nav-height : 3.5rem;
+
+html{font-size: 20px;}
+body{font-size: 1rem; margin: 0; padding: 0; font-family: sans-serif; max-width: 100%; width: 100%;}
+
+
+@media screen and(max-width : 479px) {
+    nav {
+        max-width: 100%;
+        height: @nav-height;
+        padding: 0px 1rem;
+        background-color: @red-color;
+        display: flex;
+        justify-content: space-between;
+    }
+    #logoDiv {
+        height: @nav-height;
+        width: 5rem;
+        overflow: hidden;
+    }
+
+    #loginDiv {
+        height: @nav-height;
+        width: 9rem;
+        background-color: green;
+    }
+
+    #logoFoto {
+        float: left;
+        width: 5.1rem;
+        height: 1.8rem;
+        padding-top: 17px;
+    }
+
+}
