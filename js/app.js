@@ -13,6 +13,7 @@ const navButton = document.createElement("a"); // Login Button in Nav
 const pioneersDiv = document.createElement("div");
 const pioneersH1 = document.createElement("h1");
 const pioneersH2 = document.createElement("h2");
+const pioneersButton = document.createElement("a");
 
 ///////////////Atribute//////////////////
 navLogoDiv.setAttribute("id", "logoDiv");
@@ -26,6 +27,9 @@ navButton.setAttribute("id", "loginButton");
 // First Part
 pioneersDiv.setAttribute("id", "pioneersDiv");
 pioneersH1.setAttribute("id", "pioneersH1");
+pioneersButton.setAttribute("id", "pioneersButton");
+pioneersButton.setAttribute("href", "#");
+
 /////////// CreateTextNode///////////
 // Navbar
 navText.innerText = "t3n.de";
@@ -33,7 +37,9 @@ navButton.innerText = "Login";
 // First Part
 pioneersH1.innerText = "PIONEERS NETWORK";
 pioneersH2.innerHTML = "Gestalte mit uns eine positive digitale Zukunft";
-// AppendChild
+pioneersButton.innerHTML = "Jetzt kostenlos anmelden";
+
+////////////// AppendChild /////////////
 document.body.appendChild(nav);
 nav.appendChild(navLogoDiv);
 nav.appendChild(navLoginDiv);
@@ -44,8 +50,7 @@ navLoginDiv.appendChild(navButton);
 document.body.appendChild(pioneersDiv);
 pioneersDiv.appendChild(pioneersH1);
 pioneersDiv.appendChild(pioneersH2);
-
-
+pioneersDiv.appendChild(pioneersButton);
 
 
 window.onload = function () {
