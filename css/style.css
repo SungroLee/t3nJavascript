@@ -1,5 +1,5 @@
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 html {
   font-size: 20px;
@@ -88,7 +88,7 @@ body {
   color: white;
   margin-top: 0.5%;
   margin-left: 2%;
-  font-size: 0.75rem;
+  font-size: 0.5rem;
 }
 #footer .footer-socialMediaIcons {
   display: inline-block;

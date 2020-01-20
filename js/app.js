@@ -53,6 +53,7 @@ const initFaq = function () {
     faqHeading();
     faqElements();
     faqButton();
+    //test
 }
 const faq = function () {
     var faq = document.createElement('div');
@@ -119,7 +120,7 @@ const footerSocialMedia = function () {
     var socialMediaIcons = document.createElement('div');
     socialMediaIcons.className = 'footer-socialMediaIcons';
     document.getElementById('footer').appendChild(socialMediaIcons);
-    const smIUrl = ["../media/facebook_icon.PNG", "../media/twitter_icon.PNG", "../media/xing_icon.png", "../media/linkedin_icon.png", "../media/instagram_icon.png", "../media/git_icon.png", "../media/medium_icon.png"];
+    const smIUrl = ["./media/facebook_icon.PNG", "./media/twitter_icon.PNG", "./media/xing_icon.png", "./media/linkedin_icon.png", "./media/instagram_icon.png", "./media/git_icon.png", "./media/medium_icon.png"];
     smIUrl.forEach(e => {
         var el = document.createElement('img');
         el.src = e;
