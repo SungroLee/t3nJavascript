@@ -1,36 +1,193 @@
 @red-color : #f9423a;
+@white-color : #fff;
+@balck-color : #2a2a2a;
 @nav-height : 3.5rem;
 
+.NavDefault { // Navbar Default
+    max-width: 100%;
+    height: @nav-height;
+    padding: 0px 1rem;
+    background-color: @red-color;
+    display: flex;
+    justify-content: space-between;
+}
+
+.LoginButtonDefault { //Login Button Default in Nav
+    font-weight: bolder;
+    font-size: 0.65rem;
+    width: 1.6rem;
+    height: 1.2rem;
+    background-color: @white-color;
+    color: @red-color;
+    padding: 0.35rem 1rem;
+    line-height: 2;
+    border-radius: 4px;
+    border: none;
+    text-decoration-line: none;
+    cursor: pointer;
+    transition: background-color .1s ease-in-out;
+    &:hover {
+        background-color: @balck-color;
+        color: @white-color;
+    }
+}
+
+.LogoDivDefault { // Nav left Div Default
+    height: @nav-height;
+    width: 5rem;
+}
+
+.LoginDivDefault { // Nav right Div Default
+    height: @nav-height;
+    width: 9rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.LogoFotoDefault { // Navbar left LogoFoto Default
+    float: left;
+    width: 5.1rem;
+    height: 1.8rem;
+    padding-top: 17px;
+}
+
+.NavT3nDefault {
+    font-weight: 500;
+    font-size: 0.8rem;
+    display: block;
+    color: @white-color;
+    width: 2.32rem;
+    height: 1.2rem;
+    margin-right: 1rem;
+    text-decoration-line: none;
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        border-bottom: 2px solid @white-color;
+        width: 2.4rem;
+        top: 22px;
+        left: 0px;
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+    }
+    &:hover {
+        &:after {
+            opacity: 1;
+        }
+    }
+}
+
+.PioneersDivDefault {
+    background-color: @red-color;
+    max-width: 100%;
+    h1 {
+        
+        margin: 0;
+        padding: 0.5rem 0px 0.5rem 0px;
+        color: @white-color;
+        text-decoration-line: underline;
+        text-decoration-color: @balck-color;
+        line-height: 1.8;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 1rem;
+        color: @white-color;
+        margin: 0px;
+        padding-bottom: 0.8rem;
+    } 
+}
+
+/*************************
+* Start CSS
+**************************/
 html{font-size: 20px;}
-body{font-size: 1rem; margin: 0; padding: 0; font-family: sans-serif; max-width: 100%; width: 100%;}
+body{font-size: 1rem; margin: 0; padding: 0; font-family: 'Open Sans', sans-serif; max-width: 100%; width: 100%;}
+
+nav {
+    .NavDefault;
+}
+
+#logoDiv {
+    .LogoDivDefault;
+}
 
 
-@media screen and(max-width : 479px) {
-    nav {
-        max-width: 100%;
-        height: @nav-height;
-        padding: 0px 1rem;
-        background-color: @red-color;
-        display: flex;
-        justify-content: space-between;
+#loginDiv {
+    .LoginDivDefault;
+
+    #loginButton {
+        .LoginButtonDefault;
     }
-    #logoDiv {
-        height: @nav-height;
-        width: 5rem;
-        overflow: hidden;
-    }
+}
 
-    #loginDiv {
-        height: @nav-height;
-        width: 9rem;
-        background-color: green;
-    }
+#logoFoto {
+    .LogoFotoDefault;
+}
 
+#pioneersDiv {
+    .PioneersDivDefault
+}
+
+@media screen and(max-width : 479px) { // Max Width 479px Media Query (Mobile Version)
+    
+    ////////// Navbar //////////
+    #navt3n {
+        display: none;
+    }
+    ////////// first Part /////////
+    #pioneersDiv {
+        .PioneersDivDefault;
+        height: 12.15rem;
+        padding: 2.5rem 1rem;
+        text-align: center;
+        h1 {
+            font-size: 1.6rem;
+        }
+        h2 {
+
+        }
+    }
+}
+
+@media screen and(min-width : 480px) { // Min Width 480px Media Query (Mobile Bigger Version)
+
+    ////////// Navbar //////////
     #logoFoto {
-        float: left;
-        width: 5.1rem;
-        height: 1.8rem;
-        padding-top: 17px;
+        .LogoFotoDefault;
+        height: 2rem;
+        width: 5.8rem;
+        padding-top: 15px;
+    }
+    #navt3n {
+        display: none;
+    }
+}
+
+@media screen and(min-width : 770px) { // Min Width 770px Media Query (Tablet PC Version)
+
+    ////////// Navbar //////////
+    #logoFoto {
+        width: 7.5rem;
+        height: 2.5rem;
+        padding-top: 9px;
+    }
+    #navt3n {
+        display: none;
+    }
+}
+
+@media screen and(min-width : 981px) { // Min Width 981px Media Query (Desktop Version)
+    
+    ////////// Navbar //////////
+    nav {
+        padding: 0px 2.5rem;
     }
 
+    #navt3n {
+        .NavT3nDefault
+    }
 }
