@@ -298,12 +298,13 @@ nav {
   color: white;
   margin-top: 0.5%;
   margin-left: 2%;
+  margin-right: 20%;
   font-size: 0.5rem;
 }
 #footer .footer-socialMediaIcons {
   display: inline-block;
   height: 100%;
-  margin: 0.25% 0 0 30%;
+  margin: 0.25% 10% 0 12%;
 }
 #footer .footer-socialMediaIcons img {
   background-color: black;
@@ -313,10 +314,10 @@ nav {
 }
 #footer .footer-usefulLinks {
   height: 30px;
-  margin: 0.3% 0 0 27%;
+  margin: 0.1% 0 0 17%;
 }
 #footer .footer-usefulLinks a {
-  font-size: 0.9rem;
+  font-size: 0.65rem;
   color: white;
   text-decoration: none;
   margin-right: 4%;
