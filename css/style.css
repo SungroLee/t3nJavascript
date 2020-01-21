@@ -260,7 +260,7 @@ nav {
 #faq details {
   background-color: white;
   width: 60%;
-  margin: 0 auto 20px ;
+  margin: 0 auto 20px;
 }
 #faq details summary {
   font-size: 1.5rem;
@@ -289,39 +289,131 @@ nav {
   cursor: pointer;
 }
 #footer {
-  width: 100%;
   background-color: black;
-  height: 30px;
+  height: auto;
   display: flex;
+  flex: auto;
+  flex-direction: row;
+  justify-content: space-between;
 }
 #footer .footer-copyright {
-  color: white;
+  color: #a5a5a5;
+  font-size: 0.7rem;
   margin-top: 0.5%;
-  margin-left: 2%;
-  margin-right: 20%;
-  font-size: 0.5rem;
 }
 #footer .footer-socialMediaIcons {
-  display: inline-block;
-  height: 100%;
-  margin: 0.25% 10% 0 12%;
+  margin-top: 0.2%;
 }
 #footer .footer-socialMediaIcons img {
-  background-color: black;
-  height: 70%;
+  height: 28px;
+  width: auto;
+  margin-top: 0.5%;
   margin-right: 10px;
-  display: inline-block;
 }
 #footer .footer-usefulLinks {
   height: 30px;
-  margin: 0.1% 0 0 17%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
 }
-#footer .footer-usefulLinks a {
+#footer .footer-usefulLinks li {
+  margin-right: 5%;
+}
+#footer .footer-usefulLinks li :last-of-type {
+  margin-right: 0;
+}
+#footer .footer-usefulLinks li a {
   font-size: 0.65rem;
   color: white;
   text-decoration: none;
-  margin-right: 4%;
 }
-#footer .footer-usefulLinks a:hover {
+#footer .footer-usefulLinks li a:hover {
   text-decoration: underline;
+}
+@media screen and (min-width: 1296px) {
+  #footer .footer-copyright {
+    margin-left: 3%;
+  }
+  #footer .footer-socialMediaIcons {
+    height: 100%;
+    margin-left: 10%;
+  }
+  #footer .footer-usefulLinks {
+    margin-right: 5%;
+  }
+  #footer .footer-usefulLinks li a {
+    margin-right: 10%;
+  }
+}
+@media screen and (max-width: 1295px) and (min-width: 981px) {
+  .footer-copyright {
+    margin-left: 1%;
+  }
+  .footer-socialMediaIcons {
+    margin-left: 10%;
+  }
+  .footer-usefulLinks {
+    margin-right: 4% !important;
+  }
+}
+@media screen and (max-width: 980px) and (min-width: 381px) {
+  #footer {
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  #footer .footer-copyright,
+  #footer .footer-socialMediaIcons,
+  #footer .footer-usefulLinks {
+    margin: 0 auto;
+  }
+  #footer .footer-copyright {
+    order: 1;
+    padding-bottom: 2%;
+  }
+  #footer .footer-usefulLinks {
+    margin: 0 auto !important;
+    width: fit-content;
+  }
+  #footer .footer-usefulLinks li {
+    margin-right: 7.5 !important;
+    padding-right: 7.5% !important;
+  }
+  #footer .footer-usefulLinks li:last-child {
+    margin-right: 0 !important;
+  }
+}
+@media screen and (max-width: 380px) {
+  #footer {
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  #footer .footer-copyright,
+  #footer .footer-socialMediaIcons,
+  #footer .footer-usefulLinks {
+    margin: 0 auto;
+  }
+  #footer .footer-usefulLinks {
+    flex-wrap: wrap;
+    width: 75%;
+    margin-top: 2%;
+    margin-bottom: 50px;
+    margin-left: 15%;
+  }
+  #footer .footer-usefulLinks li {
+    margin-right: 7% !important;
+    width: 41%;
+  }
+  #footer .footer-usefulLinks li:nth-of-type(odd) {
+    margin-right: 0 !important;
+    text-align: right;
+  }
+  #footer .footer-usefulLinks li:nth-of-type(even) {
+    margin-left: 20px !important;
+  }
+  #footer .footer-copyright {
+    order: 1;
+    padding-bottom: 2%;
+  }
 }

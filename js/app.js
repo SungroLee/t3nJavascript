@@ -50,7 +50,7 @@ pioneersDiv.appendChild(pioneersH2);
 
 window.onload = function () {
     this.console.log('Dokument geladen');
-    initFaq();
+    // initFaq();
     initFooter();
 }
 
@@ -158,14 +158,16 @@ const footerSocialMedia = function () {
 }
 
 const footerUsefulLinks = function () {
-    var usefulLinks = document.createElement('div');
+    var usefulLinks = document.createElement('ul');
     usefulLinks.className = 'footer-usefulLinks';
     document.getElementById('footer').appendChild(usefulLinks);
     const ulAr = ["Kontakt", "AGB", "Datenschutz", "Impressum"];
     ulAr.forEach(e => {
+        var l = document.createElement('li')
         var ref = document.createElement('a');
+        l .appendChild(ref);
         ref.href = e;
         ref.innerHTML = e;
-        usefulLinks.appendChild(ref);
+        usefulLinks.appendChild(l);
     });
 }
