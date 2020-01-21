@@ -351,7 +351,7 @@ nav {
         text-align: center;
         font-size: 2rem;
         padding: 2.5% 0;
-        margin-bottom: 1%;
+        margin: 0 auto 1%;
         font-size: 1.5rem;
     }
 
@@ -383,6 +383,31 @@ nav {
             right: 10px;
             top: 27%;
             border-radius: 50%;
+
+            &:hover {
+                svg {
+                    background-image: url(../foto/svg/triangle_hover.svg);
+                }
+            }
+
+            svg {
+                background-image: url(../foto/svg/triangle.svg);
+                // width:30px;
+                // height:30px;
+                width: 20px;
+                height: 20px;
+                position: relative;
+                top: 7px;
+                right: -8px;
+
+                path {
+                    fill: grey;
+
+                }
+
+
+
+            }
 
             &:hover {
                 background-color: black;

@@ -3,60 +3,60 @@
  *********************************/
 //////////////// Variable/////////////////
 // Navbar
-const nav = document.createElement("nav"); //navbar
-const navLogoDiv = document.createElement("div"); //nav left div
-const navLoginDiv = document.createElement("div"); //nav right div
-const navLogoFoto = document.createElement("img"); //logo img
-const navText = document.createElement("a"); // Nav Right Text "t3n"
-const navButton = document.createElement("a"); // Login Button in Nav
-// First Part
-const pioneersDiv = document.createElement("div");
-const pioneersH1 = document.createElement("h1");
-const pioneersH2 = document.createElement("h2");
-const pioneersButton = document.createElement("a");
+// const nav = document.createElement("nav"); //navbar
+// const navLogoDiv = document.createElement("div"); //nav left div
+// const navLoginDiv = document.createElement("div"); //nav right div
+// const navLogoFoto = document.createElement("img"); //logo img
+// const navText = document.createElement("a"); // Nav Right Text "t3n"
+// const navButton = document.createElement("a"); // Login Button in Nav
+// // First Part
+// const pioneersDiv = document.createElement("div");
+// const pioneersH1 = document.createElement("h1");
+// const pioneersH2 = document.createElement("h2");
+// const pioneersButton = document.createElement("a");
 
-///////////////Atribute//////////////////
-navLogoDiv.setAttribute("id", "logoDiv");
-navLoginDiv.setAttribute("id", "loginDiv");
-navLogoFoto.setAttribute("src", "./foto/t3n-logo.png");
-navLogoFoto.setAttribute("id", "logoFoto");
-navText.setAttribute("href", "#");
-navText.setAttribute("id", "navt3n");
-navButton.setAttribute("href", "#");
-navButton.setAttribute("id", "loginButton");
-// First Part
-pioneersDiv.setAttribute("id", "pioneersDiv");
-pioneersH1.setAttribute("id", "pioneersH1");
-pioneersButton.setAttribute("id", "pioneersButton");
-pioneersButton.setAttribute("href", "#");
+// ///////////////Atribute//////////////////
+// navLogoDiv.setAttribute("id", "logoDiv");
+// navLoginDiv.setAttribute("id", "loginDiv");
+// navLogoFoto.setAttribute("src", "./foto/t3n-logo.png");
+// navLogoFoto.setAttribute("id", "logoFoto");
+// navText.setAttribute("href", "#");
+// navText.setAttribute("id", "navt3n");
+// navButton.setAttribute("href", "#");
+// navButton.setAttribute("id", "loginButton");
+// // First Part
+// pioneersDiv.setAttribute("id", "pioneersDiv");
+// pioneersH1.setAttribute("id", "pioneersH1");
+// pioneersButton.setAttribute("id", "pioneersButton");
+// pioneersButton.setAttribute("href", "#");
 
-/////////// CreateTextNode///////////
-// Navbar
-navText.innerText = "t3n.de";
-navButton.innerText = "Login";
-// First Part
-pioneersH1.innerText = "PIONEERS NETWORK";
-pioneersH2.innerHTML = "Gestalte mit uns eine positive digitale Zukunft";
-pioneersButton.innerHTML = "Jetzt kostenlos anmelden";
+// /////////// CreateTextNode///////////
+// // Navbar
+// navText.innerText = "t3n.de";
+// navButton.innerText = "Login";
+// // First Part
+// pioneersH1.innerText = "PIONEERS NETWORK";
+// pioneersH2.innerHTML = "Gestalte mit uns eine positive digitale Zukunft";
+// pioneersButton.innerHTML = "Jetzt kostenlos anmelden";
 
-////////////// AppendChild /////////////
-document.body.appendChild(nav);
-nav.appendChild(navLogoDiv);
-nav.appendChild(navLoginDiv);
-navLogoDiv.appendChild(navLogoFoto);
-navLoginDiv.appendChild(navText);
-navLoginDiv.appendChild(navButton);
-// First Part
-document.body.appendChild(pioneersDiv);
-pioneersDiv.appendChild(pioneersH1);
-pioneersDiv.appendChild(pioneersH2);
-pioneersDiv.appendChild(pioneersButton);
+// ////////////// AppendChild /////////////
+// document.body.appendChild(nav);
+// nav.appendChild(navLogoDiv);
+// nav.appendChild(navLoginDiv);
+// navLogoDiv.appendChild(navLogoFoto);
+// navLoginDiv.appendChild(navText);
+// navLoginDiv.appendChild(navButton);
+// // First Part
+// document.body.appendChild(pioneersDiv);
+// pioneersDiv.appendChild(pioneersH1);
+// pioneersDiv.appendChild(pioneersH2);
+// pioneersDiv.appendChild(pioneersButton);
 
 
 window.onload = function () {
     this.console.log('Dokument geladen');
     initFaq();
-    initFooter();
+    // initFooter();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -110,6 +110,13 @@ const faqElements = function () {
         el.className = 'faq-question'
         var m = document.createElement('div');
         m.className = 'question-marker'
+        //<svg viewBox="0 0 25 25" id="s-caret" xmlns="http://www.w3.org/2000/svg"><title>Icon_Dropdown Copy</title><path d="M12.5 19.5L25 7H0z"></path></svg>
+        
+        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute('viewBox','0 0 200 200');
+        svg.setAttribute('width','240');
+        svg.setAttribute('height','240');
+        m.appendChild(svg);
         var head = document.createElement('h5');
         head.innerHTML = e.getQuestion;
         head.className = 'question-heading'
