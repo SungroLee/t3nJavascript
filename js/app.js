@@ -55,7 +55,7 @@ pioneersDiv.appendChild(pioneersButton);
 
 window.onload = function () {
     this.console.log('Dokument geladen');
-    // initFaq();
+    initFaq();
     initFooter();
 }
 
