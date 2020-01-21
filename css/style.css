@@ -349,24 +349,38 @@ nav {
   text-align: center;
   font-size: 2rem;
   padding: 2.5% 0;
+  margin-bottom: 1%;
+  font-size: 1.5rem;
 }
-#faq details {
-  background-color: white;
-  width: 60%;
+#faq .faq-question {
+  position: relative;
+  background-color: #fff;
+  height: 70px;
+  width: 70%;
+  cursor: pointer;
   margin: 0 auto 20px;
 }
-#faq details summary {
-  font-size: 1.5rem;
-  padding: 10px 0;
-  font-weight: bold;
+#faq .faq-question .question-heading {
+  position: absolute;
+  text-align: left;
+  padding-left: 30px;
 }
-#faq details p {
-  margin-bottom: 30px;
-  padding: 10px 10px 40px 30px;
-  font-size: 1.1rem;
+#faq .faq-question .question-answer {
+  background-color: green;
+  display: none;
 }
-#faq details:hover {
-  margin-top: 10px;
+#faq .faq-question .question-marker {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-color: #e0e3f6;
+  content: ' ';
+  right: 10px;
+  top: 27%;
+  border-radius: 50%;
+}
+#faq .faq-question .question-marker:hover {
+  background-color: black;
 }
 #faq button {
   border: 2px solid black;

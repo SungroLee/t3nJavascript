@@ -106,12 +106,18 @@ const faqElements = function () {
         new Aq("Warum sollte ich mich beim Pioneers Network anmelden?", "Im Pioneers Network kannst du andere digitale Pioniere entdecken und Einblicke in ihre Arbeit bekommen. Sie geben dir Tipps aus ihrem Umgang mit E-Mails, nehmen dich mit in ihren Tagesablauf und du erhältst Empfehlungen für Bücher und Podcasts. Der Funktionsumfang wird in den kommenden Versionen noch erweitert, sodass es sich lohnt, immer wieder reinzuschauen und von Anfang an dabei zu sein!")
     ];
     faqAr.forEach(e => {
-        var el = document.createElement('details');
-        var head = document.createElement('summary');
+        var el = document.createElement('div');
+        el.className = 'faq-question'
+        var m = document.createElement('div');
+        m.className = 'question-marker'
+        var head = document.createElement('h5');
         head.innerHTML = e.getQuestion;
+        head.className = 'question-heading'
         var answer = document.createElement('p');
+        answer.className = 'question-answer'
         answer.innerHTML = e.getAnswer;
         el.appendChild(head);
+        el.appendChild(m);
         el.appendChild(answer);
         document.getElementById('faq').appendChild(el);
     })
