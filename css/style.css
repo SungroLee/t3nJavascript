@@ -3,9 +3,13 @@
 }
 .NavDefault {
   max-width: 100%;
+  width: 100%;
   height: 3.5rem;
   padding: 0px 1rem;
   background-color: #f9423a;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
 }
@@ -73,6 +77,11 @@
 .PioneersDivDefault {
   background-color: #f9423a;
   max-width: 100%;
+  margin-top: 68px;
+  background-image: url(https://storage.googleapis.com/t3n-de/pioneers/4e6400c95fea8c09e98157eaa11109062ab7fc18/t3n_pn_hero_transparent_B.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
 }
 .PioneersDivDefault h1 {
   margin: 0;
@@ -83,6 +92,7 @@
 }
 .PioneersDivDefault h2 {
   margin: 0;
+  margin-bottom: 1rem;
   color: #fff;
 }
 .PioneersButtonDefault {
@@ -119,9 +129,13 @@ body {
 }
 nav {
   max-width: 100%;
+  width: 100%;
   height: 3.5rem;
   padding: 0px 1rem;
   background-color: #f9423a;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
 }
@@ -165,6 +179,11 @@ nav {
 #pioneersDiv {
   background-color: #f9423a;
   max-width: 100%;
+  margin-top: 68px;
+  background-image: url(https://storage.googleapis.com/t3n-de/pioneers/4e6400c95fea8c09e98157eaa11109062ab7fc18/t3n_pn_hero_transparent_B.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
 }
 #pioneersDiv h1 {
   margin: 0;
@@ -175,6 +194,7 @@ nav {
 }
 #pioneersDiv h2 {
   margin: 0;
+  margin-bottom: 1rem;
   color: #fff;
 }
 #pioneersButton {
@@ -200,22 +220,10 @@ nav {
     display: none;
   }
   #pioneersDiv {
-    background-color: #f9423a;
-    max-width: 100%;
     height: 17.15rem;
     padding: 2.5rem 1rem;
     text-align: center;
-  }
-  #pioneersDiv h1 {
-    margin: 0;
-    color: #fff;
-    text-decoration-line: underline;
-    text-decoration-color: #2a2a2a;
-    line-height: 1.8;
-  }
-  #pioneersDiv h2 {
-    margin: 0;
-    color: #fff;
+    background-position-x: center;
   }
   #pioneersDiv h1 {
     font-size: 1.6rem;
@@ -223,7 +231,6 @@ nav {
   }
   #pioneersDiv h2 {
     font-size: 1rem;
-    padding-bottom: 1rem;
   }
 }
 @media screen and (min-width: 353px) {
@@ -231,22 +238,9 @@ nav {
     display: none;
   }
   #pioneersDiv {
-    background-color: #f9423a;
-    max-width: 100%;
     height: 14.15rem;
     padding: 2.5rem 1rem;
     text-align: center;
-  }
-  #pioneersDiv h1 {
-    margin: 0;
-    color: #fff;
-    text-decoration-line: underline;
-    text-decoration-color: #2a2a2a;
-    line-height: 1.8;
-  }
-  #pioneersDiv h2 {
-    margin: 0;
-    color: #fff;
   }
   #pioneersDiv h1 {
     font-size: 1.6rem;
@@ -254,7 +248,6 @@ nav {
   }
   #pioneersDiv h2 {
     font-size: 1rem;
-    padding-bottom: 1rem;
   }
 }
 @media screen and (min-width: 480px) {
@@ -271,8 +264,27 @@ nav {
   #navt3n {
     display: none;
   }
+  #pioneersDiv {
+    height: 21.45rem;
+    background-position-x: center;
+  }
+  #pioneersDiv h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    line-height: 1.4;
+    padding-bottom: 2.5rem;
+  }
 }
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 723px) {
+  #pioneersDiv {
+    height: 18.45rem;
+  }
+  #pioneersDiv h1 {
+    line-height: 2;
+    padding-bottom: 1.4rem;
+  }
+}
+@media screen and (min-width: 769px) {
   #logoFoto {
     width: 7.5rem;
     height: 3rem;
@@ -280,6 +292,12 @@ nav {
   }
   #navt3n {
     display: none;
+  }
+  #pioneersDiv {
+    height: 21.4rem;
+  }
+  #pioneersDiv h1 {
+    padding-top: 1.6rem;
   }
 }
 @media screen and (min-width: 981px) {
@@ -314,6 +332,13 @@ nav {
   }
   #navt3n:hover:after {
     opacity: 1;
+  }
+  #pioneersDiv {
+    height: 24.1rem;
+  }
+  #pioneersDiv h2 {
+    font-size: 1.7rem;
+    margin-bottom: 2.5rem;
   }
 }
 #faq {

@@ -10,9 +10,13 @@
 
 .NavDefault { // Navbar Default
     max-width: 100%;
+    width: 100%;
     height: @nav-height;
     padding: 0px 1rem;
     background-color: @red-color;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
 }
@@ -88,6 +92,11 @@
 .PioneersDivDefault { // Pioneers Div
     background-color: @red-color;
     max-width: 100%;
+    margin-top: 68px;
+    background-image: url(https://storage.googleapis.com/t3n-de/pioneers/4e6400c95fea8c09e98157eaa11109062ab7fc18/t3n_pn_hero_transparent_B.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
     h1 {    
         margin: 0;
         color: @white-color;
@@ -98,6 +107,7 @@
 
     h2 {
         margin: 0;
+        margin-bottom: 1rem;
         color: @white-color;
     } 
 }
@@ -163,29 +173,28 @@ nav {
     }
     ////////// first Part /////////
     #pioneersDiv {
-        .PioneersDivDefault;
         height: 17.15rem;
         padding: 2.5rem 1rem;
         text-align: center;
+        background-position-x: center;
         h1 {
             font-size: 1.6rem;
             padding: 0px 0px 1rem 0px;
         }
         h2 {
             font-size: 1rem;
-            padding-bottom: 1rem;
         }
     }
 }
 
 @media screen and(min-width : 353px) { // Min Width 353px Media Query(Mobile Version)
+      
         ////////// Navbar //////////
         #navt3n {
             display: none;
         }
         ////////// first Part /////////
         #pioneersDiv {
-            .PioneersDivDefault;
             height: 14.15rem;
             padding: 2.5rem 1rem;
             text-align: center;
@@ -195,7 +204,6 @@ nav {
             }
             h2 {
                 font-size: 1rem;
-                padding-bottom: 1rem;
             }
         }
 }
@@ -209,12 +217,36 @@ nav {
         width: 5.8rem;
         padding-top: 15px;
     }
+
     #navt3n {
         display: none;
     }
+
+    #pioneersDiv {
+        height: 21.45rem;
+        background-position-x: center;
+        h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            line-height: 1.4;
+            padding-bottom: 2.5rem;
+        }
+    }
+
 }
 
-@media screen and(min-width : 770px) { // Min Width 770px Media Query (Tablet PC Version)
+@media screen and(min-width : 723px) {
+    
+    #pioneersDiv {
+        height: 18.45rem;
+        h1 {
+            line-height: 2;
+            padding-bottom: 1.4rem;
+        }
+    }
+}
+
+@media screen and(min-width : 769px) { // Min Width 769px Media Query (Tablet PC Version)
 
     ////////// Navbar //////////
     #logoFoto {
@@ -224,6 +256,13 @@ nav {
     }
     #navt3n {
         display: none;
+    }
+    ///////////// Pioneers Network Part //////////////
+    #pioneersDiv {
+        height: 21.4rem;
+        h1 {
+            padding-top: 1.6rem;
+        }
     }
 }
 
@@ -240,6 +279,15 @@ nav {
     }
     #navt3n {
         .NavT3nDefault
+    }
+
+    /////////// Pioneers Network Part ////////////
+    #pioneersDiv {
+        height: 24.1rem;
+        h2 {
+            font-size: 1.7rem;
+            margin-bottom: 2.5rem;
+        }
     }
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
