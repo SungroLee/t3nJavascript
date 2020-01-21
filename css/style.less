@@ -12,9 +12,13 @@
 .NavDefault {
     // Navbar Default
     max-width: 100%;
+    width: 100%;
     height: @nav-height;
     padding: 0px 1rem;
     background-color: @red-color;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
 }
@@ -23,12 +27,12 @@
     //Login Button Default in Nav
     font-weight: bolder;
     font-size: 0.65rem;
-    width: 1.6rem;
-    height: 1.2rem;
+    width: 3.6rem;
+    height: 1.9rem;
     background-color: @white-color;
     color: @red-color;
     padding: 0.35rem 1rem;
-    line-height: 2;
+    line-height: 1.8;
     border-radius: 4px;
     border: none;
     text-decoration-line: none;
@@ -60,11 +64,12 @@
     // Navbar left LogoFoto Default
     float: left;
     width: 5.1rem;
-    height: 1.8rem;
+    height: 2.7rem;
     padding-top: 17px;
+    cursor: pointer;
 }
 
-.NavT3nDefault {
+.NavT3nDefault { // Navbar t3n.de Button
     font-weight: 500;
     font-size: 0.8rem;
     display: block;
@@ -93,14 +98,22 @@
     }
 }
 
-.PioneersDivDefault {
+.PioneersDivDefault { // Pioneers Div
     background-color: @red-color;
     max-width: 100%;
+<<<<<<< HEAD
 
     h1 {
 
+=======
+    margin-top: 68px;
+    background-image: url(https://storage.googleapis.com/t3n-de/pioneers/4e6400c95fea8c09e98157eaa11109062ab7fc18/t3n_pn_hero_transparent_B.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    h1 {    
+>>>>>>> 7be6b87b9ffa09fe9ac0f5f718f5aa62ca26c731
         margin: 0;
-        padding: 0.5rem 0px 0.5rem 0px;
         color: @white-color;
         text-decoration-line: underline;
         text-decoration-color: @balck-color;
@@ -109,10 +122,33 @@
 
     h2 {
         margin: 0;
-        font-size: 1rem;
+        margin-bottom: 1rem;
         color: @white-color;
+<<<<<<< HEAD
         margin: 0px;
         padding-bottom: 0.8rem;
+    }
+=======
+    } 
+>>>>>>> 7be6b87b9ffa09fe9ac0f5f718f5aa62ca26c731
+}
+
+.PioneersButtonDefault { // Jetzt kostenlos anmelden Button
+    font-weight: bolder;
+    color: @balck-color;
+    font-size: 0.8rem;
+    width: 9.2rem;
+    height: 1.2rem;
+    padding: 0.35rem 0.75rem;
+    background-color: @white-color;
+    border-radius: 4px;
+    border: none;
+    text-decoration-line: none;
+    cursor: pointer;
+    transition: background-color .1s ease-in-out;
+    &:hover {
+        background-color: @balck-color;
+        color: @white-color;
     }
 }
 
@@ -156,10 +192,18 @@ nav {
 #pioneersDiv {
     .PioneersDivDefault
 }
+#pioneersButton {
+    .PioneersButtonDefault;
+}
 
+<<<<<<< HEAD
 @media screen and(max-width : 479px) {
     // Max Width 479px Media Query (Mobile Version)
 
+=======
+@media screen and(max-width : 352px) { // Max Width 479px Media Query (Mobile Version)
+    
+>>>>>>> 7be6b87b9ffa09fe9ac0f5f718f5aa62ca26c731
     ////////// Navbar //////////
     #navt3n {
         display: none;
@@ -167,14 +211,19 @@ nav {
 
     ////////// first Part /////////
     #pioneersDiv {
-        .PioneersDivDefault;
-        height: 12.15rem;
+        height: 17.15rem;
         padding: 2.5rem 1rem;
         text-align: center;
+<<<<<<< HEAD
 
+=======
+        background-position-x: center;
+>>>>>>> 7be6b87b9ffa09fe9ac0f5f718f5aa62ca26c731
         h1 {
             font-size: 1.6rem;
+            padding: 0px 0px 1rem 0px;
         }
+<<<<<<< HEAD
 
         h2 {}
     }
@@ -182,11 +231,41 @@ nav {
 
 @media screen and(min-width : 480px) {
     // Min Width 480px Media Query (Mobile Bigger Version)
+=======
+        h2 {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media screen and(min-width : 353px) { // Min Width 353px Media Query(Mobile Version)
+      
+        ////////// Navbar //////////
+        #navt3n {
+            display: none;
+        }
+        ////////// first Part /////////
+        #pioneersDiv {
+            height: 14.15rem;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            h1 {
+                font-size: 1.6rem;
+                padding: 0px 0px 1rem 0px;
+            }
+            h2 {
+                font-size: 1rem;
+            }
+        }
+}
+
+@media screen and(min-width : 480px) { // Min Width 480px Media Query (Mobile Bigger Version)
+>>>>>>> 7be6b87b9ffa09fe9ac0f5f718f5aa62ca26c731
 
     ////////// Navbar //////////
     #logoFoto {
         .LogoFotoDefault;
-        height: 2rem;
+        height: 2.8rem;
         width: 5.8rem;
         padding-top: 15px;
     }
@@ -194,20 +273,54 @@ nav {
     #navt3n {
         display: none;
     }
+
+    #pioneersDiv {
+        height: 21.45rem;
+        background-position-x: center;
+        h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            line-height: 1.4;
+            padding-bottom: 2.5rem;
+        }
+    }
+
 }
 
+@media screen and(min-width : 723px) {
+    
+    #pioneersDiv {
+        height: 18.45rem;
+        h1 {
+            line-height: 2;
+            padding-bottom: 1.4rem;
+        }
+    }
+}
+
+<<<<<<< HEAD
 @media screen and(min-width : 770px) {
     // Min Width 770px Media Query (Tablet PC Version)
+=======
+@media screen and(min-width : 769px) { // Min Width 769px Media Query (Tablet PC Version)
+>>>>>>> 7be6b87b9ffa09fe9ac0f5f718f5aa62ca26c731
 
     ////////// Navbar //////////
     #logoFoto {
         width: 7.5rem;
-        height: 2.5rem;
+        height: 3rem;
         padding-top: 9px;
     }
 
     #navt3n {
         display: none;
+    }
+    ///////////// Pioneers Network Part //////////////
+    #pioneersDiv {
+        height: 21.4rem;
+        h1 {
+            padding-top: 1.6rem;
+        }
     }
 }
 
@@ -218,9 +331,22 @@ nav {
     nav {
         padding: 0px 2.5rem;
     }
-
+    #logoFoto {
+        width: 7.5rem;
+        height: 3rem;
+        padding-top: 9px;
+    }
     #navt3n {
         .NavT3nDefault
+    }
+
+    /////////// Pioneers Network Part ////////////
+    #pioneersDiv {
+        height: 24.1rem;
+        h2 {
+            font-size: 1.7rem;
+            margin-bottom: 2.5rem;
+        }
     }
 }
 
