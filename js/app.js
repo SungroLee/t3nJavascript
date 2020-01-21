@@ -9,11 +9,13 @@ const navLoginDiv = document.createElement("div"); //nav right div
 const navLogoFoto = document.createElement("img"); //logo img
 const navText = document.createElement("a"); // Nav Right Text "t3n"
 const navButton = document.createElement("a"); // Login Button in Nav
-// First Part
+// Pioneers Network
 const pioneersDiv = document.createElement("div");
 const pioneersH1 = document.createElement("h1");
 const pioneersH2 = document.createElement("h2");
 const pioneersButton = document.createElement("a");
+// Slider
+const sliderDiv = document.createElement("div");
 
 ///////////////Atribute//////////////////
 navLogoDiv.setAttribute("id", "logoDiv");
@@ -24,17 +26,19 @@ navText.setAttribute("href", "#");
 navText.setAttribute("id", "navt3n");
 navButton.setAttribute("href", "#");
 navButton.setAttribute("id", "loginButton");
-// First Part
+// Pioneers Network
 pioneersDiv.setAttribute("id", "pioneersDiv");
 pioneersH1.setAttribute("id", "pioneersH1");
 pioneersButton.setAttribute("id", "pioneersButton");
 pioneersButton.setAttribute("href", "#");
+// Slder
+sliderDiv.setAttribute("id", "sliderDiv");
 
 /////////// CreateTextNode///////////
 // Navbar
 navText.innerText = "t3n.de";
 navButton.innerText = "Login";
-// First Part
+// Pioneers Network
 pioneersH1.innerText = "PIONEERS NETWORK";
 pioneersH2.innerHTML = "Gestalte mit uns eine positive digitale Zukunft";
 pioneersButton.innerHTML = "Jetzt kostenlos anmelden";
@@ -46,7 +50,7 @@ nav.appendChild(navLoginDiv);
 navLogoDiv.appendChild(navLogoFoto);
 navLoginDiv.appendChild(navText);
 navLoginDiv.appendChild(navButton);
-// First Part
+// Pioneers Network
 document.body.appendChild(pioneersDiv);
 pioneersDiv.appendChild(pioneersH1);
 pioneersDiv.appendChild(pioneersH2);
@@ -62,6 +66,17 @@ window.onload = function () {
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////CLASSES/////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
+
+class SliderProfile {
+    constructor(img, name, workingPosition, company) {
+        this.img = img;
+        this.name = name;
+        this.workingPosition = workingPosition;
+        this.company = company;
+    }
+}
+
+
 class Aq {
     constructor(quest, answer, link) {
         this.quest = quest;
@@ -75,6 +90,24 @@ class Aq {
         return String(this.answer).replace(this.link, "<a href='#'>" + this.link + "</a>");
     }
 }
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////Slider//////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+const profiles = [ // um 2 Profiles zuzugreifen.
+    new SliderProfile("./media/isa_sonnenfeld.jpg", "Isa Sonnenfeld", "Lelterin News Lab", "Google"),
+    new SliderProfile("./media/lena_raschke.jpg", "Lena Raschke", "Senlor PR Manager", "Deutsche Telekom")
+];
+
+const sliderProfiles = []; // gerade Zahl wird profiles[0] kriegen und ungerade Zahl wird profiles[1] bekommen.
+for(i = 0; i < 25; i++) {
+    if(i % 2 == 0) {
+        sliderProfiles[i] = profiles[0];
+    }else {
+        sliderProfiles[i] = profiles[1];
+    }
+}
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
