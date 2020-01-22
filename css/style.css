@@ -1,6 +1,17 @@
 * {
   box-sizing: border-box;
 }
+html {
+  font-size: 20px;
+}
+body {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  max-width: 100%;
+  width: 100%;
+}
 .NavDefault {
   max-width: 100%;
   width: 100%;
@@ -89,6 +100,7 @@
   text-decoration-line: underline;
   text-decoration-color: #2a2a2a;
   line-height: 1.8;
+  font-weight: bold;
 }
 .PioneersDivDefault h2 {
   margin: 0;
@@ -113,20 +125,41 @@
   background-color: #2a2a2a;
   color: #fff;
 }
+.sliderDivDefault {
+  max-width: 100%;
+  background-color: green;
+  text-align: center;
+}
+.sliderDivDefault h2 {
+  margin-top: 0;
+}
+.sliderDivDefault #sliderDiv {
+  max-width: 55.5rem;
+  margin: 0px auto;
+  background-color: yellow;
+}
+.sliderDefault {
+  max-width: 100%;
+  height: 100%;
+  background-color: cornflowerblue;
+  display: flex;
+  overflow: hidden;
+}
+.sliderDefault img {
+  border-radius: 50%;
+}
+.sliderDefault h3 {
+  margin: 0.5rem 0px 0px 0px;
+  font-size: 0.7rem;
+}
+.sliderDefault p {
+  font-size: 0.7rem;
+  margin: 0;
+  padding: 0;
+}
 /*************************
 * Start CSS
 **************************/
-html {
-  font-size: 20px;
-}
-body {
-  font-size: 1rem;
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  max-width: 100%;
-  width: 100%;
-}
 nav {
   max-width: 100%;
   width: 100%;
@@ -191,6 +224,7 @@ nav {
   text-decoration-line: underline;
   text-decoration-color: #2a2a2a;
   line-height: 1.8;
+  font-weight: bold;
 }
 #pioneersDiv h2 {
   margin: 0;
@@ -215,7 +249,39 @@ nav {
   background-color: #2a2a2a;
   color: #fff;
 }
-@media screen and (max-width: 352px) {
+#sliderDefaultDiv {
+  max-width: 100%;
+  background-color: green;
+  text-align: center;
+}
+#sliderDefaultDiv h2 {
+  margin-top: 0;
+}
+#sliderDefaultDiv #sliderDiv {
+  max-width: 55.5rem;
+  margin: 0px auto;
+  background-color: yellow;
+}
+#slider {
+  max-width: 100%;
+  height: 100%;
+  background-color: cornflowerblue;
+  display: flex;
+  overflow: hidden;
+}
+#slider img {
+  border-radius: 50%;
+}
+#slider h3 {
+  margin: 0.5rem 0px 0px 0px;
+  font-size: 0.7rem;
+}
+#slider p {
+  font-size: 0.7rem;
+  margin: 0;
+  padding: 0;
+}
+@media screen and (min-width: 300px) {
   #navt3n {
     display: none;
   }
@@ -223,7 +289,6 @@ nav {
     height: 17.15rem;
     padding: 2.5rem 1rem;
     text-align: center;
-    background-position-x: center;
   }
   #pioneersDiv h1 {
     font-size: 1.6rem;
@@ -231,6 +296,22 @@ nav {
   }
   #pioneersDiv h2 {
     font-size: 1rem;
+  }
+  #sliderDefaultDiv {
+    height: 16.7rem;
+    padding: 2.5rem 1rem;
+  }
+  #sliderDefaultDiv h2 {
+    margin-bottom: 0.9rem;
+    font-size: 1rem;
+    height: 2.4rem;
+  }
+  #sliderDefaultDiv #sliderDiv {
+    height: 8.4rem;
+  }
+  #slider .profilInfos img {
+    width: 3rem;
+    height: 3rem;
   }
 }
 @media screen and (min-width: 353px) {
@@ -244,10 +325,22 @@ nav {
   }
   #pioneersDiv h1 {
     font-size: 1.6rem;
-    padding: 0px 0px 1rem 0px;
   }
   #pioneersDiv h2 {
     font-size: 1rem;
+  }
+  #sliderDefaultDiv {
+    height: 16.8rem;
+  }
+  #sliderDefaultDiv h2 {
+    height: 1.2rem;
+  }
+  #sliderDefaultDiv #sliderDiv {
+    height: 9.75rem;
+  }
+  #slider .profilInfos img {
+    width: 5rem;
+    height: 5rem;
   }
 }
 @media screen and (min-width: 480px) {
@@ -266,13 +359,17 @@ nav {
   }
   #pioneersDiv {
     height: 21.45rem;
-    background-position-x: center;
   }
   #pioneersDiv h1 {
     font-size: 3.5rem;
-    font-weight: bold;
     line-height: 1.4;
     padding-bottom: 2.5rem;
+  }
+  #sliderDefaultDiv {
+    height: 15.6rem;
+  }
+  #sliderDefaultDiv #sliderDiv {
+    height: 8.55rem;
   }
 }
 @media screen and (min-width: 723px) {
@@ -298,6 +395,14 @@ nav {
   }
   #pioneersDiv h1 {
     padding-top: 1.6rem;
+  }
+  #sliderDefaultDiv {
+    padding: 5rem 1rem;
+    height: 21.8rem;
+    text-align: center;
+  }
+  #sliderDefaultDiv #sliderDiv {
+    height: 9.75rem;
   }
 }
 @media screen and (min-width: 981px) {
@@ -339,6 +444,19 @@ nav {
   #pioneersDiv h2 {
     font-size: 1.7rem;
     margin-bottom: 2.5rem;
+  }
+  #sliderDefaultDiv {
+    padding: 5rem 1rem;
+    height: 24.45rem;
+    text-align: center;
+  }
+  #sliderDefaultDiv h2 {
+    font-size: 1.7rem;
+    height: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
+  #sliderDefaultDiv #sliderDiv {
+    height: 9.75rem;
   }
 }
 #faq {

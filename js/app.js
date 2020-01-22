@@ -15,24 +15,29 @@ const pioneersH1 = document.createElement("h1");
 const pioneersH2 = document.createElement("h2");
 const pioneersButton = document.createElement("a");
 // Slider
+const sliderDefaultDiv = document.createElement("div");
+const sliderH2 = document.createElement("h2");
 const sliderDiv = document.createElement("div");
+const slider = document.createElement("div");
 
 ///////////////Atribute//////////////////
-navLogoDiv.setAttribute("id", "logoDiv");
-navLoginDiv.setAttribute("id", "loginDiv");
-navLogoFoto.setAttribute("src", "./foto/t3n-logo.png");
-navLogoFoto.setAttribute("id", "logoFoto");
-navText.setAttribute("href", "#");
-navText.setAttribute("id", "navt3n");
-navButton.setAttribute("href", "#");
-navButton.setAttribute("id", "loginButton");
+navLogoDiv.id = 'logoDiv';
+navLoginDiv.id = 'loginDiv';
+navLogoFoto.id = 'logoFoto';
+navText.id = 'navt3n';
+navButton.id = 'loginButton';
+navLogoFoto.src = "./foto/t3n-logo.png";
+navText.href = '#';
+navButton.href = '#';
 // Pioneers Network
-pioneersDiv.setAttribute("id", "pioneersDiv");
-pioneersH1.setAttribute("id", "pioneersH1");
-pioneersButton.setAttribute("id", "pioneersButton");
-pioneersButton.setAttribute("href", "#");
+pioneersDiv.id = 'pioneersDiv';
+pioneersH1.id = 'pioneersH1';
+pioneersButton.id = 'pioneersButton';
+pioneersButton.href = '#';
 // Slder
-sliderDiv.setAttribute("id", "sliderDiv");
+sliderDefaultDiv.id = 'sliderDefaultDiv';
+sliderDiv.id = 'sliderDiv';
+slider.id = "slider";
 
 /////////// CreateTextNode///////////
 // Navbar
@@ -42,6 +47,8 @@ navButton.innerText = "Login";
 pioneersH1.innerText = "PIONEERS NETWORK";
 pioneersH2.innerHTML = "Gestalte mit uns eine positive digitale Zukunft";
 pioneersButton.innerHTML = "Jetzt kostenlos anmelden";
+//Slider
+sliderH2.innerHTML = "Finde andere digitale pioniere"
 
 ////////////// AppendChild /////////////
 document.body.appendChild(nav);
@@ -55,7 +62,10 @@ document.body.appendChild(pioneersDiv);
 pioneersDiv.appendChild(pioneersH1);
 pioneersDiv.appendChild(pioneersH2);
 pioneersDiv.appendChild(pioneersButton);
-
+//Slider
+document.body.appendChild(sliderDefaultDiv);
+sliderDefaultDiv.appendChild(sliderH2);
+sliderDefaultDiv.appendChild(sliderDiv);
 
 window.onload = function () {
     this.console.log('Dokument geladen');
@@ -86,6 +96,8 @@ class Aq {
     get getQuestion() {
         return this.quest;
     }
+   
+
     get getAnswer() {
         return String(this.answer).replace(this.link, "<a href='#'>" + this.link + "</a>");
     }
@@ -95,12 +107,15 @@ class Aq {
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 const profiles = [ // um 2 Profiles zuzugreifen.
-    new SliderProfile("./media/isa_sonnenfeld.jpg", "Isa Sonnenfeld", "Lelterin News Lab", "Google"),
-    new SliderProfile("./media/lena_raschke.jpg", "Lena Raschke", "Senlor PR Manager", "Deutsche Telekom")
+    new SliderProfile("https://storage.googleapis.com/t3n-de/pioneers/4b52a4383475faa6ebfdd8a37ccf85f53694f522/fullsizeoutput_787.jpeg",
+                         "Isa Sonnenfeld", "Lelterin News Lab", "Google"),
+    new SliderProfile("https://storage.googleapis.com/t3n-de/pioneers/8298acd960400f97e749266416913a54ac9b45ea/29513215_1757429684277443_7955459664427213519_n%20-%20Kathrin%20We%C3%9Fling.jpg",
+                     "Kathrin Weßling", "Founder", "Würger & wessling")
 ];
+const sliderProfilesDiv = document.createElement("div");
 
 const sliderProfiles = []; // gerade Zahl wird profiles[0] kriegen und ungerade Zahl wird profiles[1] bekommen.
-for(i = 0; i < 25; i++) {
+for(i = 0; i < 25; i++) {  
     if(i % 2 == 0) {
         sliderProfiles[i] = profiles[0];
     }else {
@@ -108,6 +123,31 @@ for(i = 0; i < 25; i++) {
     }
 }
 
+for(i = 0; i < sliderProfiles.length; i++) {
+    
+    const freeDiv = document.createElement("div");
+    const freeA = document.createElement("a");
+    const Img = document.createElement("img");
+    const name = document.createElement("h3");
+    const position = document.createElement("p");
+    const company = document.createElement("p");
+    
+    freeDiv.appendChild(freeA);
+    freeA.appendChild(Img);
+    freeA.appendChild(name);
+    freeA.appendChild(position);
+    freeA.appendChild(company);
+
+    freeDiv.className = "profilInfos";
+    freeA.href = '#';
+    Img.src = sliderProfiles[i].img;
+    name.innerHTML = sliderProfiles[i].name;
+    position.innerHTML = sliderProfiles[i].workingPosition;
+    company.innerHTML = sliderProfiles[i].company;
+
+    slider.appendChild(freeDiv);
+}
+sliderDiv.appendChild(slider);
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
