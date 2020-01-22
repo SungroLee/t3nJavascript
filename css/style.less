@@ -2,6 +2,19 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 20px;
+}
+
+body {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    max-width: 100%;
+    width: 100%;
+}
+
 @red-color : #f9423a;
 @white-color : #fff;
 @balck-color : #2a2a2a;
@@ -115,6 +128,7 @@
         text-decoration-line: underline;
         text-decoration-color: @balck-color;
         line-height: 1.8;
+        font-weight: bold;
     }
 
     h2 {
@@ -145,21 +159,44 @@
     }
 }
 
+.sliderDivDefault {
+    max-width: 100%;
+    background-color: green;
+    text-align: center;
+    h2 {
+        margin-top: 0;
+    }
+    #sliderDiv {
+        max-width: 55.5rem;
+        margin: 0px auto;
+        background-color: yellow;
+    }
+}
+
+.sliderDefault {
+    max-width: 100%;
+    height: 100%;
+    background-color: cornflowerblue;
+    display: flex;
+    overflow: hidden;
+    img {
+        border-radius: 50%;
+    }
+    h3 {
+        margin: 0.5rem 0px 0px 0px;
+        font-size: 0.7rem;
+    }
+    p {
+        font-size: 0.7rem;
+        margin: 0;
+        padding: 0;
+    }
+}
+
 /*************************
 * Start CSS
 **************************/
-html {
-    font-size: 20px;
-}
 
-body {
-    font-size: 1rem;
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    max-width: 100%;
-    width: 100%;
-}
 
 nav {
     .NavDefault;
@@ -190,9 +227,16 @@ nav {
     .PioneersButtonDefault;
 }
 
-@media screen and(max-width : 352px) {
-    // Max Width 479px Media Query (Mobile Version)
+#sliderDefaultDiv {
+    .sliderDivDefault;
+}
 
+#slider {
+    .sliderDefault;
+}
+
+@media screen and(min-width : 300px) { // Max Width 479px Media Query (Mobile Version)
+    
     ////////// Navbar //////////
     #navt3n {
         display: none;
@@ -203,8 +247,6 @@ nav {
         height: 17.15rem;
         padding: 2.5rem 1rem;
         text-align: center;
-        background-position-x: center;
-
         h1 {
             font-size: 1.6rem;
             padding: 0px 0px 1rem 0px;
@@ -214,29 +256,65 @@ nav {
             font-size: 1rem;
         }
     }
+
+    ///////////// Slider ///////////
+    #sliderDefaultDiv {
+        height: 16.7rem;
+        padding: 2.5rem 1rem;
+        h2 {
+            margin-bottom: 0.9rem;
+            font-size: 1rem;
+            height: 2.4rem;
+        }
+        #sliderDiv {
+            height: 8.4rem;
+        }
+    }
+    #slider {
+        .profilInfos {
+            img {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+    }
 }
 
-@media screen and(min-width : 353px) {
-    // Min Width 353px Media Query(Mobile Version)
-
+@media screen and(min-width : 353px) { // Min Width 353px Media Query(Mobile Version)
+      
     ////////// Navbar //////////
     #navt3n {
         display: none;
     }
-
     ////////// first Part /////////
     #pioneersDiv {
         height: 14.15rem;
         padding: 2.5rem 1rem;
         text-align: center;
-
         h1 {
             font-size: 1.6rem;
-            padding: 0px 0px 1rem 0px;
         }
-
         h2 {
             font-size: 1rem;
+        }
+    }
+
+    /////////// Slider //////////
+    #sliderDefaultDiv {
+        height: 16.8rem;
+        h2 {
+            height: 1.2rem;
+        }
+        #sliderDiv {
+            height: 9.75rem;
+        }
+    }
+    #slider {
+        .profilInfos {
+            img {
+                width: 5rem;
+                height: 5rem;
+            }
         }
     }
 }
@@ -256,18 +334,23 @@ nav {
         display: none;
     }
 
+    ////////// Pioneer ///////////
     #pioneersDiv {
         height: 21.45rem;
-        background-position-x: center;
-
         h1 {
             font-size: 3.5rem;
-            font-weight: bold;
             line-height: 1.4;
             padding-bottom: 2.5rem;
         }
     }
 
+    ////////////// Slider /////////////
+    #sliderDefaultDiv {
+        height: 15.6rem;
+        #sliderDiv {
+            height: 8.55rem;
+        }
+    }
 }
 
 @media screen and(min-width : 723px) {
@@ -304,6 +387,16 @@ nav {
             padding-top: 1.6rem;
         }
     }
+
+    ///////////// Slider //////////////////
+    #sliderDefaultDiv {
+        padding: 5rem 1rem;
+        height: 21.8rem;
+        text-align: center;
+        #sliderDiv {
+            height: 9.75rem;
+        }
+    }
 }
 
 @media screen and(min-width : 981px) {
@@ -333,6 +426,21 @@ nav {
             margin-bottom: 2.5rem;
         }
     }
+
+    ///////////// Slider //////////////////
+    #sliderDefaultDiv {
+        padding: 5rem 1rem;
+        height: 24.45rem;
+        text-align: center;
+        h2 {
+            font-size: 1.7rem;
+            height: 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+        #sliderDiv {
+            height: 9.75rem;
+        }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -346,7 +454,7 @@ nav {
 #faq {
     background-color: @lightGrey;
     margin: 0 auto;
-
+    padding-bottom: 2%;
     .faq-heading {
         text-align: center;
         font-size: 2rem;
@@ -460,12 +568,14 @@ nav {
 }
 
 button {
+    display: block;
     border: 2px solid black;
     background-color: inherit;
     padding: 6px;
-    margin-left: auto;
-    margin-left: 47.5%;
-    margin-bottom: 5%;
+    // margin-left: auto;
+    // margin: 0 auto;
+    // margin-bottom: 5%;
+    margin: 0 auto 5% auto;
 
     &:hover {
         background-color: rgb(37, 37, 37);
