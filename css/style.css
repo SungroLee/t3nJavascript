@@ -393,20 +393,25 @@ nav {
 #faq .question-answer {
   font-size: 0.7rem;
   display: none;
-  padding: 0 0 50px 10px;
+  padding: 0 15px 50px 10px;
 }
 #faq .faq-questHeadContainer {
   position: relative;
   padding-top: 20px;
   display: flex;
+  padding-bottom: 20px;
 }
 #faq .question-marker {
-  width: 35px;
-  height: 35px;
   background-color: #e0e3f6;
   border-radius: 50%;
   display: inline-block;
+  min-width: 35px;
+  max-width: 35px;
+  min-height: 35px;
+  max-height: 35px;
   margin: auto;
+  margin-right: 1%;
+  margin-left: 1%;
 }
 #faq .question-marker:hover svg {
   background-image: url(../foto/svg/triangle_hover.svg);
@@ -417,7 +422,7 @@ nav {
   height: 20px;
   position: relative;
   top: 7px;
-  right: -8px;
+  left: 18%;
 }
 #faq .question-marker svg path {
   fill: grey;
@@ -455,6 +460,12 @@ button:hover {
   }
   #faq .faq-question {
     width: 90%;
+  }
+}
+@media screen and (max-width: 769px) {
+  .faq-heading {
+    text-align: left !important;
+    margin-left: 5% !important;
   }
 }
 #footer {

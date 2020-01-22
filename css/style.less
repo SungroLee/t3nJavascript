@@ -411,22 +411,27 @@ nav {
     .question-answer {
         font-size: .7rem;
         display: none;
-        padding: 0 0 50px 10px;
+        padding: 0 15px 50px 10px;
     }
 
     .faq-questHeadContainer {
         position: relative;
         padding-top: 20px;
         display: flex;
+        padding-bottom: 20px;
     }
 
     .question-marker {
-        width: 35px;
-        height: 35px;
         background-color: #e0e3f6;
         border-radius: 50%;
         display: inline-block;
+        min-width: 35px;
+        max-width: 35px;
+        min-height: 35px;
+        max-height: 35px;
         margin: auto;
+        margin-right: 1%;
+        margin-left: 1%;
 
         &:hover {
             svg {
@@ -440,7 +445,7 @@ nav {
             height: 20px;
             position: relative;
             top: 7px;
-            right: -8px;
+            left: 18%;
 
             path {
                 fill: grey;
@@ -495,7 +500,12 @@ button {
         }
     }
 }
-
+@media screen and (max-width: 769px){
+    .faq-heading{
+        text-align: left !important;
+        margin-left: 5% !important;
+    }
+}
 //////////////////////////////////////FOOTER////////////////////////////////////////////////////
 #footer {
     background-color: black;

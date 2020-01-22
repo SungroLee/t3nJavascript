@@ -164,7 +164,6 @@ const faqElements = function () {
         questHeading.appendChild(head);
         questHeading.appendChild(m);
         c.appendChild(questHeading);
-        // c.appendChild(m);
         c.appendChild(answer);
         document.getElementById('faq').appendChild(c);
     })
