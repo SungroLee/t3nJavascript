@@ -2,65 +2,65 @@
  * Navbar
  *********************************/
 //////////////// Variable/////////////////
-// Navbar
-const nav = document.createElement("nav"); //navbar
-const navLogoDiv = document.createElement("div"); //nav left div
-const navLoginDiv = document.createElement("div"); //nav right div
-const navLogoFoto = document.createElement("img"); //logo img
-const navText = document.createElement("a"); // Nav Right Text "t3n"
-const navButton = document.createElement("a"); // Login Button in Nav
-// Pioneers Network
-const pioneersDiv = document.createElement("div");
-const pioneersH1 = document.createElement("h1");
-const pioneersH2 = document.createElement("h2");
-const pioneersButton = document.createElement("a");
-// Slider
-const sliderDiv = document.createElement("div");
+// // Navbar
+// const nav = document.createElement("nav"); //navbar
+// const navLogoDiv = document.createElement("div"); //nav left div
+// const navLoginDiv = document.createElement("div"); //nav right div
+// const navLogoFoto = document.createElement("img"); //logo img
+// const navText = document.createElement("a"); // Nav Right Text "t3n"
+// const navButton = document.createElement("a"); // Login Button in Nav
+// // Pioneers Network
+// const pioneersDiv = document.createElement("div");
+// const pioneersH1 = document.createElement("h1");
+// const pioneersH2 = document.createElement("h2");
+// const pioneersButton = document.createElement("a");
+// // Slider
+// const sliderDiv = document.createElement("div");
 
-///////////////Atribute//////////////////
-navLogoDiv.setAttribute("id", "logoDiv");
-navLoginDiv.setAttribute("id", "loginDiv");
-navLogoFoto.setAttribute("src", "./foto/t3n-logo.png");
-navLogoFoto.setAttribute("id", "logoFoto");
-navText.setAttribute("href", "#");
-navText.setAttribute("id", "navt3n");
-navButton.setAttribute("href", "#");
-navButton.setAttribute("id", "loginButton");
-// Pioneers Network
-pioneersDiv.setAttribute("id", "pioneersDiv");
-pioneersH1.setAttribute("id", "pioneersH1");
-pioneersButton.setAttribute("id", "pioneersButton");
-pioneersButton.setAttribute("href", "#");
-// Slder
-sliderDiv.setAttribute("id", "sliderDiv");
+// ///////////////Atribute//////////////////
+// navLogoDiv.setAttribute("id", "logoDiv");
+// navLoginDiv.setAttribute("id", "loginDiv");
+// navLogoFoto.setAttribute("src", "./foto/t3n-logo.png");
+// navLogoFoto.setAttribute("id", "logoFoto");
+// navText.setAttribute("href", "#");
+// navText.setAttribute("id", "navt3n");
+// navButton.setAttribute("href", "#");
+// navButton.setAttribute("id", "loginButton");
+// // Pioneers Network
+// pioneersDiv.setAttribute("id", "pioneersDiv");
+// pioneersH1.setAttribute("id", "pioneersH1");
+// pioneersButton.setAttribute("id", "pioneersButton");
+// pioneersButton.setAttribute("href", "#");
+// // Slder
+// sliderDiv.setAttribute("id", "sliderDiv");
 
-/////////// CreateTextNode///////////
-// Navbar
-navText.innerText = "t3n.de";
-navButton.innerText = "Login";
-// Pioneers Network
-pioneersH1.innerText = "PIONEERS NETWORK";
-pioneersH2.innerHTML = "Gestalte mit uns eine positive digitale Zukunft";
-pioneersButton.innerHTML = "Jetzt kostenlos anmelden";
+// /////////// CreateTextNode///////////
+// // Navbar
+// navText.innerText = "t3n.de";
+// navButton.innerText = "Login";
+// // Pioneers Network
+// pioneersH1.innerText = "PIONEERS NETWORK";
+// pioneersH2.innerHTML = "Gestalte mit uns eine positive digitale Zukunft";
+// pioneersButton.innerHTML = "Jetzt kostenlos anmelden";
 
-////////////// AppendChild /////////////
-document.body.appendChild(nav);
-nav.appendChild(navLogoDiv);
-nav.appendChild(navLoginDiv);
-navLogoDiv.appendChild(navLogoFoto);
-navLoginDiv.appendChild(navText);
-navLoginDiv.appendChild(navButton);
-// Pioneers Network
-document.body.appendChild(pioneersDiv);
-pioneersDiv.appendChild(pioneersH1);
-pioneersDiv.appendChild(pioneersH2);
-pioneersDiv.appendChild(pioneersButton);
+// ////////////// AppendChild /////////////
+// document.body.appendChild(nav);
+// nav.appendChild(navLogoDiv);
+// nav.appendChild(navLoginDiv);
+// navLogoDiv.appendChild(navLogoFoto);
+// navLoginDiv.appendChild(navText);
+// navLoginDiv.appendChild(navButton);
+// // Pioneers Network
+// document.body.appendChild(pioneersDiv);
+// pioneersDiv.appendChild(pioneersH1);
+// pioneersDiv.appendChild(pioneersH2);
+// pioneersDiv.appendChild(pioneersButton);
 
 
 window.onload = function () {
     this.console.log('Dokument geladen');
-    // initFaq();
-    initFooter();
+    initFaq();
+    // initFooter();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -143,6 +143,9 @@ const faqElements = function () {
         const m = getQuestMarker();
         const s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         m.appendChild(s);
+        const questHeading = document.createElement('div');
+        questHeading.classList = 'faq-questHeadContainer';
+
         var head = document.createElement('h5');
         head.addEventListener('click', () => {
             c.classList.toggle('open');
@@ -158,8 +161,10 @@ const faqElements = function () {
         var answer = document.createElement('p');
         answer.className = 'question-answer'
         answer.innerHTML = e.getAnswer;
-        c.appendChild(head);
-        c.appendChild(m);
+        questHeading.appendChild(head);
+        questHeading.appendChild(m);
+        c.appendChild(questHeading);
+        // c.appendChild(m);
         c.appendChild(answer);
         document.getElementById('faq').appendChild(c);
     })

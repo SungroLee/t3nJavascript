@@ -357,8 +357,7 @@ nav {
     .faq-question {
         position: relative;
         background-color: @white-color;
-        height: 70px;
-        // width: 70%;
+        min-height: 70px;
         margin: 0 auto 20px;
         border-radius: 5px;
 
@@ -375,7 +374,6 @@ nav {
 
             .question-answer {
                 display: block;
-                // padding: 6% 0 3% 1%;
             }
 
             .question-marker {
@@ -402,34 +400,33 @@ nav {
 
     .question-heading {
         font-size: 1.1rem;
-        margin-top: 20px;
-        position: absolute;
         text-align: left;
-        padding-left: 10px;
-        padding-right: 30px;
-        width: 96%;
+        width: 95%;
         top: -3px;
         cursor: pointer;
+        display: inline-block;
+        margin: 0 auto 0 10px;
     }
 
     .question-answer {
-        // padding-top: 3vw;
-        // margin-bottom: 50px;
         font-size: .7rem;
         display: none;
-        padding: 70px 0 50px 10px;
+        padding: 0 0 50px 10px;
+    }
+
+    .faq-questHeadContainer {
+        position: relative;
+        padding-top: 20px;
+        display: flex;
     }
 
     .question-marker {
-        position: absolute;
         width: 35px;
         height: 35px;
         background-color: #e0e3f6;
-        content: ' ';
-        right: 15px;
-        top: 19px;
         border-radius: 50%;
-
+        display: inline-block;
+        margin: auto;
 
         &:hover {
             svg {
@@ -480,6 +477,12 @@ button {
     }
 }
 
+@media screen and (min-width: 981px) {
+    .faq-question {
+        width: 98%;
+    }
+}
+
 @media screen and (max-width: 980px) {
     #faq {
         .faq-heading {
@@ -489,14 +492,6 @@ button {
 
         .faq-question {
             width: 90%;
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #faq {
-        .faq-question:last-of-type {
-            height: 90px !important;
         }
     }
 }
@@ -655,13 +650,11 @@ button {
                 width: 41%;
 
                 &:nth-of-type(odd) {
-                    // border: 1px solid greenyellow;
                     margin-right: 0 !important;
                     text-align: right;
                 }
 
                 &:nth-of-type(even) {
-                    // border: 1px solid brown !important;
                     margin-left: 20px !important;
                 }
 
