@@ -350,16 +350,15 @@ nav {
     .faq-heading {
         text-align: center;
         font-size: 2rem;
-        padding: 2.5% 0;
-        margin: 0 auto 1%;
-        font-size: 1.5rem;
+        padding: 45px 0 20px;
+        margin: 0 auto 20px;
     }
 
     .faq-question {
         position: relative;
         background-color: @white-color;
         height: 70px;
-        width: 70%;
+        // width: 70%;
         margin: 0 auto 20px;
         border-radius: 5px;
 
@@ -376,7 +375,7 @@ nav {
 
             .question-answer {
                 display: block;
-                padding: 6% 0 3% 1%;
+                // padding: 6% 0 3% 1%;
             }
 
             .question-marker {
@@ -394,80 +393,110 @@ nav {
         }
 
         &.closing {
-                svg {
-                    transition: transform .3s;
-                    transform: rotateZ(0deg);
-                }
-            }
-        }
-
-        .question-heading {
-            font-size: 1.2rem;
-            margin-top: 2%;
-            position: absolute;
-            text-align: left;
-            padding-left: 1%;
-            width: 96%;
-            top: -3px;
-            cursor: pointer;
-        }
-
-        .question-answer {
-            padding-top: 5%;
-            margin-bottom: 5%;
-            font-size: .7rem;
-            display: none;
-        }
-
-        .question-marker {
-            position: absolute;
-            width: 35px;
-            height: 35px;
-            background-color: #e0e3f6;
-            content: ' ';
-            right: 15px;
-            top: 19px;
-            border-radius: 50%;
-
-
-            &:hover {
-                svg {
-                    background-image: url(../foto/svg/triangle_hover.svg);
-                }
-            }
-
             svg {
-                background-image: url(../foto/svg/triangle.svg);
-                width: 20px;
-                height: 20px;
-                position: relative;
-                top: 7px;
-                right: -8px;
-
-                path {
-                    fill: grey;
-
-                }
-            }
-
-            &:hover {
-                background-color: black;
+                transition: transform .3s;
+                transform: rotateZ(0deg);
             }
         }
     }
 
-    button {
-        border: 2px solid black;
-        background-color: inherit;
-        padding: 6px;
-        margin-left: auto;
-        margin-left: 47.5%;
-        margin-bottom: 5%;
+    .question-heading {
+        font-size: 1.1rem;
+        margin-top: 20px;
+        position: absolute;
+        text-align: left;
+        padding-left: 10px;
+        padding-right: 30px;
+        width: 96%;
+        top: -3px;
+        cursor: pointer;
+    }
+
+    .question-answer {
+        // padding-top: 3vw;
+        // margin-bottom: 50px;
+        font-size: .7rem;
+        display: none;
+        padding: 70px 0 50px 10px;
+    }
+
+    .question-marker {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        background-color: #e0e3f6;
+        content: ' ';
+        right: 15px;
+        top: 19px;
+        border-radius: 50%;
+
 
         &:hover {
-            background-color: rgb(37, 37, 37);
-            color: white;
-            cursor: pointer;
+            svg {
+                background-image: url(../foto/svg/triangle_hover.svg);
+            }
+        }
+
+        svg {
+            background-image: url(../foto/svg/triangle.svg);
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 7px;
+            right: -8px;
+
+            path {
+                fill: grey;
+
+            }
+        }
+
+        &:hover {
+            background-color: black;
+        }
+    }
+}
+
+button {
+    border: 2px solid black;
+    background-color: inherit;
+    padding: 6px;
+    margin-left: auto;
+    margin-left: 47.5%;
+    margin-bottom: 5%;
+
+    &:hover {
+        background-color: rgb(37, 37, 37);
+        color: white;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 1150px) {
+    #faq {
+        .faq-question {
+            width: 1130px;
+        }
+    }
+}
+
+@media screen and (max-width: 980px) {
+    #faq {
+        .faq-heading {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        .faq-question {
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #faq {
+        .faq-question:last-of-type {
+            height: 90px !important;
         }
     }
 }
@@ -537,7 +566,7 @@ nav {
 
         .footer-socialMediaIcons {
             height: 100%;
-            margin-left: 10%;
+            margin-left: 4%;
         }
 
         .footer-usefulLinks {
@@ -553,13 +582,13 @@ nav {
     }
 }
 
-@media screen and (max-width: 1295px)and (min-width: 981px) {
+@media screen and (min-width: 981px) and (max-width: 1295px) {
     .footer-copyright {
         margin-left: 1%;
     }
 
     .footer-socialMediaIcons {
-        margin-left: 10%;
+        margin-left: 4%;
     }
 
     .footer-usefulLinks {
@@ -567,7 +596,7 @@ nav {
     }
 }
 
-@media screen and(max-width: 980px) and (min-width: 381px) {
+@media screen and (min-width: 381px)and (max-width: 980px) {
 
     #footer {
         flex-direction: column;

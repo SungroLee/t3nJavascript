@@ -59,7 +59,7 @@ pioneersDiv.appendChild(pioneersButton);
 
 window.onload = function () {
     this.console.log('Dokument geladen');
-    initFaq();
+    // initFaq();
     initFooter();
 }
 
@@ -139,37 +139,40 @@ const faqElements = function () {
         new Aq("Warum sollte ich mich beim Pioneers Network anmelden?", "Im Pioneers Network kannst du andere digitale Pioniere entdecken und Einblicke in ihre Arbeit bekommen. Sie geben dir Tipps aus ihrem Umgang mit E-Mails, nehmen dich mit in ihren Tagesablauf und du erhältst Empfehlungen für Bücher und Podcasts. Der Funktionsumfang wird in den kommenden Versionen noch erweitert, sodass es sich lohnt, immer wieder reinzuschauen und von Anfang an dabei zu sein!")
     ];
     faqAr.forEach(e => {
-        var el = document.createElement('div');
-        el.className = 'faq-question'
-        var m = document.createElement('div');
-        m.className = 'question-marker'
-        //<svg viewBox="0 0 25 25" id="s-caret" xmlns="http://www.w3.org/2000/svg"><title>Icon_Dropdown Copy</title><path d="M12.5 19.5L25 7H0z"></path></svg>
-
-        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svg.setAttribute('viewBox', '0 0 200 200');
-        svg.setAttribute('width', '240');
-        svg.setAttribute('height', '240');
-        m.appendChild(svg);
+        const c = getQuestContainer();
+        const m = getQuestMarker();
+        const s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        m.appendChild(s);
         var head = document.createElement('h5');
         head.addEventListener('click', () => {
-            el.classList.toggle('open');
-            if (!el.classList.contains('open')) {
-                el.classList.toggle('closing');
+            c.classList.toggle('open');
+            if (!c.classList.contains('open')) {
+                c.classList.toggle('closing');
                 setTimeout(() => {
-                    el.classList.toggle('closing')
+                    c.classList.toggle('closing')
                 }, 1500)
             }
-        })
+        });
         head.innerHTML = e.getQuestion;
         head.className = 'question-heading'
         var answer = document.createElement('p');
         answer.className = 'question-answer'
         answer.innerHTML = e.getAnswer;
-        el.appendChild(head);
-        el.appendChild(m);
-        el.appendChild(answer);
-        document.getElementById('faq').appendChild(el);
+        c.appendChild(head);
+        c.appendChild(m);
+        c.appendChild(answer);
+        document.getElementById('faq').appendChild(c);
     })
+}
+const getQuestMarker = function () {
+    const div = document.createElement('div');
+    div.className = 'question-marker'
+    return div;
+}
+const getQuestContainer = function () {
+    const div = document.createElement('div')
+    div.className = 'faq-question'
+    return div;
 }
 
 const faqButton = function () {

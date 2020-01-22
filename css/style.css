@@ -348,15 +348,13 @@ nav {
 #faq .faq-heading {
   text-align: center;
   font-size: 2rem;
-  padding: 2.5% 0;
-  margin: 0 auto 1%;
-  font-size: 1.5rem;
+  padding: 45px 0 20px;
+  margin: 0 auto 20px;
 }
 #faq .faq-question {
   position: relative;
   background-color: #fff;
   height: 70px;
-  width: 70%;
   margin: 0 auto 20px;
   border-radius: 5px;
 }
@@ -370,37 +368,36 @@ nav {
 }
 #faq .faq-question.open .question-answer {
   display: block;
-  padding: 6% 0 3% 1%;
 }
 #faq .faq-question.open .question-marker svg {
-  transition: transform 1s;
+  transition: transform 0.3s;
   transform: rotateZ(180deg);
 }
 #faq .faq-question.open a {
   color: red;
   text-decoration-line: none;
 }
-#faq .faq-question.closing .question-marker svg {
-  transition: all 1s;
+#faq .faq-question.closing svg {
+  transition: transform 0.3s;
   transform: rotateZ(0deg);
 }
-#faq .faq-question .question-heading {
-  font-size: 1.2rem;
-  margin-top: 2%;
+#faq .question-heading {
+  font-size: 1.1rem;
+  margin-top: 20px;
   position: absolute;
   text-align: left;
-  padding-left: 1%;
+  padding-left: 10px;
+  padding-right: 30px;
   width: 96%;
   top: -3px;
   cursor: pointer;
 }
-#faq .faq-question .question-answer {
-  padding-top: 5%;
-  margin-bottom: 5%;
+#faq .question-answer {
   font-size: 0.7rem;
   display: none;
+  padding: 70px 0 50px 10px;
 }
-#faq .faq-question .question-marker {
+#faq .question-marker {
   position: absolute;
   width: 35px;
   height: 35px;
@@ -410,10 +407,10 @@ nav {
   top: 19px;
   border-radius: 50%;
 }
-#faq .faq-question .question-marker:hover svg {
+#faq .question-marker:hover svg {
   background-image: url(../foto/svg/triangle_hover.svg);
 }
-#faq .faq-question .question-marker svg {
+#faq .question-marker svg {
   background-image: url(../foto/svg/triangle.svg);
   width: 20px;
   height: 20px;
@@ -421,13 +418,13 @@ nav {
   top: 7px;
   right: -8px;
 }
-#faq .faq-question .question-marker svg path {
+#faq .question-marker svg path {
   fill: grey;
 }
-#faq .faq-question .question-marker:hover {
+#faq .question-marker:hover {
   background-color: black;
 }
-#faq button {
+button {
   border: 2px solid black;
   background-color: inherit;
   padding: 6px;
@@ -435,10 +432,29 @@ nav {
   margin-left: 47.5%;
   margin-bottom: 5%;
 }
-#faq button:hover {
+button:hover {
   background-color: #252525;
   color: white;
   cursor: pointer;
+}
+@media screen and (min-width: 1150px) {
+  #faq .faq-question {
+    width: 1130px;
+  }
+}
+@media screen and (max-width: 980px) {
+  #faq .faq-heading {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+  #faq .faq-question {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #faq .faq-question:last-of-type {
+    height: 90px !important;
+  }
 }
 #footer {
   background-color: black;
@@ -490,7 +506,7 @@ nav {
   }
   #footer .footer-socialMediaIcons {
     height: 100%;
-    margin-left: 10%;
+    margin-left: 4%;
   }
   #footer .footer-usefulLinks {
     margin-right: 5%;
@@ -499,18 +515,18 @@ nav {
     margin-right: 10%;
   }
 }
-@media screen and (max-width: 1295px) and (min-width: 981px) {
+@media screen and (min-width: 981px) and (max-width: 1295px) {
   .footer-copyright {
     margin-left: 1%;
   }
   .footer-socialMediaIcons {
-    margin-left: 10%;
+    margin-left: 4%;
   }
   .footer-usefulLinks {
     margin-right: 4% !important;
   }
 }
-@media screen and (max-width: 980px) and (min-width: 381px) {
+@media screen and (min-width: 381px) and (max-width: 980px) {
   #footer {
     flex-direction: column;
     padding-top: 10px;
@@ -567,13 +583,5 @@ nav {
   #footer .footer-copyright {
     order: 1;
     padding-bottom: 2%;
-  }
-}
-@keyframes rotateBack {
-  from {
-    transfrom: rotateZ(180deg);
-  }
-  to {
-    transform: rotateZ(0deg);
   }
 }
