@@ -360,17 +360,62 @@ nav {
         background-color: @white-color;
         height: 70px;
         width: 70%;
-        cursor: pointer;
         margin: 0 auto 20px;
+        border-radius: 5px;
+
+        &:hover {
+            box-shadow: 5px 5px 10px 10px rgb(199, 199, 199);
+            transition: transform 1s;
+            transform: translateY(-3px);
+
+
+        }
+
+        &.open {
+            height: fit-content;
+
+            .question-answer {
+                display: block;
+                padding: 6% 0 3% 1%;
+            }
+
+            .question-marker {
+
+                svg {
+                    transition: transform .3s;
+                    transform: rotateZ(180deg);
+                }
+            }
+
+            a {
+                color: red;
+                text-decoration-line: none;
+            }
+        }
+
+        &.closing {
+                svg {
+                    transition: transform .3s;
+                    transform: rotateZ(0deg);
+                }
+            }
+        }
 
         .question-heading {
+            font-size: 1.2rem;
+            margin-top: 2%;
             position: absolute;
             text-align: left;
-            padding-left: 30px;
+            padding-left: 1%;
+            width: 96%;
+            top: -3px;
+            cursor: pointer;
         }
 
         .question-answer {
-            background-color: green;
+            padding-top: 5%;
+            margin-bottom: 5%;
+            font-size: .7rem;
             display: none;
         }
 
@@ -380,9 +425,10 @@ nav {
             height: 35px;
             background-color: #e0e3f6;
             content: ' ';
-            right: 10px;
-            top: 27%;
+            right: 15px;
+            top: 19px;
             border-radius: 50%;
+
 
             &:hover {
                 svg {
@@ -392,8 +438,6 @@ nav {
 
             svg {
                 background-image: url(../foto/svg/triangle.svg);
-                // width:30px;
-                // height:30px;
                 width: 20px;
                 height: 20px;
                 position: relative;
@@ -404,9 +448,6 @@ nav {
                     fill: grey;
 
                 }
-
-
-
             }
 
             &:hover {
@@ -414,32 +455,6 @@ nav {
             }
         }
     }
-
-    // details {
-    //     background-color: @white;
-    //     width: 60%;
-    //     // height: 50px;
-    //     margin: 0 auto 20px;
-
-    //     summary {
-    //         font-size: 1.5rem;
-    //         padding: 10px 0;
-    //         font-weight: bold;
-    //        &::marker{
-    //             color: purple;
-    //         }
-    //     }
-
-    //     p {
-    //         margin-bottom: 30px;
-    //         padding: 10px 10px 40px 30px;
-    //         font-size: 1.1rem;
-    //     }
-
-    //     &:hover {
-    //         margin-top: 10px;
-    //     }
-    // }
 
     button {
         border: 2px solid black;
@@ -459,7 +474,6 @@ nav {
 
 //////////////////////////////////////FOOTER////////////////////////////////////////////////////
 #footer {
-    // width: 100%;
     background-color: black;
     height: auto;
     display: flex;
@@ -485,14 +499,12 @@ nav {
     }
 
     .footer-usefulLinks {
-        // border: 1px solid blue;
         height: 30px;
         list-style-type: none;
         display: flex;
         flex-direction: row;
         padding: 0;
         margin: 0;
-        // padding-left: 0;
 
         li {
             margin-right: 5%;
@@ -529,7 +541,6 @@ nav {
         }
 
         .footer-usefulLinks {
-            // margin: 0;
             margin-right: 5%;
 
             li {
@@ -552,7 +563,6 @@ nav {
     }
 
     .footer-usefulLinks {
-        // padding-right: 4%;
         margin-right: 4% !important;
     }
 }

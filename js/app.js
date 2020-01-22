@@ -100,10 +100,10 @@ const profiles = [ // um 2 Profiles zuzugreifen.
 ];
 
 const sliderProfiles = []; // gerade Zahl wird profiles[0] kriegen und ungerade Zahl wird profiles[1] bekommen.
-for(i = 0; i < 25; i++) {
-    if(i % 2 == 0) {
+for (i = 0; i < 25; i++) {
+    if (i % 2 == 0) {
         sliderProfiles[i] = profiles[0];
-    }else {
+    } else {
         sliderProfiles[i] = profiles[1];
     }
 }
@@ -125,7 +125,7 @@ const faq = function () {
     faq.id = 'faq';
     document.body.appendChild(faq);
 }
-const faqHeading = function() {
+const faqHeading = function () {
     var h = document.createElement('h4');
     h.innerHTML = 'FAQ';
     h.className = 'faq-heading'
@@ -135,7 +135,7 @@ const faqElements = function () {
     const faqAr = [
         new Aq("Warum gibt es das Pioneers Network?", "Mit dem Pioneers Network wollen wir sichtbar machen, wer die digitalen Pioniere sind, die tagtäglich daran arbeiten, die Chancen der Digitalisierung zu nutzen, statt die Gefahren zu beschwören. Und wir wollen Antworten auf die folgenden Fragen liefern: Was treibt sie an? Was ist ihre Motivation? Welche Ziele verfolgen sie? Und ganz praktisch: Welche Tools setzen sie ein, um ihre Arbeit besser und effizienter zu bewerkstelligen? Hier findest du mehr Informationen.", "Informationen"),
         new Aq("Wie werde ich Mitglied im Pioneers Network?", "Das geht mit wenigen Klicks. Dafür registrierst du dich auf t3n.de und füllst dann im Pioneers Network dein Profil aus. Je vollständiger dein Profil ausgefüllt ist, umso eher erscheinst du auch in der Suche.", "registrierst du dich auf t3n.de "),
-        new Aq("Kostet ein Profil im Pioneers Network Geld?", "Nein, das Pioneers-Network-Profil ist und bleibt kostenlos. Der aktuelle Funktionsumfang und weitere Features werden auch in Zukunft kein Geld kosten. Denkbar sind zukünftige Pro-Accounts bzw. Premium-Features."), 
+        new Aq("Kostet ein Profil im Pioneers Network Geld?", "Nein, das Pioneers-Network-Profil ist und bleibt kostenlos. Der aktuelle Funktionsumfang und weitere Features werden auch in Zukunft kein Geld kosten. Denkbar sind zukünftige Pro-Accounts bzw. Premium-Features."),
         new Aq("Warum sollte ich mich beim Pioneers Network anmelden?", "Im Pioneers Network kannst du andere digitale Pioniere entdecken und Einblicke in ihre Arbeit bekommen. Sie geben dir Tipps aus ihrem Umgang mit E-Mails, nehmen dich mit in ihren Tagesablauf und du erhältst Empfehlungen für Bücher und Podcasts. Der Funktionsumfang wird in den kommenden Versionen noch erweitert, sodass es sich lohnt, immer wieder reinzuschauen und von Anfang an dabei zu sein!")
     ];
     faqAr.forEach(e => {
@@ -144,13 +144,22 @@ const faqElements = function () {
         var m = document.createElement('div');
         m.className = 'question-marker'
         //<svg viewBox="0 0 25 25" id="s-caret" xmlns="http://www.w3.org/2000/svg"><title>Icon_Dropdown Copy</title><path d="M12.5 19.5L25 7H0z"></path></svg>
-        
+
         var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svg.setAttribute('viewBox','0 0 200 200');
-        svg.setAttribute('width','240');
-        svg.setAttribute('height','240');
+        svg.setAttribute('viewBox', '0 0 200 200');
+        svg.setAttribute('width', '240');
+        svg.setAttribute('height', '240');
         m.appendChild(svg);
         var head = document.createElement('h5');
+        head.addEventListener('click', () => {
+            el.classList.toggle('open');
+            if (!el.classList.contains('open')) {
+                el.classList.toggle('closing');
+                setTimeout(() => {
+                    el.classList.toggle('closing')
+                }, 1500)
+            }
+        })
         head.innerHTML = e.getQuestion;
         head.className = 'question-heading'
         var answer = document.createElement('p');
@@ -163,7 +172,7 @@ const faqElements = function () {
     })
 }
 
-const faqButton = function() {
+const faqButton = function () {
     var b = document.createElement('button');
     b.className = 'faq-button';
     b.innerHTML = 'Zu allen FAQ';
@@ -216,7 +225,7 @@ const footerUsefulLinks = function () {
     ulAr.forEach(e => {
         var l = document.createElement('li')
         var ref = document.createElement('a');
-        l .appendChild(ref);
+        l.appendChild(ref);
         ref.href = e;
         ref.innerHTML = e;
         usefulLinks.appendChild(l);

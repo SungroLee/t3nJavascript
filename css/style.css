@@ -357,16 +357,47 @@ nav {
   background-color: #fff;
   height: 70px;
   width: 70%;
-  cursor: pointer;
   margin: 0 auto 20px;
+  border-radius: 5px;
+}
+#faq .faq-question:hover {
+  box-shadow: 5px 5px 10px 10px #c7c7c7;
+  transition: transform 1s;
+  transform: translateY(-3px);
+}
+#faq .faq-question.open {
+  height: fit-content;
+}
+#faq .faq-question.open .question-answer {
+  display: block;
+  padding: 6% 0 3% 1%;
+}
+#faq .faq-question.open .question-marker svg {
+  transition: transform 1s;
+  transform: rotateZ(180deg);
+}
+#faq .faq-question.open a {
+  color: red;
+  text-decoration-line: none;
+}
+#faq .faq-question.closing .question-marker svg {
+  transition: all 1s;
+  transform: rotateZ(0deg);
 }
 #faq .faq-question .question-heading {
+  font-size: 1.2rem;
+  margin-top: 2%;
   position: absolute;
   text-align: left;
-  padding-left: 30px;
+  padding-left: 1%;
+  width: 96%;
+  top: -3px;
+  cursor: pointer;
 }
 #faq .faq-question .question-answer {
-  background-color: green;
+  padding-top: 5%;
+  margin-bottom: 5%;
+  font-size: 0.7rem;
   display: none;
 }
 #faq .faq-question .question-marker {
@@ -375,8 +406,8 @@ nav {
   height: 35px;
   background-color: #e0e3f6;
   content: ' ';
-  right: 10px;
-  top: 27%;
+  right: 15px;
+  top: 19px;
   border-radius: 50%;
 }
 #faq .faq-question .question-marker:hover svg {
@@ -536,5 +567,13 @@ nav {
   #footer .footer-copyright {
     order: 1;
     padding-bottom: 2%;
+  }
+}
+@keyframes rotateBack {
+  from {
+    transfrom: rotateZ(180deg);
+  }
+  to {
+    transform: rotateZ(0deg);
   }
 }
