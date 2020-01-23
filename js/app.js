@@ -19,7 +19,8 @@ const sliderDefaultDiv = document.createElement("div");
 const sliderH2 = document.createElement("h2");
 const sliderDiv = document.createElement("div");
 const slider = document.createElement("div");
-
+const leftBtn = document.createElement("button");
+const rightBtn = document.createElement("button");
 ///////////////Atribute//////////////////
 navLogoDiv.id = 'logoDiv';
 navLoginDiv.id = 'loginDiv';
@@ -38,6 +39,8 @@ pioneersButton.href = '#';
 sliderDefaultDiv.id = 'sliderDefaultDiv';
 sliderDiv.id = 'sliderDiv';
 slider.id = "slider";
+leftBtn.id = 'leftBtn';
+leftBtn.id = 'rightBtn';
 
 /////////// CreateTextNode///////////
 // Navbar
@@ -123,6 +126,7 @@ for(i = 0; i < 25; i++) {
     }
 }
 
+//einfügung die Profiles zu SliderDiv
 for(i = 0; i < sliderProfiles.length; i++) {
     
     const freeDiv = document.createElement("div");
@@ -144,6 +148,8 @@ for(i = 0; i < sliderProfiles.length; i++) {
     name.innerHTML = sliderProfiles[i].name;
     position.innerHTML = sliderProfiles[i].workingPosition;
     company.innerHTML = sliderProfiles[i].company;
+    company.id = "companyImg";
+    position.id = 'position';
 
     slider.appendChild(freeDiv);
 }

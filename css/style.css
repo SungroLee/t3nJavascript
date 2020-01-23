@@ -23,6 +23,7 @@ body {
   left: 0;
   display: flex;
   justify-content: space-between;
+  z-index: 10;
 }
 .LoginButtonDefault {
   font-weight: bolder;
@@ -134,16 +135,18 @@ body {
   margin-top: 0;
 }
 .sliderDivDefault #sliderDiv {
-  max-width: 55.5rem;
+  max-width: 65.5rem;
   margin: 0px auto;
   background-color: yellow;
 }
 .sliderDefault {
-  max-width: 100%;
   height: 100%;
   background-color: cornflowerblue;
   display: flex;
   overflow: hidden;
+}
+.sliderDefault a {
+  text-decoration-line: none;
 }
 .sliderDefault img {
   border-radius: 50%;
@@ -151,11 +154,24 @@ body {
 .sliderDefault h3 {
   margin: 0.5rem 0px 0px 0px;
   font-size: 0.7rem;
+  color: #2a2a2a;
+  font-weight: bolder;
 }
 .sliderDefault p {
   font-size: 0.7rem;
   margin: 0;
   padding: 0;
+  color: lightgrey;
+}
+.sliderDefault #companyImg:before {
+  content: '';
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  background-image: url(../foto/svg/architecture-and-city.svg);
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
 }
 /*************************
 * Start CSS
@@ -171,6 +187,7 @@ nav {
   left: 0;
   display: flex;
   justify-content: space-between;
+  z-index: 10;
 }
 #logoDiv {
   height: 3.5rem;
@@ -258,16 +275,18 @@ nav {
   margin-top: 0;
 }
 #sliderDefaultDiv #sliderDiv {
-  max-width: 55.5rem;
+  max-width: 65.5rem;
   margin: 0px auto;
   background-color: yellow;
 }
 #slider {
-  max-width: 100%;
   height: 100%;
   background-color: cornflowerblue;
   display: flex;
   overflow: hidden;
+}
+#slider a {
+  text-decoration-line: none;
 }
 #slider img {
   border-radius: 50%;
@@ -275,11 +294,24 @@ nav {
 #slider h3 {
   margin: 0.5rem 0px 0px 0px;
   font-size: 0.7rem;
+  color: #2a2a2a;
+  font-weight: bolder;
 }
 #slider p {
   font-size: 0.7rem;
   margin: 0;
   padding: 0;
+  color: lightgrey;
+}
+#slider #companyImg:before {
+  content: '';
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  background-image: url(../foto/svg/architecture-and-city.svg);
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
 }
 @media screen and (min-width: 300px) {
   #navt3n {
@@ -307,11 +339,29 @@ nav {
     height: 2.4rem;
   }
   #sliderDefaultDiv #sliderDiv {
-    height: 8.4rem;
+    height: 9.3rem;
+  }
+  #slider {
+    width: 10.1rem;
+    text-align: left;
+  }
+  #slider .profilInfos {
+    height: 9.3rem;
+  }
+  #slider .profilInfos a {
+    display: inline-block;
+    height: 100%;
+    width: 5.05rem;
   }
   #slider .profilInfos img {
     width: 3rem;
     height: 3rem;
+  }
+  #slider .profilInfos p {
+    font-size: 0.6rem;
+  }
+  #slider .profilInfos #position {
+    display: none;
   }
 }
 @media screen and (min-width: 353px) {
@@ -339,8 +389,8 @@ nav {
     height: 9.75rem;
   }
   #slider .profilInfos img {
-    width: 5rem;
-    height: 5rem;
+    width: 5.5rem;
+    height: 5.5rem;
   }
 }
 @media screen and (min-width: 480px) {
