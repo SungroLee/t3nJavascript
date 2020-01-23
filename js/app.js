@@ -1,75 +1,76 @@
 /********************************
  * Navbar
  *********************************/
-// //////////////// Variable/////////////////
-// // Navbar
-// const nav = document.createElement("nav"); //navbar
-// const navLogoDiv = document.createElement("div"); //nav left div
-// const navLoginDiv = document.createElement("div"); //nav right div
-// const navLogoFoto = document.createElement("img"); //logo img
-// const navText = document.createElement("a"); // Nav Right Text "t3n"
-// const navButton = document.createElement("a"); // Login Button in Nav
-// // Pioneers Network
-// const pioneersDiv = document.createElement("div");
-// const pioneersH1 = document.createElement("h1");
-// const pioneersH2 = document.createElement("h2");
-// const pioneersButton = document.createElement("a");
-// // Slider
-// const sliderDefaultDiv = document.createElement("div");
-// const sliderH2 = document.createElement("h2");
-// const sliderDiv = document.createElement("div");
-// const slider = document.createElement("div");
+//////////////// Variable/////////////////
+// Navbar
+const nav = document.createElement("nav"); //navbar
+const navLogoDiv = document.createElement("div"); //nav left div
+const navLoginDiv = document.createElement("div"); //nav right div
+const navLogoFoto = document.createElement("img"); //logo img
+const navText = document.createElement("a"); // Nav Right Text "t3n"
+const navButton = document.createElement("a"); // Login Button in Nav
+// Pioneers Network
+const pioneersDiv = document.createElement("div");
+const pioneersH1 = document.createElement("h1");
+const pioneersH2 = document.createElement("h2");
+const pioneersButton = document.createElement("a");
+// Slider
+const sliderDefaultDiv = document.createElement("div");
+const sliderH2 = document.createElement("h2");
+const sliderDiv = document.createElement("div");
+const slider = document.createElement("div");
 
-// ///////////////Atribute//////////////////
-// navLogoDiv.id = 'logoDiv';
-// navLoginDiv.id = 'loginDiv';
-// navLogoFoto.id = 'logoFoto';
-// navText.id = 'navt3n';
-// navButton.id = 'loginButton';
-// navLogoFoto.src = "./foto/t3n-logo.png";
-// navText.href = '#';
-// navButton.href = '#';
-// // Pioneers Network
-// pioneersDiv.id = 'pioneersDiv';
-// pioneersH1.id = 'pioneersH1';
-// pioneersButton.id = 'pioneersButton';
-// pioneersButton.href = '#';
-// // Slder
-// sliderDefaultDiv.id = 'sliderDefaultDiv';
-// sliderDiv.id = 'sliderDiv';
-// slider.id = "slider";
+///////////////Atribute//////////////////
+navLogoDiv.id = 'logoDiv';
+navLoginDiv.id = 'loginDiv';
+navLogoFoto.id = 'logoFoto';
+navText.id = 'navt3n';
+navButton.id = 'loginButton';
+navLogoFoto.src = "./foto/t3n-logo.png";
+navText.href = '#';
+navButton.href = '#';
+// Pioneers Network
+pioneersDiv.id = 'pioneersDiv';
+pioneersH1.id = 'pioneersH1';
+pioneersButton.id = 'pioneersButton';
+pioneersButton.href = '#';
+// Slder
+sliderDefaultDiv.id = 'sliderDefaultDiv';
+sliderDiv.id = 'sliderDiv';
+slider.id = "slider";
 
-// /////////// CreateTextNode///////////
-// // Navbar
-// navText.innerText = "t3n.de";
-// navButton.innerText = "Login";
-// // Pioneers Network
-// pioneersH1.innerText = "PIONEERS NETWORK";
-// pioneersH2.innerHTML = "Gestalte mit uns eine positive digitale Zukunft";
-// pioneersButton.innerHTML = "Jetzt kostenlos anmelden";
-// //Slider
-// sliderH2.innerHTML = "Finde andere digitale pioniere"
+/////////// CreateTextNode///////////
+// Navbar
+navText.innerText = "t3n.de";
+navButton.innerText = "Login";
+// Pioneers Network
+pioneersH1.innerText = "PIONEERS NETWORK";
+pioneersH2.innerHTML = "Gestalte mit uns eine positive digitale Zukunft";
+pioneersButton.innerHTML = "Jetzt kostenlos anmelden";
+//Slider
+sliderH2.innerHTML = "Finde andere digitale pioniere"
 
-// ////////////// AppendChild /////////////
-// document.body.appendChild(nav);
-// nav.appendChild(navLogoDiv);
-// nav.appendChild(navLoginDiv);
-// navLogoDiv.appendChild(navLogoFoto);
-// navLoginDiv.appendChild(navText);
-// navLoginDiv.appendChild(navButton);
-// // Pioneers Network
-// document.body.appendChild(pioneersDiv);
-// pioneersDiv.appendChild(pioneersH1);
-// pioneersDiv.appendChild(pioneersH2);
-// pioneersDiv.appendChild(pioneersButton);
-// //Slider
-// document.body.appendChild(sliderDefaultDiv);
-// sliderDefaultDiv.appendChild(sliderH2);
-// sliderDefaultDiv.appendChild(sliderDiv);
+////////////// AppendChild /////////////
+document.body.appendChild(nav);
+nav.appendChild(navLogoDiv);
+nav.appendChild(navLoginDiv);
+navLogoDiv.appendChild(navLogoFoto);
+navLoginDiv.appendChild(navText);
+navLoginDiv.appendChild(navButton);
+// Pioneers Network
+document.body.appendChild(pioneersDiv);
+pioneersDiv.appendChild(pioneersH1);
+pioneersDiv.appendChild(pioneersH2);
+pioneersDiv.appendChild(pioneersButton);
+//Slider
+document.body.appendChild(sliderDefaultDiv);
+sliderDefaultDiv.appendChild(sliderH2);
+sliderDefaultDiv.appendChild(sliderDiv);
 
 window.onload = function () {
     this.console.log('Dokument geladen');
-    // initFaq();
+    initBecomePionier();
+    initFaq();
     initFooter();
 }
 
@@ -151,7 +152,19 @@ const profiles = [ // um 2 Profiles zuzugreifen.
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////FOOTER//////////////////////////////////////////////////
+////////////////////////////////////////Become Pionier//////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+/*
+url(https://storage.googleapis.com/t3n-de/pioneers/28a287d4da97bf4bdc65935dcb96bcc29a05e33f/t3n_Background_Texture.gif)
+*/
+
+const initBecomePionier = function(){
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////FAQ/////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
 const initFaq = function () {
     faq();
@@ -161,12 +174,12 @@ const initFaq = function () {
     //test
 }
 const faq = function () {
-    var faq = document.createElement('div');
+    const faq = document.createElement('div');
     faq.id = 'faq';
     document.body.appendChild(faq);
 }
 const faqHeading = function () {
-    var h = document.createElement('h4');
+    const h = document.createElement('h4');
     h.innerHTML = 'FAQ';
     h.className = 'faq-heading'
     document.getElementById('faq').appendChild(h);
@@ -186,7 +199,7 @@ const faqElements = function () {
         const questHeading = document.createElement('div');
         questHeading.classList = 'faq-questHeadContainer';
 
-        var head = document.createElement('h5');
+        const head = document.createElement('h5');
         head.addEventListener('click', () => {
             c.classList.toggle('open');
             if (!c.classList.contains('open')) {
@@ -198,9 +211,8 @@ const faqElements = function () {
         });
         head.innerHTML = e.getQuestion;
         head.className = 'question-heading'
-        var answer = document.createElement('p');
-        answer.className = 'question-answer'
-        answer.innerHTML = e.getAnswer;
+
+        const answer = getAnswerEl(e);
         questHeading.appendChild(head);
         questHeading.appendChild(m);
         c.appendChild(questHeading);
@@ -208,17 +220,6 @@ const faqElements = function () {
         document.getElementById('faq').appendChild(c);
     })
 }
-const getQuestMarker = function () {
-    const div = document.createElement('div');
-    div.className = 'question-marker'
-    return div;
-}
-const getQuestContainer = function () {
-    const div = document.createElement('div')
-    div.className = 'faq-question'
-    return div;
-}
-
 const faqButton = function () {
     var b = document.createElement('button');
     b.className = 'faq-button';
@@ -281,4 +282,25 @@ const footerUsefulLinks = function () {
     });
     test.appendChild(usefulLinks);
     document.getElementById('footer').appendChild(test);
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////HelperR Functions///////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+const getAnswerEl = function(question){
+    const p = document.createElement('p');
+    p.className = 'question-answer'
+    p.innerHTML = question.getAnswer;
+    return p;
+}
+const getQuestMarker = function () {
+    const div = document.createElement('div');
+    div.className = 'question-marker'
+    return div;
+}
+const getQuestContainer = function () {
+    const div = document.createElement('div')
+    div.className = 'faq-question'
+    return div;
 }
