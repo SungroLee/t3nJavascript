@@ -511,37 +511,43 @@ nav {
 
 ////////////////////////////////////// Become Pionier //////////////////////////////////////////////////
 
-
-#becomePionier {
+.becomePionier-outerSection {
     background-image: url(https://storage.googleapis.com/t3n-de/pioneers/28a287d4da97bf4bdc65935dcb96bcc29a05e33f/t3n_Background_Texture.gif);
     background-size: cover;
     background-position-x: center;
     background-blend-mode: multiply;
     background-color: @red-color;
+    padding: 5% 2% 6% 2%;
 
     @supports not (background-blend-mode: 'multiply') {
         background-image: url(../media/t3n_Background_Texture_colored.png);
     }
 
+}
+
+#becomePionier {
+    // margin: 0 auto;
     color: white;
     display: flex;
-    padding: 4% 20% 6% 21%;
     justify-content: space-between;
-
+    min-width: 700px;
     .becomePionier-Heading {
+        position: relative;
         display: flex;
         height: auto;
         flex-direction: column;
         line-height: 75px;
+        // margin-left: 200px;
+        left: 200px;
 
         span {
             margin: 0 0 5px;
             position: absolute !important;
             position: relative;
-            font-size: 2.5rem;
+            font-size: 2.38rem;
             font-weight: 800;
             position: absolute;
-            margin-left: 5px;
+            margin-left: 7px;
             padding-top: 1.8px;
             display: inline-block;
         }
@@ -550,7 +556,7 @@ nav {
             margin: 6px 0 5px;
             position: relative;
             font-size: 3rem;
-            font-weight: 800;
+            font-weight: 600;
 
             &:first-of-type {
                 margin-left: 17px;
@@ -595,7 +601,7 @@ nav {
     .textArea-text {
         // background-color: purple;
         font-size: .7rem;
-        padding-top:10px;
+        padding-top: 10px;
     }
 
     .textArea-button {
@@ -605,9 +611,23 @@ nav {
         color: black;
         border-radius: 2px;
         border: none;
-        width: 35%;
+        // width: 35%;
     }
 }
+
+@media screen and (min-width: 1150px) {}
+
+@media screen and (min-width: 981px) {
+    //     #becomePionier {
+    //     padding-left: 2%;
+    //     padding-right: 2%;
+    // }
+
+}
+
+@media screen and (max-width: 980px) {}
+
+@media screen and (max-width: 769px) {}
 
 ////////////////////////////////////// FAQ /////////////////////////////////////////////////////////////
 

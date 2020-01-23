@@ -509,36 +509,41 @@ nav {
     height: 9.75rem;
   }
 }
-#becomePionier {
+.becomePionier-outerSection {
   background-image: url(https://storage.googleapis.com/t3n-de/pioneers/28a287d4da97bf4bdc65935dcb96bcc29a05e33f/t3n_Background_Texture.gif);
   background-size: cover;
   background-position-x: center;
   background-blend-mode: multiply;
   background-color: #f9423a;
-  color: white;
-  display: flex;
-  padding: 4% 20% 6% 21%;
-  justify-content: space-between;
+  padding: 5% 2% 6% 2%;
 }
 @supports not (background-blend-mode: 'multiply') {
-  #becomePionier {
+  .becomePionier-outerSection {
     background-image: url(../media/t3n_Background_Texture_colored.png);
   }
 }
+#becomePionier {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  min-width: 700px;
+}
 #becomePionier .becomePionier-Heading {
+  position: relative;
   display: flex;
   height: auto;
   flex-direction: column;
   line-height: 75px;
+  left: 200px;
 }
 #becomePionier .becomePionier-Heading span {
   margin: 0 0 5px;
   position: absolute !important;
   position: relative;
-  font-size: 2.5rem;
+  font-size: 2.38rem;
   font-weight: 800;
   position: absolute;
-  margin-left: 5px;
+  margin-left: 7px;
   padding-top: 1.8px;
   display: inline-block;
 }
@@ -546,7 +551,7 @@ nav {
   margin: 6px 0 5px;
   position: relative;
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: 600;
 }
 #becomePionier .becomePionier-Heading .heading-head:first-of-type {
   margin-left: 17px;
@@ -588,7 +593,8 @@ nav {
   color: black;
   border-radius: 2px;
   border: none;
-  width: 35%;
+}
+@media screen and (min-width: 981px) {
 }
 #faq {
   background-color: lightgrey;
