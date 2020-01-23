@@ -42,33 +42,33 @@ slider.id = "slider";
 leftBtn.id = 'leftBtn';
 leftBtn.id = 'rightBtn';
 
-/////////// CreateTextNode///////////
-// Navbar
-navText.innerText = "t3n.de";
-navButton.innerText = "Login";
-// Pioneers Network
-pioneersH1.innerText = "PIONEERS NETWORK";
-pioneersH2.innerHTML = "Gestalte mit uns eine positive digitale Zukunft";
-pioneersButton.innerHTML = "Jetzt kostenlos anmelden";
-//Slider
-sliderH2.innerHTML = "Finde andere digitale pioniere"
+// /////////// CreateTextNode///////////
+// // Navbar
+// navText.innerText = "t3n.de";
+// navButton.innerText = "Login";
+// // Pioneers Network
+// pioneersH1.innerText = "PIONEERS NETWORK";
+// pioneersH2.innerHTML = "Gestalte mit uns eine positive digitale Zukunft";
+// pioneersButton.innerHTML = "Jetzt kostenlos anmelden";
+// //Slider
+// sliderH2.innerHTML = "Finde andere digitale pioniere"
 
-////////////// AppendChild /////////////
-document.body.appendChild(nav);
-nav.appendChild(navLogoDiv);
-nav.appendChild(navLoginDiv);
-navLogoDiv.appendChild(navLogoFoto);
-navLoginDiv.appendChild(navText);
-navLoginDiv.appendChild(navButton);
-// Pioneers Network
-document.body.appendChild(pioneersDiv);
-pioneersDiv.appendChild(pioneersH1);
-pioneersDiv.appendChild(pioneersH2);
-pioneersDiv.appendChild(pioneersButton);
-//Slider
-document.body.appendChild(sliderDefaultDiv);
-sliderDefaultDiv.appendChild(sliderH2);
-sliderDefaultDiv.appendChild(sliderDiv);
+// ////////////// AppendChild /////////////
+// document.body.appendChild(nav);
+// nav.appendChild(navLogoDiv);
+// nav.appendChild(navLoginDiv);
+// navLogoDiv.appendChild(navLogoFoto);
+// navLoginDiv.appendChild(navText);
+// navLoginDiv.appendChild(navButton);
+// // Pioneers Network
+// document.body.appendChild(pioneersDiv);
+// pioneersDiv.appendChild(pioneersH1);
+// pioneersDiv.appendChild(pioneersH2);
+// pioneersDiv.appendChild(pioneersButton);
+// //Slider
+// document.body.appendChild(sliderDefaultDiv);
+// sliderDefaultDiv.appendChild(sliderH2);
+// sliderDefaultDiv.appendChild(sliderDiv);
 
 window.onload = function () {
     this.console.log('Dokument geladen');
@@ -115,32 +115,32 @@ const profiles = [ // um 2 Profiles zuzugreifen.
     new SliderProfile("https://storage.googleapis.com/t3n-de/pioneers/8298acd960400f97e749266416913a54ac9b45ea/29513215_1757429684277443_7955459664427213519_n%20-%20Kathrin%20We%C3%9Fling.jpg",
                      "Kathrin Weßling", "Founder", "Würger & wessling")
 ];
-const sliderProfilesDiv = document.createElement("div");
+// const sliderProfilesDiv = document.createElement("div");
 
-const sliderProfiles = []; // gerade Zahl wird profiles[0] kriegen und ungerade Zahl wird profiles[1] bekommen.
-for(i = 0; i < 25; i++) {  
-    if(i % 2 == 0) {
-        sliderProfiles[i] = profiles[0];
-    } else {
-        sliderProfiles[i] = profiles[1];
-    }
-}
+// const sliderProfiles = []; // gerade Zahl wird profiles[0] kriegen und ungerade Zahl wird profiles[1] bekommen.
+// for(i = 0; i < 25; i++) {  
+//     if(i % 2 == 0) {
+//         sliderProfiles[i] = profiles[0];
+//     } else {
+//         sliderProfiles[i] = profiles[1];
+//     }
+// }
 
 //einfügung die Profiles zu SliderDiv
 for(i = 0; i < sliderProfiles.length; i++) {
     
-    const freeDiv = document.createElement("div");
-    const freeA = document.createElement("a");
-    const Img = document.createElement("img");
-    const name = document.createElement("h3");
-    const position = document.createElement("p");
-    const company = document.createElement("p");
+//     const freeDiv = document.createElement("div");
+//     const freeA = document.createElement("a");
+//     const Img = document.createElement("img");
+//     const name = document.createElement("h3");
+//     const position = document.createElement("p");
+//     const company = document.createElement("p");
     
-    freeDiv.appendChild(freeA);
-    freeA.appendChild(Img);
-    freeA.appendChild(name);
-    freeA.appendChild(position);
-    freeA.appendChild(company);
+//     freeDiv.appendChild(freeA);
+//     freeA.appendChild(Img);
+//     freeA.appendChild(name);
+//     freeA.appendChild(position);
+//     freeA.appendChild(company);
 
     freeDiv.className = "profilInfos";
     freeA.href = '#';
@@ -151,9 +151,9 @@ for(i = 0; i < sliderProfiles.length; i++) {
     company.id = "companyImg";
     position.id = 'position';
 
-    slider.appendChild(freeDiv);
-}
-sliderDiv.appendChild(slider);
+//     slider.appendChild(freeDiv);
+// }
+// sliderDiv.appendChild(slider);
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -189,6 +189,9 @@ const faqElements = function () {
         const m = getQuestMarker();
         const s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         m.appendChild(s);
+        const questHeading = document.createElement('div');
+        questHeading.classList = 'faq-questHeadContainer';
+
         var head = document.createElement('h5');
         head.addEventListener('click', () => {
             c.classList.toggle('open');
@@ -204,8 +207,9 @@ const faqElements = function () {
         var answer = document.createElement('p');
         answer.className = 'question-answer'
         answer.innerHTML = e.getAnswer;
-        c.appendChild(head);
-        c.appendChild(m);
+        questHeading.appendChild(head);
+        questHeading.appendChild(m);
+        c.appendChild(questHeading);
         c.appendChild(answer);
         document.getElementById('faq').appendChild(c);
     })
@@ -238,7 +242,7 @@ const initFooter = function () {
 }
 
 const footer = function () {
-    var footer = document.createElement('div');
+    var footer = document.createElement('footer');
     footer.id = 'footer';
     document.body.appendChild(footer);
 }
@@ -267,16 +271,20 @@ const footerSocialMedia = function () {
 }
 
 const footerUsefulLinks = function () {
+    const test = document.createElement('div');
+    test.className = 'usefulLinks-outer';
     var usefulLinks = document.createElement('ul');
     usefulLinks.className = 'footer-usefulLinks';
-    document.getElementById('footer').appendChild(usefulLinks);
     const ulAr = ["Kontakt", "AGB", "Datenschutz", "Impressum"];
     ulAr.forEach(e => {
         var l = document.createElement('li')
         var ref = document.createElement('a');
+        ref.className = 'usefulLinks-link'
         l.appendChild(ref);
         ref.href = e;
         ref.innerHTML = e;
         usefulLinks.appendChild(l);
     });
+    test.appendChild(usefulLinks);
+    document.getElementById('footer').appendChild(test);
 }

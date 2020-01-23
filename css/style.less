@@ -165,9 +165,11 @@ body {
     max-width: 100%;
     background-color: green;
     text-align: center;
+
     h2 {
         margin-top: 0;
     }
+
     #sliderDiv {
         max-width: 65.5rem;
         margin: 0px auto;
@@ -186,12 +188,14 @@ body {
     img {
         border-radius: 50%;
     }
+
     h3 {
         margin: 0.5rem 0px 0px 0px;
         font-size: 0.7rem;
         color: @balck-color;
         font-weight: bolder;
     }
+
     p {
         font-size: 0.7rem;
         margin: 0;
@@ -254,8 +258,9 @@ nav {
     .sliderDefault;
 }
 
-@media screen and(min-width : 300px) { // Max Width 479px Media Query (Mobile Version)
-    
+@media screen and(min-width : 300px) {
+    // Max Width 479px Media Query (Mobile Version)
+
     ////////// Navbar //////////
     #navt3n {
         display: none;
@@ -266,6 +271,7 @@ nav {
         height: 17.15rem;
         padding: 2.5rem 1rem;
         text-align: center;
+
         h1 {
             font-size: 1.6rem;
             padding: 0px 0px 1rem 0px;
@@ -280,15 +286,18 @@ nav {
     #sliderDefaultDiv {
         height: 16.7rem;
         padding: 2.5rem 1rem;
+
         h2 {
             margin-bottom: 0.9rem;
             font-size: 1rem;
             height: 2.4rem;
         }
+
         #sliderDiv {
             height: 9.3rem;
         }
     }
+
     #slider {
         width: 10.1rem;
         text-align: left;
@@ -314,20 +323,24 @@ nav {
     }
 }
 
-@media screen and(min-width : 353px) { // Min Width 353px Media Query(Mobile Version)
-      
+@media screen and(min-width : 353px) {
+    // Min Width 353px Media Query(Mobile Version)
+
     ////////// Navbar //////////
     #navt3n {
         display: none;
     }
+
     ////////// first Part /////////
     #pioneersDiv {
         height: 14.15rem;
         padding: 2.5rem 1rem;
         text-align: center;
+
         h1 {
             font-size: 1.6rem;
         }
+
         h2 {
             font-size: 1rem;
         }
@@ -336,13 +349,16 @@ nav {
     /////////// Slider //////////
     #sliderDefaultDiv {
         height: 16.8rem;
+
         h2 {
             height: 1.2rem;
         }
+
         #sliderDiv {
             height: 9.75rem;
         }
     }
+
     #slider {
         .profilInfos {
             img {
@@ -371,6 +387,7 @@ nav {
     ////////// Pioneer ///////////
     #pioneersDiv {
         height: 21.45rem;
+
         h1 {
             font-size: 3.5rem;
             line-height: 1.4;
@@ -381,6 +398,7 @@ nav {
     ////////////// Slider /////////////
     #sliderDefaultDiv {
         height: 15.6rem;
+
         #sliderDiv {
             height: 8.55rem;
         }
@@ -427,6 +445,7 @@ nav {
         padding: 5rem 1rem;
         height: 21.8rem;
         text-align: center;
+
         #sliderDiv {
             height: 9.75rem;
         }
@@ -466,11 +485,13 @@ nav {
         padding: 5rem 1rem;
         height: 24.45rem;
         text-align: center;
+
         h2 {
             font-size: 1.7rem;
             height: 2.2rem;
             margin-bottom: 2.5rem;
         }
+
         #sliderDiv {
             height: 9.75rem;
         }
@@ -488,6 +509,7 @@ nav {
 #faq {
     background-color: @lightGrey;
     margin: 0 auto;
+    padding-bottom: 2%;
 
     .faq-heading {
         text-align: center;
@@ -499,8 +521,7 @@ nav {
     .faq-question {
         position: relative;
         background-color: @white-color;
-        height: 70px;
-        // width: 70%;
+        min-height: 70px;
         margin: 0 auto 20px;
         border-radius: 5px;
 
@@ -517,7 +538,6 @@ nav {
 
             .question-answer {
                 display: block;
-                // padding: 6% 0 3% 1%;
             }
 
             .question-marker {
@@ -544,34 +564,38 @@ nav {
 
     .question-heading {
         font-size: 1.1rem;
-        margin-top: 20px;
-        position: absolute;
         text-align: left;
-        padding-left: 10px;
-        padding-right: 30px;
-        width: 96%;
+        width: 95%;
         top: -3px;
         cursor: pointer;
+        display: inline-block;
+        margin: 0 auto 0 10px;
     }
 
     .question-answer {
-        // padding-top: 3vw;
-        // margin-bottom: 50px;
         font-size: .7rem;
         display: none;
-        padding: 70px 0 50px 10px;
+        padding: 0 15px 50px 10px;
+    }
+
+    .faq-questHeadContainer {
+        position: relative;
+        padding-top: 20px;
+        display: flex;
+        padding-bottom: 20px;
     }
 
     .question-marker {
-        position: absolute;
-        width: 35px;
-        height: 35px;
         background-color: #e0e3f6;
-        content: ' ';
-        right: 15px;
-        top: 19px;
         border-radius: 50%;
-
+        display: inline-block;
+        min-width: 35px;
+        max-width: 35px;
+        min-height: 35px;
+        max-height: 35px;
+        margin: auto;
+        margin-right: 1%;
+        margin-left: 1%;
 
         &:hover {
             svg {
@@ -584,8 +608,8 @@ nav {
             width: 20px;
             height: 20px;
             position: relative;
-            top: 7px;
-            right: -8px;
+            top: 8px;
+            left: 20%;
 
             path {
                 fill: grey;
@@ -600,12 +624,14 @@ nav {
 }
 
 button {
+    display: block;
     border: 2px solid black;
     background-color: inherit;
     padding: 6px;
-    margin-left: auto;
-    margin-left: 47.5%;
-    margin-bottom: 5%;
+    // margin-left: auto;
+    // margin: 0 auto;
+    // margin-bottom: 5%;
+    margin: 0 auto 5% auto;
 
     &:hover {
         background-color: rgb(37, 37, 37);
@@ -622,6 +648,12 @@ button {
     }
 }
 
+@media screen and (min-width: 981px) {
+    .faq-question {
+        width: 98%;
+    }
+}
+
 @media screen and (max-width: 980px) {
     #faq {
         .faq-heading {
@@ -635,11 +667,10 @@ button {
     }
 }
 
-@media screen and (max-width: 768px) {
-    #faq {
-        .faq-question:last-of-type {
-            height: 90px !important;
-        }
+@media screen and (max-width: 769px) {
+    .faq-heading {
+        text-align: left !important;
+        margin-left: 5% !important;
     }
 }
 
@@ -651,11 +682,12 @@ button {
     flex: auto;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 3%;
 
     .footer-copyright {
         color: rgb(165, 165, 165);
         font-size: .7rem;
-        margin-top: .5%;
+        padding-top: 8px;
     }
 
     .footer-socialMediaIcons {
@@ -669,29 +701,32 @@ button {
         }
     }
 
-    .footer-usefulLinks {
-        height: 30px;
-        list-style-type: none;
-        display: flex;
+    .usefulLinks-outer {
         flex-direction: row;
-        padding: 0;
-        margin: 0;
+        display: flex;
         font-weight: bold;
+        font-size: .65rem;
+        height: inherit;
+        padding-top: 0;
+    }
+
+    .footer-usefulLinks {
+        list-style-type: none;
+        padding: 0;
+        padding-top: 10px;
+        margin: 0;
 
         li {
-            margin-right: 5%;
-
-            :last-of-type {
-                margin-right: 0;
-            }
+            display: inline;
+            padding: 0;
+            margin: 0;
 
             a {
-                font-size: .65rem;
+                padding: 5px;
                 color: white;
                 text-decoration: none;
 
                 &:hover {
-
                     text-decoration: underline;
                 }
             }
@@ -699,76 +734,31 @@ button {
     }
 }
 
-
-@media screen and (min-width: 1296px) {
-
-    #footer {
-        .footer-copyright {
-            margin-left: 3%;
-        }
-
-        .footer-socialMediaIcons {
-            height: 100%;
-            margin-left: 4%;
-        }
-
-        .footer-usefulLinks {
-            margin-right: 5%;
-
-            li {
-
-                a {
-                    margin-right: 10%;
-                }
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 981px) and (max-width: 1295px) {
-    .footer-copyright {
-        margin-left: 1%;
-    }
-
-    .footer-socialMediaIcons {
-        margin-left: 4%;
-    }
-
-    .footer-usefulLinks {
-        margin-right: 4% !important;
-    }
-}
-
-@media screen and (min-width: 381px)and (max-width: 980px) {
+@media screen and (max-width: 980px) {
 
     #footer {
         flex-direction: column;
-        padding-top: 10px;
-
+        // padding-top: 10px;
+        padding: 20px 0 !important;
 
         .footer-copyright,
         .footer-socialMediaIcons,
-        .footer-usefulLinks {
+        .footer-usefulLinks,
+        .usefulLinks-outer {
             margin: 0 auto;
+        }
+
+        .footer-usefulLinks {
+            padding-top: 0;
+
+            a {
+                padding: 0 12px !important;
+            }
         }
 
         .footer-copyright {
             order: 1;
-            padding-bottom: 2%;
-        }
-
-        .footer-usefulLinks {
-            margin: 0 auto !important;
-            width: fit-content;
-
-            li {
-                margin-right: 7.5 !important;
-                padding-right: 7.5% !important;
-
-                &:last-child {
-                    margin-right: 0 !important;
-                }
-            }
+            padding-bottom: 1%;
         }
     }
 }
@@ -776,44 +766,19 @@ button {
 @media screen and(max-width: 380px) {
     #footer {
         flex-direction: column;
-        padding-top: 10px;
-
-
-        .footer-copyright,
-        .footer-socialMediaIcons,
-        .footer-usefulLinks {
-            margin: 0 auto;
-        }
 
         .footer-usefulLinks {
             flex-wrap: wrap;
-            width: 75%;
-            margin-top: 2%;
-            margin-bottom: 50px;
-            margin-left: 15%;
+            display: flex;
+            padding: 10px 10px;
 
             li {
-                margin-right: 7% !important;
-                width: 41%;
+                flex: 0 0 50%;
 
                 &:nth-of-type(odd) {
-                    // border: 1px solid greenyellow;
-                    margin-right: 0 !important;
                     text-align: right;
                 }
-
-                &:nth-of-type(even) {
-                    // border: 1px solid brown !important;
-                    margin-left: 20px !important;
-                }
-
             }
         }
-
-        .footer-copyright {
-            order: 1;
-            padding-bottom: 2%;
-        }
-
     }
 }

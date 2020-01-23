@@ -512,6 +512,7 @@ nav {
 #faq {
   background-color: lightgrey;
   margin: 0 auto;
+  padding-bottom: 2%;
 }
 #faq .faq-heading {
   text-align: center;
@@ -522,7 +523,7 @@ nav {
 #faq .faq-question {
   position: relative;
   background-color: #fff;
-  height: 70px;
+  min-height: 70px;
   margin: 0 auto 20px;
   border-radius: 5px;
 }
@@ -551,29 +552,35 @@ nav {
 }
 #faq .question-heading {
   font-size: 1.1rem;
-  margin-top: 20px;
-  position: absolute;
   text-align: left;
-  padding-left: 10px;
-  padding-right: 30px;
-  width: 96%;
+  width: 95%;
   top: -3px;
   cursor: pointer;
+  display: inline-block;
+  margin: 0 auto 0 10px;
 }
 #faq .question-answer {
   font-size: 0.7rem;
   display: none;
-  padding: 70px 0 50px 10px;
+  padding: 0 15px 50px 10px;
+}
+#faq .faq-questHeadContainer {
+  position: relative;
+  padding-top: 20px;
+  display: flex;
+  padding-bottom: 20px;
 }
 #faq .question-marker {
-  position: absolute;
-  width: 35px;
-  height: 35px;
   background-color: #e0e3f6;
-  content: ' ';
-  right: 15px;
-  top: 19px;
   border-radius: 50%;
+  display: inline-block;
+  min-width: 35px;
+  max-width: 35px;
+  min-height: 35px;
+  max-height: 35px;
+  margin: auto;
+  margin-right: 1%;
+  margin-left: 1%;
 }
 #faq .question-marker:hover svg {
   background-image: url(../foto/svg/triangle_hover.svg);
@@ -583,8 +590,8 @@ nav {
   width: 20px;
   height: 20px;
   position: relative;
-  top: 7px;
-  right: -8px;
+  top: 8px;
+  left: 20%;
 }
 #faq .question-marker svg path {
   fill: grey;
@@ -593,12 +600,11 @@ nav {
   background-color: black;
 }
 button {
+  display: block;
   border: 2px solid black;
   background-color: inherit;
   padding: 6px;
-  margin-left: auto;
-  margin-left: 47.5%;
-  margin-bottom: 5%;
+  margin: 0 auto 5% auto;
 }
 button:hover {
   background-color: #252525;
@@ -610,6 +616,11 @@ button:hover {
     width: 1130px;
   }
 }
+@media screen and (min-width: 981px) {
+  .faq-question {
+    width: 98%;
+  }
+}
 @media screen and (max-width: 980px) {
   #faq .faq-heading {
     margin-bottom: 0;
@@ -619,9 +630,10 @@ button:hover {
     width: 90%;
   }
 }
-@media screen and (max-width: 768px) {
-  #faq .faq-question:last-of-type {
-    height: 90px !important;
+@media screen and (max-width: 769px) {
+  .faq-heading {
+    text-align: left !important;
+    margin-left: 5% !important;
   }
 }
 #footer {
@@ -631,11 +643,12 @@ button:hover {
   flex: auto;
   flex-direction: row;
   justify-content: space-between;
+  padding: 0 3%;
 }
 #footer .footer-copyright {
   color: #a5a5a5;
   font-size: 0.7rem;
-  margin-top: 0.5%;
+  padding-top: 8px;
 }
 #footer .footer-socialMediaIcons {
   margin-top: 0.2%;
@@ -646,111 +659,68 @@ button:hover {
   margin-top: 0.5%;
   margin-right: 10px;
 }
-#footer .footer-usefulLinks {
-  height: 30px;
-  list-style-type: none;
-  display: flex;
+#footer .usefulLinks-outer {
   flex-direction: row;
-  padding: 0;
-  margin: 0;
+  display: flex;
   font-weight: bold;
+  font-size: 0.65rem;
+  height: inherit;
+  padding-top: 0;
+}
+#footer .footer-usefulLinks {
+  list-style-type: none;
+  padding: 0;
+  padding-top: 10px;
+  margin: 0;
 }
 #footer .footer-usefulLinks li {
-  margin-right: 5%;
-}
-#footer .footer-usefulLinks li :last-of-type {
-  margin-right: 0;
+  display: inline;
+  padding: 0;
+  margin: 0;
 }
 #footer .footer-usefulLinks li a {
-  font-size: 0.65rem;
+  padding: 5px;
   color: white;
   text-decoration: none;
 }
 #footer .footer-usefulLinks li a:hover {
   text-decoration: underline;
 }
-@media screen and (min-width: 1296px) {
-  #footer .footer-copyright {
-    margin-left: 3%;
-  }
-  #footer .footer-socialMediaIcons {
-    height: 100%;
-    margin-left: 4%;
-  }
-  #footer .footer-usefulLinks {
-    margin-right: 5%;
-  }
-  #footer .footer-usefulLinks li a {
-    margin-right: 10%;
-  }
-}
-@media screen and (min-width: 981px) and (max-width: 1295px) {
-  .footer-copyright {
-    margin-left: 1%;
-  }
-  .footer-socialMediaIcons {
-    margin-left: 4%;
-  }
-  .footer-usefulLinks {
-    margin-right: 4% !important;
-  }
-}
-@media screen and (min-width: 381px) and (max-width: 980px) {
+@media screen and (max-width: 980px) {
   #footer {
     flex-direction: column;
-    padding-top: 10px;
+    padding: 20px 0 !important;
   }
   #footer .footer-copyright,
   #footer .footer-socialMediaIcons,
-  #footer .footer-usefulLinks {
+  #footer .footer-usefulLinks,
+  #footer .usefulLinks-outer {
     margin: 0 auto;
+  }
+  #footer .footer-usefulLinks {
+    padding-top: 0;
+  }
+  #footer .footer-usefulLinks a {
+    padding: 0 12px !important;
   }
   #footer .footer-copyright {
     order: 1;
-    padding-bottom: 2%;
-  }
-  #footer .footer-usefulLinks {
-    margin: 0 auto !important;
-    width: fit-content;
-  }
-  #footer .footer-usefulLinks li {
-    margin-right: 7.5 !important;
-    padding-right: 7.5% !important;
-  }
-  #footer .footer-usefulLinks li:last-child {
-    margin-right: 0 !important;
+    padding-bottom: 1%;
   }
 }
 @media screen and (max-width: 380px) {
   #footer {
     flex-direction: column;
-    padding-top: 10px;
-  }
-  #footer .footer-copyright,
-  #footer .footer-socialMediaIcons,
-  #footer .footer-usefulLinks {
-    margin: 0 auto;
   }
   #footer .footer-usefulLinks {
     flex-wrap: wrap;
-    width: 75%;
-    margin-top: 2%;
-    margin-bottom: 50px;
-    margin-left: 15%;
+    display: flex;
+    padding: 10px 10px;
   }
   #footer .footer-usefulLinks li {
-    margin-right: 7% !important;
-    width: 41%;
+    flex: 0 0 50%;
   }
   #footer .footer-usefulLinks li:nth-of-type(odd) {
-    margin-right: 0 !important;
     text-align: right;
-  }
-  #footer .footer-usefulLinks li:nth-of-type(even) {
-    margin-left: 20px !important;
-  }
-  #footer .footer-copyright {
-    order: 1;
-    padding-bottom: 2%;
   }
 }
