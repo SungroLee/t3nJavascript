@@ -50,10 +50,10 @@ body {
     line-height: 1.8;
     border-radius: 4px;
     border: none;
-    text-decoration-line: none;
+    text-decoration: none;
     cursor: pointer;
     transition: background-color .1s ease-in-out;
-
+    
     &:hover {
         background-color: @balck-color;
         color: @white-color;
@@ -93,7 +93,7 @@ body {
     width: 2.32rem;
     height: 1.2rem;
     margin-right: 1rem;
-    text-decoration-line: none;
+    text-decoration: none;
     position: relative;
 
     &:after {
@@ -127,7 +127,7 @@ body {
     h1 {
         margin: 0;
         color: @white-color;
-        text-decoration-line: underline;
+        text-decoration: underline;
         text-decoration-color: @balck-color;
         line-height: 1.8;
         font-weight: bold;
@@ -151,7 +151,7 @@ body {
     background-color: @white-color;
     border-radius: 4px;
     border: none;
-    text-decoration-line: none;
+    text-decoration: none;
     cursor: pointer;
     transition: background-color .1s ease-in-out;
 
@@ -182,11 +182,22 @@ body {
     background-color: cornflowerblue;
     display: flex;
     overflow: hidden;
+    margin-right: 3.9rem;
+    margin-left: 3.9rem;
+    .profilInfos {
+        align-items: center;
+    }
     a {
-        text-decoration-line: none;
+        text-align: left;
+        height: 100%;
+        text-decoration: none;
+        display: inline-block;
     }
     img {
         border-radius: 50%;
+        display: inline-block;
+        width: 100%;
+        height: auto;
     }
 
     h3 {
@@ -258,7 +269,7 @@ nav {
     .sliderDefault;
 }
 
-@media screen and(min-width : 300px) {
+@media screen and(min-width : 100px) {
     // Max Width 479px Media Query (Mobile Version)
 
     ////////// Navbar //////////
@@ -286,10 +297,10 @@ nav {
     #sliderDefaultDiv {
         height: 16.7rem;
         padding: 2.5rem 1rem;
-
+        text-align: left;
         h2 {
             margin-bottom: 0.9rem;
-            font-size: 1rem;
+            font-size: 1.01rem;
             height: 2.4rem;
         }
 
@@ -299,13 +310,9 @@ nav {
     }
 
     #slider {
-        width: 10.1rem;
-        text-align: left;
+        margin-left: 0px;
         .profilInfos {
-            height: 9.3rem;
             a {
-                display: inline-block;
-                height: 100%;
                 width: 5.05rem;
             }
             img {
@@ -361,6 +368,9 @@ nav {
 
     #slider {
         .profilInfos {
+            a {
+                width: 6rem;
+            }
             img {
                 width: 5.5rem;
                 height: 5.5rem;
@@ -401,18 +411,38 @@ nav {
 
         #sliderDiv {
             height: 8.55rem;
+            #slider {
+                a {
+                    width: 9.05rem;
+                }
+            }
         }
     }
 }
 
 @media screen and(min-width : 723px) {
 
+    //////////// Pioneer //////////
     #pioneersDiv {
         height: 18.45rem;
 
         h1 {
-            line-height: 2;
-            padding-bottom: 1.4rem;
+            padding-top: 1.6rem;
+            padding-bottom: 2.1rem;
+        }
+    }
+
+    ///////////// Slider //////////////
+    #sliderDefaultDiv {
+        height: 15.6rem;
+
+        #sliderDiv {
+            height: 8.55rem;
+            #slider {
+                a {
+                    width: 10.1rem;
+                }
+            }
         }
     }
 }
@@ -436,7 +466,7 @@ nav {
         height: 21.4rem;
 
         h1 {
-            padding-top: 1.6rem;
+            padding-top: 2.5rem;
         }
     }
 
@@ -448,6 +478,15 @@ nav {
 
         #sliderDiv {
             height: 9.75rem;
+            #slider {
+                a {
+                    text-align: center;
+                    width: 10.8rem;
+                }
+                #position {
+                    display: block
+                }
+            }
         }
     }
 }
@@ -473,7 +512,6 @@ nav {
     /////////// Pioneers Network Part ////////////
     #pioneersDiv {
         height: 24.1rem;
-
         h2 {
             font-size: 1.7rem;
             margin-bottom: 2.5rem;
@@ -494,6 +532,33 @@ nav {
 
         #sliderDiv {
             height: 9.75rem;
+        }
+    }
+}
+
+@media screen and(min-width : 1116px) {
+
+    //////////// Slider /////////////
+    #sliderDefaultDiv {
+        #sliderDiv {
+            #slider {
+                a {
+                    width: 10rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and(min-width :1370px) {
+    #sliderDefaultDiv {
+        #sliderDiv {
+            #slider {
+                margin-left: 3.9rem;
+                a {
+                    width: 11.1rem;
+                }
+            }
         }
     }
 }
