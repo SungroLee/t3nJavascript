@@ -548,6 +548,7 @@ nav {
     height: 9.75rem;
   }
 }
+<<<<<<< HEAD
 @media screen and (min-width: 1116px) {
   #sliderDefaultDiv #sliderDiv #slider a {
     width: 10rem;
@@ -561,6 +562,95 @@ nav {
     width: 11.1rem;
   }
 }
+=======
+.becomePionier-outerSection {
+  background-image: url(https://storage.googleapis.com/t3n-de/pioneers/28a287d4da97bf4bdc65935dcb96bcc29a05e33f/t3n_Background_Texture.gif);
+  background-size: cover;
+  background-position-x: center;
+  background-blend-mode: multiply;
+  background-color: #f9423a;
+  padding: 5% 2% 6% 2%;
+}
+@supports not (background-blend-mode: 'multiply') {
+  .becomePionier-outerSection {
+    background-image: url(../media/t3n_Background_Texture_colored.png);
+  }
+}
+#becomePionier {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  min-width: 700px;
+}
+#becomePionier .becomePionier-Heading {
+  position: relative;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  line-height: 75px;
+  left: 200px;
+}
+#becomePionier .becomePionier-Heading span {
+  margin: 0 0 5px;
+  position: absolute !important;
+  position: relative;
+  font-size: 2.38rem;
+  font-weight: 800;
+  position: absolute;
+  margin-left: 7px;
+  padding-top: 1.8px;
+  display: inline-block;
+}
+#becomePionier .becomePionier-Heading .heading-head {
+  margin: 6px 0 5px;
+  position: relative;
+  font-size: 3rem;
+  font-weight: 600;
+}
+#becomePionier .becomePionier-Heading .heading-head:first-of-type {
+  margin-left: 17px;
+}
+#becomePionier .becomePionier-Heading .heading-head:first-of-type::after {
+  left: -17px !important;
+  width: 66% !important;
+}
+#becomePionier .becomePionier-Heading .heading-head:nth-of-type(2)::after {
+  width: 95% !important;
+}
+#becomePionier .becomePionier-Heading .heading-head::after {
+  position: absolute;
+  width: inherit;
+  height: 15px;
+  background-color: black;
+  content: ' ';
+  width: 100%;
+  display: block;
+  top: 75px;
+}
+#becomePionier .becomePionier-textArea {
+  width: 50%;
+  padding-top: 2%;
+  text-align: left;
+}
+#becomePionier .becomePionier-textArea .textArea-heading {
+  margin: 5% 0 0 0;
+  padding: 0;
+}
+#becomePionier .textArea-text {
+  font-size: 0.7rem;
+  padding-top: 10px;
+}
+#becomePionier .textArea-button {
+  margin: 0;
+  margin-top: 10%;
+  background-color: white;
+  color: black;
+  border-radius: 2px;
+  border: none;
+}
+@media screen and (min-width: 981px) {
+}
+>>>>>>> d3a2d89d66212bf4a99f36257781e77cbdaf9f30
 #faq {
   background-color: lightgrey;
   margin: 0 auto;
