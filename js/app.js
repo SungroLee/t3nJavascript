@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-window.onload = function () {
-    this.console.log('Dokument geladen');
-    initNav();
-    initPioneersNetwork();
-    initSlider();
-    initProfileClone();
-=======
 // /********************************
 //  * Navbar
 //  *********************************/
@@ -81,7 +73,6 @@ window.onload = function () {
 window.onload = function () {
     this.console.log('Dokument geladen');
     initBecomePionier();
->>>>>>> d3a2d89d66212bf4a99f36257781e77cbdaf9f30
     // initFaq();
     // initFooter();
 }
@@ -193,77 +184,24 @@ class Aq {
 ////////////////////////////////////////Slider//////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
+// const profiles = [ // um 2 Profiles zuzugreifen.
+//     new SliderProfile("https://storage.googleapis.com/t3n-de/pioneers/4b52a4383475faa6ebfdd8a37ccf85f53694f522/fullsizeoutput_787.jpeg",
+//         "Isa Sonnenfeld", "Lelterin News Lab", "Google"),
+//     new SliderProfile("https://storage.googleapis.com/t3n-de/pioneers/8298acd960400f97e749266416913a54ac9b45ea/29513215_1757429684277443_7955459664427213519_n%20-%20Kathrin%20We%C3%9Fling.jpg",
+//         "Kathrin Weßling", "Founder", "Würger & wessling")
+// ];
+// const sliderProfilesDiv = document.createElement("div");
 
+// const sliderProfiles = []; // gerade Zahl wird profiles[0] kriegen und ungerade Zahl wird profiles[1] bekommen.
+// for (i = 0; i < 25; i++) {
+//     if (i % 2 == 0) {
+//         sliderProfiles[i] = profiles[0];
+//     } else {
+//         sliderProfiles[i] = profiles[1];
+//     }
+// }
 
-const initProfileClone = () => {
-  
-    const slider = document.querySelector("#slider"); // um Slider Profil zugreifen.
-    const profiles = [ // um 2 Profiles zuzugreifen.
-        new SliderProfile("https://storage.googleapis.com/t3n-de/pioneers/4b52a4383475faa6ebfdd8a37ccf85f53694f522/fullsizeoutput_787.jpeg",
-                             "Isa Sonnenfeld", "Lelterin News Lab", "Google"),
-        new SliderProfile("https://storage.googleapis.com/t3n-de/pioneers/8298acd960400f97e749266416913a54ac9b45ea/29513215_1757429684277443_7955459664427213519_n%20-%20Kathrin%20We%C3%9Fling.jpg",
-                         "Kathrin Weßling", "Founder", "Würger & wessling")
-    ];
-    const sliderProfilesDiv = document.createElement("div"); 
-    const sliderProfiles = []; // gerade Zahl wird profiles[0] kriegen und ungerade Zahl wird profiles[1] bekommen.
-    for(i = 0; i < 25; i++) {  
-        if(i % 2 == 0) {
-            sliderProfiles[i] = profiles[0];
-        } else {
-            sliderProfiles[i] = profiles[1];
-        }
-    }
-
-    //einfügung die Profiles zu SliderDiv
-    for(i = 0; i < sliderProfiles.length; i++) {
-        
-        const freeDiv = document.createElement("div");
-        const freeA = document.createElement("a");
-        const Img = document.createElement("img");
-        const name = document.createElement("h3");
-        const position = document.createElement("p");
-        const company = document.createElement("p");
-        
-        freeDiv.appendChild(freeA);
-        freeA.appendChild(Img);
-        freeA.appendChild(name);
-        freeA.appendChild(position);
-        freeA.appendChild(company);
-
-        freeDiv.className = "profilInfos";
-        freeA.href = '#';
-        Img.src = sliderProfiles[i].img;
-        name.innerHTML = sliderProfiles[i].name;
-        position.innerHTML = sliderProfiles[i].workingPosition;
-        company.innerHTML = sliderProfiles[i].company;
-        company.id = "companyImg";
-        position.id = 'position';
-
-
-        slider.appendChild(freeDiv);
-    }
-}
-
-=======
-const profiles = [ // um 2 Profiles zuzugreifen.
-    new SliderProfile("https://storage.googleapis.com/t3n-de/pioneers/4b52a4383475faa6ebfdd8a37ccf85f53694f522/fullsizeoutput_787.jpeg",
-        "Isa Sonnenfeld", "Lelterin News Lab", "Google"),
-    new SliderProfile("https://storage.googleapis.com/t3n-de/pioneers/8298acd960400f97e749266416913a54ac9b45ea/29513215_1757429684277443_7955459664427213519_n%20-%20Kathrin%20We%C3%9Fling.jpg",
-        "Kathrin Weßling", "Founder", "Würger & wessling")
-];
-const sliderProfilesDiv = document.createElement("div");
-
-const sliderProfiles = []; // gerade Zahl wird profiles[0] kriegen und ungerade Zahl wird profiles[1] bekommen.
-for (i = 0; i < 25; i++) {
-    if (i % 2 == 0) {
-        sliderProfiles[i] = profiles[0];
-    } else {
-        sliderProfiles[i] = profiles[1];
-    }
-}
-
-//einfügung die Profiles zu SliderDiv
+// //einfügung die Profiles zu SliderDiv
 // for (i = 0; i < sliderProfiles.length; i++) {
 
 //     const freeDiv = document.createElement("div");
@@ -291,7 +229,6 @@ for (i = 0; i < 25; i++) {
 //     slider.appendChild(freeDiv);
 // }
 // sliderDiv.appendChild(slider);
->>>>>>> d3a2d89d66212bf4a99f36257781e77cbdaf9f30
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
