@@ -259,10 +259,10 @@ const faq = function () {
     document.body.appendChild(faq);
 }
 const faqHeading = function () {
-    const h = document.createElement('h4');
-    h.innerHTML = 'FAQ';
-    h.className = 'faq-heading'
-    document.getElementById('faq').appendChild(h);
+    const heading = document.createElement('h4');
+    heading.innerHTML = 'FAQ';
+    heading.className = 'faq-heading'
+    document.getElementById('faq').appendChild(heading);
 }
 const faqElements = function () {
     const faqAr = [
@@ -272,20 +272,20 @@ const faqElements = function () {
         new Aq("Warum sollte ich mich beim Pioneers Network anmelden?", "Im Pioneers Network kannst du andere digitale Pioniere entdecken und Einblicke in ihre Arbeit bekommen. Sie geben dir Tipps aus ihrem Umgang mit E-Mails, nehmen dich mit in ihren Tagesablauf und du erhältst Empfehlungen für Bücher und Podcasts. Der Funktionsumfang wird in den kommenden Versionen noch erweitert, sodass es sich lohnt, immer wieder reinzuschauen und von Anfang an dabei zu sein!")
     ];
     faqAr.forEach(e => {
-        const c = getQuestContainer();
-        const m = getQuestMarker();
-        const s = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        m.appendChild(s);
+        const container = getQuestContainer();
+        const marker = getQuestMarker();
+        const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        marker.appendChild(svg);
         const questHeading = document.createElement('div');
         questHeading.classList = 'faq-questHeadContainer';
 
         const head = document.createElement('h5');
-        head.addEventListener('click', () => {
-            c.classList.toggle('open');
-            if (!c.classList.contains('open')) {
-                c.classList.toggle('closing');
+        container.addEventListener('click', () => {
+            container.classList.toggle('open');
+            if (!container.classList.contains('open')) {
+                container.classList.toggle('closing');
                 setTimeout(() => {
-                    c.classList.toggle('closing')
+                    container.classList.toggle('closing')
                 }, 1500)
             }
         });
@@ -294,10 +294,10 @@ const faqElements = function () {
 
         const answer = getAnswerEl(e);
         questHeading.appendChild(head);
-        questHeading.appendChild(m);
-        c.appendChild(questHeading);
-        c.appendChild(answer);
-        document.getElementById('faq').appendChild(c);
+        questHeading.appendChild(marker);
+        container.appendChild(questHeading);
+        container.appendChild(answer);
+        document.getElementById('faq').appendChild(container);
     })
 }
 const faqButton = function () {
@@ -346,22 +346,22 @@ const footerSocialMedia = function () {
 }
 
 const footerUsefulLinks = function () {
-    const test = document.createElement('div');
-    test.className = 'usefulLinks-outer';
+    const outerDiv = document.createElement('div');
+    outerDiv.className = 'usefulLinks-outer';
     var usefulLinks = document.createElement('ul');
     usefulLinks.className = 'footer-usefulLinks';
     const ulAr = ["Kontakt", "AGB", "Datenschutz", "Impressum"];
-    ulAr.forEach(e => {
-        var l = document.createElement('li')
-        var ref = document.createElement('a');
-        ref.className = 'usefulLinks-link'
-        l.appendChild(ref);
-        ref.href = e;
-        ref.innerHTML = e;
-        usefulLinks.appendChild(l);
+    ulAr.forEach(mapEntry => {
+        var listEntry = document.createElement('li')
+        var refference = document.createElement('a');
+        refference.className = 'usefulLinks-link'
+        listEntry.appendChild(refference);
+        refference.href = mapEntry;
+        refference.innerHTML = mapEntry;
+        usefulLinks.appendChild(listEntry);
     });
-    test.appendChild(usefulLinks);
-    document.getElementById('footer').appendChild(test);
+    outerDiv.appendChild(usefulLinks);
+    document.getElementById('footer').appendChild(outerDiv);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -369,10 +369,10 @@ const footerUsefulLinks = function () {
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 const getAnswerEl = function (question) {
-    const p = document.createElement('p');
-    p.className = 'question-answer'
-    p.innerHTML = question.getAnswer;
-    return p;
+    const paragraph = document.createElement('p');
+    paragraph.className = 'question-answer'
+    paragraph.innerHTML = question.getAnswer;
+    return paragraph;
 }
 const getQuestMarker = function () {
     const div = document.createElement('div');
