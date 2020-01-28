@@ -732,6 +732,10 @@ nav {
   font-size: 0.7rem;
   height: 35px;
 }
+#becomePionier .textArea-button:hover {
+  background-color: #383838;
+  color: white;
+}
 @media screen and (max-width: 980px) {
   #becomePionier {
     flex-direction: column;
