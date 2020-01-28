@@ -4,23 +4,30 @@ window.onload = function () {
     initPioneersNetwork();
     initSlider();
     initProfileClone();
-    // initFaq();
-    // initFooter();
+    initFaq();
+    initFooter();
     currentSliderSizeHandler();
 }
 
-const setElements = (e, i, c) => { // Element, ID, und Class Einsteller.
-    const el = document.createElement(e);
-    el.id = i;
-    el.className = c;
-    
-    if(i === null || i === "" || i === undefined) {
-        el.removeAttribute("id");
+const setElements = (element, id, className) => { // Element, ID, und Class Einsteller.
+    const elementToCreate = document.createElement(element);
+
+    if(id !== null && id !== "" && id !== undefined) {
+        elementToCreate.id = id;
     }
-    if(c === null || c === "" || c === undefined) {
-        el.removeAttribute("class");
+
+    if(className !== null && className !== "" && className !== undefined) {
+        elementToCreate.className = className;
     }
-    return el;
+    // el.id = i;
+    // el.className = c;
+    // if(i === null || i === "" || i === undefined) {
+    //     el.removeAttribute("id");
+    // }
+    // if(c === null || c === "" || c === undefined) {
+    //     el.removeAttribute("class");
+    // }
+    return elementToCreate;
 }
 
 
@@ -103,7 +110,6 @@ const currentSliderSizeHandler = () => { // um eine Aktuelle Größe über slide
             else
                 profiles[i].style.width = (sliderWidht / 5) + 'px';
         }
-
     },500);
 }
 

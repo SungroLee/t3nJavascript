@@ -128,7 +128,7 @@ body {
 }
 .sliderDivDefault {
   max-width: 100%;
-  background-color: green;
+  background-color: #fff;
   text-align: center;
 }
 .sliderDivDefault h2 {
@@ -147,6 +147,11 @@ body {
   border: none;
   background-color: #f4f4f4;
   border-radius: 50%;
+  outline: none;
+}
+.sliderDivDefault #sliderDiv .sliderButton:hover {
+  background-color: #2a2a2a;
+  transition: transform 100ms ease-in-out;
 }
 .sliderDivDefault #sliderDiv #leftBtn {
   position: absolute;
@@ -158,10 +163,8 @@ body {
   background-position: center;
 }
 .sliderDivDefault #sliderDiv #leftBtn:hover {
-  background-image: url(../foto/svg/);
-  background-color: #2a2a2a;
-  transform: translateX(-3px);
-  transition: transform 100ms ease-in-out;
+  background-image: url(../foto/svg/left-arrow-white.svg);
+  transform: translateX(-2px);
 }
 .sliderDivDefault #sliderDiv #rightBtn {
   position: absolute;
@@ -173,13 +176,12 @@ body {
   background-position: center;
 }
 .sliderDivDefault #sliderDiv #rightBtn:hover {
-  background-color: #2a2a2a;
-  transform: translateX(3px);
-  transition: transform 100ms ease-in-out;
+  background-image: url(../foto/svg/right-arrow-white.svg);
+  transform: translateX(2px);
 }
 .sliderDefault {
   height: 100%;
-  background-color: cornflowerblue;
+  background-color: #fff;
   margin-right: 3.9rem;
   margin-left: 3.9rem;
 }
@@ -209,10 +211,10 @@ body {
   font-weight: bolder;
 }
 .sliderDefault p {
-  font-size: 0.7rem;
+  font-weight: 500;
   margin: 0;
   padding: 0;
-  color: lightgrey;
+  color: #9b9b9b;
 }
 .sliderDefault #companyImg:before {
   content: '';
@@ -319,7 +321,7 @@ nav {
 }
 #sliderDefaultDiv {
   max-width: 100%;
-  background-color: green;
+  background-color: #fff;
   text-align: center;
 }
 #sliderDefaultDiv h2 {
@@ -338,6 +340,11 @@ nav {
   border: none;
   background-color: #f4f4f4;
   border-radius: 50%;
+  outline: none;
+}
+#sliderDefaultDiv #sliderDiv .sliderButton:hover {
+  background-color: #2a2a2a;
+  transition: transform 100ms ease-in-out;
 }
 #sliderDefaultDiv #sliderDiv #leftBtn {
   position: absolute;
@@ -349,10 +356,8 @@ nav {
   background-position: center;
 }
 #sliderDefaultDiv #sliderDiv #leftBtn:hover {
-  background-image: url(../foto/svg/);
-  background-color: #2a2a2a;
-  transform: translateX(-3px);
-  transition: transform 100ms ease-in-out;
+  background-image: url(../foto/svg/left-arrow-white.svg);
+  transform: translateX(-2px);
 }
 #sliderDefaultDiv #sliderDiv #rightBtn {
   position: absolute;
@@ -364,13 +369,12 @@ nav {
   background-position: center;
 }
 #sliderDefaultDiv #sliderDiv #rightBtn:hover {
-  background-color: #2a2a2a;
-  transform: translateX(3px);
-  transition: transform 100ms ease-in-out;
+  background-image: url(../foto/svg/right-arrow-white.svg);
+  transform: translateX(2px);
 }
 #slider {
   height: 100%;
-  background-color: cornflowerblue;
+  background-color: #fff;
   margin-right: 3.9rem;
   margin-left: 3.9rem;
 }
@@ -400,10 +404,10 @@ nav {
   font-weight: bolder;
 }
 #slider p {
-  font-size: 0.7rem;
+  font-weight: 500;
   margin: 0;
   padding: 0;
-  color: lightgrey;
+  color: #9b9b9b;
 }
 #slider #companyImg:before {
   content: '';
@@ -494,6 +498,9 @@ nav {
   #slider .profilInfos img {
     width: 5.5rem;
     height: 5.5rem;
+  }
+  #slider .profilInfos p {
+    font-size: 0.7rem;
   }
 }
 @media screen and (min-width: 480px) {
