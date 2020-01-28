@@ -4,6 +4,7 @@ window.onload = function () {
     initPioneersNetwork();
     initSlider();
     initProfileClone();
+    initBecomePionier();
     initFaq();
     initFooter();
     currentSliderSizeHandler();
