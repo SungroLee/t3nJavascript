@@ -242,6 +242,8 @@ const getMovementSection = function() {
     paragraph.innerHTML = 'Zeig, wer du bist und werde Mitglied im Pioneers Network – dem Netzwerk für Menschen, die die Digitalisierung gestalten. Menschen, die etwas bewegen wollen, die kreativ sind, die eine Haltung haben, die positiv denken, konstruktives Feedback und Impulse geben und Spaß bei der Arbeit haben. Digitale Pioniere eben.';
     paragraph.className ='textArea-text';
     const button = document.createElement('button');
+    button.type = 'button';
+    button.onclick ="location.href='login.html'"
     button.className = 'textArea-button';
     button.innerHTML ='Jetzt kostenlos anmelden';
     area.appendChild(areaHeading);
