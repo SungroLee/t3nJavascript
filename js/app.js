@@ -305,10 +305,10 @@ const clickFunction = function(container){
     }
 }
 const faqButton = function () {
-    var b = document.createElement('button');
-    b.className = 'faq-button';
-    b.innerHTML = 'Zu allen FAQ';
-    document.getElementById('faq').appendChild(b);
+    const button = document.createElement('button');
+    button.className = 'faq-button';
+    button.innerHTML = 'Zu allen FAQ';
+    document.getElementById('faq').appendChild(button);
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////FOOTER//////////////////////////////////////////////////
@@ -321,7 +321,7 @@ const initFooter = function () {
 }
 
 const footer = function () {
-    var footer = document.createElement('footer');
+    const footer = document.createElement('footer');
     footer.id = 'footer';
     document.body.appendChild(footer);
 }
@@ -336,12 +336,12 @@ const footerCopyright = function () {
 }
 
 const footerSocialMedia = function () {
-    var socialMediaIcons = document.createElement('div');
+    const socialMediaIcons = document.createElement('div');
     socialMediaIcons.className = 'footer-socialMediaIcons';
     document.getElementById('footer').appendChild(socialMediaIcons);
     const smIUrl = ["./media/facebook_icon.PNG", "./media/twitter_icon.PNG", "./media/xing_icon.png", "./media/linkedin_icon.png", "./media/instagram_icon.png", "./media/git_icon.png", "./media/medium_icon.png"];
     smIUrl.forEach(e => {
-        var el = document.createElement('img');
+        const el = document.createElement('img');
         el.src = e;
         socialMediaIcons.appendChild(el);
 
@@ -352,12 +352,12 @@ const footerSocialMedia = function () {
 const footerUsefulLinks = function () {
     const outerDiv = document.createElement('div');
     outerDiv.className = 'usefulLinks-outer';
-    var usefulLinks = document.createElement('ul');
+    const usefulLinks = document.createElement('ul');
     usefulLinks.className = 'footer-usefulLinks';
     const ulAr = ["Kontakt", "AGB", "Datenschutz", "Impressum"];
     ulAr.forEach(mapEntry => {
-        var listEntry = document.createElement('li')
-        var refference = document.createElement('a');
+        const listEntry = document.createElement('li')
+        const refference = document.createElement('a');
         refference.className = 'usefulLinks-link'
         listEntry.appendChild(refference);
         refference.href = mapEntry;
