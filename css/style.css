@@ -696,7 +696,7 @@ nav {
 }
 #becomePionier .becomePionier-Heading .heading-head:first-of-type::after {
   left: 0;
-  width: 66%;
+  width: 61%;
 }
 #becomePionier .becomePionier-Heading .heading-head:nth-of-type(2)::after {
   width: 95%;
