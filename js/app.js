@@ -1,89 +1,12 @@
-<<<<<<< HEAD
 window.onload = function () {
     this.console.log('Dokument geladen');
     initNav();
     initPioneersNetwork();
     initSlider();
     initProfileClone();
-=======
-// /********************************
-//  * Navbar
-//  *********************************/
-// //////////////// Variable/////////////////
-// // Navbar
-// const nav = document.createElement("nav"); //navbar
-// const navLogoDiv = document.createElement("div"); //nav left div
-// const navLoginDiv = document.createElement("div"); //nav right div
-// const navLogoFoto = document.createElement("img"); //logo img
-// const navText = document.createElement("a"); // Nav Right Text "t3n"
-// const navButton = document.createElement("a"); // Login Button in Nav
-// // Pioneers Network
-// const pioneersDiv = document.createElement("div");
-// const pioneersH1 = document.createElement("h1");
-// const pioneersH2 = document.createElement("h2");
-// const pioneersButton = document.createElement("a");
-// // Slider
-// const sliderDefaultDiv = document.createElement("div");
-// const sliderH2 = document.createElement("h2");
-// const sliderDiv = document.createElement("div");
-// const slider = document.createElement("div");
-// const leftBtn = document.createElement("button");
-// const rightBtn = document.createElement("button");
-// ///////////////Atribute//////////////////
-// navLogoDiv.id = 'logoDiv';
-// navLoginDiv.id = 'loginDiv';
-// navLogoFoto.id = 'logoFoto';
-// navText.id = 'navt3n';
-// navButton.id = 'loginButton';
-// navLogoFoto.src = "./foto/t3n-logo.png";
-// navText.href = '#';
-// navButton.href = '#';
-// // Pioneers Network
-// pioneersDiv.id = 'pioneersDiv';
-// pioneersH1.id = 'pioneersH1';
-// pioneersButton.id = 'pioneersButton';
-// pioneersButton.href = '#';
-// // Slder
-// sliderDefaultDiv.id = 'sliderDefaultDiv';
-// sliderDiv.id = 'sliderDiv';
-// slider.id = "slider";
-// leftBtn.id = 'leftBtn';
-// leftBtn.id = 'rightBtn';
-
-// /////////// CreateTextNode///////////
-// // Navbar
-// navText.innerText = "t3n.de";
-// navButton.innerText = "Login";
-// // Pioneers Network
-// pioneersH1.innerText = "PIONEERS NETWORK";
-// pioneersH2.innerHTML = "Gestalte mit uns eine positive digitale Zukunft";
-// pioneersButton.innerHTML = "Jetzt kostenlos anmelden";
-// //Slider
-// sliderH2.innerHTML = "Finde andere digitale pioniere"
-
-// ////////////// AppendChild /////////////
-// document.body.appendChild(nav);
-// nav.appendChild(navLogoDiv);
-// nav.appendChild(navLoginDiv);
-// navLogoDiv.appendChild(navLogoFoto);
-// navLoginDiv.appendChild(navText);
-// navLoginDiv.appendChild(navButton);
-// // Pioneers Network
-// document.body.appendChild(pioneersDiv);
-// pioneersDiv.appendChild(pioneersH1);
-// pioneersDiv.appendChild(pioneersH2);
-// pioneersDiv.appendChild(pioneersButton);
-// //Slider
-// document.body.appendChild(sliderDefaultDiv);
-// sliderDefaultDiv.appendChild(sliderH2);
-// sliderDefaultDiv.appendChild(sliderDiv);
-
-window.onload = function () {
-    this.console.log('Dokument geladen');
-    initBecomePionier();
->>>>>>> d3a2d89d66212bf4a99f36257781e77cbdaf9f30
     // initFaq();
     // initFooter();
+    currentSliderSizeHandler();
 }
 
 const setElements = (e, i, c) => { // Element, ID, und Class Einsteller.
@@ -149,16 +72,41 @@ const initSlider = () => {
     const sliderH2 = setElements("h2");
     const sliderDiv = setElements("div", "sliderDiv");
     const slider = setElements("div", "slider");
-    const leftBtn = setElements("button", "leftBtn");
-    const rightBtn = setElements("button", "rightBtn");
+    const acturalSlide = setElements("div");
+    const leftBtn = setElements("button", "leftBtn", "sliderButton");
+    const rightBtn = setElements("button", "rightBtn", "sliderButton");
 
     sliderH2.innerHTML = "Finde andere digitale pioniere"
 
     document.body.appendChild(sliderDefaultDiv);
+    sliderDiv.appendChild(leftBtn);
     sliderDiv.appendChild(slider);
+    sliderDiv.appendChild(rightBtn);
     sliderDefaultDiv.appendChild(sliderH2);
     sliderDefaultDiv.appendChild(sliderDiv);
+    slider.appendChild(acturalSlide);
 }
+
+const currentSliderSizeHandler = () => { // um eine Aktuelle Größe über sliderProfiles zu zugreifen.
+    setInterval(() => {
+        const slider = document.querySelector("#slider");
+        const profiles = document.querySelectorAll(".profilInfos a");
+        const sliderWidht = slider.clientWidth;
+
+        for(i = 0; i < profiles.length; i++) {
+            if(sliderWidht <= 482)
+                profiles[i].style.width = (sliderWidht / 2) + 'px';
+            else if(sliderWidht >= 483 && sliderWidht <= 782)
+                profiles[i].style.width = (sliderWidht / 3) + 'px';
+            else if(sliderWidht >= 783 && sliderWidht <= 996)
+                profiles[i].style.width = (sliderWidht / 4) + 'px';
+            else
+                profiles[i].style.width = (sliderWidht / 5) + 'px';
+        }
+
+    },500);
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////CLASSES/////////////////////////////////////////////////
@@ -193,12 +141,11 @@ class Aq {
 ////////////////////////////////////////Slider//////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
 
 
 const initProfileClone = () => {
   
-    const slider = document.querySelector("#slider"); // um Slider Profil zugreifen.
+    const slider = document.querySelector("#slider div"); // um Slider Profil zugreifen.
     const profiles = [ // um 2 Profiles zuzugreifen.
         new SliderProfile("https://storage.googleapis.com/t3n-de/pioneers/4b52a4383475faa6ebfdd8a37ccf85f53694f522/fullsizeoutput_787.jpeg",
                              "Isa Sonnenfeld", "Lelterin News Lab", "Google"),
@@ -245,53 +192,6 @@ const initProfileClone = () => {
     }
 }
 
-=======
-const profiles = [ // um 2 Profiles zuzugreifen.
-    new SliderProfile("https://storage.googleapis.com/t3n-de/pioneers/4b52a4383475faa6ebfdd8a37ccf85f53694f522/fullsizeoutput_787.jpeg",
-        "Isa Sonnenfeld", "Lelterin News Lab", "Google"),
-    new SliderProfile("https://storage.googleapis.com/t3n-de/pioneers/8298acd960400f97e749266416913a54ac9b45ea/29513215_1757429684277443_7955459664427213519_n%20-%20Kathrin%20We%C3%9Fling.jpg",
-        "Kathrin Weßling", "Founder", "Würger & wessling")
-];
-const sliderProfilesDiv = document.createElement("div");
-
-const sliderProfiles = []; // gerade Zahl wird profiles[0] kriegen und ungerade Zahl wird profiles[1] bekommen.
-for (i = 0; i < 25; i++) {
-    if (i % 2 == 0) {
-        sliderProfiles[i] = profiles[0];
-    } else {
-        sliderProfiles[i] = profiles[1];
-    }
-}
-
-//einfügung die Profiles zu SliderDiv
-// for (i = 0; i < sliderProfiles.length; i++) {
-
-//     const freeDiv = document.createElement("div");
-//     const freeA = document.createElement("a");
-//     const Img = document.createElement("img");
-//     const name = document.createElement("h3");
-//     const position = document.createElement("p");
-//     const company = document.createElement("p");
-
-//     freeDiv.appendChild(freeA);
-//     freeA.appendChild(Img);
-//     freeA.appendChild(name);
-//     freeA.appendChild(position);
-//     freeA.appendChild(company);
-
-//     freeDiv.className = "profilInfos";
-//     freeA.href = '#';
-//     Img.src = sliderProfiles[i].img;
-//     name.innerHTML = sliderProfiles[i].name;
-//     position.innerHTML = sliderProfiles[i].workingPosition;
-//     company.innerHTML = sliderProfiles[i].company;
-//     company.id = "companyImg";
-//     position.id = 'position';
-
-//     slider.appendChild(freeDiv);
-// }
-// sliderDiv.appendChild(slider);
->>>>>>> d3a2d89d66212bf4a99f36257781e77cbdaf9f30
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

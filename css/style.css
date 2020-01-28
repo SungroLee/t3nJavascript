@@ -135,17 +135,57 @@ body {
   margin-top: 0;
 }
 .sliderDivDefault #sliderDiv {
+  position: relative;
   max-width: 65.5rem;
   margin: 0px auto;
   background-color: yellow;
 }
+.sliderDivDefault #sliderDiv .sliderButton {
+  width: 4rem;
+  height: 4rem;
+  padding: 0.65rem;
+  border: none;
+  background-color: #f4f4f4;
+  border-radius: 50%;
+}
+.sliderDivDefault #sliderDiv #leftBtn {
+  position: absolute;
+  top: 13px;
+  left: 0px;
+  background-image: url(../foto/svg/left-arrow-gray.svg);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.sliderDivDefault #sliderDiv #leftBtn:hover {
+  background-image: url(../foto/svg/);
+  background-color: #2a2a2a;
+  transform: translateX(-3px);
+  transition: transform 100ms ease-in-out;
+}
+.sliderDivDefault #sliderDiv #rightBtn {
+  position: absolute;
+  top: 13px;
+  right: 0px;
+  background-image: url(../foto/svg/right-arrow-gray.svg);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.sliderDivDefault #sliderDiv #rightBtn:hover {
+  background-color: #2a2a2a;
+  transform: translateX(3px);
+  transition: transform 100ms ease-in-out;
+}
 .sliderDefault {
   height: 100%;
   background-color: cornflowerblue;
-  display: flex;
-  overflow: hidden;
   margin-right: 3.9rem;
   margin-left: 3.9rem;
+}
+.sliderDefault > div {
+  display: flex;
+  overflow: hidden;
 }
 .sliderDefault .profilInfos {
   align-items: center;
@@ -286,17 +326,57 @@ nav {
   margin-top: 0;
 }
 #sliderDefaultDiv #sliderDiv {
+  position: relative;
   max-width: 65.5rem;
   margin: 0px auto;
   background-color: yellow;
 }
+#sliderDefaultDiv #sliderDiv .sliderButton {
+  width: 4rem;
+  height: 4rem;
+  padding: 0.65rem;
+  border: none;
+  background-color: #f4f4f4;
+  border-radius: 50%;
+}
+#sliderDefaultDiv #sliderDiv #leftBtn {
+  position: absolute;
+  top: 13px;
+  left: 0px;
+  background-image: url(../foto/svg/left-arrow-gray.svg);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#sliderDefaultDiv #sliderDiv #leftBtn:hover {
+  background-image: url(../foto/svg/);
+  background-color: #2a2a2a;
+  transform: translateX(-3px);
+  transition: transform 100ms ease-in-out;
+}
+#sliderDefaultDiv #sliderDiv #rightBtn {
+  position: absolute;
+  top: 13px;
+  right: 0px;
+  background-image: url(../foto/svg/right-arrow-gray.svg);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#sliderDefaultDiv #sliderDiv #rightBtn:hover {
+  background-color: #2a2a2a;
+  transform: translateX(3px);
+  transition: transform 100ms ease-in-out;
+}
 #slider {
   height: 100%;
   background-color: cornflowerblue;
-  display: flex;
-  overflow: hidden;
   margin-right: 3.9rem;
   margin-left: 3.9rem;
+}
+#slider > div {
+  display: flex;
+  overflow: hidden;
 }
 #slider .profilInfos {
   align-items: center;
@@ -335,7 +415,7 @@ nav {
   background-size: 15px 15px;
   background-repeat: no-repeat;
 }
-@media screen and (min-width: 100px) {
+@media screen and (min-width: 200px) {
   #navt3n {
     display: none;
   }
@@ -364,8 +444,11 @@ nav {
   #sliderDefaultDiv #sliderDiv {
     height: 9.3rem;
   }
+  #sliderDefaultDiv #sliderDiv #leftBtn {
+    display: none;
+  }
   #slider {
-    margin-left: 0px;
+    margin-left: 0;
   }
   #slider .profilInfos a {
     width: 5.05rem;
@@ -548,13 +631,15 @@ nav {
     height: 9.75rem;
   }
 }
-<<<<<<< HEAD
 @media screen and (min-width: 1116px) {
   #sliderDefaultDiv #sliderDiv #slider a {
     width: 10rem;
   }
 }
 @media screen and (min-width: 1370px) {
+  #sliderDefaultDiv #sliderDiv #leftBtn {
+    display: block;
+  }
   #sliderDefaultDiv #sliderDiv #slider {
     margin-left: 3.9rem;
   }
@@ -562,7 +647,6 @@ nav {
     width: 11.1rem;
   }
 }
-=======
 .becomePionier-outerSection {
   background-image: url(https://storage.googleapis.com/t3n-de/pioneers/28a287d4da97bf4bdc65935dcb96bcc29a05e33f/t3n_Background_Texture.gif);
   background-size: cover;
@@ -650,7 +734,6 @@ nav {
 }
 @media screen and (min-width: 981px) {
 }
->>>>>>> d3a2d89d66212bf4a99f36257781e77cbdaf9f30
 #faq {
   background-color: lightgrey;
   margin: 0 auto;
