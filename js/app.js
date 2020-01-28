@@ -1,3 +1,5 @@
+import * as Footer from "./footer.js";
+
 window.onload = function () {
     this.console.log('Dokument geladen');
     initNav();
@@ -6,7 +8,8 @@ window.onload = function () {
     initProfileClone();
     initBecomePionier();
     initFaq();
-    initFooter();
+    // initFooter();
+   Footer.initFooter();
     currentSliderSizeHandler();
 }
 
@@ -101,7 +104,7 @@ const currentSliderSizeHandler = () => { // um eine Aktuelle Größe über slide
         const profiles = document.querySelectorAll(".profilInfos a");
         const sliderWidht = slider.clientWidth;
 
-        for(i = 0; i < profiles.length; i++) {
+        for(let i = 0; i < profiles.length; i++) {
             if(sliderWidht <= 482)
                 profiles[i].style.width = (sliderWidht / 2) + 'px';
             else if(sliderWidht >= 483 && sliderWidht <= 782)
@@ -161,7 +164,7 @@ const initProfileClone = () => {
     ];
     const sliderProfilesDiv = document.createElement("div"); 
     const sliderProfiles = []; // gerade Zahl wird profiles[0] kriegen und ungerade Zahl wird profiles[1] bekommen.
-    for(i = 0; i < 25; i++) {  
+    for(let i = 0; i < 25; i++) {  
         if(i % 2 == 0) {
             sliderProfiles[i] = profiles[0];
         } else {
@@ -170,7 +173,7 @@ const initProfileClone = () => {
     }
 
     //einfügung die Profiles zu SliderDiv
-    for(i = 0; i < sliderProfiles.length; i++) {
+    for(let i = 0; i < sliderProfiles.length; i++) {
         
         const freeDiv = document.createElement("div");
         const freeA = document.createElement("a");
@@ -235,15 +238,15 @@ const getMovementSection = function() {
     const areaHeading = document.createElement('h4');
     areaHeading.innerHTML = 'Werde Teil der Bewegung!';
     areaHeading.className = ('textArea-heading');
-    const p = document.createElement('p');
-    p.innerHTML = 'Zeig, wer du bist und werde Mitglied im Pioneers Network – dem Netzwerk für Menschen, die die Digitalisierung gestalten. Menschen, die etwas bewegen wollen, die kreativ sind, die eine Haltung haben, die positiv denken, konstruktives Feedback und Impulse geben und Spaß bei der Arbeit haben. Digitale Pioniere eben.';
-    p.className ='textArea-text';
-    const b = document.createElement('button');
-    b.className = 'textArea-button';
-    b.innerHTML ='Jetzt kostenlos anmelden';
+    const paragraph = document.createElement('p');
+    paragraph.innerHTML = 'Zeig, wer du bist und werde Mitglied im Pioneers Network – dem Netzwerk für Menschen, die die Digitalisierung gestalten. Menschen, die etwas bewegen wollen, die kreativ sind, die eine Haltung haben, die positiv denken, konstruktives Feedback und Impulse geben und Spaß bei der Arbeit haben. Digitale Pioniere eben.';
+    paragraph.className ='textArea-text';
+    const button = document.createElement('button');
+    button.className = 'textArea-button';
+    button.innerHTML ='Jetzt kostenlos anmelden';
     area.appendChild(areaHeading);
-    area.appendChild(p)
-    area.appendChild(b);
+    area.appendChild(paragraph)
+    area.appendChild(button);
     return area;
 
     
@@ -319,60 +322,7 @@ const faqButton = function () {
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////FOOTER//////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
-const initFooter = function () {
-    footer();
-    footerCopyright();
-    footerSocialMedia();
-    footerUsefulLinks();
-}
 
-const footer = function () {
-    const footer = document.createElement('footer');
-    footer.id = 'footer';
-    document.body.appendChild(footer);
-}
-
-const footerCopyright = function () {
-    var copyright = document.createElement('div');
-    copyright.className = 'footer-copyright';
-    var cpText = document.createElement('span');
-    cpText.innerHTML = '© yeebase media GmbH 2005-2020';
-    copyright.appendChild(cpText);
-    document.getElementById('footer').appendChild(copyright);
-}
-
-const footerSocialMedia = function () {
-    const socialMediaIcons = document.createElement('div');
-    socialMediaIcons.className = 'footer-socialMediaIcons';
-    document.getElementById('footer').appendChild(socialMediaIcons);
-    const smIUrl = ["./media/facebook_icon.PNG", "./media/twitter_icon.PNG", "./media/xing_icon.png", "./media/linkedin_icon.png", "./media/instagram_icon.png", "./media/git_icon.png", "./media/medium_icon.png"];
-    smIUrl.forEach(e => {
-        const el = document.createElement('img');
-        el.src = e;
-        socialMediaIcons.appendChild(el);
-
-    })
-
-}
-
-const footerUsefulLinks = function () {
-    const outerDiv = document.createElement('div');
-    outerDiv.className = 'usefulLinks-outer';
-    const usefulLinks = document.createElement('ul');
-    usefulLinks.className = 'footer-usefulLinks';
-    const ulAr = ["Kontakt", "AGB", "Datenschutz", "Impressum"];
-    ulAr.forEach(mapEntry => {
-        const listEntry = document.createElement('li')
-        const refference = document.createElement('a');
-        refference.className = 'usefulLinks-link'
-        listEntry.appendChild(refference);
-        refference.href = mapEntry;
-        refference.innerHTML = mapEntry;
-        usefulLinks.appendChild(listEntry);
-    });
-    outerDiv.appendChild(usefulLinks);
-    document.getElementById('footer').appendChild(outerDiv);
-}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////HelperR Functions///////////////////////////////////////
