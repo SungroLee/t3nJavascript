@@ -73,7 +73,7 @@
 window.onload = function () {
     this.console.log('Dokument geladen');
     initBecomePionier();
-    // initFaq();
+    initFaq();
     // initFooter();
 }
 
