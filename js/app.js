@@ -280,15 +280,8 @@ const faqElements = function () {
         questHeading.classList = 'faq-questHeadContainer';
 
         const head = document.createElement('h5');
-        container.addEventListener('click', () => {
-            container.classList.toggle('open');
-            if (!container.classList.contains('open')) {
-                container.classList.toggle('closing');
-                setTimeout(() => {
-                    container.classList.toggle('closing')
-                }, 1500)
-            }
-        });
+        head.addEventListener('click', function(){clickFunction(container)});
+        marker.addEventListener('click', function(){clickFunction(container)});
         head.innerHTML = e.getQuestion;
         head.className = 'question-heading'
 
@@ -299,6 +292,17 @@ const faqElements = function () {
         container.appendChild(answer);
         document.getElementById('faq').appendChild(container);
     })
+}
+
+const clickFunction = function(container){
+    console.log(container);
+    container.classList.toggle('open');
+    if (!container.classList.contains('open')) {
+        container.classList.toggle('closing');
+        setTimeout(() => {
+            container.classList.toggle('closing')
+        }, 1500)
+    }
 }
 const faqButton = function () {
     var b = document.createElement('button');
