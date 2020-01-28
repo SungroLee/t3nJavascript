@@ -9,7 +9,7 @@ window.onload = function () {
     initBecomePionier();
     initFaq();
     // initFooter();
-   Footer.initFooter();
+   Footer.init();
     currentSliderSizeHandler();
 }
 
