@@ -637,6 +637,7 @@ nav {
 ////////////////////////////////////// Become Pionier //////////////////////////////////////////////////
 
 .becomePionier-outerSection {
+    // width: 100%;
     background-color: @red-color;
 
     @supports not (background-blend-mode: 'multiply') {
@@ -652,11 +653,12 @@ nav {
 }
 
 #becomePionier {
-    // background-color: brown;
     color: white;
     display: flex;
     justify-content: space-between;
-    padding: 100px 20px;
+    padding: 100px 20px 140px;
+    max-width: 1100px;
+    margin: 0 auto;
 
     .becomePionier-Heading {
         position: relative;
@@ -664,14 +666,12 @@ nav {
         height: auto;
         flex-direction: column;
         line-height: 90px;
-        // left: 200px;
 
         span {
-            margin: 0 0 5px;
             position: absolute;
-            font-size: 2.8rem;
             font-weight: 800;
-            margin-left: 7px;
+            margin: 0 0 5px 7px;
+            font-size: 2.8rem;
             padding-top: 1px;
         }
 
@@ -681,18 +681,17 @@ nav {
             font-size: 3.5rem;
             font-weight: 600;
 
-            // line-height: 80px;
             &:first-of-type {
-                margin-left: 17px;
+                padding-left: 17px;
 
                 &::after {
-                    left: -17px !important;
-                    width: 66% !important;
+                    left: 0;
+                    width: 61%;
                 }
             }
 
             &:nth-of-type(2)::after {
-                width: 95% !important;
+                width: 95%;
 
             }
 
@@ -711,9 +710,7 @@ nav {
     }
 
     .becomePionier-textArea {
-        // background-color: orange;
-        width: 50%;
-        padding-top: 40px;
+        margin: 40px 0 0 0;
         text-align: left;
 
         .textArea-heading {
@@ -723,15 +720,11 @@ nav {
     }
 
     .textArea-text {
-        // background-color: purple;
-        font-size: .8rem;
-        padding-top: 10px;
-        padding-right: 10px;
+        font-size: .7rem;
     }
 
     .textArea-button {
         margin: 35px 0;
-        // margin-top: 100px;
         background-color: white;
         color: black;
         border-radius: 5px;
@@ -742,65 +735,80 @@ nav {
     }
 }
 
-@media screen and (min-width: 1150px) {
-    #becomePionier {
-        margin: 0 auto;
-        width: 1150px !important;
-    }
-}
-
-
-
 @media screen and (max-width: 980px) {
     #becomePionier {
         flex-direction: column;
-    }
 
-    .becomePionier-textArea {
-        width: 100% !important;
-    }
+        .becomePionier-Heading {
+            margin-bottom: 30px;
+            .heading-head {
+                &:nth-of-type(1) {
+                    &::after {
+                        width: 170px;
+                    }
 
-    .heading-head {
-        width: 100%;
+                }
 
-        &:first-of-type::after {
-            width: 150px !important;
-        }
+                &:nth-of-type(2) {
+                    &::after {
+                        width: 280px;
+                    }
+                }
 
-        &::after {
-            width: 290px !important;
-        }
-
-        &:first-of-type {
-            // width: 28%;
-        }
-    }
-}
-
-@media screen and (max-width: 479px) {
-    .heading-head {
-        font-size: 1.2rem !important;
-        line-height: 50px;
-
-        &:first-of-type {
-            &::after {
-                margin-left: 16px;
+                &:nth-of-type(3) {
+                    &::after {
+                        width: 290px;
+                    }
+                }
             }
-
-        }
-
-        &::after {
-            top: 39px !important;
         }
     }
 
-    span {
-        font-size: 1.1rem !important;
-        top: -16.5px;
-        padding-right: 10px;
-        // background-color: grey;
+}
+
+@media screen and (min-width: 981px) {
+    .becomePionier-textArea {
+        width: 45%;
     }
 }
+
+@media screen and (max-width: 479px){
+    #becomePionier{
+        .becomePionier-Heading{
+            line-height: 40px;
+            span{
+                font-size: 1.2rem;
+                padding-top: 4px;
+                margin-left: 4px;
+            }
+            .heading-head{
+                font-size: 1.5rem;
+                &:nth-of-type(1){
+                    padding-left: 10px;
+                    &::after{
+                        width: 75px;
+                    }
+                }
+                &:nth-of-type(2){
+                    &::after{
+                        width: 120px;
+                    }
+                }
+                &:nth-of-type(3){
+                    &::after{
+                        width: 125px;
+                    }
+                }
+                &::after{
+                    top: 35px;
+                    height: 8px;
+                }
+            }
+        }
+    }
+}
+
+
 
 ////////////////////////////////////// FAQ /////////////////////////////////////////////////////////////
 
