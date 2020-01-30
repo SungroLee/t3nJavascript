@@ -1,5 +1,5 @@
 
-const initFooter = function () {
+const init = function () {
     footer();
     footerCopyright();
     footerSocialMedia();
@@ -54,4 +54,4 @@ const footerUsefulLinks = function () {
     document.getElementById('footer').appendChild(outerDiv);
 }
 
-export {initFooter};
+export {init};

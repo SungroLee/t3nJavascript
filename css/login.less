@@ -1,0 +1,163 @@
+@import "footer.less";
+
+* {
+    box-sizing: content-box;
+}
+
+html {
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    // margin-top: 30px;
+    font-size: 1rem;
+    background-color: rgb(235, 235, 235);
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+
+
+form {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    padding: 30px 20px 50px 30px;
+
+    h1 {
+        margin: 10px 0 0;
+        padding: 0;
+        font-size: 1.2rem;
+    }
+
+    p {
+        margin: 0;
+        font-size: .9rem;
+        display: inline;
+        padding-bottom: 10px;
+
+        a {
+            display: inline;
+            color: black;
+            text-decoration: underline black thin;
+        }
+    }
+
+    label {
+        font-size: .9rem;
+        // margin-top: 20px;
+    }
+
+    input {
+        // margin: 0 20px;
+        padding-left: 10px;
+        height: 35px;
+        border-radius: 5px;
+        border: 1px solid rgb(112, 112, 112);
+    }
+
+
+    object[state='active'] {
+        display: block;
+    }
+    object[state='inactive']{
+        display: none;
+    }
+
+
+.input-cancel {
+    // background-color: red;
+    position: relative;
+    height: 30px;
+    width: 30px;
+
+    object {
+        // display: none;
+        width: 15px;
+        height: 15px;
+        
+    }
+
+}
+
+.disclaimer {
+    margin: 35px 0 20px;
+    color: rgb(112, 112, 112);
+    font-size: .7rem;
+}
+
+button {
+    width: 100%;
+    height: 38px;
+    background-color: grey;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: .7rem;
+    margin-bottom: 20px;
+}
+
+button[isFree='true']:hover {
+    background-color: red;
+}
+
+.g-recaptcha {
+    margin-top: 20px;
+}
+}
+
+.preFooter {
+    background-color: black;
+    width: inherit;
+    height: 50px;
+    text-align: center;
+    color: rgb(112, 112, 112);
+    border-bottom: .5px solid rgb(112, 112, 112);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 30px 0 10px;
+    margin-top: auto;
+}
+
+@media screen and (min-width: 480px) {
+    form {
+        max-width: 290px;
+        margin: 20px auto;
+        padding: 20px 50px;
+
+        input {
+            padding-right: 50px;
+            background-color: orange;
+        }
+
+        * {
+            display: block;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        button {
+            width: 35%;
+        }
+
+        .input-cancel {
+            top: -35px;
+            left: 250px;
+            position: relative;
+            object{
+                // display: block;
+                position: absolute;
+                top: 7.5px;
+                right: 7px;
+            }
+
+        }
+    }
+}
