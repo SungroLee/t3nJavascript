@@ -11,11 +11,7 @@ window.onload = function () {
     initBecomePionier();
     initFaq();
     // initFooter();
-<<<<<<< HEAD
     Footer.initFooter();
-=======
-   Footer.init();
->>>>>>> 5339d85a64974b6f31778996e644dd4152ec6b2e
     currentSliderSizeHandler();
     sliderButtonInit();
 }
