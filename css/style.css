@@ -230,80 +230,6 @@ body {
   max-width: 100%;
   width: 100%;
 }
-.NavDefault {
-  max-width: 100%;
-  width: 100%;
-  height: 3.5rem;
-  padding: 0px 1rem;
-  background-color: #f9423a;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  z-index: 10;
-}
-.LoginButtonDefault {
-  font-weight: bolder;
-  font-size: 0.65rem;
-  width: 3.6rem;
-  height: 1.9rem;
-  background-color: #fff;
-  color: #f9423a;
-  padding: 0.35rem 1rem;
-  line-height: 1.8;
-  border-radius: 4px;
-  border: none;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.1s ease-in-out;
-}
-.LoginButtonDefault:hover {
-  background-color: #2a2a2a;
-  color: #fff;
-}
-.LogoDivDefault {
-  height: 3.5rem;
-  width: 5rem;
-}
-.LoginDivDefault {
-  height: 3.5rem;
-  width: 9rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.LogoFotoDefault {
-  float: left;
-  width: 5.1rem;
-  height: 2.7rem;
-  padding-top: 17px;
-  cursor: pointer;
-}
-.NavT3nDefault {
-  font-weight: 500;
-  font-size: 0.8rem;
-  display: block;
-  color: #fff;
-  width: 2.32rem;
-  height: 1.2rem;
-  margin-right: 1rem;
-  text-decoration: none;
-  position: relative;
-}
-.NavT3nDefault:after {
-  content: '';
-  position: absolute;
-  border-bottom: 2px solid #fff;
-  width: 2.4rem;
-  top: 22px;
-  left: 0px;
-  opacity: 0;
-  transition: opacity 0.2s ease-in-out;
-}
-.NavT3nDefault:hover:after {
-  opacity: 1;
-}
 .PioneersDivDefault {
   background-color: #f9423a;
   max-width: 100%;
@@ -314,6 +240,7 @@ body {
   background-position-x: center;
 }
 .PioneersDivDefault h1 {
+  position: relative;
   margin: 0;
   color: #fff;
   text-decoration: underline;
@@ -356,7 +283,6 @@ body {
   position: relative;
   max-width: 65.5rem;
   margin: 0px auto;
-  background-color: yellow;
 }
 .sliderDivDefault #sliderDiv .sliderButton {
   width: 4rem;
@@ -366,10 +292,10 @@ body {
   background-color: #f4f4f4;
   border-radius: 50%;
   outline: none;
+  transition: all 150ms ease-in-out;
 }
 .sliderDivDefault #sliderDiv .sliderButton:hover {
   background-color: #2a2a2a;
-  transition: transform 100ms ease-in-out;
 }
 .sliderDivDefault #sliderDiv #leftBtn {
   position: absolute;
@@ -384,6 +310,13 @@ body {
   background-image: url(../foto/svg/left-arrow-white.svg);
   transform: translateX(-2px);
 }
+.sliderDivDefault #sliderDiv #leftBtn:focus:not(:hover) {
+  width: 95px;
+  height: 95px;
+  background-color: #2a2a2a;
+  background-image: url(../foto/svg/left-arrow-white.svg);
+  transform: translateX(-10px);
+}
 .sliderDivDefault #sliderDiv #rightBtn {
   position: absolute;
   top: 13px;
@@ -397,24 +330,33 @@ body {
   background-image: url(../foto/svg/right-arrow-white.svg);
   transform: translateX(2px);
 }
+.sliderDivDefault #sliderDiv #rightBtn:focus:not(:hover) {
+  width: 95px;
+  height: 95px;
+  background-color: #2a2a2a;
+  background-image: url(../foto/svg/right-arrow-white.svg);
+  transform: translateX(10px);
+}
 .sliderDefault {
   height: 100%;
   background-color: #fff;
+  overflow: hidden;
   margin-right: 3.9rem;
   margin-left: 3.9rem;
 }
 .sliderDefault > div {
   display: flex;
-  overflow: hidden;
-}
-.sliderDefault .profilInfos {
-  align-items: center;
 }
 .sliderDefault a {
+  padding-top: 10px;
   text-align: left;
   height: 100%;
   text-decoration: none;
   display: inline-block;
+  transition: all 100ms ease-in-out;
+}
+.sliderDefault a:hover {
+  transform: translateY(-3px);
 }
 .sliderDefault img {
   border-radius: 50%;
@@ -447,56 +389,6 @@ body {
 /*************************
 * Start CSS
 **************************/
-nav {
-  max-width: 100%;
-  width: 100%;
-  height: 3.5rem;
-  padding: 0px 1rem;
-  background-color: #f9423a;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  z-index: 10;
-}
-#logoDiv {
-  height: 3.5rem;
-  width: 5rem;
-}
-#loginDiv {
-  height: 3.5rem;
-  width: 9rem;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-#loginDiv #loginButton {
-  font-weight: bolder;
-  font-size: 0.65rem;
-  width: 3.6rem;
-  height: 1.9rem;
-  background-color: #fff;
-  color: #f9423a;
-  padding: 0.35rem 1rem;
-  line-height: 1.8;
-  border-radius: 4px;
-  border: none;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.1s ease-in-out;
-}
-#loginDiv #loginButton:hover {
-  background-color: #2a2a2a;
-  color: #fff;
-}
-#logoFoto {
-  float: left;
-  width: 5.1rem;
-  height: 2.7rem;
-  padding-top: 17px;
-  cursor: pointer;
-}
 #pioneersDiv {
   background-color: #f9423a;
   max-width: 100%;
@@ -507,6 +399,7 @@ nav {
   background-position-x: center;
 }
 #pioneersDiv h1 {
+  position: relative;
   margin: 0;
   color: #fff;
   text-decoration: underline;
@@ -549,7 +442,6 @@ nav {
   position: relative;
   max-width: 65.5rem;
   margin: 0px auto;
-  background-color: yellow;
 }
 #sliderDefaultDiv #sliderDiv .sliderButton {
   width: 4rem;
@@ -559,10 +451,10 @@ nav {
   background-color: #f4f4f4;
   border-radius: 50%;
   outline: none;
+  transition: all 150ms ease-in-out;
 }
 #sliderDefaultDiv #sliderDiv .sliderButton:hover {
   background-color: #2a2a2a;
-  transition: transform 100ms ease-in-out;
 }
 #sliderDefaultDiv #sliderDiv #leftBtn {
   position: absolute;
@@ -577,6 +469,13 @@ nav {
   background-image: url(../foto/svg/left-arrow-white.svg);
   transform: translateX(-2px);
 }
+#sliderDefaultDiv #sliderDiv #leftBtn:focus:not(:hover) {
+  width: 95px;
+  height: 95px;
+  background-color: #2a2a2a;
+  background-image: url(../foto/svg/left-arrow-white.svg);
+  transform: translateX(-10px);
+}
 #sliderDefaultDiv #sliderDiv #rightBtn {
   position: absolute;
   top: 13px;
@@ -590,24 +489,33 @@ nav {
   background-image: url(../foto/svg/right-arrow-white.svg);
   transform: translateX(2px);
 }
+#sliderDefaultDiv #sliderDiv #rightBtn:focus:not(:hover) {
+  width: 95px;
+  height: 95px;
+  background-color: #2a2a2a;
+  background-image: url(../foto/svg/right-arrow-white.svg);
+  transform: translateX(10px);
+}
 #slider {
   height: 100%;
   background-color: #fff;
+  overflow: hidden;
   margin-right: 3.9rem;
   margin-left: 3.9rem;
 }
 #slider > div {
   display: flex;
-  overflow: hidden;
-}
-#slider .profilInfos {
-  align-items: center;
 }
 #slider a {
+  padding-top: 10px;
   text-align: left;
   height: 100%;
   text-decoration: none;
   display: inline-block;
+  transition: all 100ms ease-in-out;
+}
+#slider a:hover {
+  transform: translateY(-3px);
 }
 #slider img {
   border-radius: 50%;
@@ -638,9 +546,6 @@ nav {
   background-repeat: no-repeat;
 }
 @media screen and (min-width: 200px) {
-  #navt3n {
-    display: none;
-  }
   #pioneersDiv {
     height: 17.15rem;
     padding: 2.5rem 1rem;
@@ -672,9 +577,6 @@ nav {
   #slider {
     margin-left: 0;
   }
-  #slider .profilInfos a {
-    width: 5.05rem;
-  }
   #slider .profilInfos img {
     width: 3rem;
     height: 3rem;
@@ -687,9 +589,6 @@ nav {
   }
 }
 @media screen and (min-width: 353px) {
-  #navt3n {
-    display: none;
-  }
   #pioneersDiv {
     height: 14.15rem;
     padding: 2.5rem 1rem;
@@ -710,9 +609,6 @@ nav {
   #sliderDefaultDiv #sliderDiv {
     height: 9.75rem;
   }
-  #slider .profilInfos a {
-    width: 6rem;
-  }
   #slider .profilInfos img {
     width: 5.5rem;
     height: 5.5rem;
@@ -722,19 +618,6 @@ nav {
   }
 }
 @media screen and (min-width: 480px) {
-  #logoFoto {
-    float: left;
-    width: 5.1rem;
-    height: 2.7rem;
-    padding-top: 17px;
-    cursor: pointer;
-    height: 2.8rem;
-    width: 5.8rem;
-    padding-top: 15px;
-  }
-  #navt3n {
-    display: none;
-  }
   #pioneersDiv {
     height: 21.45rem;
   }
@@ -748,9 +631,6 @@ nav {
   }
   #sliderDefaultDiv #sliderDiv {
     height: 8.55rem;
-  }
-  #sliderDefaultDiv #sliderDiv #slider a {
-    width: 9.05rem;
   }
 }
 @media screen and (min-width: 723px) {
@@ -767,19 +647,8 @@ nav {
   #sliderDefaultDiv #sliderDiv {
     height: 8.55rem;
   }
-  #sliderDefaultDiv #sliderDiv #slider a {
-    width: 10.1rem;
-  }
 }
 @media screen and (min-width: 769px) {
-  #logoFoto {
-    width: 7.5rem;
-    height: 3rem;
-    padding-top: 9px;
-  }
-  #navt3n {
-    display: none;
-  }
   #pioneersDiv {
     height: 21.4rem;
   }
@@ -803,38 +672,6 @@ nav {
   }
 }
 @media screen and (min-width: 981px) {
-  nav {
-    padding: 0px 2.5rem;
-  }
-  #logoFoto {
-    width: 7.5rem;
-    height: 3rem;
-    padding-top: 9px;
-  }
-  #navt3n {
-    font-weight: 500;
-    font-size: 0.8rem;
-    display: block;
-    color: #fff;
-    width: 2.32rem;
-    height: 1.2rem;
-    margin-right: 1rem;
-    text-decoration: none;
-    position: relative;
-  }
-  #navt3n:after {
-    content: '';
-    position: absolute;
-    border-bottom: 2px solid #fff;
-    width: 2.4rem;
-    top: 22px;
-    left: 0px;
-    opacity: 0;
-    transition: opacity 0.2s ease-in-out;
-  }
-  #navt3n:hover:after {
-    opacity: 1;
-  }
   #pioneersDiv {
     height: 24.1rem;
   }
@@ -857,9 +694,6 @@ nav {
   }
 }
 @media screen and (min-width: 1116px) {
-  #sliderDefaultDiv #sliderDiv #slider a {
-    width: 10rem;
-  }
 }
 @media screen and (min-width: 1370px) {
   #sliderDefaultDiv #sliderDiv #leftBtn {
@@ -867,9 +701,6 @@ nav {
   }
   #sliderDefaultDiv #sliderDiv #slider {
     margin-left: 3.9rem;
-  }
-  #sliderDefaultDiv #sliderDiv #slider a {
-    width: 11.1rem;
   }
 }
 .becomePionier-outerSection {

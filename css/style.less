@@ -27,97 +27,14 @@ body {
     width: 100%;
 }
 
-
-.NavDefault {
-    // Navbar Default
-    max-width: 100%;
-    width: 100%;
-    height: @nav-height;
-    padding: 0px 1rem;
-    background-color: @red-color;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: space-between;
-    z-index: 10;
-}
-
-.LoginButtonDefault {
-    //Login Button Default in Nav
-    font-weight: bolder;
-    font-size: 0.65rem;
-    width: 3.6rem;
-    height: 1.9rem;
-    background-color: @white-color;
-    color: @red-color;
-    padding: 0.35rem 1rem;
-    line-height: 1.8;
-    border-radius: 4px;
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color .1s ease-in-out;
-
-    &:hover {
-        background-color: @balck-color;
-        color: @white-color;
-    }
-}
-
-.LogoDivDefault {
-    // Nav left Div Default
-    height: @nav-height;
-    width: 5rem;
-}
-
-.LoginDivDefault {
-    // Nav right Div Default
-    height: @nav-height;
-    width: 9rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.LogoFotoDefault {
-    // Navbar left LogoFoto Default
-    float: left;
-    width: 5.1rem;
-    height: 2.7rem;
-    padding-top: 17px;
-    cursor: pointer;
-}
-
-.NavT3nDefault {
-    // Navbar t3n.de Button
-    font-weight: 500;
-    font-size: 0.8rem;
-    display: block;
-    color: @white-color;
-    width: 2.32rem;
-    height: 1.2rem;
-    margin-right: 1rem;
-    text-decoration: none;
-    position: relative;
-
-    &:after {
-        content: '';
-        position: absolute;
-        border-bottom: 2px solid @white-color;
-        width: 2.4rem;
-        top: 22px;
-        left: 0px;
-        opacity: 0;
-        transition: opacity .2s ease-in-out;
-    }
-
-    &:hover {
-        &:after {
-            opacity: 1;
-        }
-    }
-}
+// @red-color : #f9423a;
+// @font-gray-color : rgb(155, 155, 155);
+// @white-color : #fff;
+// @balck-color : #2a2a2a;
+// @nav-height : 3.5rem;
+// @gray-color : #f4f4f4;
+// @lightGrey: lightgrey;
+// @white: white;
 
 .PioneersDivDefault {
     // Pioneers Div
@@ -130,6 +47,7 @@ body {
     background-position-x: center;
 
     h1 {
+        position: relative;
         margin: 0;
         color: @white-color;
         text-decoration: underline;
@@ -178,7 +96,6 @@ body {
         position: relative;
         max-width: 65.5rem;
         margin: 0px auto;
-        background-color: yellow;
         .sliderButton {
             width: 4rem;
             height: 4rem;
@@ -187,9 +104,9 @@ body {
             background-color: @gray-color;
             border-radius: 50%;
             outline: none;
+            transition: all 150ms ease-in-out;
             &:hover {
                 background-color: @balck-color;
-                transition: transform 100ms ease-in-out;
             }
         }
         #leftBtn {
@@ -202,8 +119,16 @@ body {
             background-position: center;
             &:hover {
                 background-image: url(../foto/svg/left-arrow-white.svg);
-                transform: translateX(-2px);
-                
+                transform: translateX(-2px);   
+            }
+            &:focus {
+                &:not(:hover) {
+                    width: 95px;
+                    height: 95px;
+                    background-color: @balck-color;
+                    background-image: url(../foto/svg/left-arrow-white.svg);
+                    transform: translateX(-10px);
+                }
             }
         }
         #rightBtn {
@@ -218,6 +143,15 @@ body {
                 background-image: url(../foto/svg/right-arrow-white.svg);
                 transform: translateX(2px);
             }
+            &:focus {
+                &:not(:hover) {
+                    width: 95px;
+                    height: 95px;
+                    background-color: @balck-color;
+                    background-image: url(../foto/svg/right-arrow-white.svg);
+                    transform: translateX(10px);
+                }
+            }
         }
     }
 }
@@ -225,23 +159,22 @@ body {
 .sliderDefault {
     height: 100%;
     background-color: @white-color;
-    // display: flex;
-    // overflow: hidden;
+    overflow: hidden;
     margin-right: 3.9rem;
     margin-left: 3.9rem;
     >div {
         display: flex;
-        overflow: hidden;
-    }
-    // justify-content: space-between;
-    .profilInfos {
-        align-items: center;
     }
     a {
+        padding-top: 10px;
         text-align: left;
         height: 100%;
         text-decoration: none;
         display: inline-block;
+        transition: all 100ms ease-in-out;
+        &:hover {
+            transform: translateY(-3px);
+        }
     }
 
     img {
@@ -282,29 +215,6 @@ body {
 /*************************
 * Start CSS
 **************************/
-
-
-nav {
-    .NavDefault;
-}
-
-#logoDiv {
-    .LogoDivDefault;
-}
-
-
-#loginDiv {
-    .LoginDivDefault;
-
-    #loginButton {
-        .LoginButtonDefault;
-    }
-}
-
-#logoFoto {
-    .LogoFotoDefault;
-}
-
 #pioneersDiv {
     .PioneersDivDefault
 }
@@ -323,11 +233,6 @@ nav {
 
 @media screen and(min-width : 200px) {
     // Max Width 479px Media Query (Mobile Version)
-
-    ////////// Navbar //////////
-    #navt3n {
-        display: none;
-    }
 
     ////////// first Part /////////
     #pioneersDiv {
@@ -368,10 +273,6 @@ nav {
     #slider {
         margin-left: 0;
         .profilInfos {
-            a {
-                width: 5.05rem;
-            }
-
             img {
                 width: 3rem;
                 height: 3rem;
@@ -390,11 +291,6 @@ nav {
 
 @media screen and(min-width : 353px) {
     // Min Width 353px Media Query(Mobile Version)
-
-    ////////// Navbar //////////
-    #navt3n {
-        display: none;
-    }
 
     ////////// first Part /////////
     #pioneersDiv {
@@ -426,10 +322,6 @@ nav {
 
     #slider {
         .profilInfos {
-            a {
-                width: 6rem;
-            }
-
             img {
                 width: 5.5rem;
                 height: 5.5rem;
@@ -443,18 +335,6 @@ nav {
 
 @media screen and(min-width : 480px) {
     // Min Width 480px Media Query (Mobile Bigger Version)
-
-    ////////// Navbar //////////
-    #logoFoto {
-        .LogoFotoDefault;
-        height: 2.8rem;
-        width: 5.8rem;
-        padding-top: 15px;
-    }
-
-    #navt3n {
-        display: none;
-    }
 
     ////////// Pioneer ///////////
     #pioneersDiv {
@@ -473,12 +353,6 @@ nav {
 
         #sliderDiv {
             height: 8.55rem;
-
-            #slider {
-                a {
-                    width: 9.05rem;
-                }
-            }
         }
     }
 }
@@ -501,30 +375,12 @@ nav {
 
         #sliderDiv {
             height: 8.55rem;
-
-            #slider {
-                a {
-                    width: 10.1rem;
-                }
-            }
         }
     }
 }
 
 @media screen and(min-width : 769px) {
     // Min Width 769px Media Query (Tablet PC Version)
-
-    ////////// Navbar //////////
-    #logoFoto {
-        width: 7.5rem;
-        height: 3rem;
-        padding-top: 9px;
-    }
-
-    #navt3n {
-        display: none;
-
-    }
 
     ///////////// Pioneers Network Part //////////////
     #pioneersDiv {
@@ -561,21 +417,6 @@ nav {
 @media screen and(min-width : 981px) {
     // Min Width 981px Media Query (Desktop Version)
 
-    ////////// Navbar //////////
-    nav {
-        padding: 0px 2.5rem;
-    }
-
-    #logoFoto {
-        width: 7.5rem;
-        height: 3rem;
-        padding-top: 9px;
-    }
-
-    #navt3n {
-        .NavT3nDefault
-    }
-
     /////////// Pioneers Network Part ////////////
     #pioneersDiv {
         height: 24.1rem;
@@ -606,15 +447,6 @@ nav {
 @media screen and(min-width : 1116px) {
 
     //////////// Slider /////////////
-    #sliderDefaultDiv {
-        #sliderDiv {
-            #slider {
-                a {
-                    width: 10rem;
-                }
-            }
-        }
-    }
 }
 
 @media screen and(min-width :1370px) {
@@ -625,10 +457,6 @@ nav {
             }
             #slider {
                 margin-left: 3.9rem;
-
-                a {
-                    width: 11.1rem;
-                }
             }
         }
     }

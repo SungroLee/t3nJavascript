@@ -25,13 +25,13 @@ const footerSocialMedia = function () {
     socialMediaIcons.className = 'footer-socialMediaIcons';
     const smIUrl = ["./media/facebook_icon.PNG", "./media/twitter_icon.PNG", "./media/xing_icon.png", "./media/linkedin_icon.png", "./media/instagram_icon.png", "./media/git_icon.png", "./media/medium_icon.png"];
     smIUrl.forEach(mapEntry => {
-        const a = document.createElement('a');
-        a.href = '#';
-        a.className = 'image-container';
-        const el = document.createElement('img');
-        el.src = mapEntry;
-        a.appendChild(el);
-        socialMediaIcons.appendChild(a);
+        const anker = document.createElement('a');
+        anker.href = '#';
+        anker.className = 'image-container';
+        const imageElement = document.createElement('img');
+        imageElement.src = mapEntry;
+        anker.appendChild(imageElement);
+        socialMediaIcons.appendChild(anker);
     })
     footerElement.appendChild(socialMediaIcons);
 
@@ -42,8 +42,8 @@ const footerUsefulLinks = function () {
     outerDiv.className = 'usefulLinks-outer';
     const usefulLinks = document.createElement('ul');
     usefulLinks.className = 'footer-usefulLinks';
-    const ulAr = ["Kontakt", "AGB", "Datenschutz", "Impressum"];
-    ulAr.forEach(mapEntry => {
+    const usefullLinksArray = ["Kontakt", "AGB", "Datenschutz", "Impressum"];
+    usefullLinksArray.forEach(mapEntry => {
         const listEntry = document.createElement('li')
         const refference = document.createElement('a');
         refference.className = 'usefulLinks-link'
