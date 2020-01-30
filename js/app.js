@@ -1,69 +1,27 @@
 import * as Footer from "./footer.js";
+import * as Nav from "./nav.js";
+import * as SetElement from "./setElement.js";
 
 window.onload = function () {
     this.console.log('Dokument geladen');
-    initNav();
+    Nav.initNav();
     initPioneersNetwork();
     initSlider();
     initProfileClone();
     initBecomePionier();
     initFaq();
     // initFooter();
-   Footer.initFooter();
+    Footer.initFooter();
     currentSliderSizeHandler();
-}
-
-const setElements = (element, id, className) => { // Element, ID, und Class Einsteller.
-    const elementToCreate = document.createElement(element);
-
-    if(id !== null && id !== "" && id !== undefined) {
-        elementToCreate.id = id;
-    }
-
-    if(className !== null && className !== "" && className !== undefined) {
-        elementToCreate.className = className;
-    }
-    // el.id = i;
-    // el.className = c;
-    // if(i === null || i === "" || i === undefined) {
-    //     el.removeAttribute("id");
-    // }
-    // if(c === null || c === "" || c === undefined) {
-    //     el.removeAttribute("class");
-    // }
-    return elementToCreate;
-}
-
-
-const initNav = () => {
-
-    const nav = setElements("nav");
-    const navLogoDiv = setElements("div", "logoDiv");
-    const navLoginDiv = setElements("div", "loginDiv");
-    const navLogoFoto = setElements("img", "logoFoto");
-    const navText = setElements("a", "navt3n");;
-    const navButton = setElements("a", "loginButton");
-
-    navLogoFoto.src = "./foto/t3n-logo.png";
-    navText.href = '#';
-    navButton.href = '#';
-    navText.innerText = "t3n.de";
-    navButton.innerText = "Login";
-
-    document.body.appendChild(nav);
-    nav.appendChild(navLogoDiv);
-    nav.appendChild(navLoginDiv);
-    navLogoDiv.appendChild(navLogoFoto);
-    navLoginDiv.appendChild(navText);
-    navLoginDiv.appendChild(navButton);
+    sliderButtonInit();
 }
 
 const initPioneersNetwork = () => {
 
-    const pioneersDiv = setElements("div", "pioneersDiv");
-    const pioneersH1 = setElements("h1", "pioneersH1");
-    const pioneersH2 = setElements("h2");
-    const pioneersButton = setElements("a", "pioneersButton");
+    const pioneersDiv = SetElement.setElements("div", "pioneersDiv");
+    const pioneersH1 = SetElement.setElements("h1", "pioneersH1");
+    const pioneersH2 = SetElement.setElements("h2");
+    const pioneersButton = SetElement.setElements("a", "pioneersButton");
 
     pioneersButton.href = '#';
     pioneersH1.innerHTML = "PIONEERS NETWORK";
@@ -79,13 +37,13 @@ const initPioneersNetwork = () => {
 
 const initSlider = () => {
 
-    const sliderDefaultDiv = setElements("div", "sliderDefaultDiv");
-    const sliderH2 = setElements("h2");
-    const sliderDiv = setElements("div", "sliderDiv");
-    const slider = setElements("div", "slider");
-    const acturalSlide = setElements("div");
-    const leftBtn = setElements("button", "leftBtn", "sliderButton");
-    const rightBtn = setElements("button", "rightBtn", "sliderButton");
+    const sliderDefaultDiv = SetElement.setElements("div", "sliderDefaultDiv");
+    const sliderH2 = SetElement.setElements("h2");
+    const sliderDiv = SetElement.setElements("div", "sliderDiv");
+    const slider = SetElement.setElements("div", "slider");
+    const acturalSlide = SetElement.setElements("div");
+    const leftBtn = SetElement.setElements("button", "leftBtn", "sliderButton");
+    const rightBtn = SetElement.setElements("button", "rightBtn", "sliderButton");
 
     sliderH2.innerHTML = "Finde andere digitale pioniere"
 
@@ -99,11 +57,13 @@ const initSlider = () => {
 }
 
 const currentSliderSizeHandler = () => { // um eine Aktuelle Größe über sliderProfiles zu zugreifen.
+
+    const sliderDiv = document.querySelector("#slider > div");
     setInterval(() => {
         const slider = document.querySelector("#slider");
         const profiles = document.querySelectorAll(".profilInfos a");
         const sliderWidht = slider.clientWidth;
-
+        
         for(let i = 0; i < profiles.length; i++) {
             if(sliderWidht <= 482)
                 profiles[i].style.width = (sliderWidht / 2) + 'px';
@@ -117,6 +77,40 @@ const currentSliderSizeHandler = () => { // um eine Aktuelle Größe über slide
     },500);
 }
 
+
+
+const sliderButtonInit = () => {
+    let counter = 1;
+    const sliderDiv = document.querySelector("#slider > div");
+    const buttons = document.querySelectorAll(".sliderButton");
+    const sliderProfiles = document.querySelectorAll('.profilInfos');
+    sliderDiv.style.transform = 'translateX(' + (-sliderDiv.clientWidth * 1) + 'px)';
+    buttons[0].addEventListener("click", () => {
+        counter--;
+        sliderDiv.style.transform = 'translateX(' + (-sliderDiv.clientWidth * counter) + 'px)';
+        sliderDiv.style.transition = 'transform 400ms ease-in-out';
+    })
+    buttons[1].addEventListener("click", () => {
+        const sliderDiv = document.querySelector("#slider > div");
+        const sliderProfiles = document.querySelectorAll(".profilInfos");
+        counter++;
+        sliderDiv.style.transform = 'translateX(' + (-sliderDiv.clientWidth * counter) + 'px)';
+        sliderDiv.style.transition = 'transform 400ms ease-in-out';        
+    })
+
+    sliderDiv.addEventListener('transitionend', () => {
+        if(counter == 5) {
+            sliderDiv.style.transition = 'none';
+            counter = 1;
+            sliderDiv.style.transform = 'translateX(' + (-sliderDiv.clientWidth * counter) + 'px)';
+        }
+        if(counter == 0) {
+            sliderDiv.style.transition = 'none';
+            counter = 4;
+            sliderDiv.style.transform = 'translateX(' + (-sliderDiv.clientWidth * counter) + 'px)';
+        }
+    })
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////CLASSES/////////////////////////////////////////////////
@@ -164,7 +158,7 @@ const initProfileClone = () => {
     ];
     const sliderProfilesDiv = document.createElement("div"); 
     const sliderProfiles = []; // gerade Zahl wird profiles[0] kriegen und ungerade Zahl wird profiles[1] bekommen.
-    for(let i = 0; i < 25; i++) {  
+    for(let i = 0; i < 35; i++) {  
         if(i % 2 == 0) {
             sliderProfiles[i] = profiles[0];
         } else {
