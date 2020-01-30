@@ -10,10 +10,10 @@ window.onload = function () {
     initSlider();
     initProfileClone();
     initBecomePionier();
-    Faq.initFaq();
+    Faq.init();
     // initFaq();
     // initFooter();
-    Footer.initFooter();
+    Footer.init();
     currentSliderSizeHandler();
     sliderButtonInit();
 }

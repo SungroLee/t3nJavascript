@@ -11,6 +11,7 @@
 }
 #faq .faq-question {
   position: relative;
+  max-height: 0;
   background-color: #fff;
   min-height: 70px;
   margin: 0 auto 20px;
@@ -20,6 +21,10 @@
   box-shadow: 5px 5px 10px 10px #c7c7c7;
   transition: transform 0.3s;
   transform: translateY(-3px);
+}
+#faq .faq-question.open {
+  max-height: 500px;
+  transition: max-height 0.75s ease-in-out;
 }
 #faq .faq-question.open .question-answer {
   display: block;
@@ -31,6 +36,9 @@
 #faq .faq-question.open a {
   color: red;
   text-decoration-line: none;
+}
+#faq .faq-question.closing {
+  transition: max-height 0.5s ease-in-out;
 }
 #faq .faq-question.closing svg {
   transition: transform 0.3s;

@@ -1,4 +1,3 @@
-
 #faq {
     background-color: @lightGrey;
     margin: 0 auto;
@@ -13,6 +12,7 @@
 
     .faq-question {
         position: relative;
+        max-height: 0;
         background-color: @white-color;
         min-height: 70px;
         margin: 0 auto 20px;
@@ -27,15 +27,16 @@
         }
 
         &.open {
-            // height: fit-content;
-
+            // height: fit-content;;
+            max-height: 500px;
+            transition: max-height .75s ease-in-out;
 
             .question-answer {
                 display: block;
             }
 
             .question-marker {
-                
+
                 svg {
                     transition: transform .3s;
                     transform: rotateZ(180deg);
@@ -49,7 +50,8 @@
         }
 
         &.closing {
-
+            transition: max-height .5s ease-in-out;
+       
             svg {
                 transition: transform .3s;
                 transform: rotateZ(0deg);
@@ -166,4 +168,3 @@ button {
         margin-left: 5% !important;
     }
 }
-
