@@ -1,6 +1,5 @@
 import * as Footer from './footer.js';
 // import * as Header from './header.js';
-
 window.onload = () => {
     // Headers.init();
     initRegister();
@@ -10,7 +9,7 @@ window.onload = () => {
     // inputWatcher();
 }
 
-const initRegister = () => {
+function initRegister() {
     const container = document.createElement('div');
 
     const form = document.createElement('form');
@@ -74,7 +73,7 @@ const initRegister = () => {
     document.body.appendChild(container);
 }
 
-const createInputField = (parameter) => {
+function createInputField(parameter) {
     const label = document.createElement('label');
     label.innerHTML = parameter.label;
     const input = document.createElement('input');
@@ -82,11 +81,13 @@ const createInputField = (parameter) => {
     input.type = parameter.inputType;
     input.name = parameter.infoName;
     // input.addEventListener('input',inputWatcher(event.target));
-    input.oninput = function(){inputWatcher(input)};
+    input.oninput = function () { inputWatcher(input) };
+    input.onchange = function () { inputVerifier(input) };
     const cancelInputButton = document.createElement('div');
-    cancelInputButton.addEventListener('click',function(){clearInput(input)});
+    cancelInputButton.addEventListener('click', function () { clearInput(input) });
     cancelInputButton.className = 'input-cancel';
     const svg = document.createElement('object');
+    svg.addEventListener('click', function () { clearInput(input) });
     svg.setAttribute('state', 'inactive');
     svg.data = './foto/svg/cross.svg';
     cancelInputButton.appendChild(svg);
@@ -95,7 +96,7 @@ const createInputField = (parameter) => {
     };
 }
 
-const getCaptcha = () => {
+function getCaptcha() {
     const script = document.createElement('script');
     script.src = 'https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key';
     const captchaContainer = document.createElement('div');
@@ -106,22 +107,63 @@ const getCaptcha = () => {
     }
 }
 
-const initPreFooter = () => {
+function initPreFooter() {
     const outerElement = document.createElement('div');
     outerElement.classList = 'preFooter'
     outerElement.innerHTML = 'Wir helfen digitalen Pionieren, glücklich zu arbeiten und zu leben.'
     document.body.appendChild(outerElement);
 }
-const clearInput = (inputField) =>{
-    alert("bitte coden!")
+function clearInput(inputField) {
+    inputField.innerHTML = '';
+    inputField.value = '';
+    inputWatcher(inputField);
 }
-const inputWatcher = (inputField) => {
-        if (inputField.value != '' && inputField.getAttribute('hasContent') === 'false') {
-            inputField.setAttribute('hasContent','true');
-            inputField.nextElementSibling.childNodes[0].setAttribute('state', 'active')
+function inputWatcher(inputField) {
+    if (inputField.value != '' && inputField.getAttribute('hasContent') === 'false') {
+        inputField.setAttribute('hasContent', 'true');
+        inputField.nextElementSibling.childNodes[0].setAttribute('state', 'active')
+    }
+    if (inputField.value == '' && inputField.getAttribute('hasContent') === 'true') {
+        inputField.setAttribute('hasContent', 'false');
+        inputField.nextElementSibling.childNodes[0].setAttribute('state', 'inactive')
+    }
+}
+
+function inputVerifier(inputField) {
+    let inputFieldVerification;
+    // alert(inputField.name + "  " + inputField.value);
+    if (inputField.name.includes('mail')) {
+        verifyMailadressInput(inputField) ? null : inputFieldVerification = { inputField: inputField, result: false };;
+    } else if (!inputField.name.includes('password')) {
+        alert("nicht passwort field")
+    } else {
+        console.log(inputField.value)
+        alert("Passowrt field")
+    }
+
+}
+function verifyPasswordInput(inputField) {
+
+}
+function verifyMailadressInput(inputField) {
+    const regex = new RegExp(/.[1]*@.*.../);
+    // console.log(regex.test(inputField.value))
+    return regex.test(inputField.value);
+}
+function verifyNameInput(inputField) {
+
+}
+
+function getInputError(inputFieldError) {
+    if (inputFieldError.result === false) {
+        switch (inputFieldError) {
+            case 'mail':
+                console.log("abc");
+                break;
+            case 'name':
+                break;
+            case 'password':
+                break;
         }
-        if (inputField.value == '' && inputField.getAttribute('hasContent') === 'true') {
-            inputField.setAttribute('hasContent','false');
-            inputField.nextElementSibling.childNodes[0].setAttribute('state', 'inactive')
-        }
+    }
 }

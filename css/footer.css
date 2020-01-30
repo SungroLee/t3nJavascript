@@ -15,9 +15,14 @@
 #footer .footer-socialMediaIcons {
   margin-top: 0.2%;
 }
-#footer .footer-socialMediaIcons img {
+#footer .footer-socialMediaIcons .image-container {
   height: 28px;
-  width: auto;
+  width: 28px;
+  top: 0;
+}
+#footer .footer-socialMediaIcons .image-container img {
+  width: inherit;
+  height: inherit;
   margin-top: 0.5%;
   margin-right: 10px;
 }

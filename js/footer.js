@@ -1,15 +1,14 @@
-
+const footerElement = document.createElement('footer');
 const init = function () {
-    footer();
     footerCopyright();
     footerSocialMedia();
     footerUsefulLinks();
+    footer();
 }
 
 const footer = function () {
-    const footer = document.createElement('footer');
-    footer.id = 'footer';
-    document.body.appendChild(footer);
+    footerElement.id = 'footer';
+    document.body.appendChild(footerElement);
 }
 
 const footerCopyright = function () {
@@ -18,20 +17,23 @@ const footerCopyright = function () {
     var cpText = document.createElement('span');
     cpText.innerHTML = '© yeebase media GmbH 2005-2020';
     copyright.appendChild(cpText);
-    document.getElementById('footer').appendChild(copyright);
+    footerElement.appendChild(copyright);
 }
 
 const footerSocialMedia = function () {
     const socialMediaIcons = document.createElement('div');
     socialMediaIcons.className = 'footer-socialMediaIcons';
-    document.getElementById('footer').appendChild(socialMediaIcons);
     const smIUrl = ["./media/facebook_icon.PNG", "./media/twitter_icon.PNG", "./media/xing_icon.png", "./media/linkedin_icon.png", "./media/instagram_icon.png", "./media/git_icon.png", "./media/medium_icon.png"];
-    smIUrl.forEach(e => {
+    smIUrl.forEach(mapEntry => {
+        const a = document.createElement('a');
+        a.href = '#';
+        a.className = 'image-container';
         const el = document.createElement('img');
-        el.src = e;
-        socialMediaIcons.appendChild(el);
-
+        el.src = mapEntry;
+        a.appendChild(el);
+        socialMediaIcons.appendChild(a);
     })
+    footerElement.appendChild(socialMediaIcons);
 
 }
 
@@ -51,7 +53,7 @@ const footerUsefulLinks = function () {
         usefulLinks.appendChild(listEntry);
     });
     outerDiv.appendChild(usefulLinks);
-    document.getElementById('footer').appendChild(outerDiv);
+    footerElement.appendChild(outerDiv);
 }
 
 export {init};
