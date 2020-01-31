@@ -110,13 +110,21 @@ body {
   background-position-x: center;
 }
 .PioneersDivDefault h1 {
+  display: inline-block;
   position: relative;
   margin: 0;
   color: #fff;
-  text-decoration: underline;
-  text-decoration-color: #2a2a2a;
   line-height: 1.8;
   font-weight: bold;
+}
+.PioneersDivDefault h1:after {
+  content: "";
+  position: absolute;
+  top: 45px;
+  background-color: #2a2a2a;
+  display: block;
+  width: 100%;
+  height: 8px;
 }
 .PioneersDivDefault h2 {
   margin: 0;
@@ -224,11 +232,16 @@ body {
   text-decoration: none;
   display: inline-block;
   transition: all 100ms ease-in-out;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 .sliderDefault a:hover {
   transform: translateY(-3px);
 }
 .sliderDefault img {
+  user-select: none;
   border-radius: 50%;
   display: inline-block;
   width: 100%;
@@ -256,6 +269,32 @@ body {
   background-size: 15px 15px;
   background-repeat: no-repeat;
 }
+.teileDeinWissenDefault {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background-color: #f4f4f4;
+}
+.teileDeinWissenDefault #section3_middleDiv {
+  margin: 0 auto;
+  height: 100%;
+  padding: 5rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.teileDeinWissenDefault #section3_middleDiv .section3_insideDiv {
+  width: 100%;
+}
+.teileDeinWissenDefault .section3_lists {
+  font-size: 0.75rem;
+  font-weight: 400;
+  padding-bottom: 0.9rem;
+}
+.teileDeinWissenDefault ul {
+  margin-top: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 0.8rem;
+}
 /*************************
 * Start CSS
 **************************/
@@ -269,13 +308,21 @@ body {
   background-position-x: center;
 }
 #pioneersDiv h1 {
+  display: inline-block;
   position: relative;
   margin: 0;
   color: #fff;
-  text-decoration: underline;
-  text-decoration-color: #2a2a2a;
   line-height: 1.8;
   font-weight: bold;
+}
+#pioneersDiv h1:after {
+  content: "";
+  position: absolute;
+  top: 45px;
+  background-color: #2a2a2a;
+  display: block;
+  width: 100%;
+  height: 8px;
 }
 #pioneersDiv h2 {
   margin: 0;
@@ -383,11 +430,16 @@ body {
   text-decoration: none;
   display: inline-block;
   transition: all 100ms ease-in-out;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 #slider a:hover {
   transform: translateY(-3px);
 }
 #slider img {
+  user-select: none;
   border-radius: 50%;
   display: inline-block;
   width: 100%;
@@ -415,6 +467,55 @@ body {
   background-size: 15px 15px;
   background-repeat: no-repeat;
 }
+#teileDeinWissen {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background-color: #f4f4f4;
+}
+#teileDeinWissen #section3_middleDiv {
+  margin: 0 auto;
+  height: 100%;
+  padding: 5rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+#teileDeinWissen #section3_middleDiv .section3_insideDiv {
+  width: 100%;
+}
+#teileDeinWissen .section3_lists {
+  font-size: 0.75rem;
+  font-weight: 400;
+  padding-bottom: 0.9rem;
+}
+#teileDeinWissen ul {
+  margin-top: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 0.8rem;
+}
+#section3_button {
+  font-weight: bolder;
+  color: #2a2a2a;
+  font-size: 0.8rem;
+  width: 9.2rem;
+  height: 1.2rem;
+  padding: 0.35rem 0.75rem;
+  background-color: #fff;
+  border-radius: 4px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+#section3_button:hover {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+#section3_button:hover {
+  background-color: #f9423a;
+}
 @media screen and (min-width: 200px) {
   #pioneersDiv {
     height: 17.15rem;
@@ -423,7 +524,6 @@ body {
   }
   #pioneersDiv h1 {
     font-size: 1.6rem;
-    padding: 0px 0px 1rem 0px;
   }
   #pioneersDiv h2 {
     font-size: 1rem;
@@ -456,6 +556,30 @@ body {
   }
   #slider .profilInfos #position {
     display: none;
+  }
+  #teileDeinWissen {
+    min-height: 35.95rem;
+    padding: 2.5rem 1rem;
+  }
+  #teileDeinWissen #section3_middleDiv {
+    padding: 0px;
+  }
+  #teileDeinWissen #section3_imgDiv {
+    margin: 1rem 0.5rem;
+    min-height: 9.2rem;
+  }
+  #teileDeinWissen #section3_listDiv {
+    margin: 1rem 0;
+    min-height: 17.7rem;
+  }
+  #teileDeinWissen img {
+    width: 100%;
+    max-width: 30rem;
+    height: auto;
+  }
+  #teileDeinWissen h3 {
+    font-weight: bolder;
+    font-size: 1.2rem;
   }
 }
 @media screen and (min-width: 353px) {
@@ -496,6 +620,10 @@ body {
     line-height: 1.4;
     padding-bottom: 2.5rem;
   }
+  #pioneersDiv h1:after {
+    top: 80px;
+    height: 12px;
+  }
   #sliderDefaultDiv {
     height: 15.6rem;
   }
@@ -510,6 +638,10 @@ body {
   #pioneersDiv h1 {
     padding-top: 1.6rem;
     padding-bottom: 2.1rem;
+  }
+  #pioneersDiv h1:after {
+    top: 140px;
+    height: 15px;
   }
   #sliderDefaultDiv {
     height: 15.6rem;
@@ -540,6 +672,9 @@ body {
   #sliderDefaultDiv #sliderDiv #slider #position {
     display: block;
   }
+  #teileDeinWissen {
+    padding: 5rem 1rem;
+  }
 }
 @media screen and (min-width: 981px) {
   #pioneersDiv {
@@ -562,8 +697,25 @@ body {
   #sliderDefaultDiv #sliderDiv {
     height: 9.75rem;
   }
+  #teileDeinWissen {
+    min-height: 17rem;
+  }
+  #teileDeinWissen #section3_middleDiv {
+    max-width: 86rem;
+    flex-direction: row;
+  }
+  #teileDeinWissen #section3_listDiv {
+    margin: 0;
+  }
+  #teileDeinWissen #section3_imgDiv img {
+    max-width: 37.5rem;
+  }
 }
 @media screen and (min-width: 1116px) {
+  #teileDeinWissen {
+    padding-top: 2rem;
+    padding-bottom: 0.9rem;
+  }
 }
 @media screen and (min-width: 1370px) {
   #sliderDefaultDiv #sliderDiv #leftBtn {
@@ -571,6 +723,9 @@ body {
   }
   #sliderDefaultDiv #sliderDiv #slider {
     margin-left: 3.9rem;
+  }
+  #section3_listDiv {
+    padding-top: 2.2rem;
   }
 }
 .becomePionier-outerSection {

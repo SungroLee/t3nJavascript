@@ -37,13 +37,23 @@ body {
     background-position-x: center;
 
     h1 {
+        display: inline-block;
         position: relative;
         margin: 0;
         color: @white-color;
-        text-decoration: underline;
-        text-decoration-color: @balck-color;
+        // text-decoration: underline;
+        // text-decoration-color: @balck-color;
         line-height: 1.8;
         font-weight: bold;
+        &:after {
+            content:"";
+            position: absolute;
+            top: 45px;
+            background-color: @balck-color;
+            display: block;
+            width: 100%;
+            height: 8px;
+        }
     }
 
     h2 {
@@ -162,12 +172,17 @@ body {
         text-decoration: none;
         display: inline-block;
         transition: all 100ms ease-in-out;
+        -khtml-user-select: none;
+        -o-user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
         &:hover {
             transform: translateY(-3px);
         }
     }
 
-    img {
+    img {        
+        user-select: none;
         border-radius: 50%;
         display: inline-block;
         width: 100%;
@@ -202,6 +217,34 @@ body {
     }
 }
 
+.teileDeinWissenDefault {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    background-color: @gray-color;
+    #section3_middleDiv {
+        margin: 0 auto;
+        height: 100%;
+        padding: 5rem 1rem;
+        display: flex;
+        flex-direction: column;
+
+        .section3_insideDiv {
+            width: 100%;
+        }
+    }
+    .section3_lists {
+        font-size: 0.75rem;
+        font-weight: 400;
+        padding-bottom: 0.9rem;
+    }
+    ul {
+    margin-top: 2rem;
+    padding-left: 2rem;
+    padding-bottom: 0.8rem;
+    }
+}
+
 /*************************
 * Start CSS
 **************************/
@@ -221,6 +264,21 @@ body {
     .sliderDefault;
 }
 
+#teileDeinWissen {
+    .teileDeinWissenDefault;
+}
+
+#section3_button {
+    .PioneersButtonDefault;
+    background-color: @balck-color;
+    color: @white-color;
+    &:hover {
+        background-color: @red-color;
+    }
+}
+
+
+
 @media screen and(min-width : 200px) {
     // Max Width 479px Media Query (Mobile Version)
 
@@ -232,7 +290,7 @@ body {
 
         h1 {
             font-size: 1.6rem;
-            padding: 0px 0px 1rem 0px;
+            // padding: 0px 0px 1rem 0px;
         }
 
         h2 {
@@ -277,6 +335,34 @@ body {
             }
         }
     }
+
+    ////////// Teile dein Wissen ///////////
+    #teileDeinWissen {
+        min-height: 35.95rem;
+        padding: 2.5rem 1rem;
+        #section3_middleDiv {
+            padding: 0px;
+        }
+        #section3_imgDiv {
+            margin: 1rem 0.5rem;
+            min-height: 9.2rem;
+        }
+        #section3_listDiv {
+            margin: 1rem 0;
+            min-height: 17.7rem;
+        }
+        img {
+            width: 100%;
+            max-width: 30rem;
+            height: auto;
+        }
+        h3 {
+            font-weight: bolder;
+            font-size: 1.2rem;
+        }
+
+    }
+
 }
 
 @media screen and(min-width : 353px) {
@@ -334,6 +420,11 @@ body {
             font-size: 3.5rem;
             line-height: 1.4;
             padding-bottom: 2.5rem;
+            &:after {
+                top: 80px;
+                height: 12px;
+
+            }
         }
     }
 
@@ -356,6 +447,10 @@ body {
         h1 {
             padding-top: 1.6rem;
             padding-bottom: 2.1rem;
+            &:after {
+                top: 140px;
+                height: 15px;
+            }
         }
     }
 
@@ -381,6 +476,8 @@ body {
         }
     }
 
+
+
     ///////////// Slider //////////////////
     #sliderDefaultDiv {
         padding: 5rem 1rem;
@@ -402,6 +499,11 @@ body {
             }
         }
     }
+
+    #teileDeinWissen {
+        padding: 5rem 1rem;
+    }
+
 }
 
 @media screen and(min-width : 981px) {
@@ -432,10 +534,35 @@ body {
             height: 9.75rem;
         }
     }
+
+    ////////////// Teile dein Wissen /////////////
+    #teileDeinWissen {
+        min-height: 17rem;
+
+        #section3_middleDiv {
+            // max-width: 57.5rem;
+            max-width: 86rem;
+            flex-direction: row; 
+        }
+
+        #section3_listDiv {
+            margin: 0;
+        }
+
+        #section3_imgDiv {
+            img {
+                max-width: 37.5rem;
+            }
+        }
+    }
 }
 
 @media screen and(min-width : 1116px) {
 
+    #teileDeinWissen {
+        padding-top: 2rem;
+        padding-bottom: 0.9rem;
+    }
     //////////// Slider /////////////
 }
 
@@ -449,6 +576,10 @@ body {
                 margin-left: 3.9rem;
             }
         }
+    }
+
+    #section3_listDiv {
+        padding-top: 2.2rem;
     }
 }
 
