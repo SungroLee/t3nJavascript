@@ -100,6 +100,7 @@ body {
   background-color: #ebebeb;
   height: 100%;
   font-family: 'Open Sans', sans-serif;
+  flex-grow: 1;
 }
 form {
   background-color: white;
@@ -107,6 +108,7 @@ form {
   justify-content: center;
   flex-flow: column;
   padding: 30px 20px 50px 30px;
+  margin-bottom: auto;
 }
 form h1 {
   margin: 10px 0 0;
@@ -143,8 +145,10 @@ form .input-cancel {
   position: relative;
   height: 30px;
   width: 30px;
+  cursor: pointer;
 }
 form .input-cancel object {
+  cursor: pointer;
   width: 15px;
   height: 15px;
 }
@@ -162,6 +166,7 @@ form button {
   border: none;
   font-size: 0.7rem;
   margin-bottom: 20px;
+  cursor: not-allowed;
 }
 form button[isFree='true']:hover {
   background-color: red;

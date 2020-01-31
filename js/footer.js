@@ -1,15 +1,14 @@
-
+const footerElement = document.createElement('footer');
 const init = function () {
-    footer();
     footerCopyright();
     footerSocialMedia();
     footerUsefulLinks();
+    footer();
 }
 
 const footer = function () {
-    const footer = document.createElement('footer');
-    footer.id = 'footer';
-    document.body.appendChild(footer);
+    footerElement.id = 'footer';
+    document.body.appendChild(footerElement);
 }
 
 const footerCopyright = function () {
@@ -18,20 +17,23 @@ const footerCopyright = function () {
     var cpText = document.createElement('span');
     cpText.innerHTML = '© yeebase media GmbH 2005-2020';
     copyright.appendChild(cpText);
-    document.getElementById('footer').appendChild(copyright);
+    footerElement.appendChild(copyright);
 }
 
 const footerSocialMedia = function () {
     const socialMediaIcons = document.createElement('div');
     socialMediaIcons.className = 'footer-socialMediaIcons';
-    document.getElementById('footer').appendChild(socialMediaIcons);
     const smIUrl = ["./media/facebook_icon.PNG", "./media/twitter_icon.PNG", "./media/xing_icon.png", "./media/linkedin_icon.png", "./media/instagram_icon.png", "./media/git_icon.png", "./media/medium_icon.png"];
-    smIUrl.forEach(e => {
-        const el = document.createElement('img');
-        el.src = e;
-        socialMediaIcons.appendChild(el);
-
+    smIUrl.forEach(mapEntry => {
+        const anker = document.createElement('a');
+        anker.href = '#';
+        anker.className = 'image-container';
+        const imageElement = document.createElement('img');
+        imageElement.src = mapEntry;
+        anker.appendChild(imageElement);
+        socialMediaIcons.appendChild(anker);
     })
+    footerElement.appendChild(socialMediaIcons);
 
 }
 
@@ -40,8 +42,8 @@ const footerUsefulLinks = function () {
     outerDiv.className = 'usefulLinks-outer';
     const usefulLinks = document.createElement('ul');
     usefulLinks.className = 'footer-usefulLinks';
-    const ulAr = ["Kontakt", "AGB", "Datenschutz", "Impressum"];
-    ulAr.forEach(mapEntry => {
+    const usefullLinksArray = ["Kontakt", "AGB", "Datenschutz", "Impressum"];
+    usefullLinksArray.forEach(mapEntry => {
         const listEntry = document.createElement('li')
         const refference = document.createElement('a');
         refference.className = 'usefulLinks-link'
@@ -51,7 +53,7 @@ const footerUsefulLinks = function () {
         usefulLinks.appendChild(listEntry);
     });
     outerDiv.appendChild(usefulLinks);
-    document.getElementById('footer').appendChild(outerDiv);
+    footerElement.appendChild(outerDiv);
 }
 
 export {init};
