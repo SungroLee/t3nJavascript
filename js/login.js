@@ -4,7 +4,7 @@ import * as Nav from './nav.js';
 
 // import * as Header from './header.js';
 window.onload = () => {
-    Nav.initNav();
+    // Nav.initNav();
     // Headers.init();
     initRegister();
     initPreFooter();
