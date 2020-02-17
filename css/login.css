@@ -91,6 +91,9 @@
     text-align: right;
   }
 }
+* {
+  box-sizing: border-box;
+}
 html {
   font-size: 20px;
 }
