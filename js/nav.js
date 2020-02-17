@@ -9,18 +9,6 @@ const initNav = () => {
     const navText = SetElement.setElements("a", "nav_t3n");
     const navButton = SetElement.setElements("a", "nav_loginButton");
 
-    // const arr = [nav, navLogoDiv, navLoginDiv, navLogoFoto, navText, navButton];
-
-    // const json = [
-    //     logo = {prop : ["./foto/t3n-logo.png", "#"]},
-    //     login = 
-    //     {}
-    // ]
-
-    // json.forEach((el, index) => {
-    //     arr[index].src = el.src;
-    // })
-
     navLogoFoto.src = "./foto/t3n-logo.png";
     navText.href = '#';
     navButton.href = '#';
@@ -33,17 +21,6 @@ const initNav = () => {
     navLogoDiv.appendChild(navLogoFoto);
     navLoginDiv.appendChild(navText);
     navLoginDiv.appendChild(navButton);
-
-    // const navstructure = {
-    //      'div.nav_logoDiv': { children: {'img.logoFoto', a.navt3n: {prop: {href: '#'}} },
-    //     div.loginDiv: {children: {}, a.loginButton}},
-    // }
-
-    // document.body.appendChild(buildElementTree(navstructure));
-
-    // navstructure.forEach(element => {
-        
-    // });
 }
 
 export {initNav};
