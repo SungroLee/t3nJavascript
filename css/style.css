@@ -1228,6 +1228,10 @@ body {
   }
 }
 @media screen and (max-width: 479px) {
+  #becomePionier {
+    padding-top: 70px;
+    padding-bottom: 25px;
+  }
   #becomePionier .becomePionier-Heading {
     line-height: 40px;
   }
