@@ -347,10 +347,10 @@ form input {
   border-radius: 5px;
   border: 1px solid #707070;
 }
-form object[state='active'] {
+form div[state='active'] {
   display: block;
 }
-form object[state='inactive'] {
+form div[state='inactive'] {
   display: none;
 }
 form .input-cancel {
@@ -359,10 +359,11 @@ form .input-cancel {
   width: 30px;
   cursor: pointer;
 }
-form .input-cancel object {
-  cursor: pointer;
+form .input-cancel div {
   width: 15px;
   height: 15px;
+  background-image: url('../foto/svg/cross.svg');
+  background-size: contain;
 }
 form .disclaimer {
   margin: 35px 0 20px;
@@ -422,7 +423,7 @@ form .g-recaptcha {
     left: 250px;
     position: relative;
   }
-  form .input-cancel object {
+  form .input-cancel div {
     position: absolute;
     top: 7.5px;
     right: 7px;

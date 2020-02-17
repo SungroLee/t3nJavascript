@@ -13,7 +13,6 @@ html {
 
 body {
     margin: 0;
-    // margin-top: 30px;
     font-size: 1rem;
     background-color: rgb(235, 235, 235);
     height: 100%;
@@ -65,11 +64,11 @@ form {
     }
 
 
-    object[state='active'] {
+    div[state='active'] {
         display: block;
     }
 
-    object[state='inactive'] {
+    div[state='inactive'] {
         display: none;
     }
 
@@ -81,11 +80,12 @@ form {
         width: 30px;
         cursor: pointer;
 
-        object {
-            cursor: pointer;
-            // display: none;
+        div {
+            // background-color: purple;
             width: 15px;
             height: 15px;
+            background-image: url('../foto/svg/cross.svg');
+            background-size: contain;
 
         }
 
@@ -132,8 +132,6 @@ form {
     margin-top: auto;
 }
 
-#footer {}
-
 @media screen and (min-width: 480px) {
     form {
         max-width: 290px;
@@ -162,7 +160,7 @@ form {
             left: 250px;
             position: relative;
 
-            object {
+            div {
                 // display: block;
                 position: absolute;
                 top: 7.5px;

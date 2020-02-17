@@ -86,10 +86,10 @@ function createInputField(parameter) {
     const cancelInputButton = document.createElement('div');
     cancelInputButton.addEventListener('click', function () { clearInput(input) });
     cancelInputButton.className = 'input-cancel';
-    const svg = document.createElement('object');
+    const svg = document.createElement('div');
     svg.addEventListener('click', function () { clearInput(input) });
     svg.setAttribute('state', 'inactive');
-    svg.data = './foto/svg/cross.svg';
+    // svg.data = './foto/svg/cross.svg';
     cancelInputButton.appendChild(svg);
     return {
         label, input, cancelInputButton
