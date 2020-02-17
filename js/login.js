@@ -2,7 +2,6 @@ import * as Footer from './footer.js';
 import * as Header from './nav.js';
 window.onload = () => {
     Header.initNav();
-    // Headers.init();
     initRegister();
     initPreFooter();
     Footer.init();
