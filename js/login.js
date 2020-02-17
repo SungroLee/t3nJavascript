@@ -1,6 +1,10 @@
 import * as Footer from './footer.js';
+import * as Nav from './nav.js';
+
+
 // import * as Header from './header.js';
 window.onload = () => {
+    Nav.initNav();
     // Headers.init();
     initRegister();
     initPreFooter();

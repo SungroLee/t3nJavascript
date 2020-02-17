@@ -10,6 +10,7 @@ window.onload = function () {
     initSlider();
     initProfileClone();
     initTeileDeinWissen();
+    initPioniereInListenFinden();
     initBecomePionier();
     // initFaq();
     Footer.init();
@@ -108,7 +109,7 @@ const initProfileClone = () => {
         
         freeA.setAttribute("ondragstart", "return false;");
         freeA.setAttribute("draggable", false);
-        freeA.href = '#';
+        // freeA.href = '#';
         img.src = sliderProfiles[i].img;
         img.setAttribute("draggable", false);
         name.innerHTML = sliderProfiles[i].name;
@@ -172,19 +173,65 @@ const sliderButtonInit = () => { //Slider ButtonFunktionen
 
     let counter = 1;
     const sliderDiv = document.querySelector("#slider > div");
+    const profileInfos = document.querySelectorAll('.profilInfos > a');
     const buttons = document.querySelectorAll(".sliderButton");
-    
+    let mousedownPosition = 0;
+    let mouseUpPosition = 0;
+    let isClicked = false;
+
     sliderDiv.style.transform = 'translateX(' + (-sliderDiv.clientWidth * 1) + 'px)';
 
-    buttons[0].addEventListener("click", () => {
+    const rightSlider = () => {
         counter--;
         sliderDiv.style.transform = 'translateX(' + (-sliderDiv.clientWidth * counter) + 'px)';
         sliderDiv.style.transition = 'transform 400ms ease-in-out';
-    })
-    buttons[1].addEventListener("click", () => {
+    }
+
+    const leftSlider = () => {
         counter++;
         sliderDiv.style.transform = 'translateX(' + (-sliderDiv.clientWidth * counter) + 'px)';
-        sliderDiv.style.transition = 'transform 400ms ease-in-out';        
+        sliderDiv.style.transition = 'transform 400ms ease-in-out';     
+    }
+
+    for(let i = 0; i < profileInfos.length; i++) {
+
+        profileInfos[i].addEventListener('mousedown', (event) => {
+            isClicked = true;
+            mousedownPosition = event.clientX;
+            console.log(mousedownPosition);
+        })
+        profileInfos[i].addEventListener('mouseup', (event) => {
+            mouseUpPosition = event.clientX;
+
+            console.log(mouseUpPosition);
+            if(mousedownPosition - mouseUpPosition < -200) {
+                rightSlider(); 
+            }else if( mousedownPosition - mouseUpPosition > 200) {
+                leftSlider();
+                console.log(counter);
+            }else {
+                sliderDiv.style.transform = 'translateX(' + (-sliderDiv.clientWidth * counter) + 'px)';
+                sliderDiv.style.transition = 'transform 400ms ease-in-out';
+            }
+            isClicked = false;
+        })
+
+        profileInfos[i].addEventListener("mousemove", (event) => {
+            if(isClicked){
+            sliderDiv.style.transform = 'translateX(' + ((-sliderDiv.clientWidth * counter) + (-mousedownPosition + event.clientX)) + 'px)';
+            sliderDiv.style.transition = 'none';
+            // console.log(-mousedownPosition + event.clientX);
+            }
+        })
+    }
+
+    
+
+    buttons[0].addEventListener("click", () => {
+        rightSlider();
+    })
+    buttons[1].addEventListener("click", () => {
+        leftSlider();
     })
 
     sliderDiv.addEventListener('transitionend', () => {
@@ -199,7 +246,6 @@ const sliderButtonInit = () => { //Slider ButtonFunktionen
             sliderDiv.style.transform = 'translateX(' + (-sliderDiv.clientWidth * counter) + 'px)';
         }
     })
-    return counter;
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////Teile dein Wissen////////////////////////////////////////
@@ -207,7 +253,7 @@ const sliderButtonInit = () => { //Slider ButtonFunktionen
 
 const initTeileDeinWissen = () => {
     const section3 = SetElement.setElements("div","teileDeinWissen");
-    const middelDiv = SetElement.setElements("div", "section3_middleDiv");
+    const middleDiv = SetElement.setElements("div", "section3_middleDiv");
     const imgDiv = SetElement.setElements("div", "section3_imgDiv", "section3_insideDiv");
     const listDiv = SetElement.setElements("div", "section3_listDiv", "section3_insideDiv");
     const computerImg = SetElement.setElements("img");
@@ -236,14 +282,39 @@ const initTeileDeinWissen = () => {
     button.innerHTML = jsonAttribute[5].innerHTML;
     
     document.body.appendChild(section3);
-    section3.appendChild(middelDiv);
-    middelDiv.appendChild(imgDiv);
-    middelDiv.appendChild(listDiv);
+    section3.appendChild(middleDiv);
+    middleDiv.appendChild(imgDiv);
+    middleDiv.appendChild(listDiv);
     imgDiv.appendChild(computerImg);
     listDiv.appendChild(teileDeinWissenH3);
     listDiv.appendChild(ulList);
     listDiv.appendChild(button);
 }
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////Pioniere in Listen Finden////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+const initPioniereInListenFinden = () => {
+    const section4 = SetElement.setElements("div", "pioneersInListen");
+    const middleDiv = SetElement.setElements("div", "section4_middleDiv");
+    const listDiv = SetElement.setElements("div","section4_listDiv", "section4_insideDiv");
+    const textDiv = SetElement.setElements("div","section4_textDiv", "section4_insideDiv");
+    const profilList = [];
+    
+    for(let i = 0; i < 8; i++) {
+        const div = SetElement.setElements("li", "", "profils");
+        profilList[i] = div;
+    }
+
+
+    document.body.appendChild(section4);
+    section4.appendChild(middleDiv);
+    middleDiv.appendChild(listDiv);
+    middleDiv.appendChild(textDiv);   
+}
+
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
