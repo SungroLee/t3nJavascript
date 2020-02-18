@@ -97,14 +97,6 @@
 html {
   font-size: 20px;
 }
-body {
-  font-size: 1rem;
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  max-width: 100%;
-  width: 100%;
-}
 .NavDefault {
   box-sizing: border-box !important;
   max-width: 100%;
@@ -300,6 +292,9 @@ nav {
     opacity: 1;
   }
 }
+#nav_loginButton {
+  display: none;
+}
 html {
   font-size: 18px;
   width: 100%;
@@ -338,14 +333,6 @@ body {
 }
 .ghost {
   display: none;
-}
-.visible {
-  display: block;
-  color: red;
-  font-size: 0.6rem;
-}
-.cleartext {
-  -webkit-text-security: text;
 }
 form {
   box-sizing: content-box;

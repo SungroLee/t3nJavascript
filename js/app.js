@@ -300,19 +300,87 @@ const initPioniereInListenFinden = () => {
     const middleDiv = SetElement.setElements("div", "section4_middleDiv");
     const listDiv = SetElement.setElements("div","section4_listDiv", "section4_insideDiv");
     const textDiv = SetElement.setElements("div","section4_textDiv", "section4_insideDiv");
+    let count = 2;
+    const textArr = ['PIONIERE', 'IN LISTEN', 'FINDEN'];
     const profilList = [];
-    
-    for(let i = 0; i < 8; i++) {
-        const div = SetElement.setElements("li", "", "profils");
-        profilList[i] = div;
-    }
+    const jSon = [
+        {'title':'Medien'},
+        {'title':'PR&Kommunikation'},
+        {'name':'Drik von Gehlen', 'src':"https://storage.googleapis.com/t3n-de/pioneers/4b52a4383475faa6ebfdd8a37ccf85f53694f522/fullsizeoutput_787.jpeg"},
+        {'name':"Peter Hogenkamp", 'src':"https://storage.googleapis.com/t3n-de/pioneers/8298acd960400f97e749266416913a54ac9b45ea/29513215_1757429684277443_7955459664427213519_n%20-%20Kathrin%20We%C3%9Fling.jpg"},
+        {'name':"Isa Sonnenfeld", 'src':"https://storage.googleapis.com/t3n-de/pioneers/4b52a4383475faa6ebfdd8a37ccf85f53694f522/fullsizeoutput_787.jpeg"},
+        {'name':"Carolin Neumann", 'src':"https://storage.googleapis.com/t3n-de/pioneers/8298acd960400f97e749266416913a54ac9b45ea/29513215_1757429684277443_7955459664427213519_n%20-%20Kathrin%20We%C3%9Fling.jpg"},
+        {'name':"Stefan Keuchel", 'src':"https://storage.googleapis.com/t3n-de/pioneers/4b52a4383475faa6ebfdd8a37ccf85f53694f522/fullsizeoutput_787.jpeg"},
+        {'name':"Lena Raschke", 'src':"https://storage.googleapis.com/t3n-de/pioneers/8298acd960400f97e749266416913a54ac9b45ea/29513215_1757429684277443_7955459664427213519_n%20-%20Kathrin%20We%C3%9Fling.jpg"},
+        {'name':"Magdalena Rogl", 'src':"https://storage.googleapis.com/t3n-de/pioneers/4b52a4383475faa6ebfdd8a37ccf85f53694f522/fullsizeoutput_787.jpeg"},
+        {'name':"Sascha Pallenberg", 'src':"https://storage.googleapis.com/t3n-de/pioneers/8298acd960400f97e749266416913a54ac9b45ea/29513215_1757429684277443_7955459664427213519_n%20-%20Kathrin%20We%C3%9Fling.jpg"},
+        {'zurListe':'Zur Liste &#8594;'},
+    ];
 
+    for(let i = 0; i < count; i++) {
+        profilList[i] = SetElement.setElements('ul', '', 'section4_uls');
+    }
+        
+    jSon.forEach((element, index) => {
+
+        if(element.title != null) {
+
+            const h3Tag = SetElement.setElements('h3');
+            h3Tag.innerHTML = element.title;
+
+            if(h3Tag.textContent == 'Medien') {
+                profilList[0].appendChild(h3Tag);
+            }else if(h3Tag.textContent == 'PR&Kommunikation') {
+                profilList[1].appendChild(h3Tag);
+            }
+
+        }else if(element.title == undefined && index < 10) {
+
+            const imgs = SetElement.setElements('img');
+            const lists = SetElement.setElements('li', '', 'section4_profilLists');
+            const pTags = SetElement.setElements('p');
+    
+            pTags.innerHTML = element.name;
+            imgs.src = element.src;
+    
+            lists.appendChild(imgs);
+            lists.appendChild(pTags);
+
+            if(index >1 && index < 6) {
+                profilList[0].appendChild(lists);
+            }else {
+                profilList[1].appendChild(lists);
+            }
+
+        }else if(index == 10) {
+
+            for(let i = 0; i < profilList.length; i++) {
+                const aTag = SetElement.setElements('a');
+                aTag.innerHTML = element.zurListe;
+                
+                profilList[i].appendChild(aTag);  
+            }
+            
+        }
+    });
 
     document.body.appendChild(section4);
     section4.appendChild(middleDiv);
     middleDiv.appendChild(listDiv);
-    middleDiv.appendChild(textDiv);   
+    middleDiv.appendChild(textDiv);
+
+    profilList.forEach(element => {
+        listDiv.appendChild(element);
+    })
+
+    for(let i = 0; i < textArr.length; i++) {
+        const h2Text = SetElement.setElements('h2');
+        h2Text.innerHTML = textArr[i];
+        textDiv.appendChild(h2Text);
+    }
+
 }
+
 
 
 

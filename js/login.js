@@ -97,7 +97,7 @@ function createInputField(parameter) {
 
     input.onclick = function () {
         if (span.type = 'password') {
-            // span.classList = 'visible';
+
         } else {
 
             input.setAttribute('state', 'active');
@@ -110,7 +110,7 @@ function createInputField(parameter) {
     input.onblur = function () {
         inputVerifier(input)
         if (span.type = 'password') {
-            // span.classList = 'invisible';
+
         } else {
 
             input.setAttribute('state', 'inactive')
@@ -120,9 +120,7 @@ function createInputField(parameter) {
 
     if (parameter.inputType === 'password') {
         span.addEventListener('click', function () {
-            // console.log("test")
             input.type == 'password' ? input.type = 'text' : input.type = 'password';
-            // input.classList.toggle('cleartext');
         });
     } else {
         cancelInputButton.addEventListener('click', function () { clearInput(input) });
