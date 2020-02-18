@@ -1,8 +1,8 @@
 #footer {
+  box-sizing: content-box !important;
   background-color: black;
   height: auto;
   display: flex;
-  flex: auto;
   flex-direction: row;
   justify-content: space-between;
   padding: 0 3%;
@@ -92,19 +92,249 @@
   }
 }
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
+}
+html {
+  font-size: 20px;
+}
+body {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  max-width: 100%;
+  width: 100%;
+}
+.NavDefault {
+  box-sizing: border-box !important;
+  max-width: 100%;
+  width: 100%;
+  height: 3.5rem;
+  padding: 0px 1rem;
+  background-color: #f9423a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+.LoginButtonDefault {
+  font-weight: bolder;
+  font-size: 0.65rem;
+  width: 3.6rem;
+  height: 1.9rem;
+  background-color: #fff;
+  color: #f9423a;
+  padding: 0.35rem 1rem;
+  line-height: 1.8;
+  border-radius: 4px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+.LoginButtonDefault:hover {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+.LogoDivDefault {
+  height: 3.5rem;
+  width: 5rem;
+}
+.LoginDivDefault {
+  height: 3.5rem;
+  width: 9rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.LogoFotoDefault {
+  float: left;
+  width: 5.1rem;
+  height: 2.7rem;
+  padding-top: 17px;
+  cursor: pointer;
+}
+.NavT3nDefault {
+  font-weight: 500;
+  font-size: 0.8rem;
+  display: block;
+  color: #fff;
+  width: 2.32rem;
+  height: 1.2rem;
+  margin-right: 1rem;
+  text-decoration: none;
+  position: relative;
+}
+.NavT3nDefault:after {
+  content: '';
+  position: absolute;
+  border-bottom: 2px solid #fff;
+  width: 2.4rem;
+  top: 22px;
+  left: 0px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.NavT3nDefault:hover:after {
+  opacity: 1;
+}
+nav {
+  box-sizing: border-box !important;
+  max-width: 100%;
+  width: 100%;
+  height: 3.5rem;
+  padding: 0px 1rem;
+  background-color: #f9423a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+#nav_logoDiv {
+  height: 3.5rem;
+  width: 5rem;
+}
+#nav_loginDiv {
+  height: 3.5rem;
+  width: 9rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+#nav_loginDiv #nav_loginButton {
+  font-weight: bolder;
+  font-size: 0.65rem;
+  width: 3.6rem;
+  height: 1.9rem;
+  background-color: #fff;
+  color: #f9423a;
+  padding: 0.35rem 1rem;
+  line-height: 1.8;
+  border-radius: 4px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.1s ease-in-out;
+}
+#nav_loginDiv #nav_loginButton:hover {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+#nav_logoFoto {
+  float: left;
+  width: 5.1rem;
+  height: 2.7rem;
+  padding-top: 17px;
+  cursor: pointer;
+}
+@media screen and (min-width: 200px) {
+  #nav_t3n {
+    display: none;
+  }
+}
+@media screen and (min-width: 353px) {
+  #nav_t3n {
+    display: none;
+  }
+}
+@media screen and (min-width: 480px) {
+  #nav_logoFoto {
+    float: left;
+    width: 5.1rem;
+    height: 2.7rem;
+    padding-top: 17px;
+    cursor: pointer;
+    height: 2.8rem;
+    width: 5.8rem;
+    padding-top: 15px;
+  }
+  #nav_t3n {
+    display: none;
+  }
+}
+@media screen and (min-width: 769px) {
+  #nav_logoFoto {
+    width: 7.5rem;
+    height: 3rem;
+    padding-top: 9px;
+  }
+  #nav_t3n {
+    display: none;
+  }
+}
+@media screen and (min-width: 981px) {
+  nav {
+    padding: 0px 2.5rem;
+  }
+  #nav_logoFoto {
+    width: 7.5rem;
+    height: 3rem;
+    padding-top: 9px;
+  }
+  #nav_t3n {
+    font-weight: 500;
+    font-size: 0.8rem;
+    display: block;
+    color: #fff;
+    width: 2.32rem;
+    height: 1.2rem;
+    margin-right: 1rem;
+    text-decoration: none;
+    position: relative;
+  }
+  #nav_t3n:after {
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid #fff;
+    width: 2.4rem;
+    top: 22px;
+    left: 0px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  #nav_t3n:hover:after {
+    opacity: 1;
+  }
 }
 html {
   font-size: 18px;
+  width: 100%;
+  height: 100%;
+}
+nav {
+  height: 55px;
+  padding-right: 0;
+  padding-left: 0;
+}
+nav div {
+  height: inherit !important;
+}
+nav div img {
+  height: inherit !important;
+}
+nav #nav_logoDiv {
+  margin-left: 10px;
+}
+nav div#nav_loginDiv {
+  display: none;
 }
 body {
   margin: 0;
-  margin-top: 30px;
   font-size: 1rem;
   background-color: #ebebeb;
   height: 100%;
   font-family: 'Open Sans', sans-serif;
-  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+}
+#container {
+  box-sizing: content-box !important;
+  height: 100%;
 }
 .ghost {
   display: none;
@@ -116,12 +346,13 @@ body {
   margin-top: 7px;
 }
 form {
+  box-sizing: content-box;
   background-color: white;
   display: flex;
-  justify-content: center;
   flex-flow: column;
-  padding: 30px 20px 50px 30px;
-  margin-bottom: auto;
+  padding: 70px 20px 20px 30px;
+  flex-grow: 2;
+  height: inherit;
 }
 form h1 {
   margin: 10px 0 0;
@@ -148,7 +379,7 @@ form .error {
 }
 form input {
   padding-left: 10px;
-  height: 35px;
+  min-height: 35px;
   border-radius: 5px;
   border: 1px solid #707070;
 }
@@ -164,7 +395,8 @@ form .input-cancel {
   position: relative;
   height: 30px;
   width: 30px;
-  display: hidden;
+  top: -33px;
+  left: 90%;
   cursor: pointer;
   margin-bottom: -30px;
 }
@@ -200,25 +432,39 @@ form .g-recaptcha {
   margin-top: 20px;
 }
 .preFooter {
+  box-sizing: content-box;
   background-color: black;
-  width: inherit;
   height: 30px;
   text-align: center;
   color: #707070;
   border-bottom: 0.5px solid #707070;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  padding: 30px 0 10px;
-  margin-bottom: auto;
+  padding: 20px 0px 20px;
+  display: flex;
+  justify-content: center;
+}
+.preFooter p {
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media screen and (min-width: 480px) {
+  #container {
+    height: auto;
+    margin: auto;
+    margin-top: 70px;
+  }
   form {
-    max-width: 270px;
-    margin: 90px auto 30px;
-    padding: 30px 50px;
+    max-width: 290px;
+    margin: auto;
+    padding: 30px 60px 15px;
+    justify-content: center;
+    margin-bottom: 20px;
   }
   form input {
     padding-right: 50px;
+    margin-top: 6px;
   }
   form h1 {
     font-size: 1.5rem;
@@ -227,13 +473,21 @@ form .g-recaptcha {
     width: 35%;
   }
   form .input-cancel {
-    top: -35px;
-    left: 240px;
+    top: -33px;
+    left: 260px;
     position: relative;
   }
   form .input-cancel div {
     position: absolute;
     top: 7.5px;
     right: 7px;
+  }
+  form .preFooter {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 740px) {
+  form h1 {
+    font-size: 1.7rem;
   }
 }

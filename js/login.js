@@ -1,18 +1,15 @@
 import * as Footer from './footer.js';
 import * as Nav from './nav.js';
 
-
-// import * as Header from './header.js';
 window.onload = () => {
-    // Nav.initNav();
+    Nav.initNav();
     initRegister();
     initPreFooter();
     Footer.init();
 }
-
 function initRegister() {
     const container = document.createElement('div');
-
+    container.id = 'container';
     const form = document.createElement('form');
 
     const heading = document.createElement('h1');
@@ -77,7 +74,6 @@ function initRegister() {
     container.appendChild(form)
     document.body.appendChild(container);
 }
-
 function createInputField(parameter) {
     const label = document.createElement('label');
     label.innerHTML = parameter.label;
@@ -86,11 +82,11 @@ function createInputField(parameter) {
     input.setAttribute('hasContent', 'false');
     input.type = parameter.inputType;
     input.name = parameter.infoName;
-    // input.addEventListener('input',inputWatcher(event.target));
-    // input.oninput = function () {  };
-    input.onblur = function () {
+    input.oninput = function() {
+        inputWatcher(input);
+    }
+        input.onblur = function () {
         inputVerifier(input)
-        input.oninput = function () { inputWatcher(input), inputVerifier(input) }
     };
 
     const cancelInputButton = document.createElement('div');
@@ -101,7 +97,6 @@ function createInputField(parameter) {
     const svg = document.createElement('span');
     svg.addEventListener('click', function () { clearInput(input) });
     svg.setAttribute('state', 'inactive');
-    // svg.data = './foto/svg/cross.svg';
     cancelInputButton.appendChild(svg);
 
     const errorParagraph = document.createElement('p');
@@ -111,7 +106,6 @@ function createInputField(parameter) {
         label, input, cancelInputButton, errorParagraph
     };
 }
-
 function getCaptcha() {
     const script = document.createElement('script');
     script.src = 'https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key';
@@ -124,11 +118,12 @@ function getCaptcha() {
         script, captchaContainer
     }
 }
-
 function initPreFooter() {
     const outerElement = document.createElement('div');
+    const paragraph = document.createElement('p');
     outerElement.classList = 'preFooter'
-    outerElement.innerHTML = 'Wir helfen digitalen Pionieren, glücklich zu arbeiten und zu leben.'
+    paragraph.innerHTML = 'Wir helfen digitalen Pionieren, glücklich zu arbeiten und zu leben.'
+    outerElement.appendChild(paragraph);
     document.body.appendChild(outerElement);
 }
 function clearInput(inputField) {
@@ -148,12 +143,10 @@ function inputWatcher(inputField) {
         inputField.nextElementSibling.setAttribute('state', 'inactive')
     }
 }
-
 function inputVerifier(inputField) {
     console.log(inputField);
     var fieldObject;
     if (inputField.name.includes('mail')) {
-        // verifyMailadressInput(inputField) ? acceptInputThrough({ field: inputField, errorparagraph: getErrorParagraph('mailerror') }) : declineInputThrough({ field: inputField, errorparagraph: getErrorParagraph('mailerror') });
         fieldObject = { field: inputField, errorparagraph: getErrorParagraph('mailError') };
         verifyMailadressInput(inputField) ? acceptInputThrough(fieldObject) : declineInputThrough(fieldObject);
     } else if (!inputField.name.includes('password')) {
@@ -177,33 +170,27 @@ function verifyPassword(fieldObject){
 function getErrorParagraph(id) {
     return document.getElementById(id);
 }
-
 function acceptInputThrough(inputfield) {
     inputfield.field.classList = '';
     inputfield.errorparagraph.classList = 'ghost';
 }
-
 function declineInputThrough(errorObject) {
     createInputError(errorObject);
 }
-
 function verifyMailadressInput(inputField) {
     const regex = new RegExp(/.[1]*@.*.../);
-    // console.log(regex.test(inputField.value))
     return regex.test(inputField.value);
 }
 function verifyNameInput(inputObject) {
     console.log("verifyer")
     return inputObject.field.value.length >= 3;
 }
-
 function createInputError(errorObject) {
     console.log(errorObject)
     console.log(errorObject.field.name)
     var errorMessage;
     errorObject.field.classList = 'error';
     errorObject.errorparagraph.classList = 'visible';
-    // if (errorObject.result === false) {
     switch (errorObject.field.name) {
         case 'emailadress':
             errorObject.field.value !== 0 ? errorMessage = 'Bitte gib eine gültige E-Mail-Adresse an.' : errorMessage = 'Bitte gib deine E-Mail-Adresse an.'
@@ -221,5 +208,4 @@ function createInputError(errorObject) {
             break;
     }
     errorObject.errorparagraph.innerHTML = errorMessage;
-    // }
 }
