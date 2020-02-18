@@ -343,7 +343,9 @@ body {
   display: block;
   color: red;
   font-size: 0.6rem;
-  margin-top: 7px;
+}
+.cleartext {
+  -webkit-text-security: text;
 }
 form {
   box-sizing: content-box;
@@ -379,9 +381,10 @@ form .error {
 }
 form input {
   padding-left: 10px;
-  min-height: 35px;
+  min-height: 40px;
   border-radius: 5px;
   border: 1px solid #707070;
+  font-size: 1.1rem;
 }
 form span[state='active'],
 form div[state='active'] {
@@ -395,8 +398,8 @@ form .input-cancel {
   position: relative;
   height: 30px;
   width: 30px;
-  top: -33px;
-  left: 90%;
+  top: -34px;
+  left: 91%;
   cursor: pointer;
   margin-bottom: -30px;
 }
@@ -406,8 +409,17 @@ form .input-cancel span {
   left: 25%;
   width: 15px;
   height: 15px;
-  background-image: url('../foto/svg/cross.svg');
   background-size: contain;
+  background-repeat: no-repeat;
+}
+form .input-cancel span[type='text'][isactive='true'] {
+  background-image: url(../foto/svg/cross.svg);
+}
+form .input-cancel span[type='text'][isactive='false'] {
+  background-image: url(../foto/svg/cross_grey.svg);
+}
+span[isactive='true']form .input-cancelspan[type='text'] {
+  background-image: url('../foto/svg/cross.svg');
 }
 form .disclaimer {
   margin: 35px 0 20px;
@@ -473,7 +485,7 @@ form .g-recaptcha {
     width: 35%;
   }
   form .input-cancel {
-    top: -33px;
+    top: -34px;
     left: 260px;
     position: relative;
   }

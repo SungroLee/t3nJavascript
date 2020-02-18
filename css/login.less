@@ -59,7 +59,10 @@ body {
     display: block;
     color: red;
     font-size: .6rem;
-    margin-top: 7px;
+}
+
+.cleartext{
+    -webkit-text-security: text;
 }
 
 form {
@@ -70,7 +73,6 @@ form {
     padding: 70px 20px 20px 30px;
     flex-grow: 2;
     height: inherit;
-
 
     h1 {
         margin: 10px 0 0;
@@ -103,9 +105,16 @@ form {
 
     input {
         padding-left: 10px;
-        min-height: 35px;
+        min-height: 40px;
         border-radius: 5px;
         border: 1px solid rgb(112, 112, 112);
+        font-size: 1.1rem;
+    //    &[type='password']{
+    //        background-color: orange;
+    //    }
+    //    &[name='password']{
+    //        background-color: green
+    //    }
     }
 
 
@@ -123,8 +132,8 @@ form {
         position: relative;
         height: 30px;
         width: 30px;
-        top: -33px;
-        left: 90%;
+        top: -34px;
+        left: 91%;
         cursor: pointer;
         margin-bottom: -30px;
 
@@ -134,10 +143,40 @@ form {
             left: 25%;
             width: 15px;
             height: 15px;
-            background-image: url('../foto/svg/cross.svg');
             background-size: contain;
+            background-repeat: no-repeat;
+            &[type='text']{
+                &[isactive='true']{
+                    background-image: url(../foto/svg/cross.svg);
 
+                }
+                &[isactive='false']{
+                    background-image: url(../foto/svg/cross_grey.svg);
+                }
+            }
+            // &[type='password']{
+            //     height: 20px;
+            //     width: auto;
+            //     &[isactive='true']{
+            //         background-color: hotpink;
+            //         .invisible{
+            //             background-color: greenyellow;
+            //         }
+            //         // background-image: url('../foto/svg/eye_black.svg');
+            //     }&[isactive='false']{
+            //         background-color: peru;
+            //         .invisible{
+            //             background-color: purple;
+            //         }
+                    
+            //         // background-image: url('../foto/svg/eye_stroked_black.svg');
+            //     }
+            // }
         }
+        span[isactive='true']&span[type='text']{
+            background-image: url('../foto/svg/cross.svg');
+        }
+        
 
     }
 
@@ -220,7 +259,7 @@ form {
         }
 
         .input-cancel {
-            top: -33px;
+            top: -34px;
             left: 260px;
             position: relative;
 

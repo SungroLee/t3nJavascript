@@ -76,32 +76,61 @@ function initRegister() {
 }
 function createInputField(parameter) {
     const label = document.createElement('label');
-    label.innerHTML = parameter.label;
-
     const input = document.createElement('input');
+    const cancelInputButton = document.createElement('div');
+    const span = document.createElement('span');
+    const errorParagraph = document.createElement('p');
+
+    label.innerHTML = parameter.label;
     input.setAttribute('hasContent', 'false');
     input.type = parameter.inputType;
     input.name = parameter.infoName;
-    input.oninput = function() {
-        inputWatcher(input);
-    }
-        input.onblur = function () {
-        inputVerifier(input)
-    };
-
-    const cancelInputButton = document.createElement('div');
-    cancelInputButton.addEventListener('click', function () { clearInput(input) });
     cancelInputButton.className = 'input-cancel';
     cancelInputButton.setAttribute('state', 'inactive');
-
-    const svg = document.createElement('span');
-    svg.addEventListener('click', function () { clearInput(input) });
-    svg.setAttribute('state', 'inactive');
-    cancelInputButton.appendChild(svg);
-
-    const errorParagraph = document.createElement('p');
+    span.setAttribute('state', 'inactive');
+    span.setAttribute('type', parameter.inputType);
+    span.classList = 'invisible'
+    cancelInputButton.appendChild(span);
     errorParagraph.id = parameter.errorparagrapId;
-    console.log(errorParagraph)
+
+
+
+    input.onclick = function () {
+        if (span.type = 'password') {
+            // span.classList = 'visible';
+        } else {
+
+            input.setAttribute('state', 'active');
+            span.setAttribute('isActive', 'true');
+        }
+    }
+    input.oninput = function () {
+        inputWatcher(input);
+    }
+    input.onblur = function () {
+        inputVerifier(input)
+        if (span.type = 'password') {
+            // span.classList = 'invisible';
+        } else {
+
+            input.setAttribute('state', 'inactive')
+            span.setAttribute('isActive', 'false');
+        }
+    };
+
+    if (parameter.inputType === 'password') {
+        span.addEventListener('click', function () {
+            // console.log("test")
+            input.type == 'password' ? input.type = 'text' : input.type = 'password';
+            // input.classList.toggle('cleartext');
+        });
+    } else {
+        cancelInputButton.addEventListener('click', function () { clearInput(input) });
+        span.addEventListener('click', function () { clearInput(input) });
+
+    }
+
+
     return {
         label, input, cancelInputButton, errorParagraph
     };
@@ -164,7 +193,7 @@ function inputVerifier(inputField) {
         verifyPassword(fieldObject) ? acceptInputThrough(fieldObject) : declineInputThrough(fieldObject);
     }
 }
-function verifyPassword(fieldObject){
+function verifyPassword(fieldObject) {
     return fieldObject.field.value.length >= 8
 }
 function getErrorParagraph(id) {
