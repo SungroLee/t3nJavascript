@@ -300,6 +300,9 @@ nav {
     opacity: 1;
   }
 }
+#nav_loginButton {
+  display: none;
+}
 html {
   font-size: 20px;
   width: 100%;
