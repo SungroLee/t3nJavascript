@@ -1,8 +1,8 @@
 #footer {
+  box-sizing: content-box !important;
   background-color: black;
   height: auto;
   display: flex;
-  flex: auto;
   flex-direction: row;
   justify-content: space-between;
   padding: 0 3%;
@@ -96,14 +96,6 @@
 }
 html {
   font-size: 20px;
-}
-body {
-  font-size: 1rem;
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  max-width: 100%;
-  width: 100%;
 }
 .NavDefault {
   box-sizing: border-box !important;
@@ -304,9 +296,26 @@ nav {
   display: none;
 }
 html {
-  font-size: 20px;
+  font-size: 18px;
   width: 100%;
   height: 100%;
+}
+nav {
+  height: 55px;
+  padding-right: 0;
+  padding-left: 0;
+}
+nav div {
+  height: inherit !important;
+}
+nav div img {
+  height: inherit !important;
+}
+nav #nav_logoDiv {
+  margin-left: 10px;
+}
+nav div#nav_loginDiv {
+  display: none;
 }
 body {
   margin: 0;
@@ -314,16 +323,25 @@ body {
   background-color: #ebebeb;
   height: 100%;
   font-family: 'Open Sans', sans-serif;
-  flex-grow: 1;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column;
+}
+#container {
+  box-sizing: content-box !important;
+  height: 100%;
+}
+.ghost {
+  display: none;
 }
 form {
+  box-sizing: content-box;
   background-color: white;
   display: flex;
-  justify-content: center;
   flex-flow: column;
-  padding: 30px 20px 50px 30px;
-  margin-bottom: auto;
+  padding: 70px 20px 20px 30px;
+  flex-grow: 2;
+  height: inherit;
 }
 form h1 {
   margin: 10px 0 0;
@@ -339,20 +357,26 @@ form p {
 form p a {
   display: inline;
   color: black;
-  text-decoration: underline black thin;
+  text-decoration: underline black;
 }
 form label {
   font-size: 0.9rem;
+  margin-top: 20px;
+}
+form .error {
+  border-color: red;
 }
 form input {
   padding-left: 10px;
-  height: 35px;
+  min-height: 35px;
   border-radius: 5px;
   border: 1px solid #707070;
 }
+form span[state='active'],
 form div[state='active'] {
   display: block;
 }
+form span[state='inactive'],
 form div[state='inactive'] {
   display: none;
 }
@@ -360,9 +384,15 @@ form .input-cancel {
   position: relative;
   height: 30px;
   width: 30px;
+  top: -33px;
+  left: 90%;
   cursor: pointer;
+  margin-bottom: -30px;
 }
-form .input-cancel div {
+form .input-cancel span {
+  position: relative;
+  top: 25%;
+  left: 25%;
   width: 15px;
   height: 15px;
   background-image: url('../foto/svg/cross.svg');
@@ -391,29 +421,39 @@ form .g-recaptcha {
   margin-top: 20px;
 }
 .preFooter {
+  box-sizing: content-box;
   background-color: black;
-  width: inherit;
-  height: 50px;
+  height: 30px;
   text-align: center;
   color: #707070;
   border-bottom: 0.5px solid #707070;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  padding: 30px 0 10px;
-  margin-top: auto;
+  padding: 20px 0px 20px;
+  display: flex;
+  justify-content: center;
+}
+.preFooter p {
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 @media screen and (min-width: 480px) {
+  #container {
+    height: auto;
+    margin: auto;
+    margin-top: 70px;
+  }
   form {
     max-width: 290px;
-    margin: 20px auto;
-    padding: 20px 50px;
+    margin: auto;
+    padding: 30px 60px 15px;
+    justify-content: center;
+    margin-bottom: 20px;
   }
   form input {
     padding-right: 50px;
-    background-color: orange;
-  }
-  form * {
-    display: block;
+    margin-top: 6px;
   }
   form h1 {
     font-size: 1.5rem;
@@ -422,13 +462,21 @@ form .g-recaptcha {
     width: 35%;
   }
   form .input-cancel {
-    top: -35px;
-    left: 250px;
+    top: -33px;
+    left: 260px;
     position: relative;
   }
   form .input-cancel div {
     position: absolute;
     top: 7.5px;
     right: 7px;
+  }
+  form .preFooter {
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 740px) {
+  form h1 {
+    font-size: 1.7rem;
   }
 }

@@ -1,42 +1,78 @@
 @import "footer.less";
-* {
-    // box-sizing: content-box;
-}
-
 @import "nav.less";
 #nav_loginButton {
     display: none;
 }
 
+
 html {
-    font-size: 20px;
+    font-size: 18px;
     width: 100%;
     height: 100%;
+}
+
+nav {
+    height: 55px;
+
+    div {
+        height: inherit !important;
+
+        img {
+            height: inherit !important;
+        }
+    }
+
+    padding-right: 0;
+    padding-left: 0;
+
+    #nav_logoDiv {
+        margin-left: 10px;
+    }
+
+    div#nav_loginDiv {
+        display: none;
+    }
 }
 
 body {
     margin: 0;
+    // margin-top: 50px;
+    // padding-top: 50
     font-size: 1rem;
     background-color: rgb(235, 235, 235);
     height: 100%;
     font-family: 'Open Sans', sans-serif;
-    flex-grow: 1;
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: column;
 }
 
+#container {
+    box-sizing: content-box !important;
+    height: 100%;
+    // height: 95%;
+    // margin-bottom: 30px;
+}
+
+.ghost {
+    display: none;
+}
 
 form {
+    box-sizing: content-box;
     background-color: white;
     display: flex;
-    justify-content: center;
     flex-flow: column;
-    padding: 30px 20px 50px 30px;
-    margin-bottom: auto;
+    padding: 70px 20px 20px 30px;
+    flex-grow: 2;
+    height: inherit;
+
 
     h1 {
         margin: 10px 0 0;
         padding: 0;
         font-size: 1.2rem;
+
     }
 
     p {
@@ -48,42 +84,50 @@ form {
         a {
             display: inline;
             color: black;
-            text-decoration: underline black thin;
+            text-decoration: underline black;
         }
     }
 
     label {
         font-size: .9rem;
-        // margin-top: 20px;
+        margin-top: 20px;
+    }
+
+    .error {
+        border-color: red;
     }
 
     input {
-        // margin: 0 20px;
         padding-left: 10px;
-        height: 35px;
+        min-height: 35px;
         border-radius: 5px;
         border: 1px solid rgb(112, 112, 112);
     }
 
 
+    span[state='active'],
     div[state='active'] {
         display: block;
     }
 
+    span[state='inactive'],
     div[state='inactive'] {
         display: none;
     }
 
-
     .input-cancel {
-        // background-color: red;
         position: relative;
         height: 30px;
         width: 30px;
+        top: -33px;
+        left: 90%;
         cursor: pointer;
+        margin-bottom: -30px;
 
-        div {
-            // background-color: purple;
+        span {
+            position: relative;
+            top: 25%;
+            left: 25%;
             width: 15px;
             height: 15px;
             background-image: url('../foto/svg/cross.svg');
@@ -109,6 +153,7 @@ form {
         font-size: .7rem;
         margin-bottom: 20px;
         cursor: not-allowed;
+
     }
 
     button[isFree='true']:hover {
@@ -121,32 +166,45 @@ form {
 }
 
 .preFooter {
+    box-sizing: content-box;
     background-color: black;
-
-    width: inherit;
-    height: 50px;
+    height: 30px;
     text-align: center;
     color: rgb(112, 112, 112);
     border-bottom: .5px solid rgb(112, 112, 112);
-    font-size: 1rem;
+    font-size: .9rem;
     font-weight: 700;
-    padding: 30px 0 10px;
-    margin-top: auto;
+    padding: 20px 0px 20px;
+    display: flex;
+    justify-content: center;
+
+    p {
+        margin: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }
 
+
+
 @media screen and (min-width: 480px) {
+    #container {
+        height: auto;
+        margin: auto;
+        margin-top: 70px;
+    }
+
     form {
         max-width: 290px;
-        margin: 20px auto;
-        padding: 20px 50px;
+        margin: auto;
+        padding: 30px 60px 15px;
+        justify-content: center;
+        // margin: auto;
+        margin-bottom: 20px;
 
         input {
             padding-right: 50px;
-            background-color: orange;
-        }
-
-        * {
-            display: block;
+            margin-top: 6px;
         }
 
         h1 {
@@ -158,17 +216,29 @@ form {
         }
 
         .input-cancel {
-            top: -35px;
-            left: 250px;
+            top: -33px;
+            left: 260px;
             position: relative;
 
             div {
-                // display: block;
                 position: absolute;
                 top: 7.5px;
                 right: 7px;
             }
 
+        }
+
+        .preFooter {
+            margin-top: 20px;
+            
+        }
+    }
+}
+
+@media screen and (min-width:740px) {
+    form {
+        h1 {
+            font-size: 1.7rem;
         }
     }
 }
