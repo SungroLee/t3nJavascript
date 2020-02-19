@@ -26,28 +26,32 @@ function initRegister() {
     form.appendChild(orLoginParagraph);
 
     const mail = createInputField({ label: 'E-Mail-Adresse', inputType: 'text', infoName: 'emailadress', errorparagrapId: 'mailError' });
-    form.appendChild(mail.label);
-    form.appendChild(mail.input);
-    form.appendChild(mail.cancelInputButton)
-    form.appendChild(mail.errorParagraph);
+    // form.appendChild(mail.label);
+    // form.appendChild(mail.input);
+    // form.appendChild(mail.cancelInputButton)
+    // form.appendChild(mail.errorParagraph);
+    form.appendChild(mail);
 
     const preName = createInputField({ label: 'Vorname', inputType: 'text', infoName: 'vorname', errorparagrapId: 'preNameError' });
-    form.appendChild(preName.label);
-    form.appendChild(preName.input)
-    form.appendChild(preName.cancelInputButton);
-    form.appendChild(preName.errorParagraph);
-
+    // form.appendChild(preName.label);
+    // form.appendChild(preName.input)
+    // form.appendChild(preName.cancelInputButton);
+    // form.appendChild(preName.errorParagraph);
+    form.appendChild(preName);
+    
     const name = createInputField({ label: 'Nachname', inputType: 'text', infoName: 'nachname', errorparagrapId: 'nameError' })
-    form.appendChild(name.label)
-    form.appendChild(name.input);
-    form.appendChild(name.cancelInputButton);
-    form.appendChild(name.errorParagraph);
-
+    // form.appendChild(name.label)
+    // form.appendChild(name.input);
+    // form.appendChild(name.cancelInputButton);
+    // form.appendChild(name.errorParagraph);
+    form.appendChild(name);
+    
     const password = createInputField({ label: 'Passwort', inputType: 'password', infoName: 'password', errorparagrapId: 'passwordError' });
-    form.appendChild(password.label);
-    form.appendChild(password.input);
-    form.appendChild(password.cancelInputButton)
-    form.appendChild(password.errorParagraph);
+    // form.appendChild(password.label);
+    // form.appendChild(password.input);
+    // form.appendChild(password.cancelInputButton)
+    // form.appendChild(password.errorParagraph);
+    form.appendChild(password);
 
     const captcha = getCaptcha();
     document.body.appendChild(captcha.script)
@@ -75,31 +79,44 @@ function initRegister() {
     document.body.appendChild(container);
 }
 function createInputField(parameter) {
+    const groupingDiv = document.createElement('div');
     const label = document.createElement('label');
     const input = document.createElement('input');
     const cancelInputButton = document.createElement('div');
     const span = document.createElement('span');
     const errorParagraph = document.createElement('p');
 
+    groupingDiv.id = parameter.infoName;
     label.innerHTML = parameter.label;
     input.setAttribute('hasContent', 'false');
     input.type = parameter.inputType;
     input.name = parameter.infoName;
+    // input.id = parameter.infoName;
     cancelInputButton.className = 'input-cancel';
     cancelInputButton.setAttribute('state', 'inactive');
     span.setAttribute('state', 'inactive');
     span.setAttribute('type', parameter.inputType);
     span.classList = 'invisible'
-    cancelInputButton.appendChild(span);
     errorParagraph.id = parameter.errorparagrapId;
 
+    cancelInputButton.appendChild(span);
+
+    groupingDiv.appendChild(label)
+    groupingDiv.appendChild(input)
+    groupingDiv.appendChild(cancelInputButton)
+    groupingDiv.appendChild(errorParagraph)
 
 
-    input.onclick = function () {
-        if (span.type = 'password') {
 
-        } else {
-
+    if (parameter.inputType == 'password') {
+        // span.id='passwordChanger'
+        // span.classList='invisible'
+        // input.onclick = function() {
+        //     input.setAttribute('state','active');
+        // }
+    } else {
+        input.onclick = function () {
+            document.getElementById('password').setAttribute('state','inactive');
             input.setAttribute('state', 'active');
             span.setAttribute('isActive', 'true');
         }
@@ -109,12 +126,13 @@ function createInputField(parameter) {
     }
     input.onblur = function () {
         inputVerifier(input)
-        if (span.type = 'password') {
-
-        } else {
-
+        input.oninput = function(){
+            inputVerifier(input);
+        }
+        if (parameter.inputType != 'password') {
             input.setAttribute('state', 'inactive')
             span.setAttribute('isActive', 'false');
+
         }
     };
 
@@ -127,19 +145,22 @@ function createInputField(parameter) {
         span.addEventListener('click', function () { clearInput(input) });
 
     }
-
-
-    return {
-        label, input, cancelInputButton, errorParagraph
-    };
+    // setupHandler(groupingDiv);
+    // return {
+        // label, input, cancelInputButton, errorParagraph
+        // };
+       return groupingDiv
 }
+// function setupHandler(elements){
+//     elements.
+// }
 function getCaptcha() {
     const script = document.createElement('script');
     script.src = 'https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key';
 
     const captchaContainer = document.createElement('div');
     captchaContainer.classList = 'g-recaptcha';
-    captchaContainer.setAttribute('data-sitekey', 'localhost');
+    captchaContainer.setAttribute('data-sitekey', '172.0.0.1:5500');
 
     return {
         script, captchaContainer
@@ -205,7 +226,7 @@ function declineInputThrough(errorObject) {
     createInputError(errorObject);
 }
 function verifyMailadressInput(inputField) {
-    const regex = new RegExp(/.[1]*@.*.../);
+    const regex = new RegExp(/.[1]*@.*.\.[a-z]/);
     return regex.test(inputField.value);
 }
 function verifyNameInput(inputObject) {
@@ -213,25 +234,27 @@ function verifyNameInput(inputObject) {
     return inputObject.field.value.length >= 3;
 }
 function createInputError(errorObject) {
-    console.log(errorObject)
-    console.log(errorObject.field.name)
+    // console.log(errorObject)
+    // console.log(errorObject.field.name)
     var errorMessage;
-    errorObject.field.classList = 'error';
+    if(!errorObject.field.classList.value.includes('error')){
+        errorObject.field.classList += ' error';
+    }
     errorObject.errorparagraph.classList = 'visible';
     switch (errorObject.field.name) {
         case 'emailadress':
-            errorObject.field.value !== 0 ? errorMessage = 'Bitte gib eine gültige E-Mail-Adresse an.' : errorMessage = 'Bitte gib deine E-Mail-Adresse an.'
+            errorObject.field.value.length !== 0 ? errorMessage =  'Bitte gib eine gültige E-Mail-Adresse an.': errorMessage = 'Bitte gib deine E-Mail-Adresse an.'
             break;
         case 'vorname':
             console.log("CreateInputError -> name")
-            errorObject.field.value == 0 ? errorMessage = 'Bitte gib deinen Vornamen an.' : errorMessage = 'Der Vorname muss mindestens 3 Zeichen lang sein.'
+            errorObject.field.value.length == 0 ? errorMessage = 'Bitte gib deinen Vornamen an.' : errorMessage = 'Der Vorname muss mindestens 3 Zeichen lang sein.'
             break;
         case 'nachname':
             console.log("nachname");
-            errorObject.field.value == 0 ? errorMessage = 'Bitte gib deinen Nachnamen an.' : errorMessage = 'Der Nachname muss midnestens 3 Zeichen lang sein.'
+            errorObject.field.value.length == 0 ? errorMessage = 'Bitte gib deinen Nachnamen an.' : errorMessage = 'Der Nachname muss midnestens 3 Zeichen lang sein.'
             break;
         case 'password':
-            errorObject.field.value == 0 ? errorMessage = 'Bitte gib ein Passwort.' : errorMessage = 'Bitte gib mindestens 8 Zeichen an.'
+            errorObject.field.value.length == 0 ? errorMessage = 'Bitte gib ein Passwort.' : errorMessage = 'Bitte gib mindestens 8 Zeichen an.'
             break;
     }
     errorObject.errorparagraph.innerHTML = errorMessage;
