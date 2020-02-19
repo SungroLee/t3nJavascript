@@ -67,17 +67,19 @@ body {
 
 .visible {
     color: red;
-    font-size: .7rem;
+    font-size: .6rem;
     margin-top: 5px;
 }
 
 form {
-   
-    box-sizing: content-box !important;
+   *{
+       box-sizing: content-box !important;
+   }
     background-color: white;
     display: flex;
     flex-flow: column;
     padding: 70px 20px 20px 30px;
+    // padding: 0 20px;
     flex-grow: 2;
     height: inherit;
     div{
@@ -130,15 +132,16 @@ form {
     }
 
 
-    span[state='active'],
-    div[state='active'] {
+    span.active // div.active 
+    {
+        background-color: red;
         display: block;
     }
 
-    span[state='inactive'],
-    div[state='inactive'] {
-        display: none;
-    }
+    // span[state='inactive'],
+    // div[state='inactive'] {
+    //     display: none;
+    // }
 
     .input-cancel {
         position: relative;
@@ -274,10 +277,11 @@ form {
     }
 
     form {
-        max-height: 700px;
+        // max-height: 700px;
         max-width: 290px;
         margin: auto;
         padding: 30px 60px 15px;
+        // padding: 30px;
         justify-content: center;
         margin: auto;
         margin-bottom: 20px;

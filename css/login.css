@@ -332,17 +332,19 @@ body {
 }
 .visible {
   color: red;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   margin-top: 5px;
 }
 form {
-  box-sizing: content-box !important;
   background-color: white;
   display: flex;
   flex-flow: column;
   padding: 70px 20px 20px 30px;
   flex-grow: 2;
   height: inherit;
+}
+form * {
+  box-sizing: content-box !important;
 }
 form div {
   display: flex;
@@ -378,13 +380,9 @@ form input {
   border: 1px solid #707070;
   font-size: 1.1rem;
 }
-form span[state='active'],
-form div[state='active'] {
+form span.active {
+  background-color: red;
   display: block;
-}
-form span[state='inactive'],
-form div[state='inactive'] {
-  display: none;
 }
 form .input-cancel {
   position: relative;
@@ -455,7 +453,6 @@ form .g-recaptcha {
     flex-grow: 1;
   }
   form {
-    max-height: 700px;
     max-width: 290px;
     padding: 30px 60px 15px;
     justify-content: center;

@@ -88,15 +88,15 @@ function createInputField(parameter) {
 
     groupingDiv.id = parameter.infoName;
     label.innerHTML = parameter.label;
-    input.setAttribute('hasContent', 'false');
+    // input.setAttribute('hasContent', 'false');
     input.type = parameter.inputType;
     input.name = parameter.infoName;
     // input.id = parameter.infoName;
     cancelInputButton.className = 'input-cancel';
-    cancelInputButton.setAttribute('state', 'inactive');
-    span.setAttribute('state', 'inactive');
-    span.setAttribute('type', parameter.inputType);
-    span.classList = 'invisible'
+    // cancelInputButton.setAttribute('state', 'inactive');
+    // span.setAttribute('state', 'inactive');
+    // span.setAttribute('type', parameter.inputType);
+    // span.classList = 'invisible'
     errorParagraph.id = parameter.errorparagrapId;
 
     cancelInputButton.appendChild(span);
@@ -115,23 +115,29 @@ function createInputField(parameter) {
         //     input.setAttribute('state','active');
         // }
     } else {
+        input.onfocus = function(){
+            // input.parentElement.classList.add('active')
+        }
         input.onclick = function () {
-            document.getElementById('password').setAttribute('state','inactive');
-            input.setAttribute('state', 'active');
-            span.setAttribute('isActive', 'true');
+            // span.classList.add('active');
+            
+            // document.getElementById('password').setAttribute('state','inactive');
+            // input.setAttribute('state', 'active');
+            // span.setAttribute('isActive', 'true');
         }
     }
     input.oninput = function () {
         inputWatcher(input);
     }
     input.onblur = function () {
+        // span.classList.replace('active','inactive')
         inputVerifier(input)
         input.oninput = function(){
             inputVerifier(input);
         }
         if (parameter.inputType != 'password') {
-            input.setAttribute('state', 'inactive')
-            span.setAttribute('isActive', 'false');
+            // input.setAttribute('state', 'inactive')
+            // span.setAttribute('isActive', 'false');
 
         }
     };
