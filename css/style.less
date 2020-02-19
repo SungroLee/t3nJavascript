@@ -168,7 +168,7 @@ body {
         display: flex;
     }
     a {
-        padding-top: 10px;
+        padding-top: 7px;
         text-align: left;
         height: 100%;
         text-decoration: none;
@@ -248,18 +248,17 @@ body {
 }
 
 .pioneersInListenDefault {
-    background-color: yellow;
+    background-color: @white-color;
+    height: auto;
     #section4_middleDiv {
         display: flex;
-        background-color: yellowgreen;
         margin: 0 auto;
         width: 100%;
-        flex-direction: column;
+        // flex-direction: column;
         .section4_insideDiv {
             flex: 1;
         }
         #section4_listDiv {
-            background-color: chocolate;
             display: flex;
             .section4_uls {
                 flex: 1;
@@ -269,10 +268,7 @@ body {
                 .section4_profilLists {
                     display: flex;
                     img {
-                        border-radius: 50%;
-                    }
-                    p {
-                        margin: 0;
+                        border-radius: 50%;  
                     }
                 }
             } 
@@ -411,14 +407,16 @@ body {
     margin: 0 auto;
     width: 100%;
     height: 46.5vmax;
-    // height: 22.39em;
+    // height: 28.39em;
     max-height: 30rem;
+    flex-direction: column;
     #section4_listDiv {
+        margin-bottom: 1rem;
         .section4_uls {
-            border: 4px solid @lightGrey;
+            border: 6px solid @lightGrey;
             padding: 0 0 0 0.4rem;
             margin: 0.5rem 0 0 0;
-            height: 16.5vmax;
+            // height: 16.5vmax;
             .section4_profilLists {
                 padding-bottom: 6px;
                 img {
@@ -426,20 +424,23 @@ body {
                     height: 2vmax;
                 }
                 p {
-                    font-size: 1vmax;
+                    font-size: 0.9vmax;
                     margin: 0;
+                    padding-top: 4px;
+                    padding-left: 4px;
                 }
             }
-        }
-        h3 {
-            font-size: 1vmax;
-        }   
-        a {
-            font-size: 0.8vmax;
+            h3 {
+                font-size: 1vmax;
+                margin-top: 4px;
+            }   
+            a {
+                font-size: 0.8vmax;
+            }
         }
     }
     #section4_textDiv {
-        padding-top: 40px;
+        margin-top: 1rem;
         display: flex;
         flex-direction: column;
         h2 {
@@ -542,8 +543,55 @@ body {
             height: 8.55rem;
         }
     }
-}
 
+    ////////////// Pioniere In Listen Finden ////////////
+    #section4_middleDiv {
+        height: 39.2rem;
+        max-height: 40rem;
+        #section4_listDiv {
+            .section4_uls {
+                margin-top: 3rem;
+                height: 11.5rem;
+                .section4_profilLists {
+                    padding-bottom: 0.60rem;
+                    img {
+                        width: 2.1vmax;
+                        height: 2.1vmax;
+                        margin-left: 10px;
+                    }
+                    p {
+                        font-size: 1.1vmax;
+                        margin-left: 0.65rem;
+                    }
+                }
+                h3 {
+                    font-size: 1.4vmax;
+                    margin: 0.5rem 0 0.5rem 0.65rem;
+                }
+                a {
+                    font-size: 1vmax;
+                    margin-left: 0.65rem;
+                }
+            }
+        }
+        #section4_textDiv {
+            h2 {
+                font-size: 3.5rem;
+                &:after{
+                    top: 85px;
+                    width: 15.5rem;
+                    height: 15px;
+                }
+                &:last-child {
+                    &:after {
+                        width: 12.4rem;       
+                    }
+                }
+            }
+
+        }
+    }
+}
 
 @media screen and(min-width : 723px) {
 
@@ -572,6 +620,38 @@ body {
             height: 8.55rem;
         }
     }
+    
+    ///////////////// Pioniere In Listen Finden //////////////////
+    #section4_middleDiv {
+        height: 45.9rem;
+        max-height: 50rem;
+        padding: 2.5rem 1rem;
+        #section4_listDiv {
+            .section4_uls {
+                height: 18.05rem;
+                margin-top: 2rem;
+                .section4_profilLists {
+                    img {
+                        width: 4.3vmax;
+                        height: 4.3vmax;
+                    }
+                    p {
+                        font-size: 1.4vmax;
+                        margin-top: 10px;
+                    }
+                }
+                h3 {
+                    font-size: 1.7vmax;
+                    margin: 0.8rem 0 1rem 0.65rem;
+                }
+                a {
+                    font-size: 1.4vmax;
+                }
+            }
+        }
+
+    }
+
 }
 
 @media screen and(min-width : 769px) {
@@ -613,8 +693,19 @@ body {
         }
     }
 
+    ////////// Teile dein Wisse /////////////
     #teileDeinWissen {
         padding: 5rem 1rem;
+    }
+
+    //////////// Pionere In Listen Finden //////////////
+    #section4_middleDiv {
+        height: 52.1rem;
+        max-height: 55rem;
+        padding: 5rem 1rem;
+        #section4_textDiv {
+            margin-top: 2rem;
+        }
     }
 }
 
@@ -666,6 +757,43 @@ body {
             }
         }
     }
+
+    //////////////// Pioniere In Listen Finden /////////////
+    #section4_middleDiv {
+        flex-direction: row;
+        height: 28rem;
+        #section4_listDiv {
+            justify-content: flex-end;
+            .section4_uls {
+                max-width: 11.8rem;
+                height: 12.9rem;
+                .section4_profilLists {
+                    padding-bottom: 10px;
+                    img {
+                        width: 25px;
+                        height: 25px;
+                    }
+                    p {
+                        font-size: 0.65rem;
+                        margin-top: 5px;
+                    }
+                }
+                h3 {
+                    font-size: 0.8rem;
+                }
+                a {
+                    font-size: 0.6rem;
+                }
+                &:last-child {
+                    margin-right: 3rem
+                }
+            }
+        }
+        #section4_textDiv {
+            margin-top: 0rem;
+        }
+    }
+
 }
 
 @media screen and(min-width : 1116px) {
@@ -841,7 +969,7 @@ body {
 
 @media screen and (min-width: 981px) {
     .becomePionier-textArea {
-        width: 45%;
+        width: 49%;
     }
 }
 

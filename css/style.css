@@ -132,10 +132,10 @@ button:hover {
   }
 }
 #footer {
+  box-sizing: content-box !important;
   background-color: black;
   height: auto;
   display: flex;
-  flex: auto;
   flex-direction: row;
   justify-content: space-between;
   padding: 0 3%;
@@ -565,7 +565,7 @@ body {
   display: flex;
 }
 .sliderDefault a {
-  padding-top: 10px;
+  padding-top: 7px;
   text-align: left;
   height: 100%;
   text-decoration: none;
@@ -635,20 +635,18 @@ body {
   padding-bottom: 0.8rem;
 }
 .pioneersInListenDefault {
-  background-color: yellow;
+  background-color: #fff;
+  height: auto;
 }
 .pioneersInListenDefault #section4_middleDiv {
   display: flex;
-  background-color: yellowgreen;
   margin: 0 auto;
   width: 100%;
-  flex-direction: column;
 }
 .pioneersInListenDefault #section4_middleDiv .section4_insideDiv {
   flex: 1;
 }
 .pioneersInListenDefault #section4_middleDiv #section4_listDiv {
-  background-color: chocolate;
   display: flex;
 }
 .pioneersInListenDefault #section4_middleDiv #section4_listDiv .section4_uls {
@@ -662,9 +660,6 @@ body {
 }
 .pioneersInListenDefault #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists img {
   border-radius: 50%;
-}
-.pioneersInListenDefault #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists p {
-  margin: 0;
 }
 .pioneersInListenDefault #section4_middleDiv #section4_listDiv a {
   color: #f9423a;
@@ -798,7 +793,7 @@ body {
   display: flex;
 }
 #slider a {
-  padding-top: 10px;
+  padding-top: 7px;
   text-align: left;
   height: 100%;
   text-decoration: none;
@@ -891,20 +886,18 @@ body {
   background-color: #f9423a;
 }
 #pioneersInListen {
-  background-color: yellow;
+  background-color: #fff;
+  height: auto;
 }
 #pioneersInListen #section4_middleDiv {
   display: flex;
-  background-color: yellowgreen;
   margin: 0 auto;
   width: 100%;
-  flex-direction: column;
 }
 #pioneersInListen #section4_middleDiv .section4_insideDiv {
   flex: 1;
 }
 #pioneersInListen #section4_middleDiv #section4_listDiv {
-  background-color: chocolate;
   display: flex;
 }
 #pioneersInListen #section4_middleDiv #section4_listDiv .section4_uls {
@@ -918,9 +911,6 @@ body {
 }
 #pioneersInListen #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists img {
   border-radius: 50%;
-}
-#pioneersInListen #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists p {
-  margin: 0;
 }
 #pioneersInListen #section4_middleDiv #section4_listDiv a {
   color: #f9423a;
@@ -998,12 +988,15 @@ body {
   width: 100%;
   height: 46.5vmax;
   max-height: 30rem;
+  flex-direction: column;
+}
+#section4_middleDiv #section4_listDiv {
+  margin-bottom: 1rem;
 }
 #section4_middleDiv #section4_listDiv .section4_uls {
-  border: 4px solid lightgrey;
+  border: 6px solid lightgrey;
   padding: 0 0 0 0.4rem;
   margin: 0.5rem 0 0 0;
-  height: 16.5vmax;
 }
 #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists {
   padding-bottom: 6px;
@@ -1013,17 +1006,20 @@ body {
   height: 2vmax;
 }
 #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists p {
-  font-size: 1vmax;
+  font-size: 0.9vmax;
   margin: 0;
+  padding-top: 4px;
+  padding-left: 4px;
 }
-#section4_middleDiv #section4_listDiv h3 {
+#section4_middleDiv #section4_listDiv .section4_uls h3 {
   font-size: 1vmax;
+  margin-top: 4px;
 }
-#section4_middleDiv #section4_listDiv a {
+#section4_middleDiv #section4_listDiv .section4_uls a {
   font-size: 0.8vmax;
 }
 #section4_middleDiv #section4_textDiv {
-  padding-top: 40px;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -1099,6 +1095,45 @@ body {
   #sliderDefaultDiv #sliderDiv {
     height: 8.55rem;
   }
+  #section4_middleDiv {
+    height: 39.2rem;
+    max-height: 40rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls {
+    margin-top: 3rem;
+    height: 11.5rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists {
+    padding-bottom: 0.6rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists img {
+    width: 2.1vmax;
+    height: 2.1vmax;
+    margin-left: 10px;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists p {
+    font-size: 1.1vmax;
+    margin-left: 0.65rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls h3 {
+    font-size: 1.4vmax;
+    margin: 0.5rem 0 0.5rem 0.65rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls a {
+    font-size: 1vmax;
+    margin-left: 0.65rem;
+  }
+  #section4_middleDiv #section4_textDiv h2 {
+    font-size: 3.5rem;
+  }
+  #section4_middleDiv #section4_textDiv h2:after {
+    top: 85px;
+    width: 15.5rem;
+    height: 15px;
+  }
+  #section4_middleDiv #section4_textDiv h2:last-child:after {
+    width: 12.4rem;
+  }
 }
 @media screen and (min-width: 723px) {
   #pioneersDiv {
@@ -1120,6 +1155,30 @@ body {
   }
   #sliderDefaultDiv #sliderDiv {
     height: 8.55rem;
+  }
+  #section4_middleDiv {
+    height: 45.9rem;
+    max-height: 50rem;
+    padding: 2.5rem 1rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls {
+    height: 18.05rem;
+    margin-top: 2rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists img {
+    width: 4.3vmax;
+    height: 4.3vmax;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists p {
+    font-size: 1.4vmax;
+    margin-top: 10px;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls h3 {
+    font-size: 1.7vmax;
+    margin: 0.8rem 0 1rem 0.65rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls a {
+    font-size: 1.4vmax;
   }
 }
 @media screen and (min-width: 769px) {
@@ -1149,6 +1208,14 @@ body {
   }
   #teileDeinWissen {
     padding: 5rem 1rem;
+  }
+  #section4_middleDiv {
+    height: 52.1rem;
+    max-height: 55rem;
+    padding: 5rem 1rem;
+  }
+  #section4_middleDiv #section4_textDiv {
+    margin-top: 2rem;
   }
 }
 @media screen and (min-width: 981px) {
@@ -1184,6 +1251,40 @@ body {
   }
   #teileDeinWissen #section3_imgDiv img {
     max-width: 37.5rem;
+  }
+  #section4_middleDiv {
+    flex-direction: row;
+    height: 28rem;
+  }
+  #section4_middleDiv #section4_listDiv {
+    justify-content: flex-end;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls {
+    max-width: 11.8rem;
+    height: 12.9rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists {
+    padding-bottom: 10px;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists img {
+    width: 25px;
+    height: 25px;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists p {
+    font-size: 0.65rem;
+    margin-top: 5px;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls h3 {
+    font-size: 0.8rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls a {
+    font-size: 0.6rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls:last-child {
+    margin-right: 3rem;
+  }
+  #section4_middleDiv #section4_textDiv {
+    margin-top: 0rem;
   }
 }
 @media screen and (min-width: 1116px) {
@@ -1315,7 +1416,7 @@ body {
 }
 @media screen and (min-width: 981px) {
   .becomePionier-textArea {
-    width: 45%;
+    width: 49%;
   }
 }
 @media screen and (max-width: 479px) {
