@@ -11,6 +11,7 @@ window.onload = function () {
     initProfileClone();
     initTeileDeinWissen();
     initPioniereInListenFinden();
+    initLassDichInspirieren();
     initBecomePionier();
     // initFaq();
     Footer.init();
@@ -193,39 +194,87 @@ const sliderButtonInit = () => { //Slider ButtonFunktionen
         sliderDiv.style.transition = 'transform 400ms ease-in-out';     
     }
 
-    for(let i = 0; i < profileInfos.length; i++) {
-
-        profileInfos[i].addEventListener('mousedown', (event) => {
+    const mousedownTouchStartFunction = (e) => {
+        if(e.type == 'mousedown') {
             isClicked = true;
-            mousedownPosition = event.clientX;
-            console.log(mousedownPosition);
-        })
-        profileInfos[i].addEventListener('mouseup', (event) => {
-            mouseUpPosition = event.clientX;
+            mousedownPosition = e.clientX;
+        }else if(e.type == 'touchstart') {
+            isClicked = true;
+            mousedownPosition = event.touches[0].clientX;
+        }       
+    }
+    
+    const mouseupTouchEndFunction = (e) => {
 
-            console.log(mouseUpPosition);
+        if(e.type == 'mouseup') {
+            mouseUpPosition = e.clientX;
+
             if(mousedownPosition - mouseUpPosition < -200) {
                 rightSlider(); 
             }else if( mousedownPosition - mouseUpPosition > 200) {
                 leftSlider();
-                console.log(counter);
             }else {
                 sliderDiv.style.transform = 'translateX(' + (-sliderDiv.clientWidth * counter) + 'px)';
                 sliderDiv.style.transition = 'transform 400ms ease-in-out';
             }
             isClicked = false;
+        }else if(e.type == 'touchend') {
+            mouseUpPosition = event.changedTouches[0].clientX;
+
+            if(mousedownPosition - mouseUpPosition < -200) {
+                rightSlider(); 
+            }else if( mousedownPosition - mouseUpPosition > 200) {
+                leftSlider();
+            }else {
+                sliderDiv.style.transform = 'translateX(' + (-sliderDiv.clientWidth * counter) + 'px)';
+                sliderDiv.style.transition = 'transform 400ms ease-in-out';
+            }
+            isClicked = false;
+        }
+        
+    }
+
+    const mousemoveTouchmoveFunction = (e) => {
+
+
+        if(isClicked && e.type == 'mousemove'){
+        sliderDiv.style.transform = 'translateX(' + ((-sliderDiv.clientWidth * counter) + (-mousedownPosition + e.clientX)) + 'px)';
+        sliderDiv.style.transition = 'none';
+        }else if(isClicked && e.type == 'touchmove') {
+            sliderDiv.style.transform = 'translateX(' + ((-sliderDiv.clientWidth * counter) + (-mousedownPosition + event.touches[0].clientX)) + 'px)';
+            sliderDiv.style.transition = 'none';
+        }
+    }
+
+    for(let i = 0; i < profileInfos.length; i++) {
+
+        profileInfos[i].addEventListener('mousedown', (event) => {
+            mousedownTouchStartFunction(event);
+        })
+
+        profileInfos[i].addEventListener('mouseup', (event) => {
+            mouseupTouchEndFunction(event);
         })
 
         profileInfos[i].addEventListener("mousemove", (event) => {
-            if(isClicked){
-            sliderDiv.style.transform = 'translateX(' + ((-sliderDiv.clientWidth * counter) + (-mousedownPosition + event.clientX)) + 'px)';
-            sliderDiv.style.transition = 'none';
-            // console.log(-mousedownPosition + event.clientX);
-            }
+            mousemoveTouchmoveFunction(event);
         })
     }
 
-    
+    for(let i = 0; i < profileInfos.length; i++) {
+
+        profileInfos[i].addEventListener('touchstart', (event) => {
+            mousedownTouchStartFunction(event);
+        })
+
+        profileInfos[i].addEventListener('touchend', (event) => {
+            mouseupTouchEndFunction(event);
+        })
+
+        profileInfos[i].addEventListener("touchmove", (event) => {
+            mousemoveTouchmoveFunction(event);
+        })
+    }
 
     buttons[0].addEventListener("click", () => {
         rightSlider();
@@ -381,7 +430,57 @@ const initPioniereInListenFinden = () => {
 
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////Lass Dich Inspirieren///////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
 
+const initLassDichInspirieren = () => {
+    const section5 = [];
+    const jSon = [
+        {'id':'lassDichInspirieren'},
+        {'id':'section5_middleDiv'},
+        {'id':'section5_textDiv', 'className':'section5_insideDiv'},
+        {'id':'section5_videoDiv', 'className':'section5_insideDiv'},
+    ];
+    const text = ['LASS', 'DICH', 'INSPIRIEREN'];
+    const video = SetElement.setElements('video');
+    const source = SetElement.setElements('source');
+    video.autoplay = true;
+    video.loop = true;
+    video.muted = true;
+
+    source.src = 'https://storage.googleapis.com/t3n-de/pioneers/cfa02d7739eea252d2161f78e8980ed9e8437cfb/PN_Features.mp4';
+    video.appendChild(source);
+
+    jSon.forEach((element, index) => {
+        if(!element.className) {
+            const div = SetElement.setElements("div", element.id);
+            section5[index] = div;
+        }else {
+            const div = SetElement.setElements("div", element.id, element.className);
+            section5[index] = div;
+        }
+    })
+
+    text.forEach(element => {
+        const h2 = SetElement.setElements('h2');
+        h2.innerHTML = element;
+        section5[2].appendChild(h2);
+    })
+
+    for(let i = 0; i < section5.length; i++) {
+        if(i == 0) {
+            section5[i].appendChild(section5[i+1]);
+            document.body.appendChild(section5[0]);
+        }else if(i == 1) {
+            section5[i].appendChild(section5[i+1]);
+            section5[i].appendChild(section5[i+2]);
+            section5[i+2].appendChild(video);
+        }else {
+            return;
+        }
+    }
+}
 
 
 

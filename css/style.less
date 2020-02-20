@@ -279,6 +279,19 @@ body {
     }
 }
 
+.lassDichInspirierenDefault {
+    background-color: @gray-color;
+    height: auto;
+    width: 100%;
+    #section5_middleDiv {
+        display: flex;
+        // flex-direction: column-reverse;
+        .section5_insideDiv {
+            flex: 1;
+        }
+    }
+}
+
 /*************************
 * Start CSS
 **************************/
@@ -315,6 +328,9 @@ body {
     .pioneersInListenDefault;
 }
 
+#lassDichInspirieren {
+    .lassDichInspirierenDefault;
+}
 
 
 @media screen and(min-width : 200px) {
@@ -400,72 +416,110 @@ body {
             font-size: 1.2rem;
         }
     }
+
+    #section4_middleDiv {
+        padding: 2.5rem 0.9rem;
+        margin: 0 auto;
+        width: 100%;
+        height: 46.5vmax;
+        // height: 28.39em;
+        max-height: 30rem;
+        flex-direction: column;
+        #section4_listDiv {
+            margin-bottom: 1rem;
+            .section4_uls {
+                border: 6px solid @lightGrey;
+                padding: 0 0 0 0.4rem;
+                margin: 0.5rem 0 0 0;
+                // height: 16.5vmax;
+                .section4_profilLists {
+                    padding-bottom: 6px;
+                    img {
+                        width: 2vmax;
+                        height: 2vmax;
+                    }
+                    p {
+                        font-size: 0.9vmax;
+                        margin: 0;
+                        padding-top: 4px;
+                        padding-left: 4px;
+                    }
+                }
+                h3 {
+                    font-size: 1vmax;
+                    margin-top: 4px;
+                }   
+                a {
+                    font-size: 0.8vmax;
+                }
+            }
+        }
+        #section4_textDiv {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            h2 {
+                margin: 0;
+                text-align: left;
+                font-size: 1.6rem;
+                margin: 0.3rem 0 0.25rem 0.25rem;
+                position: relative;
+                &:after{
+                    content:"";
+                    position: absolute;
+                    top: 40px;
+                    background-color: @red-color;
+                    display: block;
+                    width: 7.2rem;
+                    height: 8px;
+                }
+                &:last-child {
+                    &:after {
+                        width: 5.7rem;
+                    }
+                }
+            }
+        }
+    }
+    
+    #section5_middleDiv {
+        padding: 2rem 1rem;
+        // max-height: 35.9rem;
+        flex-direction: column-reverse;
+        #section5_videoDiv {
+            video {
+                width: 100%;
+                height: auto;
+            }
+        }
+        #section5_textDiv {
+            padding-bottom: 4rem;
+            padding-top: 2.65rem;
+            h2 {
+                position: relative;
+                margin: 0;
+                text-align: left;
+                font-size: 1.6rem;
+                margin: 0.3rem 0 0.25rem 0.25rem;
+                &:after{
+                    content:"";
+                    position: absolute;
+                    top: 40px;
+                    background-color: @red-color;
+                    display: block;
+                    width: 3.7rem;
+                    height: 8px;
+                }
+                &:last-child {
+                    &:after {
+                        width: 9.3rem;
+                    }
+                }
+            }
+        }
+    }
 }
 
-#section4_middleDiv {
-    padding: 2.5rem 0.9rem;
-    margin: 0 auto;
-    width: 100%;
-    height: 46.5vmax;
-    // height: 28.39em;
-    max-height: 30rem;
-    flex-direction: column;
-    #section4_listDiv {
-        margin-bottom: 1rem;
-        .section4_uls {
-            border: 6px solid @lightGrey;
-            padding: 0 0 0 0.4rem;
-            margin: 0.5rem 0 0 0;
-            // height: 16.5vmax;
-            .section4_profilLists {
-                padding-bottom: 6px;
-                img {
-                    width: 2vmax;
-                    height: 2vmax;
-                }
-                p {
-                    font-size: 0.9vmax;
-                    margin: 0;
-                    padding-top: 4px;
-                    padding-left: 4px;
-                }
-            }
-            h3 {
-                font-size: 1vmax;
-                margin-top: 4px;
-            }   
-            a {
-                font-size: 0.8vmax;
-            }
-        }
-    }
-    #section4_textDiv {
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: column;
-        h2 {
-            margin: 0;
-            text-align: left;
-            font-size: 1.6rem;
-            margin: 0.3rem 0 0 0.25rem;
-            position: relative;
-            &:after{
-                content:"";
-                position: absolute;
-                top: 40px;
-                background-color: @red-color;
-                display: block;
-                width: 7.2rem;
-                height: 8px;
-            }
-            &:last-child {
-                &:after {
-                    width: 5.7rem;
-                }
-            }
-        }
-    }
-}
 
 @media screen and(min-width : 353px) {
     // Min Width 353px Media Query(Mobile Version)
@@ -588,7 +642,25 @@ body {
                     }
                 }
             }
+        }
+    }
 
+    #section5_middleDiv {
+        #section5_textDiv {
+            padding-bottom: 3.3rem;
+            h2 {
+                font-size: 3.5rem;
+                &:after{
+                    top: 85px;
+                    width: 8rem;
+                    height: 15px;
+                }
+                &:last-child {
+                    &:after {
+                        width: 20.3rem;       
+                    }
+                }
+            }
         }
     }
 }
@@ -791,6 +863,22 @@ body {
         }
         #section4_textDiv {
             margin-top: 0rem;
+        }
+    }
+
+    #section5_middleDiv {
+        padding: 5rem 1rem;
+        max-width: 55.5rem;
+        margin: 0 auto;
+        flex-direction: row;
+        max-height: 36.7rem;
+        #section5_videoDiv {
+            video {    
+                max-height: 26.35rem;
+            }
+        }
+        #section5_textDiv {
+            margin-top: 40px;
         }
     }
 
