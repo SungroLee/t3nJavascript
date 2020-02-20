@@ -5,47 +5,32 @@
     display: none;
 }
 
-
 html {
     font-size: 18px;
     height: 100%;
 }
+
 div#password.active {
-    span{
+    span {
         background-image: url('../foto/svg/eye_black.svg');
     }
-    span.clearText{
+
+    span.clearText {
         background-image: url('../foto/svg/eye_stroked_black.svg');
     }
 }
-div#password.inactive{
-    span{
+
+div#password.inactive {
+    span {
         background-image: url('../foto/svg/eye_visible.svg');
     }
-    span.clearText{
+
+    span.clearText {
         background-image: url('../foto/svg/eye_notVisible.svg');
     }
 }
+
 nav {
-    // height: 55px;
-
-    // div {
-    //     height: inherit !important;
-
-    //     img {
-    //         height: 40px !important;
-    //         margin-top: -10px;
-
-    //     }
-    // }
-
-    // padding-right: 0;
-    // padding-left: 0;
-
-    // #nav_logoDiv {
-    //     margin-left: 10px;
-    // }
-
     div#nav_loginDiv {
         display: none;
     }
@@ -61,25 +46,17 @@ body {
     display: flex;
     justify-content: space-between;
     flex-flow: column;
-    // background-color: red;
 }
-
 
 #container {
     box-sizing: content-box !important;
-    // height: 100%;
     margin: auto;
-    // flex-grow: 1;
-    // background-color: wheat;
     height: inherit;
 }
 
 form div.active {
-    // background-color: red;
-
     span {
         display: inline-block;
-        // background-image: url('../foto/svg/cross.svg');
     }
 }
 
@@ -94,11 +71,8 @@ form div.active {
 }
 
 .inactive {
-    // background-color: green;
-
     span {
         display: inline-block;
-        // background-image: url('../foto/svg/cross_grey.svg');
     }
 }
 
@@ -106,6 +80,7 @@ form {
     div p {
         margin-top: 0;
     }
+
     * {
         box-sizing: content-box !important;
     }
@@ -114,7 +89,6 @@ form {
     display: flex;
     flex-flow: column;
     padding: 70px 20px 20px 30px;
-    // padding: 0 20px;
     flex-grow: 2;
     height: inherit;
 
@@ -127,7 +101,6 @@ form {
         margin: 10px 0 0;
         padding: 0;
         font-size: 1.2rem;
-
     }
 
     p {
@@ -161,48 +134,6 @@ form {
         border: 1px solid rgb(112, 112, 112);
         font-size: 1.1rem;
     }
-    span {
-        // position: relative;
-        // height: 30px;
-        // width: 30px;
-        // top: -30px;
-        // left: 90%;
-        // cursor: pointer;
-        // margin-bottom: -30px;
-        // display: none;
-        // display: block;
-
-        // // &.empty {
-        // //     background-color: grey;
-        // //     // &:focus {
-        // //     //     background-color: green;
-        // //     // }
-        // // }
-
-        // &.containing {
-        //     // background-color: orange;
-        //     display: inline-block;
-        //     // background-color: red;
-
-        // }
-
-
-        // span[isactive='true']&span[type='text'] {
-        //     background-image: url('../foto/svg/cross.svg');
-        // }
-
-
-    }
-
-    div.active span.containing {
-        display: inline-block;
-        background-image: url('../foto/svg/cross.svg');
-    }
-
-    div.inactive span.containing {
-        display: inline-block;
-        background-image: url('../foto/svg/cross_grey.svg');
-    }
 
     span {
         position: relative;
@@ -230,7 +161,6 @@ form {
         font-size: .7rem;
         margin-bottom: 20px;
         cursor: not-allowed;
-        // margin-bottom: auto;
     }
 
     button[isFree='true']:hover {
@@ -254,7 +184,6 @@ form {
     padding: 20px 0px 20px;
     display: flex;
     justify-content: center;
-    // align-self: flex-end;
 
     p {
         margin: auto;
@@ -263,29 +192,22 @@ form {
     }
 }
 
-
-
 @media screen and (min-width: 480px) {
     html {
-        // height: max-content;
         height: 100%;
     }
 
     body {
-        // height: inherit;
         display: flex;
         padding-top: 70px;
         height: -webkit-fill-available;
-        // height: 95%;
         flex-grow: 1;
     }
 
     form {
-        // max-height: 700px;
         max-width: 290px;
         margin: auto;
         padding: 30px 60px 15px;
-        // padding: 30px;
         justify-content: center;
         margin: auto;
         margin-bottom: 20px;
@@ -313,7 +235,6 @@ form {
                 top: 7.5px;
                 right: 7px;
             }
-
         }
 
         .preFooter {
