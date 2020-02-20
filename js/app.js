@@ -60,7 +60,7 @@ const initPioneersNetwork = () => {
     const pioneersH2 = SetElement.setElements("h2");
     const pioneersButton = SetElement.setElements("a", "pioneersButton");
 
-    pioneersButton.href = '../login.html';
+    pioneersButton.href = '../register.html';
     pioneersH1.innerHTML = "PIONEERS&nbsp;";
     pioneersH12.innerHTML = "NETWORK";
     pioneersH2.innerHTML = "Gestalte mit uns eine positive digitale Zukunft";
