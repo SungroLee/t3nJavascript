@@ -7,13 +7,25 @@
 
 
 html {
-    // background-color: palegoldenrod;
-    // height: -webkit-fill-available;
     font-size: 18px;
-    // width: 100%;
     height: 100%;
 }
-
+div#password.active {
+    span{
+        background-image: url('../foto/svg/eye_black.svg');
+    }
+    span.clearText{
+        background-image: url('../foto/svg/eye_stroked_black.svg');
+    }
+}
+div#password.inactive{
+    span{
+        background-image: url('../foto/svg/eye_visible.svg');
+    }
+    span.clearText{
+        background-image: url('../foto/svg/eye_notVisible.svg');
+    }
+}
 nav {
     // height: 55px;
 

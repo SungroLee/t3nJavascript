@@ -293,6 +293,18 @@ html {
   font-size: 18px;
   height: 100%;
 }
+div#password.active span {
+  background-image: url('../foto/svg/eye_black.svg');
+}
+div#password.active span.clearText {
+  background-image: url('../foto/svg/eye_stroked_black.svg');
+}
+div#password.inactive span {
+  background-image: url('../foto/svg/eye_visible.svg');
+}
+div#password.inactive span.clearText {
+  background-image: url('../foto/svg/eye_notVisible.svg');
+}
 nav div#nav_loginDiv {
   display: none;
 }

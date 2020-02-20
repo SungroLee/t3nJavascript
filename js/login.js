@@ -96,6 +96,7 @@ function createInputField(probs) {
         const inputElement = span.parentNode.childNodes[1];
         span.addEventListener('click', function () {
             inputElement.type == 'text' ? inputElement.type = 'password' : inputElement.type = 'text';
+            span.classList.toggle('clearText')
         })
     } else {
         span.addEventListener('click', function () { clearInput(input) });
