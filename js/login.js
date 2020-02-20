@@ -86,10 +86,10 @@ function createInputField(probs) {
         activInputButtonClassHandler(input);
     }
     input.oninput = function () {
-        onInputClassHandler(input);
+        onInputEventClassHandler(input);
     }
     input.onblur = function () {
-        onBlurHandler(input);
+        onBlurEventHandler(input);
     };
 
     if (probs.inputType === 'password') {
@@ -104,7 +104,6 @@ function createInputField(probs) {
     }
     return groupingDiv
 }
-
 function onClickClassHandler(div) {
     activeClassRemover()
     div.classList.replace('inactive', 'active');
@@ -117,11 +116,11 @@ function activeClassRemover() {
         }
     });
 }
-function onInputClassHandler(input) {
+function onInputEventClassHandler(input) {
     inputWatcher(input);
 
 }
-function onBlurHandler(input) {
+function onBlurEventHandler(input) {
     inputVerifier(input)
     input.oninput = function () {
         inputWatcher(input)
@@ -141,7 +140,6 @@ function activInputButtonClassHandler(input) {
         }
     }
 }
-
 function getCaptcha() {
     const script = document.createElement('script');
     script.src = 'https://www.google.com/recaptcha/api.js?render=_reCAPTCHA_site_key';
@@ -167,17 +165,17 @@ function clearInput(inputField) {
     inputField.value = '';
     inputWatcher(inputField);
 }
-function getCrossElement(input) {
+function getCorrespondingSpanElement(input) {
     return input.nextElementSibling;
 }
 function inputWatcher(inputField) {
     if (inputField.value.length > 0) {
-        const cross = getCrossElement(inputField);
+        const cross = getCorrespondingSpanElement(inputField);
         cross.classList.add('containing')
         cross.classList.remove('empty');
     } else {
-        getCrossElement(inputField).classList.remove('containing')
-        getCrossElement(inputField).classList.add('empty')
+        getCorrespondingSpanElement(inputField).classList.remove('containing')
+        getCorrespondingSpanElement(inputField).classList.add('empty')
     }
 }
 function inputVerifier(inputField) {
