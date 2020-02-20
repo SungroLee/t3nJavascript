@@ -15,24 +15,24 @@ html {
 }
 
 nav {
-    height: 55px;
+    // height: 55px;
 
-    div {
-        height: inherit !important;
+    // div {
+    //     height: inherit !important;
 
-        img {
-            height: 40px !important;
-            margin-top: -10px;
-            
-        }
-    }
+    //     img {
+    //         height: 40px !important;
+    //         margin-top: -10px;
 
-    padding-right: 0;
-    padding-left: 0;
+    //     }
+    // }
 
-    #nav_logoDiv {
-        margin-left: 10px;
-    }
+    // padding-right: 0;
+    // padding-left: 0;
+
+    // #nav_logoDiv {
+    //     margin-left: 10px;
+    // }
 
     div#nav_loginDiv {
         display: none;
@@ -52,6 +52,7 @@ body {
     // background-color: red;
 }
 
+
 #container {
     box-sizing: content-box !important;
     // height: 100%;
@@ -61,6 +62,15 @@ body {
     height: inherit;
 }
 
+form div.active {
+    // background-color: red;
+
+    span {
+        display: inline-block;
+        // background-image: url('../foto/svg/cross.svg');
+    }
+}
+
 .ghost {
     display: none;
 }
@@ -68,13 +78,26 @@ body {
 .visible {
     color: red;
     font-size: .6rem;
-    margin-top: 5px;
+    margin-top: -15px;
+}
+
+.inactive {
+    // background-color: green;
+
+    span {
+        display: inline-block;
+        // background-image: url('../foto/svg/cross_grey.svg');
+    }
 }
 
 form {
-   *{
-       box-sizing: content-box !important;
-   }
+    div p {
+        margin-top: 0;
+    }
+    * {
+        box-sizing: content-box !important;
+    }
+
     background-color: white;
     display: flex;
     flex-flow: column;
@@ -82,7 +105,8 @@ form {
     // padding: 0 20px;
     flex-grow: 2;
     height: inherit;
-    div{
+
+    div {
         display: flex;
         flex-direction: column;
     }
@@ -114,7 +138,8 @@ form {
 
     .error {
         border-color: red;
-        // margin-bottom: 5px;
+        margin-top: 0;
+        padding-top: 0;
     }
 
     input {
@@ -123,55 +148,32 @@ form {
         border-radius: 5px;
         border: 1px solid rgb(112, 112, 112);
         font-size: 1.1rem;
-        //    &[type='password']{
-        //        background-color: orange;
-        //    }
-        //    &[name='password']{
-        //        background-color: green
-        //    }
     }
+    span {
+        // position: relative;
+        // height: 30px;
+        // width: 30px;
+        // top: -30px;
+        // left: 90%;
+        // cursor: pointer;
+        // margin-bottom: -30px;
+        // display: none;
+        // display: block;
 
+        // // &.empty {
+        // //     background-color: grey;
+        // //     // &:focus {
+        // //     //     background-color: green;
+        // //     // }
+        // // }
 
-    span.active // div.active 
-    {
-        background-color: red;
-        display: block;
-    }
+        // &.containing {
+        //     // background-color: orange;
+        //     display: inline-block;
+        //     // background-color: red;
 
-    // span[state='inactive'],
-    // div[state='inactive'] {
-    //     display: none;
-    // }
+        // }
 
-    .input-cancel {
-        position: relative;
-        height: 30px;
-        width: 30px;
-        top: -34px;
-        left: 91%;
-        cursor: pointer;
-        margin-bottom: -30px;
-
-        span {
-            position: relative;
-            top: 25%;
-            left: 25%;
-            width: 15px;
-            height: 15px;
-            background-size: contain;
-            background-repeat: no-repeat;
-
-            &[type='text'] {
-                // &[isactive='true'] {
-                //     background-image: url(../foto/svg/cross.svg);
-
-                // }
-
-                // &[isactive='false'] {
-                //     background-image: url(../foto/svg/cross_grey.svg);
-                // }
-            }
-        }
 
         // span[isactive='true']&span[type='text'] {
         //     background-image: url('../foto/svg/cross.svg');
@@ -180,31 +182,25 @@ form {
 
     }
 
-    // #password[state='inactive'] >span.invisible{
-    //     display: block;
-    //     //
-    //     border: 2px solid green;
-    //     background-color: green;
-    // }
-    // #password[state='inactive'] span.visible{
-    //     display: block;
-    //     border: 2px solid  red;
-    // }
-    // #password[state='active'] span.invisible{
-    //     display: block;
-    //     border: 2px solid purple;
-    // }
-    // #password[state='active'] span.visible{
-    //     display: block;
-    //     border: 2px solid orange;
-    // }
+    div.active span.containing {
+        display: inline-block;
+        background-image: url('../foto/svg/cross.svg');
+    }
 
-    // #password {
-        // background-color: orange;
-        // &[state='active'] {
-            // background-color: purple;
-        // }
-    // }
+    div.inactive span.containing {
+        display: inline-block;
+        background-image: url('../foto/svg/cross_grey.svg');
+    }
+
+    span {
+        position: relative;
+        top: 25%;
+        left: 25%;
+        width: 25px;
+        height: 20px;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 
     .disclaimer {
         margin: 35px 0 20px;
@@ -258,10 +254,11 @@ form {
 
 
 @media screen and (min-width: 480px) {
-    html{
+    html {
         // height: max-content;
         height: 100%;
     }
+
     body {
         // height: inherit;
         display: flex;
@@ -269,11 +266,6 @@ form {
         height: -webkit-fill-available;
         // height: 95%;
         flex-grow: 1;
-    }
-
-    #container {
-        // height: auto;
-        // margin: auto;
     }
 
     form {
@@ -299,10 +291,10 @@ form {
             width: 35%;
         }
 
-        .input-cancel {
-            top: -34px;
-            left: 260px;
+        span {
             position: relative;
+            top: -35px;
+            left: 260px;
 
             div {
                 position: absolute;

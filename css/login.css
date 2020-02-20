@@ -293,21 +293,6 @@ html {
   font-size: 18px;
   height: 100%;
 }
-nav {
-  height: 55px;
-  padding-right: 0;
-  padding-left: 0;
-}
-nav div {
-  height: inherit !important;
-}
-nav div img {
-  height: 40px !important;
-  margin-top: -10px;
-}
-nav #nav_logoDiv {
-  margin-left: 10px;
-}
 nav div#nav_loginDiv {
   display: none;
 }
@@ -327,13 +312,19 @@ body {
   margin: auto;
   height: inherit;
 }
+form div.active span {
+  display: inline-block;
+}
 .ghost {
   display: none;
 }
 .visible {
   color: red;
   font-size: 0.6rem;
-  margin-top: 5px;
+  margin-top: -15px;
+}
+.inactive span {
+  display: inline-block;
 }
 form {
   background-color: white;
@@ -342,6 +333,9 @@ form {
   padding: 70px 20px 20px 30px;
   flex-grow: 2;
   height: inherit;
+}
+form div p {
+  margin-top: 0;
 }
 form * {
   box-sizing: content-box !important;
@@ -372,6 +366,8 @@ form label {
 }
 form .error {
   border-color: red;
+  margin-top: 0;
+  padding-top: 0;
 }
 form input {
   padding-left: 10px;
@@ -380,25 +376,20 @@ form input {
   border: 1px solid #707070;
   font-size: 1.1rem;
 }
-form span.active {
-  background-color: red;
-  display: block;
+form div.active span.containing {
+  display: inline-block;
+  background-image: url('../foto/svg/cross.svg');
 }
-form .input-cancel {
-  position: relative;
-  height: 30px;
-  width: 30px;
-  top: -34px;
-  left: 91%;
-  cursor: pointer;
-  margin-bottom: -30px;
+form div.inactive span.containing {
+  display: inline-block;
+  background-image: url('../foto/svg/cross_grey.svg');
 }
-form .input-cancel span {
+form span {
   position: relative;
   top: 25%;
   left: 25%;
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 20px;
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -469,12 +460,12 @@ form .g-recaptcha {
   form button {
     width: 35%;
   }
-  form .input-cancel {
-    top: -34px;
-    left: 260px;
+  form span {
     position: relative;
+    top: -35px;
+    left: 260px;
   }
-  form .input-cancel div {
+  form span div {
     position: absolute;
     top: 7.5px;
     right: 7px;
