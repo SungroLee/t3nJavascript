@@ -1,0 +1,133 @@
+#faq {
+  background-color: #f4f4f4;
+  margin: 0 auto;
+  padding-bottom: 2%;
+}
+#faq .faq-heading {
+  text-align: center;
+  font-size: 2rem;
+  padding: 45px 0 20px;
+  margin: 0 auto 20px;
+}
+#faq .faq-question {
+  position: relative;
+  max-height: 0;
+  background-color: #fff;
+  min-height: 70px;
+  margin: 0 auto 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  transform: translateY(5px);
+  transition: transform 0.5s;
+}
+#faq .faq-question:hover {
+  box-shadow: 5px 5px 10px 10px #c7c7c7;
+  transition: transform 0.3s;
+  transform: translateY(-5px);
+}
+#faq .faq-question.open {
+  max-height: 500px;
+  transition: max-height 0.75s ease-in;
+}
+#faq .faq-question.open .question-answer {
+  display: block;
+}
+#faq .faq-question.open .question-marker svg {
+  transition: transform 0.3s;
+  transform: rotateZ(180deg);
+}
+#faq .faq-question.open a {
+  color: red;
+  text-decoration-line: none;
+}
+#faq .faq-question.closing svg {
+  transition: transform 0.3s;
+  transform: rotateZ(0deg);
+}
+#faq .question-heading {
+  font-size: 1.1rem;
+  text-align: left;
+  width: 95%;
+  top: -3px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 auto 0 10px;
+}
+#faq .question-answer {
+  font-size: 0.7rem;
+  display: none;
+  padding: 0 15px 50px 10px;
+}
+#faq .faq-questHeadContainer {
+  position: relative;
+  padding-top: 20px;
+  display: flex;
+  padding-bottom: 20px;
+}
+#faq .question-marker {
+  background-color: #f4f4f4;
+  border-radius: 50%;
+  display: inline-block;
+  min-width: 35px;
+  max-width: 35px;
+  min-height: 35px;
+  max-height: 35px;
+  margin: auto;
+  margin-right: 1%;
+  margin-left: 1%;
+  cursor: pointer;
+}
+#faq .question-marker:hover svg {
+  background-image: url(../foto/svg/triangle_hover.svg);
+}
+#faq .question-marker svg {
+  background-image: url(../foto/svg/triangle.svg);
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: 8px;
+  left: 20%;
+}
+#faq .question-marker svg path {
+  fill: grey;
+}
+#faq .question-marker:hover {
+  background-color: black;
+}
+button {
+  display: block;
+  border: 2px solid black;
+  background-color: inherit;
+  padding: 6px;
+  margin: 0 auto 5% auto;
+}
+button:hover {
+  background-color: #252525;
+  color: white;
+  cursor: pointer;
+}
+@media screen and (min-width: 1150px) {
+  #faq .faq-question {
+    width: 1130px;
+  }
+}
+@media screen and (min-width: 981px) {
+  .faq-question {
+    width: 98%;
+  }
+}
+@media screen and (max-width: 980px) {
+  #faq .faq-heading {
+    margin-bottom: 0;
+    font-size: 1rem;
+  }
+  #faq .faq-question {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 769px) {
+  .faq-heading {
+    text-align: left !important;
+    margin-left: 5% !important;
+  }
+}

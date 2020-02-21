@@ -16,11 +16,14 @@
   min-height: 70px;
   margin: 0 auto 20px;
   border-radius: 5px;
+  overflow: hidden;
+  transform: translateY(5px);
+  transition: transform 0.5s;
 }
 #faq .faq-question:hover {
   box-shadow: 5px 5px 10px 10px #c7c7c7;
   transition: transform 0.3s;
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 }
 #faq .faq-question.open {
   max-height: 500px;
@@ -36,9 +39,6 @@
 #faq .faq-question.open a {
   color: red;
   text-decoration-line: none;
-}
-#faq .faq-question.closing {
-  transition: max-height 0.5s ease-in-out;
 }
 #faq .faq-question.closing svg {
   transition: transform 0.3s;

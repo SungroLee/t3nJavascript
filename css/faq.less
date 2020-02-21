@@ -1,5 +1,5 @@
 @lightGrey1: #f4f4f4;
-
+@white-color : #fff;
 #faq {
     background-color: @lightGrey1;
     margin: 0 auto;
@@ -19,11 +19,15 @@
         min-height: 70px;
         margin: 0 auto 20px;
         border-radius: 5px;
+        overflow: hidden;
+        transform : translateY(5px);
+        transition: transform .5s;
+
 
         &:hover {
             box-shadow: 5px 5px 10px 10px rgb(199, 199, 199);
             transition: transform .3s;
-            transform: translateY(-3px);
+            transform: translateY(-5px);
 
 
         }
@@ -52,7 +56,11 @@
         }
 
         &.closing {
-            transition: max-height .5s ease-in-out;
+            // max-height: 500px;
+            // transition: max-height .75s ease-in;
+            // max-height: 0;
+            // transition: max-height .75s ease-in;
+            
        
             svg {
                 transition: transform .3s;
