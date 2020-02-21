@@ -4,7 +4,6 @@ import * as SetElement from "./setElement.js";
 import * as Faq from './faq.js'
 
 window.onload = function () {
-    this.console.log('Dokument geladen');
     Nav.initNav();
     initPioneersNetwork();
     initSlider();
