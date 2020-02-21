@@ -1,5 +1,5 @@
 #faq {
-  background-color: lightgrey;
+  background-color: #f4f4f4;
   margin: 0 auto;
   padding-bottom: 2%;
 }
@@ -24,7 +24,7 @@
 }
 #faq .faq-question.open {
   max-height: 500px;
-  transition: max-height 0.75s ease-in-out;
+  transition: max-height 0.75s ease-in;
 }
 #faq .faq-question.open .question-answer {
   display: block;
@@ -65,7 +65,7 @@
   padding-bottom: 20px;
 }
 #faq .question-marker {
-  background-color: #e0e3f6;
+  background-color: #f4f4f4;
   border-radius: 50%;
   display: inline-block;
   min-width: 35px;
@@ -424,7 +424,7 @@ body {
   font-size: 1rem;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Work Sans', 'Open Sans', sans-serif;
   max-width: 100%;
   width: 100%;
 }
@@ -1425,12 +1425,9 @@ body {
   font-size: 3.5rem;
   font-weight: 600;
 }
-#becomePionier .becomePionier-Heading .heading-head:first-of-type {
-  padding-left: 17px;
-}
 #becomePionier .becomePionier-Heading .heading-head:first-of-type::after {
   left: 0;
-  width: 61%;
+  width: 73%;
 }
 #becomePionier .becomePionier-Heading .heading-head:nth-of-type(2)::after {
   width: 95%;
@@ -1478,13 +1475,13 @@ body {
     margin-bottom: 30px;
   }
   #becomePionier .becomePionier-Heading .heading-head:nth-of-type(1)::after {
-    width: 170px;
+    width: 225px;
   }
   #becomePionier .becomePionier-Heading .heading-head:nth-of-type(2)::after {
-    width: 280px;
+    width: 290px;
   }
   #becomePionier .becomePionier-Heading .heading-head:nth-of-type(3)::after {
-    width: 290px;
+    width: 310px;
   }
 }
 @media screen and (min-width: 981px) {
@@ -1508,17 +1505,14 @@ body {
   #becomePionier .becomePionier-Heading .heading-head {
     font-size: 1.5rem;
   }
-  #becomePionier .becomePionier-Heading .heading-head:nth-of-type(1) {
-    padding-left: 10px;
-  }
   #becomePionier .becomePionier-Heading .heading-head:nth-of-type(1)::after {
-    width: 75px;
+    width: 100px;
   }
   #becomePionier .becomePionier-Heading .heading-head:nth-of-type(2)::after {
-    width: 120px;
+    width: 125px;
   }
   #becomePionier .becomePionier-Heading .heading-head:nth-of-type(3)::after {
-    width: 125px;
+    width: 132px;
   }
   #becomePionier .becomePionier-Heading .heading-head::after {
     top: 35px;

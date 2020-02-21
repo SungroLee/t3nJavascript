@@ -66,7 +66,6 @@ const faqElements = function () {
 }
 
 const clickFunction = function (container) {
-    console.log(container);
     container.classList.toggle('open');
     if (!container.classList.contains('open')) {
         container.classList.toggle('closing');

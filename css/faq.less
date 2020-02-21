@@ -1,5 +1,7 @@
+@lightGrey1: #f4f4f4;
+
 #faq {
-    background-color: @lightGrey;
+    background-color: @lightGrey1;
     margin: 0 auto;
     padding-bottom: 2%;
 
@@ -29,7 +31,7 @@
         &.open {
             // height: fit-content;;
             max-height: 500px;
-            transition: max-height .75s ease-in-out;
+            transition: max-height .75s ease-in;
 
             .question-answer {
                 display: block;
@@ -83,7 +85,7 @@
     }
 
     .question-marker {
-        background-color: #e0e3f6;
+        background-color:@lightGrey1;
         border-radius: 50%;
         display: inline-block;
         min-width: 35px;

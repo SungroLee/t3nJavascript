@@ -4,7 +4,7 @@ import * as SetElement from "./setElement.js";
 import * as Faq from './faq.js'
 
 window.onload = function () {
-    this.console.log('Dokument geladen');
+    insertFontToDocument();
     Nav.initNav();
     initPioneersNetwork();
     initSlider();
@@ -13,7 +13,7 @@ window.onload = function () {
     initPioniereInListenFinden();
     initLassDichInspirieren();
     initBecomePionier();
-    // initFaq();
+    Faq.init();
     Footer.init();
     currentSliderSizeHandler();
     sliderButtonInit();
@@ -497,11 +497,10 @@ const initBecomePionier = function () {
     section.className = 'becomePionier-outerSection';
     const outerDiv = document.createElement('div');
     outerDiv.id = 'becomePionier';
-    const span = document.createElement('span');
-    span.innerHTML = 'J';
-    const hAr = ["ETZT", "PIONIER","WERDEN"];
+    // const span = document.createElement('span');
+    const hAr = ["JETZT", "PIONIER","WERDEN"];
     const sectionHeading = document.createElement('div')
-    sectionHeading.appendChild(span);
+    // sectionHeading.appendChild(span);
         hAr.forEach(e => {
             const h = document.createElement('h2');
             h.innerHTML= e;
@@ -536,17 +535,9 @@ const getMovementSection = function() {
     return area;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////FAQ/////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////FOOTER//////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////HelperR Functions///////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+function insertFontToDocument(){
+    const fontObject = document.createElement('link');
+    fontObject.href = 'https://fonts.googleapis.com/css?family=Work+Sans:800&display=swap';
+    fontObject.rel = 'stylesheet';
+    document.body.appendChild(fontObject);
+}
