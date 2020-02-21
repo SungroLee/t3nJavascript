@@ -537,7 +537,7 @@ const getMovementSection = function() {
 
 function insertFontToDocument(){
     const fontObject = document.createElement('link');
-    fontObject.href = 'https://fonts.googleapis.com/css?family=Work+Sans:800&display=swap';
+    fontObject.href = 'https://fonts.googleapis.com/css?family=Work+Sans:400,800&display=swap';
     fontObject.rel = 'stylesheet';
     document.body.appendChild(fontObject);
 }
