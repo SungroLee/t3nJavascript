@@ -13,7 +13,7 @@ window.onload = function () {
     initPioniereInListenFinden();
     initLassDichInspirieren();
     initBecomePionier();
-    // initFaq();
+    Faq.init();
     Footer.init();
     currentSliderSizeHandler();
     sliderButtonInit();

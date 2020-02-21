@@ -293,16 +293,16 @@ html {
   font-size: 18px;
   height: 100%;
 }
-div#password.active span {
+div#password.active span.containing {
   background-image: url('../foto/svg/eye_black.svg');
 }
-div#password.active span.clearText {
+div#password.active span.clearText.containing {
   background-image: url('../foto/svg/eye_stroked_black.svg');
 }
-div#password.inactive span {
+div#password.inactive span.containing {
   background-image: url('../foto/svg/eye_visible.svg');
 }
-div#password.inactive span.clearText {
+div#password.inactive span.clearText.containing {
   background-image: url('../foto/svg/eye_notVisible.svg');
 }
 nav div#nav_loginDiv {
@@ -324,8 +324,9 @@ body {
   margin: auto;
   height: inherit;
 }
-form div.active span {
+form div.active span.containing {
   display: inline-block;
+  background-image: url('../foto/svg/cross.svg');
 }
 .ghost {
   display: none;
@@ -335,7 +336,8 @@ form div.active span {
   font-size: 0.6rem;
   margin-top: -15px;
 }
-.inactive span {
+.inactive span.containing {
+  background-image: url('../foto/svg/cross_grey.svg');
   display: inline-block;
 }
 form {
@@ -355,6 +357,7 @@ form * {
 form div {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 form h1 {
   margin: 10px 0 0;
@@ -389,13 +392,14 @@ form input {
   font-size: 1.1rem;
 }
 form span {
-  position: relative;
-  top: 25%;
-  left: 25%;
+  position: absolute;
+  left: 93%;
   width: 25px;
   height: 20px;
   background-size: contain;
   background-repeat: no-repeat;
+  background-color: red;
+  display: none;
 }
 form .disclaimer {
   margin: 35px 0 20px;

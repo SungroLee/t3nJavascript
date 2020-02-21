@@ -11,21 +11,21 @@ html {
 }
 
 div#password.active {
-    span {
+    span.containing {
         background-image: url('../foto/svg/eye_black.svg');
     }
 
-    span.clearText {
+    span.clearText.containing {
         background-image: url('../foto/svg/eye_stroked_black.svg');
     }
 }
 
 div#password.inactive {
-    span {
+    span.containing {
         background-image: url('../foto/svg/eye_visible.svg');
     }
 
-    span.clearText {
+    span.clearText.containing {
         background-image: url('../foto/svg/eye_notVisible.svg');
     }
 }
@@ -55,8 +55,9 @@ body {
 }
 
 form div.active {
-    span {
+    span.containing {
         display: inline-block;
+        background-image: url('../foto/svg/cross.svg');
     }
 }
 
@@ -71,7 +72,9 @@ form div.active {
 }
 
 .inactive {
-    span {
+    span.containing {
+
+        background-image: url('../foto/svg/cross_grey.svg');
         display: inline-block;
     }
 }
@@ -95,6 +98,8 @@ form {
     div {
         display: flex;
         flex-direction: column;
+
+        position: relative;
     }
 
     h1 {
@@ -136,13 +141,17 @@ form {
     }
 
     span {
-        position: relative;
-        top: 25%;
-        left: 25%;
+        position: absolute;
+        // top: 25%;
+        // left: 25%;
+        // top: -30px;
+        left: 93%;
         width: 25px;
         height: 20px;
         background-size: contain;
         background-repeat: no-repeat;
+        background-color: red;
+        display: none;
     }
 
     .disclaimer {
