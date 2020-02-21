@@ -136,11 +136,6 @@ nav {
 }
 @media screen and (min-width: 480px) {
   #nav_logoFoto {
-    float: left;
-    width: 5.1rem;
-    height: 2.7rem;
-    padding-top: 17px;
-    cursor: pointer;
     height: 2.8rem;
     width: 5.8rem;
     padding-top: 15px;
