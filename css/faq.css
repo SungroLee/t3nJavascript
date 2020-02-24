@@ -18,7 +18,7 @@
   transition-property: transform, max-height, min-height;
   transition-duration: 1s;
   min-height: 75px;
-  max-height: 0;
+  height: fit-content;
 }
 #faq .faq-question:hover {
   box-shadow: 5px 5px 10px 10px #c7c7c7;
@@ -127,5 +127,9 @@ button:hover {
   .faq-heading {
     text-align: left !important;
     margin-left: 5% !important;
+  }
+  .faq-question {
+    background-color: red !important;
+    height: fit-content;
   }
 }
