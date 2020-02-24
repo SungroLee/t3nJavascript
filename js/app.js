@@ -55,7 +55,7 @@ class Aq {
 
 const initPioneersNetwork = () => {
 
-    const pioneersDiv = SetElement.setElements("div", "pioneersDiv");
+    const pioneersDiv = SetElement.setElements("section", "pioneersDiv");
     const pioneersH1 = SetElement.setElements("h1", "", 'pioneersH1');
     const pioneersH12 = SetElement.setElements("h1", "", 'pioneersH1');
     const pioneersH2 = SetElement.setElements("h2");
@@ -131,7 +131,7 @@ const initProfileClone = () => {
 
 const initSlider = () => {
 
-    const sliderDefaultDiv = SetElement.setElements("div", "sliderDefaultDiv");
+    const sliderDefaultDiv = SetElement.setElements("section", "sliderDefaultDiv");
     const sliderH2 = SetElement.setElements("h2");
     const sliderDiv = SetElement.setElements("div", "sliderDiv");
     const slider = SetElement.setElements("div", "slider");
@@ -301,7 +301,7 @@ const sliderButtonInit = () => { //Slider ButtonFunktionen
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 const initTeileDeinWissen = () => {
-    const section3 = SetElement.setElements("div","teileDeinWissen");
+    const section3 = SetElement.setElements("section","teileDeinWissen");
     const middleDiv = SetElement.setElements("div", "section3_middleDiv");
     const imgDiv = SetElement.setElements("div", "section3_imgDiv", "section3_insideDiv");
     const listDiv = SetElement.setElements("div", "section3_listDiv", "section3_insideDiv");
@@ -319,6 +319,8 @@ const initTeileDeinWissen = () => {
         {'innerHTML' : 'Jetzt kostenlos anmelden'},
         {'src' : 'https://storage.googleapis.com/t3n-de/pioneers/a0e9cb9419205aeb77d95c7de29244579285f3da/PioneersScreen.png'},
     ]
+
+    button.href = "../register.html";
 
     for(let i = 0; i < 4; i++) {
         const list = SetElement.setElements("li","","section3_lists") ;
@@ -345,7 +347,7 @@ const initTeileDeinWissen = () => {
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 const initPioniereInListenFinden = () => {
-    const section4 = SetElement.setElements("div", "pioneersInListen");
+    const section4 = SetElement.setElements("section", "pioneersInListen");
     const middleDiv = SetElement.setElements("div", "section4_middleDiv");
     const listDiv = SetElement.setElements("div","section4_listDiv", "section4_insideDiv");
     const textDiv = SetElement.setElements("div","section4_textDiv", "section4_insideDiv");
@@ -406,6 +408,7 @@ const initPioniereInListenFinden = () => {
             for(let i = 0; i < profilList.length; i++) {
                 const aTag = SetElement.setElements('a');
                 aTag.innerHTML = element.zurListe;
+                aTag.href = '#';
                 
                 profilList[i].appendChild(aTag);  
             }
@@ -453,7 +456,11 @@ const initLassDichInspirieren = () => {
     video.appendChild(source);
 
     jSon.forEach((element, index) => {
-        if(!element.className) {
+
+        if(!element.className && index == 0) {
+            const div = SetElement.setElements("section", element.id);
+            section5[index] = div;
+        }else if(!element.className && index != 0) {
             const div = SetElement.setElements("div", element.id);
             section5[index] = div;
         }else {

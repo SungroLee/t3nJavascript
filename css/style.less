@@ -275,6 +275,7 @@ body {
             } 
             a {
                 color: @red-color;
+                text-decoration: none;
             }
         }
     }
@@ -461,20 +462,20 @@ body {
                 margin: 0;
                 text-align: left;
                 font-size: 1.6rem;
-                margin: 0.3rem 0 0.25rem 0.25rem;
+                margin: 0.3rem 0 0.6rem 0.25rem;
                 position: relative;
                 &:after{
                     content:"";
                     position: absolute;
-                    top: 40px;
+                    top: 35px;
                     background-color: @red-color;
                     display: block;
-                    width: 7.2rem;
+                    width: 7.9rem;
                     height: 8px;
                 }
                 &:last-child {
                     &:after {
-                        width: 5.7rem;
+                        width: 6rem;
                     }
                 }
             }
@@ -499,19 +500,19 @@ body {
                 margin: 0;
                 text-align: left;
                 font-size: 1.6rem;
-                margin: 0.3rem 0 0.25rem 0.25rem;
+                margin: 0.3rem 0 0.6rem 0.25rem;
                 &:after{
                     content:"";
                     position: absolute;
-                    top: 40px;
+                    top: 35px;
                     background-color: @red-color;
                     display: block;
-                    width: 3.7rem;
+                    width: 4rem;
                     height: 8px;
                 }
                 &:last-child {
                     &:after {
-                        width: 9.3rem;
+                        width: 10.3rem;
                     }
                 }
             }
@@ -520,7 +521,7 @@ body {
 }
 
 
-@media screen and(min-width : 353px) {
+@media screen and(min-width : 378px) {
     // Min Width 353px Media Query(Mobile Version)
 
     ////////// first Part /////////
@@ -633,14 +634,15 @@ body {
         #section4_textDiv {
             h2 {
                 font-size: 3.5rem;
+                margin-bottom: 0.7rem;
                 &:after{
-                    top: 85px;
-                    width: 15.5rem;
+                    top: 77px;
+                    width: 17rem;
                     height: 15px;
                 }
                 &:last-child {
                     &:after {
-                        width: 12.4rem;       
+                        width: 13rem;       
                     }
                 }
             }
@@ -651,15 +653,16 @@ body {
         #section5_textDiv {
             padding-bottom: 3.3rem;
             h2 {
+                margin-bottom: 0.7rem;
                 font-size: 3.5rem;
                 &:after{
-                    top: 85px;
-                    width: 8rem;
+                    top: 77px;
+                    width: 8.8rem;
                     height: 15px;
                 }
                 &:last-child {
                     &:after {
-                        width: 20.3rem;       
+                        width: 22.5rem;       
                     }
                 }
             }
@@ -671,18 +674,19 @@ body {
 
     //////////// Pioneer //////////
     #pioneersDiv {
-        height: 18.45rem;
+        // height: 18.45rem;
 
         h1 {
-            padding-top: 1.6rem;
-            padding-bottom: 2.1rem;
+            // padding-top: 1.6rem;
+            // padding-bottom: 2.1rem;
             &:after {
-                top: 120px;
-                height: 15px;
+                // top: 120px;
+                top: 80px;
+                height: 12px;
             }
         }
         h2 {
-            margin-top: 0.5rem;
+            margin-top: 2rem;
         }
     }
 
@@ -728,7 +732,7 @@ body {
 
 }
 
-@media screen and(min-width : 769px) {
+@media screen and(min-width : 778px) {
     // Min Width 769px Media Query (Tablet PC Version)
 
     ///////////// Pioneers Network Part //////////////
@@ -840,7 +844,7 @@ body {
             justify-content: flex-end;
             .section4_uls {
                 max-width: 11.8rem;
-                height: 12.9rem;
+                height: 11.9rem;
                 .section4_profilLists {
                     padding-bottom: 10px;
                     img {

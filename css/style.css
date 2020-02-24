@@ -37,9 +37,6 @@
   color: red;
   text-decoration-line: none;
 }
-#faq .faq-question.closing {
-  animation: faqCollaps 0.75s forwards;
-}
 #faq .faq-question.closing svg {
   transition: transform 0.3s;
   transform: rotateZ(0deg);
@@ -236,7 +233,6 @@ button:hover {
   }
 }
 .NavDefault {
-  box-sizing: border-box !important;
   max-width: 100%;
   width: 100%;
   height: 3.5rem;
@@ -250,7 +246,6 @@ button:hover {
   z-index: 10;
 }
 .LoginButtonDefault {
-  font-weight: bolder;
   font-size: 0.65rem;
   width: 3.6rem;
   height: 1.9rem;
@@ -261,7 +256,6 @@ button:hover {
   border-radius: 4px;
   border: none;
   text-decoration: none;
-  cursor: pointer;
   transition: background-color 0.1s ease-in-out;
 }
 .LoginButtonDefault:hover {
@@ -280,7 +274,6 @@ button:hover {
   align-items: center;
 }
 .LogoFotoDefault {
-  float: left;
   width: 5.1rem;
   height: 2.7rem;
   padding-top: 17px;
@@ -311,7 +304,6 @@ button:hover {
   opacity: 1;
 }
 nav {
-  box-sizing: border-box !important;
   max-width: 100%;
   width: 100%;
   height: 3.5rem;
@@ -336,7 +328,6 @@ nav {
   align-items: center;
 }
 #nav_loginDiv #nav_loginButton {
-  font-weight: bolder;
   font-size: 0.65rem;
   width: 3.6rem;
   height: 1.9rem;
@@ -347,7 +338,6 @@ nav {
   border-radius: 4px;
   border: none;
   text-decoration: none;
-  cursor: pointer;
   transition: background-color 0.1s ease-in-out;
 }
 #nav_loginDiv #nav_loginButton:hover {
@@ -355,7 +345,6 @@ nav {
   color: #fff;
 }
 #nav_logoFoto {
-  float: left;
   width: 5.1rem;
   height: 2.7rem;
   padding-top: 17px;
@@ -367,18 +356,12 @@ nav {
   }
 }
 @media screen and (min-width: 353px) {
-  #nav_t3n {
-    display: none;
-  }
 }
 @media screen and (min-width: 480px) {
   #nav_logoFoto {
     height: 2.8rem;
     width: 5.8rem;
-    padding-top: 15px;
-  }
-  #nav_t3n {
-    display: none;
+    padding-top: 0.75rem;
   }
 }
 @media screen and (min-width: 769px) {
@@ -386,9 +369,6 @@ nav {
     width: 7.5rem;
     height: 3rem;
     padding-top: 9px;
-  }
-  #nav_t3n {
-    display: none;
   }
 }
 @media screen and (min-width: 981px) {
@@ -662,6 +642,7 @@ body {
 }
 .pioneersInListenDefault #section4_middleDiv #section4_listDiv a {
   color: #f9423a;
+  text-decoration: none;
 }
 .lassDichInspirierenDefault {
   background-color: #f4f4f4;
@@ -922,6 +903,7 @@ body {
 }
 #pioneersInListen #section4_middleDiv #section4_listDiv a {
   color: #f9423a;
+  text-decoration: none;
 }
 #lassDichInspirieren {
   background-color: #f4f4f4;
@@ -1045,20 +1027,20 @@ body {
     margin: 0;
     text-align: left;
     font-size: 1.6rem;
-    margin: 0.3rem 0 0.25rem 0.25rem;
+    margin: 0.3rem 0 0.6rem 0.25rem;
     position: relative;
   }
   #section4_middleDiv #section4_textDiv h2:after {
     content: "";
     position: absolute;
-    top: 40px;
+    top: 35px;
     background-color: #f9423a;
     display: block;
-    width: 7.2rem;
+    width: 7.9rem;
     height: 8px;
   }
   #section4_middleDiv #section4_textDiv h2:last-child:after {
-    width: 5.7rem;
+    width: 6rem;
   }
   #section5_middleDiv {
     padding: 2rem 1rem;
@@ -1077,22 +1059,22 @@ body {
     margin: 0;
     text-align: left;
     font-size: 1.6rem;
-    margin: 0.3rem 0 0.25rem 0.25rem;
+    margin: 0.3rem 0 0.6rem 0.25rem;
   }
   #section5_middleDiv #section5_textDiv h2:after {
     content: "";
     position: absolute;
-    top: 40px;
+    top: 35px;
     background-color: #f9423a;
     display: block;
-    width: 3.7rem;
+    width: 4rem;
     height: 8px;
   }
   #section5_middleDiv #section5_textDiv h2:last-child:after {
-    width: 9.3rem;
+    width: 10.3rem;
   }
 }
-@media screen and (min-width: 353px) {
+@media screen and (min-width: 378px) {
   #pioneersDiv {
     height: 14.15rem;
     padding: 2.5rem 1rem;
@@ -1178,44 +1160,39 @@ body {
   }
   #section4_middleDiv #section4_textDiv h2 {
     font-size: 3.5rem;
+    margin-bottom: 0.7rem;
   }
   #section4_middleDiv #section4_textDiv h2:after {
-    top: 85px;
-    width: 15.5rem;
+    top: 77px;
+    width: 17rem;
     height: 15px;
   }
   #section4_middleDiv #section4_textDiv h2:last-child:after {
-    width: 12.4rem;
+    width: 13rem;
   }
   #section5_middleDiv #section5_textDiv {
     padding-bottom: 3.3rem;
   }
   #section5_middleDiv #section5_textDiv h2 {
+    margin-bottom: 0.7rem;
     font-size: 3.5rem;
   }
   #section5_middleDiv #section5_textDiv h2:after {
-    top: 85px;
-    width: 8rem;
+    top: 77px;
+    width: 8.8rem;
     height: 15px;
   }
   #section5_middleDiv #section5_textDiv h2:last-child:after {
-    width: 20.3rem;
+    width: 22.5rem;
   }
 }
 @media screen and (min-width: 723px) {
-  #pioneersDiv {
-    height: 18.45rem;
-  }
-  #pioneersDiv h1 {
-    padding-top: 1.6rem;
-    padding-bottom: 2.1rem;
-  }
   #pioneersDiv h1:after {
-    top: 120px;
-    height: 15px;
+    top: 80px;
+    height: 12px;
   }
   #pioneersDiv h2 {
-    margin-top: 0.5rem;
+    margin-top: 2rem;
   }
   #sliderDefaultDiv {
     height: 15.6rem;
@@ -1248,7 +1225,7 @@ body {
     font-size: 0.9rem;
   }
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 778px) {
   #pioneersDiv {
     height: 21.4rem;
   }
@@ -1328,7 +1305,7 @@ body {
   }
   #section4_middleDiv #section4_listDiv .section4_uls {
     max-width: 11.8rem;
-    height: 12.9rem;
+    height: 11.9rem;
   }
   #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists {
     padding-bottom: 10px;
