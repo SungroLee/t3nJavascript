@@ -34,9 +34,9 @@ function initRegister() {
     const password = createInputField({ label: 'Passwort', inputType: 'password', infoName: 'password', errorparagrapId: 'passwordError' });
     form.appendChild(password);
 
-    // const captcha = getCaptcha();
-    // document.body.appendChild(captcha.script)
-    // form.appendChild(captcha.captchaContainer);
+    const captcha = getCaptcha();
+    document.body.appendChild(captcha.script)
+    form.appendChild(captcha.captchaContainer);
 
     const disclaimer = document.createElement('p');
     disclaimer.classList = 'disclaimer';
@@ -65,7 +65,7 @@ function initRegister() {
 
 function formTransmitProcessHandler(event) {
    if(validateAllInputFields()){
-       //
+       //Sende Daten an Server 
    }else{
        event.preventDefault();
    }
@@ -91,8 +91,6 @@ function validateAllInputFields(){
         }
         if(tempConclusion === false){
             conclusion = tempConclusion
-            // return;
-            // return false;
         }
     });
     return conclusion
