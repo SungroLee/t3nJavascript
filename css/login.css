@@ -267,6 +267,10 @@ nav {
 #nav_loginButton {
   display: none;
 }
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
 nav #nav_logoDiv {
   height: inherit;
 }
@@ -370,6 +374,7 @@ form .error {
   padding-top: 0;
 }
 form input {
+  padding-right: 30px;
   padding-left: 10px;
   min-height: 40px;
   border-radius: 5px;
@@ -393,7 +398,7 @@ form .disclaimer {
   font-size: 0.7rem;
 }
 form button {
-  width: 100%;
+  width: inherit;
   height: 38px;
   background-color: grey;
   color: white;
@@ -412,7 +417,6 @@ form .g-recaptcha {
 .preFooter {
   box-sizing: content-box;
   background-color: black;
-  height: 30px;
   text-align: center;
   color: #707070;
   border-bottom: 0.5px solid #707070;
