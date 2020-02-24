@@ -21,25 +21,17 @@
         overflow: hidden;
         transition-property: transform, max-height, min-height;
         transition-duration: 1s;
-        min-height: 75px;
-        // max-height: 0;
-        // height: fit-content;
-
+        min-height: 70px;
 
         &:hover {
             box-shadow: 5px 5px 10px 10px rgb(199, 199, 199);
-            // transition: transform .3s;
             transform: translateY(-5px);
 
 
         }
 
         &.open {
-            // animation-name: faqExpand;
             animation: faqExpand .75s forwards;
-            // max-height: 500px;
-
-            // min-height: 75px;
             .question-answer {
                 display: block;
             }
@@ -59,10 +51,7 @@
         }
 
         &.closing {
-            // height: 100px;
-            // min-height: 0px;
-            // animation: faqCollaps .75s forwards;
-            // transition: min-height 1s;
+            animation: faqCollaps .75s forwards;
 
             svg {
                 transition: transform .3s;
@@ -72,6 +61,7 @@
     }
 
     .question-heading {
+        padding: 5px 0;
         font-size: 1.1rem;
         text-align: left;
         width: 95%;
@@ -89,9 +79,8 @@
 
     .faq-questHeadContainer {
         position: relative;
-        padding-top: 20px;
+        padding: 20px 0;
         display: flex;
-        padding-bottom: 20px;
     }
 
     .question-marker {
@@ -191,14 +180,5 @@ button {
     }
     to{
         max-height: 300px;
-    }
-}
-
-@keyframes faqCollaps{
-    from{
-        max-height: 300px;
-    }
-    to{
-        max-height: 0;
     }
 }
