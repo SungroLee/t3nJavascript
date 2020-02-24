@@ -53,11 +53,38 @@ function initRegister() {
 
     const registerButton = document.createElement('button');
     registerButton.innerHTML = 'Registrieren';
-
+    registerButton.onclick = function (event) {
+        formTransmitProcessHandler(event);
+    }
     form.appendChild(registerButton);
 
     container.appendChild(form)
     document.body.appendChild(container);
+}
+
+function formTransmitProcessHandler(event) {
+    const inputFields = Array.from(document.getElementsByTagName('input'));
+    var conclusion;
+    inputFields.forEach(element => {
+        const type = element.name;
+        switch (type) {
+            case "emailadress":
+                verifyMailadressInput(element) ? conclusion = true : conclusion = false;
+                break;
+            case "vorname":
+            case "nachname":
+                verifyNameInput(element) ? conclusion = true : conclusion = false;
+                break;
+            case "password":
+                verifyPassword(element) ? conclusion = true : conclusion = false;
+                break;
+        }
+        if (!conclusion) {
+            event.preventDefault();
+            return;
+        }
+        // event.preventDefault();
+    });
 }
 function createInputField(probs) {
     const groupingDiv = document.createElement('div');
@@ -186,19 +213,18 @@ function inputVerifier(inputField) {
     } else if (!inputField.name.includes('password')) {
         if (inputField.name.includes('vor')) {
             fieldObject = { field: inputField, errorparagraph: getErrorParagraph('preNameError') }
-            verifyNameInput(fieldObject) ? acceptInputThrough(fieldObject) : declineInputThrough(fieldObject);
+            verifyNameInput(inputField) ? acceptInputThrough(fieldObject) : declineInputThrough(fieldObject);
         } else {
             fieldObject = { field: inputField, errorparagraph: getErrorParagraph('nameError') }
-            verifyNameInput(fieldObject) ? acceptInputThrough(fieldObject) : declineInputThrough(fieldObject);
-
+            verifyNameInput(inputField) ? acceptInputThrough(fieldObject) : declineInputThrough(fieldObject);
         }
     } else {
         fieldObject = { field: inputField, errorparagraph: getErrorParagraph('passwordError') }
-        verifyPassword(fieldObject) ? acceptInputThrough(fieldObject) : declineInputThrough(fieldObject);
+        verifyPassword(inputField) ? acceptInputThrough(fieldObject) : declineInputThrough(fieldObject);
     }
 }
 function verifyPassword(fieldObject) {
-    return fieldObject.field.value.length >= 8
+    return fieldObject.value.length >= 8
 }
 function getErrorParagraph(id) {
     return document.getElementById(id);
@@ -215,7 +241,14 @@ function verifyMailadressInput(inputField) {
     return regex.test(inputField.value);
 }
 function verifyNameInput(inputObject) {
-    return inputObject.field.value.length >= 3;
+    // alert(inputObject.field.value)
+    const value = inputObject.value;
+    if (value) {
+        return value.length >= 3
+    } else {
+        return false;
+    }
+    // return inputObject.field.value.length >= 3;
 }
 function createInputError(errorObject) {
     var errorMessage;
