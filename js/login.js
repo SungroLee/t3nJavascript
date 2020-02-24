@@ -34,9 +34,9 @@ function initRegister() {
     const password = createInputField({ label: 'Passwort', inputType: 'password', infoName: 'password', errorparagrapId: 'passwordError' });
     form.appendChild(password);
 
-    const captcha = getCaptcha();
-    document.body.appendChild(captcha.script)
-    form.appendChild(captcha.captchaContainer);
+    // const captcha = getCaptcha();
+    // document.body.appendChild(captcha.script)
+    // form.appendChild(captcha.captchaContainer);
 
     const disclaimer = document.createElement('p');
     disclaimer.classList = 'disclaimer';
@@ -53,6 +53,7 @@ function initRegister() {
 
     const registerButton = document.createElement('button');
     registerButton.innerHTML = 'Registrieren';
+    registerButton.setAttribute('isFree','false');
     registerButton.onclick = function (event) {
         formTransmitProcessHandler(event);
     }
@@ -63,28 +64,38 @@ function initRegister() {
 }
 
 function formTransmitProcessHandler(event) {
+   if(validateAllInputFields()){
+       //
+   }else{
+       event.preventDefault();
+   }
+}
+
+function validateAllInputFields(){
     const inputFields = Array.from(document.getElementsByTagName('input'));
-    var conclusion;
+    var conclusion = true;
     inputFields.forEach(element => {
+        var tempConclusion;
         const type = element.name;
         switch (type) {
             case "emailadress":
-                verifyMailadressInput(element) ? conclusion = true : conclusion = false;
+                verifyMailadressInput(element) ? tempConclusion = true : tempConclusion = false;
                 break;
             case "vorname":
             case "nachname":
-                verifyNameInput(element) ? conclusion = true : conclusion = false;
+                verifyNameInput(element) ? tempConclusion = true : tempConclusion = false;
                 break;
             case "password":
-                verifyPassword(element) ? conclusion = true : conclusion = false;
+                verifyPassword(element) ? tempConclusion = true : tempConclusion = false;
                 break;
         }
-        if (!conclusion) {
-            event.preventDefault();
-            return;
+        if(tempConclusion === false){
+            conclusion = tempConclusion
+            // return;
+            // return false;
         }
-        // event.preventDefault();
     });
+    return conclusion
 }
 function createInputField(probs) {
     const groupingDiv = document.createElement('div');
@@ -145,7 +156,16 @@ function activeClassRemover() {
 }
 function onInputEventClassHandler(input) {
     inputWatcher(input);
+    transmitButtonStateHandler();
 
+}
+function transmitButtonStateHandler() {
+    const transmitButton = document.getElementsByTagName('button')[0];
+    if(validateAllInputFields()){
+        transmitButton.setAttribute('isFree','true');
+    }else{
+        transmitButton.setAttribute('isFree','false');
+    }
 }
 function onBlurEventHandler(input) {
     inputVerifier(input)
@@ -241,14 +261,12 @@ function verifyMailadressInput(inputField) {
     return regex.test(inputField.value);
 }
 function verifyNameInput(inputObject) {
-    // alert(inputObject.field.value)
     const value = inputObject.value;
     if (value) {
         return value.length >= 3
     } else {
         return false;
     }
-    // return inputObject.field.value.length >= 3;
 }
 function createInputError(errorObject) {
     var errorMessage;

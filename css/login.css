@@ -310,7 +310,6 @@ body {
 }
 #container {
   box-sizing: content-box !important;
-  margin: auto;
   display: flex;
   flex-grow: 1;
 }
@@ -406,9 +405,12 @@ form button {
   border: none;
   font-size: 0.7rem;
   margin-bottom: 20px;
+}
+form button[isFree='false'] {
   cursor: not-allowed;
 }
 form button[isFree='true']:hover {
+  cursor: pointer;
   background-color: red;
 }
 form .g-recaptcha {
