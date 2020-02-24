@@ -191,7 +191,7 @@ function getCaptcha() {
 
     const captchaContainer = document.createElement('div');
     captchaContainer.classList = 'g-recaptcha';
-    captchaContainer.setAttribute('data-sitekey', '172.0.0.1:5500');
+    captchaContainer.setAttribute('data-sitekey', '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'); //its a test-key
 
     return {
         script, captchaContainer
