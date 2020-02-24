@@ -3,6 +3,17 @@
 
 #nav_loginButton {
     display: none;
+
+}
+
+nav{
+    #nav_logoDiv{
+        height: inherit;
+    }
+    #nav_logoFoto{
+        // height: 30px;
+        padding-top: 8px;
+    }
 }
 
 html {
@@ -51,7 +62,9 @@ body {
 #container {
     box-sizing: content-box !important;
     margin: auto;
-    height: inherit;
+    // height: inherit;
+    display: flex;
+    // flex-grow:1;
 }
 
 form div.active {
@@ -66,9 +79,11 @@ form div.active {
 }
 
 .visible {
+    // position: absolute;
     color: red;
     font-size: .6rem;
-    margin-top: -15px;
+    // margin-top: -15px;
+    padding-top: 5px;
 }
 
 .inactive {
@@ -92,7 +107,7 @@ form {
     display: flex;
     flex-flow: column;
     padding: 70px 20px 20px 30px;
-    flex-grow: 2;
+    // flex-grow: 2;
     height: inherit;
 
     div {
@@ -142,15 +157,13 @@ form {
 
     span {
         position: absolute;
-        // top: 25%;
-        // left: 25%;
-        // top: -30px;
+        top: 55px;
         left: 93%;
-        width: 25px;
+        width: 15px;
         height: 20px;
         background-size: contain;
         background-repeat: no-repeat;
-        background-color: red;
+        // background-color: red;
         display: none;
     }
 

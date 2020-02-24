@@ -229,11 +229,6 @@ nav {
 }
 @media screen and (min-width: 480px) {
   #nav_logoFoto {
-    float: left;
-    width: 5.1rem;
-    height: 2.7rem;
-    padding-top: 17px;
-    cursor: pointer;
     height: 2.8rem;
     width: 5.8rem;
     padding-top: 15px;
@@ -289,6 +284,12 @@ nav {
 #nav_loginButton {
   display: none;
 }
+nav #nav_logoDiv {
+  height: inherit;
+}
+nav #nav_logoFoto {
+  padding-top: 8px;
+}
 html {
   font-size: 18px;
   height: 100%;
@@ -322,7 +323,7 @@ body {
 #container {
   box-sizing: content-box !important;
   margin: auto;
-  height: inherit;
+  display: flex;
 }
 form div.active span.containing {
   display: inline-block;
@@ -334,7 +335,7 @@ form div.active span.containing {
 .visible {
   color: red;
   font-size: 0.6rem;
-  margin-top: -15px;
+  padding-top: 5px;
 }
 .inactive span.containing {
   background-image: url('../foto/svg/cross_grey.svg');
@@ -345,7 +346,6 @@ form {
   display: flex;
   flex-flow: column;
   padding: 70px 20px 20px 30px;
-  flex-grow: 2;
   height: inherit;
 }
 form div p {
@@ -393,12 +393,12 @@ form input {
 }
 form span {
   position: absolute;
+  top: 55px;
   left: 93%;
-  width: 25px;
+  width: 15px;
   height: 20px;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: red;
   display: none;
 }
 form .disclaimer {
