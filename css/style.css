@@ -18,14 +18,13 @@
   transition-property: transform, max-height, min-height;
   transition-duration: 1s;
   min-height: 75px;
-  height: fit-content;
 }
 #faq .faq-question:hover {
   box-shadow: 5px 5px 10px 10px #c7c7c7;
   transform: translateY(-5px);
 }
 #faq .faq-question.open {
-  max-height: 500px;
+  animation: faqExpand 0.75s forwards;
 }
 #faq .faq-question.open .question-answer {
   display: block;
@@ -37,6 +36,9 @@
 #faq .faq-question.open a {
   color: red;
   text-decoration-line: none;
+}
+#faq .faq-question.closing {
+  animation: faqCollaps 0.75s forwards;
 }
 #faq .faq-question.closing svg {
   transition: transform 0.3s;
@@ -129,8 +131,23 @@ button:hover {
     margin-left: 5% !important;
   }
   .faq-question {
-    background-color: red !important;
     height: fit-content;
+  }
+}
+@keyframes faqExpand {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 300px;
+  }
+}
+@keyframes faqCollaps {
+  from {
+    max-height: 300px;
+  }
+  to {
+    max-height: 0;
   }
 }
 #footer {

@@ -23,7 +23,7 @@
         transition-duration: 1s;
         min-height: 75px;
         // max-height: 0;
-        height: fit-content;
+        // height: fit-content;
 
 
         &:hover {
@@ -35,7 +35,9 @@
         }
 
         &.open {
-            max-height: 500px;
+            // animation-name: faqExpand;
+            animation: faqExpand .75s forwards;
+            // max-height: 500px;
 
             // min-height: 75px;
             .question-answer {
@@ -59,7 +61,7 @@
         &.closing {
             // height: 100px;
             // min-height: 0px;
-
+            // animation: faqCollaps .75s forwards;
             // transition: min-height 1s;
 
             svg {
@@ -179,7 +181,24 @@ button {
     }
 
     .faq-question {
-        background-color: red !important;
         height: fit-content;
+    }
+}
+
+@keyframes faqExpand{
+    from {
+        max-height: 0;
+    }
+    to{
+        max-height: 300px;
+    }
+}
+
+@keyframes faqCollaps{
+    from{
+        max-height: 300px;
+    }
+    to{
+        max-height: 0;
     }
 }
