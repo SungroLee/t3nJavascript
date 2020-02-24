@@ -6,12 +6,12 @@
 
 }
 
-nav{
-    #nav_logoDiv{
+nav {
+    #nav_logoDiv {
         height: inherit;
     }
-    #nav_logoFoto{
-        // height: 30px;
+
+    #nav_logoFoto {
         padding-top: 8px;
     }
 }
@@ -19,6 +19,7 @@ nav{
 html {
     font-size: 18px;
     height: 100%;
+    width: fit-content;
 }
 
 div#password.active {
@@ -62,9 +63,8 @@ body {
 #container {
     box-sizing: content-box !important;
     margin: auto;
-    // height: inherit;
     display: flex;
-    // flex-grow:1;
+    flex-grow: 1;
 }
 
 form div.active {
@@ -79,10 +79,8 @@ form div.active {
 }
 
 .visible {
-    // position: absolute;
     color: red;
     font-size: .6rem;
-    // margin-top: -15px;
     padding-top: 5px;
 }
 
@@ -107,7 +105,6 @@ form {
     display: flex;
     flex-flow: column;
     padding: 70px 20px 20px 30px;
-    // flex-grow: 2;
     height: inherit;
 
     div {
@@ -163,7 +160,6 @@ form {
         height: 20px;
         background-size: contain;
         background-repeat: no-repeat;
-        // background-color: red;
         display: none;
     }
 
@@ -217,22 +213,26 @@ form {
 @media screen and (min-width: 480px) {
     html {
         height: 100%;
+        width: unset;
     }
 
     body {
         display: flex;
-        padding-top: 70px;
+        padding-top: 65px;
         height: -webkit-fill-available;
-        flex-grow: 1;
+    }
+
+    .container {
+
+        margin: auto;
+        flex-grow: 0;
     }
 
     form {
         max-width: 290px;
-        margin: auto;
         padding: 30px 60px 15px;
         justify-content: center;
         margin: auto;
-        margin-bottom: 20px;
 
         input {
             padding-right: 50px;
