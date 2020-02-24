@@ -1,5 +1,6 @@
 @lightGrey1: #f4f4f4;
 @white-color : #fff;
+
 #faq {
     background-color: @lightGrey1;
     margin: 0 auto;
@@ -14,30 +15,29 @@
 
     .faq-question {
         position: relative;
-        max-height: 0;
         background-color: @white-color;
-        min-height: 70px;
         margin: 0 auto 20px;
         border-radius: 5px;
         overflow: hidden;
-        transform : translateY(5px);
-        transition: transform .5s;
-        
+        transition-property: transform, max-height, min-height;
+        transition-duration: 1s;
+        min-height: 75px;
+        max-height: 0;
+
 
 
         &:hover {
             box-shadow: 5px 5px 10px 10px rgb(199, 199, 199);
-            transition: transform .3s;
+            // transition: transform .3s;
             transform: translateY(-5px);
 
 
         }
 
         &.open {
-            // height: fit-content;;
             max-height: 500px;
-            transition: max-height .75s ease-in;
 
+            // min-height: 75px;
             .question-answer {
                 display: block;
             }
@@ -57,12 +57,11 @@
         }
 
         &.closing {
-            // max-height: 500px;
-            // transition: max-height .75s ease-in;
-            // max-height: 10px;
-            // transition: max-height .75s ease-in;
-            transition: min-height .5s ease-in;
-       
+            // height: 100px;
+            // min-height: 0px;
+
+            // transition: min-height 1s;
+
             svg {
                 transition: transform .3s;
                 transform: rotateZ(0deg);
@@ -94,7 +93,7 @@
     }
 
     .question-marker {
-        background-color:@lightGrey1;
+        background-color: @lightGrey1;
         border-radius: 50%;
         display: inline-block;
         min-width: 35px;

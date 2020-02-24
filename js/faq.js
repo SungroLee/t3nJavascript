@@ -71,7 +71,7 @@ const clickFunction = function (container) {
         container.classList.toggle('closing');
         setTimeout(() => {
             container.classList.toggle('closing')
-        }, 1500)
+        }, 1000)
     }
 }
 const faqButton = function () {
