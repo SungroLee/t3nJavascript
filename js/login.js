@@ -231,7 +231,7 @@ function createInputError(errorObject) {
             errorObject.field.value.length == 0 ? errorMessage = 'Bitte gib deinen Vornamen an.' : errorMessage = 'Der Vorname muss mindestens 3 Zeichen lang sein.'
             break;
         case 'nachname':
-            errorObject.field.value.length == 0 ? errorMessage = 'Bitte gib deinen Nachnamen an.' : errorMessage = 'Der Nachname muss midnestens 3 Zeichen lang sein.'
+            errorObject.field.value.length == 0 ? errorMessage = 'Bitte gib deinen Nachnamen an.' : errorMessage = 'Der Nachname muss mindestens 3 Zeichen lang sein.'
             break;
         case 'password':
             errorObject.field.value.length == 0 ? errorMessage = 'Bitte gib ein Passwort.' : errorMessage = 'Bitte gib mindestens 8 Zeichen an.'
