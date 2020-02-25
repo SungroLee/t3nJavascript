@@ -25,6 +25,8 @@ nav {
 html {
     font-size: 18px;
     height: 100%;
+    height: -moz-available;
+    height: -webkit-fill-available;
     width: fit-content;
 }
 
@@ -34,17 +36,17 @@ div#password.active {
     }
 
     span.clearText.containing {
-        background-image: url('../foto/svg/eye_stroked_black.svg');
+        background-image: url('../foto/svg/eye_black_crossed.svg');
     }
 }
 
 div#password.inactive {
     span.containing {
-        background-image: url('../foto/svg/eye_visible.svg');
+        background-image: url('../foto/svg/eye_grey.svg');
     }
 
     span.clearText.containing {
-        background-image: url('../foto/svg/eye_notVisible.svg');
+        background-image: url('../foto/svg/eye_grey_crossed.svg'); 
     }
 }
 
@@ -222,6 +224,8 @@ form {
 @media screen and (min-width: 480px) {
     html {
         height: 100%;
+        height: -moz-available;
+        height: -webkit-fill-available;
         width: unset;
     }
 
@@ -229,6 +233,8 @@ form {
         display: flex;
         padding-top: 65px;
         height: -webkit-fill-available;
+        height: fill-available;
+        width: -webkit-fill-available
     }
 
     .container {

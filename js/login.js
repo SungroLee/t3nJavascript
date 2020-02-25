@@ -62,7 +62,6 @@ function initRegister() {
     container.appendChild(form)
     document.body.appendChild(container);
 }
-
 function formTransmitProcessHandler(event) {
    if(validateAllInputFields()){
        //Sende Daten an Server 
@@ -70,7 +69,6 @@ function formTransmitProcessHandler(event) {
        event.preventDefault();
    }
 }
-
 function validateAllInputFields(){
     const inputFields = Array.from(document.getElementsByTagName('input'));
     var conclusion = true;

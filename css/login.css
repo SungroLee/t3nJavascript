@@ -280,19 +280,21 @@ nav #nav_logoFoto {
 html {
   font-size: 18px;
   height: 100%;
+  height: -moz-available;
+  height: -webkit-fill-available;
   width: fit-content;
 }
 div#password.active span.containing {
   background-image: url('../foto/svg/eye_black.svg');
 }
 div#password.active span.clearText.containing {
-  background-image: url('../foto/svg/eye_stroked_black.svg');
+  background-image: url('../foto/svg/eye_black_crossed.svg');
 }
 div#password.inactive span.containing {
-  background-image: url('../foto/svg/eye_visible.svg');
+  background-image: url('../foto/svg/eye_grey.svg');
 }
 div#password.inactive span.clearText.containing {
-  background-image: url('../foto/svg/eye_notVisible.svg');
+  background-image: url('../foto/svg/eye_grey_crossed.svg');
 }
 nav div#nav_loginDiv {
   display: none;
@@ -436,12 +438,16 @@ form .g-recaptcha {
 @media screen and (min-width: 480px) {
   html {
     height: 100%;
+    height: -moz-available;
+    height: -webkit-fill-available;
     width: unset;
   }
   body {
     display: flex;
     padding-top: 65px;
     height: -webkit-fill-available;
+    height: fill-available;
+    width: -webkit-fill-available;
   }
   .container {
     margin: auto;
