@@ -280,11 +280,6 @@ nav #nav_logoFoto {
 html {
   font-size: 18px;
   height: 100%;
-  height: -moz-available;
-  height: -webkit-fill-available;
-  width: -webkit-fill-available;
-  width: -moz-available;
-  width: fit-content;
 }
 div#password.active span.containing {
   background-image: url('../foto/svg/eye_black.svg');
@@ -447,9 +442,6 @@ form .g-recaptcha #rc-anchor-container {
 @media screen and (min-width: 480px) {
   html {
     height: 100%;
-    height: -moz-available;
-    height: -webkit-fill-available;
-    width: unset;
   }
   .g-recaptcha {
     width: initial;
