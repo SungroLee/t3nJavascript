@@ -520,18 +520,20 @@ const initChatButton = () => {
 
     button.addEventListener('click', () => {
       if(!isClicked) {
-        //   svgs[0].style.opacity = 0;
-        //   svgs[1].style.opacity = 1;
           svgs[0].style.transform = "scale(0.2, 0.2)";
+          svgs[1].style.transform = 'rotate(0deg)';
           setTimeout(() => {
               svgs[0].style.visibility = 'hidden';
-          },200);
+              svgs[1].style.visibility = 'visible';
+          },100);
           isClicked = true;
       }else {
         svgs[0].style.transform = "scale(1, 1)";
+        svgs[1].style.transform = 'rotate(40deg)';
         setTimeout(() => {
             svgs[0].style.visibility = 'visible';
-        },200);
+            svgs[1].style.visibility = 'hidden';
+        },130);
         isClicked = false;
       }
     })
