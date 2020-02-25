@@ -457,7 +457,6 @@ const initLassDichInspirieren = () => {
     video.appendChild(source);
 
     jSon.forEach((element, index) => {
-
         if(!element.className && index == 0) {
             const div = SetElement.setElements("section", element.id);
             section5[index] = div;
@@ -497,11 +496,10 @@ const initLassDichInspirieren = () => {
 const initChatButton = () => {
 
     
-    const chatButton = SetElement.setElements('a','chatButton', 'pulseAnimation');
+    const chatButton = SetElement.setElements('a','chatButton');
+
+    localStorage.getItem('pulse') != null ? chatButton.className = null : chatButton.className = 'pulseAnimation';
     
-    if(localStorage.getItem('pulse') != null) {
-        chatButton.className = null;
-    }
     const ids = ['cloudIcon', 'xIcon']
     let count = 2;
     let isClicked = false;
@@ -518,6 +516,7 @@ const initChatButton = () => {
 
     button.style.width = "0px";
     button.style.height = "0px";
+
     setTimeout(()=> {
         button.style.width = "20px";
         button.style.height = "20px";
@@ -525,7 +524,12 @@ const initChatButton = () => {
         button.style.transition = "transform 200ms ease";
     }, 1000);
 
-    button.addEventListener('click', () => {
+    button.addEventListener('mousedown', ()=> {
+        button.style.transform = 'scale(2.95,2.95)';
+    })
+
+    button.addEventListener('mouseup', () => {
+        button.style.transform = 'scale(3,3)';
       if(!isClicked) {
           svgs[0].style.transform = "scale(0.2, 0.2)";
           svgs[1].style.transform = 'rotate(0deg)';
