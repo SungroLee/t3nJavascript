@@ -949,9 +949,10 @@ body {
   height: 100%;
   background-image: url(../foto/svg/chatCloud.svg);
   background-size: 8px;
-  background-position: 50%;
+  background-position: center;
   background-repeat: no-repeat;
-  transition: transform 200ms ease-in;
+  transition: transform 230ms ease-in;
+  -webkit-font-smoothing: antialiased;
 }
 #chatButton #xIcon {
   visibility: hidden;
@@ -960,10 +961,11 @@ body {
   height: 100%;
   background-image: url(../foto/svg/cross_white.svg);
   background-size: 6px;
-  background-position: 50%;
+  background-position: center;
   background-repeat: no-repeat;
   transition: transform 180ms ease-in;
   transform: rotate(40deg);
+  -webkit-font-smoothing: antialiased;
 }
 .pulseAnimation {
   animation: pulse 2.5s linear forwards;

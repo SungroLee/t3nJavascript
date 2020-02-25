@@ -498,7 +498,7 @@ const initChatButton = () => {
     
     const chatButton = SetElement.setElements('a','chatButton');
 
-    localStorage.getItem('pulse') != null ? chatButton.className = null : chatButton.className = 'pulseAnimation';
+    localStorage.getItem('pulse') == null ? chatButton.className = 'pulseAnimation' : chatButton;
     
     const ids = ['cloudIcon', 'xIcon']
     let count = 2;
@@ -514,39 +514,48 @@ const initChatButton = () => {
     const button = document.querySelector('#chatButton');
     const svgs = document.querySelectorAll('#chatButton > span');
 
-    button.style.width = "0px";
-    button.style.height = "0px";
-
+    button.style.opacity = 0;
     setTimeout(()=> {
+        button.style.opacity = 1;
         button.style.width = "20px";
         button.style.height = "20px";
         button.style. transform = "scale(3.0,3.0)";
         button.style.transition = "transform 200ms ease";
     }, 1000);
 
+    const svgHandler = (time) => {
+        setTimeout(()=> {
+            if(!isClicked) {
+                svgs[0].style.transform = "scale(0.2, 0.2)";
+                svgs[1].style.transform = 'rotate(0deg)';
+                setTimeout(() => {
+                    svgs[0].style.visibility = 'hidden';
+                    svgs[1].style.visibility = 'visible';
+                },100);
+                isClicked = true;
+            }else {
+              svgs[0].style.transform = "scale(1, 1)";
+              svgs[1].style.transform = 'rotate(40deg)';
+              setTimeout(() => {
+                  svgs[0].style.visibility = 'visible';
+                  svgs[1].style.visibility = 'hidden';
+              },130);
+              isClicked = false;
+            }
+        },time);
+    }
+
+    const scaleHandler = (num) => {
+        button.style.transform = 'scale(' + num + ',' + num + ')';
+    }
+
     button.addEventListener('mousedown', ()=> {
-        button.style.transform = 'scale(2.95,2.95)';
+        scaleHandler(2.95);
     })
 
     button.addEventListener('mouseup', () => {
-        button.style.transform = 'scale(3,3)';
-      if(!isClicked) {
-          svgs[0].style.transform = "scale(0.2, 0.2)";
-          svgs[1].style.transform = 'rotate(0deg)';
-          setTimeout(() => {
-              svgs[0].style.visibility = 'hidden';
-              svgs[1].style.visibility = 'visible';
-          },100);
-          isClicked = true;
-      }else {
-        svgs[0].style.transform = "scale(1, 1)";
-        svgs[1].style.transform = 'rotate(40deg)';
-        setTimeout(() => {
-            svgs[0].style.visibility = 'visible';
-            svgs[1].style.visibility = 'hidden';
-        },130);
-        isClicked = false;
-      }
+        scaleHandler(3);
+        svgHandler(50);
     })
 }
 
