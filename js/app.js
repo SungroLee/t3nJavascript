@@ -495,7 +495,13 @@ const initLassDichInspirieren = () => {
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 const initChatButton = () => {
-    const chatButton = SetElement.setElements('a','chatButton');
+
+    
+    const chatButton = SetElement.setElements('a','chatButton', 'pulseAnimation');
+    
+    if(localStorage.getItem('pulse') != null) {
+        chatButton.className = null;
+    }
     const ids = ['cloudIcon', 'xIcon']
     let count = 2;
     let isClicked = false;
@@ -504,6 +510,7 @@ const initChatButton = () => {
         chatButton.appendChild(span);
     }
 
+    localStorage.setItem('pulse', 'cookie');
     document.body.appendChild(chatButton);  
     
     const button = document.querySelector('#chatButton');
