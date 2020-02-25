@@ -17,6 +17,7 @@ window.onload = function () {
     Footer.init();
     currentSliderSizeHandler();
     sliderButtonInit();
+    initChatButton();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -493,6 +494,48 @@ const initLassDichInspirieren = () => {
 ////////////////////////////////////////Chat Icon///////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
+const initChatButton = () => {
+    const chatButton = SetElement.setElements('a','chatButton');
+    const ids = ['cloudIcon', 'xIcon']
+    let count = 2;
+    let isClicked = false;
+    for(let i = 0; i < count; i++) {
+        const span = SetElement.setElements('span', ids[i]);
+        chatButton.appendChild(span);
+    }
+
+    document.body.appendChild(chatButton);  
+    
+    const button = document.querySelector('#chatButton');
+    const svgs = document.querySelectorAll('#chatButton > span');
+
+    button.style.width = "0px";
+    button.style.height = "0px";
+    setTimeout(()=> {
+        button.style.width = "20px";
+        button.style.height = "20px";
+        button.style. transform = "scale(3.0,3.0)";
+        button.style.transition = "transform 200ms ease";
+    }, 1000);
+
+    button.addEventListener('click', () => {
+      if(!isClicked) {
+        //   svgs[0].style.opacity = 0;
+        //   svgs[1].style.opacity = 1;
+          svgs[0].style.transform = "scale(0.2, 0.2)";
+          setTimeout(() => {
+              svgs[0].style.visibility = 'hidden';
+          },200);
+          isClicked = true;
+      }else {
+        svgs[0].style.transform = "scale(1, 1)";
+        setTimeout(() => {
+            svgs[0].style.visibility = 'visible';
+        },200);
+        isClicked = false;
+      }
+    })
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

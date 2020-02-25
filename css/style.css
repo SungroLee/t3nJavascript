@@ -37,6 +37,9 @@
   color: red;
   text-decoration-line: none;
 }
+#faq .faq-question.closing {
+  animation: faqCollaps 0.75s forwards;
+}
 #faq .faq-question.closing svg {
   transition: transform 0.3s;
   transform: rotateZ(0deg);
@@ -455,7 +458,7 @@ body {
   font-size: 0.8rem;
   width: 9.2rem;
   height: 1.2rem;
-  padding: 0.35rem 0.75rem;
+  padding: 0.4rem 0.5rem;
   background-color: #fff;
   border-radius: 4px;
   border: none;
@@ -694,7 +697,7 @@ body {
   font-size: 0.8rem;
   width: 9.2rem;
   height: 1.2rem;
-  padding: 0.35rem 0.75rem;
+  padding: 0.4rem 0.5rem;
   background-color: #fff;
   border-radius: 4px;
   border: none;
@@ -857,7 +860,7 @@ body {
   font-size: 0.8rem;
   width: 9.2rem;
   height: 1.2rem;
-  padding: 0.35rem 0.75rem;
+  padding: 0.4rem 0.5rem;
   background-color: #fff;
   border-radius: 4px;
   border: none;
@@ -915,6 +918,52 @@ body {
 }
 #lassDichInspirieren #section5_middleDiv .section5_insideDiv {
   flex: 1;
+}
+#chatButton {
+  background-color: #f9423a;
+  position: fixed;
+  bottom: -67px;
+  right: 60px;
+  margin-bottom: 126px;
+  border: none;
+  border-radius: 50%;
+  z-index: 100;
+  outline: none;
+  cursor: pointer;
+}
+#chatButton:hover {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 0px 30px inset;
+}
+#chatButton:active {
+  width: 59.55px;
+  height: 59.55px;
+  transition: width height 0.5s ease-in;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 30px inset;
+}
+#chatButton #cloudIcon {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(../foto/svg/chatCloud.svg);
+  background-size: 8px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  transition: transform 300ms ease-in-out;
+}
+#chatButton #xIcon {
+  opacity: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url(../foto/svg/cross_grey.svg);
+  background-size: 5px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  transition: opacity 1s ease-in-out;
 }
 @media screen and (min-width: 200px) {
   #pioneersDiv {
@@ -1191,9 +1240,6 @@ body {
     top: 80px;
     height: 12px;
   }
-  #pioneersDiv h2 {
-    margin-top: 2rem;
-  }
   #sliderDefaultDiv {
     height: 15.6rem;
   }
@@ -1225,7 +1271,7 @@ body {
     font-size: 0.9rem;
   }
 }
-@media screen and (min-width: 778px) {
+@media screen and (min-width: 798px) {
   #pioneersDiv {
     height: 21.4rem;
   }
@@ -1265,6 +1311,9 @@ body {
 @media screen and (min-width: 981px) {
   #pioneersDiv {
     height: 24.1rem;
+  }
+  #pioneersDiv h1:after {
+    top: 130px;
   }
   #pioneersDiv h2 {
     font-size: 1.7rem;
