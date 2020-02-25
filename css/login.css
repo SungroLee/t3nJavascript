@@ -312,7 +312,10 @@ body {
   flex-flow: column;
 }
 #container {
+  display: flex;
+  flex-grow: 1;
   margin: auto;
+  justify-content: center;
 }
 form div.active span.containing {
   display: inline-block;
