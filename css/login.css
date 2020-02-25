@@ -282,6 +282,8 @@ html {
   height: 100%;
   height: -moz-available;
   height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  width: -moz-available;
   width: fit-content;
 }
 div#password.active span.containing {
@@ -300,7 +302,6 @@ nav div#nav_loginDiv {
   display: none;
 }
 body {
-  flex-grow: 1;
   margin: 0;
   font-size: 1rem;
   background-color: #ebebeb;
@@ -417,6 +418,10 @@ form button[isFree='true']:hover {
 }
 form .g-recaptcha {
   margin-top: 20px;
+  width: inherit;
+}
+form .g-recaptcha #rc-anchor-container {
+  width: auto;
 }
 .preFooter {
   box-sizing: content-box;
@@ -442,8 +447,13 @@ form .g-recaptcha {
     height: -webkit-fill-available;
     width: unset;
   }
+  .g-recaptcha {
+    width: initial;
+  }
+  .g-recaptcha #rc-anchor-container {
+    width: initial;
+  }
   body {
-    display: flex;
     padding-top: 65px;
     height: -webkit-fill-available;
     height: fill-available;

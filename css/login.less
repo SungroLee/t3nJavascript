@@ -27,6 +27,8 @@ html {
     height: 100%;
     height: -moz-available;
     height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    width:-moz-available;
     width: fit-content;
 }
 
@@ -57,7 +59,7 @@ nav {
 }
 
 body {
-    flex-grow: 1;
+    // flex-grow: 1;
     margin: 0;
     font-size: 1rem;
     background-color: rgb(235, 235, 235);
@@ -199,6 +201,12 @@ form {
 
     .g-recaptcha {
         margin-top: 20px;
+        // width: 1vw;
+        width: inherit;
+        #rc-anchor-container{
+            width: auto;
+        }
+
     }
 }
 
@@ -228,9 +236,15 @@ form {
         height: -webkit-fill-available;
         width: unset;
     }
+    .g-recaptcha {
+        width: initial;
+        #rc-anchor-container{
+            width: initial;
+        }
+    }
 
     body {
-        display: flex;
+        // display: flex;
         padding-top: 65px;
         height: -webkit-fill-available;
         height: fill-available;
