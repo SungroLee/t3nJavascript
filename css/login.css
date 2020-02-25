@@ -312,9 +312,7 @@ body {
   flex-flow: column;
 }
 #container {
-  box-sizing: content-box !important;
-  display: flex;
-  flex-grow: 1;
+  margin: auto;
 }
 form div.active span.containing {
   display: inline-block;
@@ -336,7 +334,7 @@ form {
   background-color: white;
   display: flex;
   flex-flow: column;
-  padding: 70px 20px 20px 30px;
+  padding: 90px 20px 20px 30px;
   height: inherit;
 }
 form div p {
@@ -399,6 +397,9 @@ form .disclaimer {
   color: #707070;
   font-size: 0.7rem;
 }
+form .disclaimer a {
+  text-decoration: underline;
+}
 form button {
   width: inherit;
   height: 38px;
@@ -458,10 +459,6 @@ form .g-recaptcha #rc-anchor-container {
     height: -webkit-fill-available;
     height: fill-available;
     width: -webkit-fill-available;
-  }
-  .container {
-    margin: auto;
-    flex-grow: 0;
   }
   form {
     max-width: 290px;
