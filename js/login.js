@@ -63,7 +63,10 @@ function initRegister() {
     document.body.appendChild(container);
 }
 function formTransmitProcessHandler(event) {
-   if(validateAllInputFields()){
+   if(
+       validateAllInputFields() && 
+       grecaptcha.getResponse().length !==0){
+       alert("SENDING FORMULAR!")
        //Sende Daten an Server 
    }else{
        event.preventDefault();
@@ -142,6 +145,11 @@ function onClickClassHandler(div) {
     activeClassRemover()
     div.classList.replace('inactive', 'active');
 }
+function isCaptchaSolved(){
+    const captchaSpan = document.getElementsByTagName('span');
+    console.log(captchaSpan);
+}
+
 function activeClassRemover() {
     const allDivs = Array.from(document.getElementsByTagName('form')[0].getElementsByTagName('div'));
     allDivs.forEach(div => {
