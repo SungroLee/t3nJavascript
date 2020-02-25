@@ -930,15 +930,14 @@ body {
   z-index: 100;
   outline: none;
   cursor: pointer;
+  width: 20px;
+  height: 20px;
 }
 #chatButton:hover {
   box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 0px 30px inset;
 }
 #chatButton:active {
-  width: 59.55px;
-  height: 59.55px;
-  transition: width height 0.5s ease-in;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 30px inset;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 30px inset;
 }
 #chatButton #cloudIcon {
   visibility: visible;
@@ -950,21 +949,23 @@ body {
   height: 100%;
   background-image: url(../foto/svg/chatCloud.svg);
   background-size: 8px;
-  background-position: 50%;
+  background-position: center;
   background-repeat: no-repeat;
-  transition: transform 200ms ease-in;
+  transition: transform 230ms ease-in;
+  -webkit-font-smoothing: antialiased;
 }
 #chatButton #xIcon {
   visibility: hidden;
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url(../foto/svg/cross_grey.svg);
+  background-image: url(../foto/svg/cross_white.svg);
   background-size: 6px;
-  background-position: 50%;
+  background-position: center;
   background-repeat: no-repeat;
-  transition: transform 230ms ease-in;
+  transition: transform 180ms ease-in;
   transform: rotate(40deg);
+  -webkit-font-smoothing: antialiased;
 }
 .pulseAnimation {
   animation: pulse 2.5s linear forwards;
