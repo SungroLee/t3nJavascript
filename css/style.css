@@ -464,6 +464,7 @@ body {
 .PioneersButtonDefault {
   color: #2a2a2a;
   font-size: 0.8rem;
+  font-weight: 400;
   width: 9.2rem;
   height: 1.2rem;
   padding: 0.4rem 0.5rem;
@@ -561,10 +562,6 @@ body {
   text-decoration: none;
   display: inline-block;
   transition: all 100ms ease-in-out;
-  -khtml-user-select: none;
-  -o-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
 }
 .sliderDefault a:hover {
   transform: translateY(-3px);
@@ -703,6 +700,7 @@ body {
 #pioneersButton {
   color: #2a2a2a;
   font-size: 0.8rem;
+  font-weight: 400;
   width: 9.2rem;
   height: 1.2rem;
   padding: 0.4rem 0.5rem;
@@ -800,10 +798,6 @@ body {
   text-decoration: none;
   display: inline-block;
   transition: all 100ms ease-in-out;
-  -khtml-user-select: none;
-  -o-user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
 }
 #slider a:hover {
   transform: translateY(-3px);
@@ -866,6 +860,7 @@ body {
 #section3_button {
   color: #2a2a2a;
   font-size: 0.8rem;
+  font-weight: 400;
   width: 9.2rem;
   height: 1.2rem;
   padding: 0.4rem 0.5rem;
@@ -958,7 +953,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   transition: transform 230ms ease-in;
-  -webkit-font-smoothing: antialiased;
 }
 #chatButton #xIcon svg {
   visibility: hidden;
@@ -971,7 +965,6 @@ body {
   background-repeat: no-repeat;
   transition: transform 180ms ease-in;
   transform: rotate(40deg);
-  -webkit-font-smoothing: antialiased;
 }
 .pulseAnimation {
   animation: pulse 2.5s linear forwards;
@@ -1520,6 +1513,7 @@ body {
   border: none;
   width: 200px;
   font-size: 0.7rem;
+  font-weight: 400;
   height: 35px;
 }
 #becomePionier .textArea-button:hover {
