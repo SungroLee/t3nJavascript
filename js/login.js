@@ -6,6 +6,9 @@ window.onload = () => {
     initRegister();
     initPreFooter();
     Footer.init();
+    setInterval(() => {
+        transmitButtonStateHandler(); 
+    }, 500);
 }
 function initRegister() {
     const container = document.createElement('div');
@@ -63,9 +66,7 @@ function initRegister() {
     document.body.appendChild(container);
 }
 function formTransmitProcessHandler(event) {
-   if(
-       validateAllInputFields() && 
-       grecaptcha.getResponse().length !==0){
+   if(validateAllInputFields() && isCaptchaSolved()){
        alert("SENDING FORMULAR!")
        //Sende Daten an Server 
    }else{
@@ -146,8 +147,7 @@ function onClickClassHandler(div) {
     div.classList.replace('inactive', 'active');
 }
 function isCaptchaSolved(){
-    const captchaSpan = document.getElementsByTagName('span');
-    console.log(captchaSpan);
+   return grecaptcha.getResponse().length !==0
 }
 
 function activeClassRemover() {
@@ -160,14 +160,15 @@ function activeClassRemover() {
 }
 function onInputEventClassHandler(input) {
     inputWatcher(input);
-    transmitButtonStateHandler();
-
+   
 }
 function transmitButtonStateHandler() {
     const transmitButton = document.getElementsByTagName('button')[0];
-    if(validateAllInputFields()){
+    if(validateAllInputFields() && isCaptchaSolved()){
+        console.log("Button is free")
         transmitButton.setAttribute('isFree','true');
     }else{
+        console.log("button is not free")
         transmitButton.setAttribute('isFree','false');
     }
 }
