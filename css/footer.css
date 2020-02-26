@@ -46,6 +46,7 @@
   margin: 0;
 }
 #footer .footer-usefulLinks li a {
+  font-weight: 400;
   padding: 5px;
   color: white;
   text-decoration: none;
