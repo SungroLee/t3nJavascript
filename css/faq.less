@@ -32,6 +32,7 @@
 
         &.open {
             animation: faqExpand .75s forwards;
+
             .question-answer {
                 display: block;
             }
@@ -97,12 +98,17 @@
         cursor: pointer;
 
         &:hover {
-            svg {
+
+            background-color: black;
+
+             svg {
+                background-color: red;    
                 background-image: url(../foto/svg/triangle_hover.svg);
             }
         }
 
         svg {
+            background-color: green;
             background-image: url(../foto/svg/triangle.svg);
             width: 20px;
             height: 20px;
@@ -114,10 +120,6 @@
                 fill: grey;
 
             }
-        }
-
-        &:hover {
-            background-color: black;
         }
     }
 }
@@ -174,11 +176,12 @@ button {
     }
 }
 
-@keyframes faqExpand{
+@keyframes faqExpand {
     from {
         max-height: 0;
     }
-    to{
+
+    to {
         max-height: 300px;
     }
 }

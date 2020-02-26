@@ -77,10 +77,15 @@
   margin-left: 1%;
   cursor: pointer;
 }
+#faq .question-marker:hover {
+  background-color: black;
+}
 #faq .question-marker:hover svg {
+  background-color: red;
   background-image: url(../foto/svg/triangle_hover.svg);
 }
 #faq .question-marker svg {
+  background-color: green;
   background-image: url(../foto/svg/triangle.svg);
   width: 20px;
   height: 20px;
@@ -90,9 +95,6 @@
 }
 #faq .question-marker svg path {
   fill: grey;
-}
-#faq .question-marker:hover {
-  background-color: black;
 }
 button {
   display: block;
