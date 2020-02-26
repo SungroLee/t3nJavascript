@@ -111,7 +111,7 @@ const initProfileClone = () => {
 		const freeA = SetElement.setElements('a');
 		const img = SetElement.setElements('img');
 		const name = SetElement.setElements('h3');
-		const position = SetElement.setElements('p', 'position');
+		const position = SetElement.setElements('p', '', 'position');
 		const company = SetElement.setElements('p', 'companyImg');
 
 		freeA.setAttribute('ondragstart', 'return false;');
