@@ -409,10 +409,10 @@ form button {
   font-size: 0.7rem;
   margin-bottom: 20px;
 }
-form button[isFree='false'] {
+form button.isNotFree {
   cursor: not-allowed;
 }
-form button[isFree='true']:hover {
+form button.isFree:hover {
   cursor: pointer;
   background-color: red;
 }

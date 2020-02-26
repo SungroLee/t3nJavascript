@@ -56,7 +56,7 @@ function initRegister() {
 
     const registerButton = document.createElement('button');
     registerButton.innerHTML = 'Registrieren';
-    registerButton.setAttribute('isFree','false');
+    registerButton.classList.add('isNotFree');
     registerButton.onclick = function (event) {
         formTransmitProcessHandler(event);
     }
@@ -68,7 +68,6 @@ function initRegister() {
 function formTransmitProcessHandler(event) {
    if(validateAllInputFields() && isCaptchaSolved()){
        alert("SENDING FORMULAR!")
-       //Sende Daten an Server 
    }else{
        event.preventDefault();
    }
@@ -165,11 +164,11 @@ function onInputEventClassHandler(input) {
 function transmitButtonStateHandler() {
     const transmitButton = document.getElementsByTagName('button')[0];
     if(validateAllInputFields() && isCaptchaSolved()){
-        console.log("Button is free")
-        transmitButton.setAttribute('isFree','true');
+        transmitButton.classList.replace('isNotFree','isFree')
     }else{
-        console.log("button is not free")
-        transmitButton.setAttribute('isFree','false');
+        transmitButton.classList.remove('isFree')
+        transmitButton.classList.add('isNotFree')
+
     }
 }
 function onBlurEventHandler(input) {
