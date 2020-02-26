@@ -3,7 +3,7 @@ import * as Nav from './nav.js';
 import * as SetElement from './setElement.js';
 import * as Faq from './faq.js';
 
-window.onload = function() {
+window.onload = function () {
 	insertFontToDocument();
 	initChatButton();
 	Nav.initNav();
@@ -626,22 +626,19 @@ const initChatButton = () => {
 ////////////////////////////////////////Become Pionier//////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-const initBecomePionier = function() {
+const initBecomePionier = function () {
 	const section = document.createElement('section');
 	section.className = 'becomePionier-outerSection';
 	const outerDiv = document.createElement('div');
 	outerDiv.id = 'becomePionier';
-	// const span = document.createElement('span');
 	const hAr = ['JETZT', 'PIONIER', 'WERDEN'];
 	const sectionHeading = document.createElement('div');
-	// sectionHeading.appendChild(span);
 	hAr.forEach(e => {
 		const h = document.createElement('h2');
 		h.innerHTML = e;
 		h.className = 'heading-head';
 		sectionHeading.appendChild(h);
 	});
-	// sectionHeading.innerHTML= 'JETZT PIONIER WERDEN';
 	sectionHeading.className = 'becomePionier-Heading';
 	outerDiv.appendChild(sectionHeading);
 	outerDiv.appendChild(getMovementSection());
@@ -649,7 +646,7 @@ const initBecomePionier = function() {
 	document.body.appendChild(section);
 };
 
-const getMovementSection = function() {
+const getMovementSection = function () {
 	const area = document.createElement('div');
 	area.className = 'becomePionier-textArea';
 	const areaHeading = document.createElement('h4');
@@ -664,6 +661,9 @@ const getMovementSection = function() {
 	button.onclick = "location.href='login.html'";
 	button.className = 'textArea-button';
 	button.innerHTML = 'Jetzt kostenlos anmelden';
+	button.onclick = function () {
+		directToRegisterPage();
+	}
 	area.appendChild(areaHeading);
 	area.appendChild(paragraph);
 	area.appendChild(button);
@@ -676,4 +676,7 @@ function insertFontToDocument() {
 		'https://fonts.googleapis.com/css?family=Work+Sans:400,800&display=swap';
 	fontObject.rel = 'stylesheet';
 	document.body.appendChild(fontObject);
+}
+function directToRegisterPage() {
+	window.location.href = '/register.html';
 }
