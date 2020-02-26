@@ -3,7 +3,7 @@ import * as Nav from './nav.js';
 import * as SetElement from './setElement.js';
 import * as Faq from './faq.js';
 
-window.onload = function () {
+window.onload = function() {
 	insertFontToDocument();
 	initChatButton();
 	Nav.initNav();
@@ -118,6 +118,7 @@ const initProfileClone = () => {
 		freeA.setAttribute('draggable', false);
 		// freeA.href = '#';
 		img.src = sliderProfiles[i].img;
+		img.alt = '';
 		img.setAttribute('draggable', false);
 		name.innerHTML = sliderProfiles[i].name;
 		position.innerHTML = sliderProfiles[i].workingPosition;
@@ -356,6 +357,7 @@ const initTeileDeinWissen = () => {
 	}
 
 	computerImg.src = jsonAttribute[6].src;
+	computerImg.alt = '';
 	teileDeinWissenH3.innerHTML = jsonAttribute[4].innerHTML;
 	button.innerHTML = jsonAttribute[5].innerHTML;
 
@@ -456,6 +458,7 @@ const initPioniereInListenFinden = () => {
 
 			pTags.innerHTML = element.name;
 			imgs.src = element.src;
+			imgs.alt = '';
 
 			lists.appendChild(imgs);
 			lists.appendChild(pTags);
@@ -626,7 +629,7 @@ const initChatButton = () => {
 ////////////////////////////////////////Become Pionier//////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-const initBecomePionier = function () {
+const initBecomePionier = function() {
 	const section = document.createElement('section');
 	section.className = 'becomePionier-outerSection';
 	const outerDiv = document.createElement('div');
@@ -646,7 +649,7 @@ const initBecomePionier = function () {
 	document.body.appendChild(section);
 };
 
-const getMovementSection = function () {
+const getMovementSection = function() {
 	const area = document.createElement('div');
 	area.className = 'becomePionier-textArea';
 	const areaHeading = document.createElement('h4');
@@ -661,9 +664,9 @@ const getMovementSection = function () {
 	button.onclick = "location.href='login.html'";
 	button.className = 'textArea-button';
 	button.innerHTML = 'Jetzt kostenlos anmelden';
-	button.onclick = function () {
+	button.onclick = function() {
 		directToRegisterPage();
-	}
+	};
 	area.appendChild(areaHeading);
 	area.appendChild(paragraph);
 	area.appendChild(button);
