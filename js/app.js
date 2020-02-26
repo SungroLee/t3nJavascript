@@ -118,7 +118,7 @@ const initProfileClone = () => {
 		freeA.setAttribute('draggable', false);
 		// freeA.href = '#';
 		img.src = sliderProfiles[i].img;
-		img.alt = '';
+		img.alt = 'ProfileFotos';
 		img.setAttribute('draggable', false);
 		name.innerHTML = sliderProfiles[i].name;
 		position.innerHTML = sliderProfiles[i].workingPosition;
@@ -357,7 +357,7 @@ const initTeileDeinWissen = () => {
 	}
 
 	computerImg.src = jsonAttribute[6].src;
-	computerImg.alt = '';
+	computerImg.alt = 'Laptop';
 	teileDeinWissenH3.innerHTML = jsonAttribute[4].innerHTML;
 	button.innerHTML = jsonAttribute[5].innerHTML;
 
@@ -458,7 +458,7 @@ const initPioniereInListenFinden = () => {
 
 			pTags.innerHTML = element.name;
 			imgs.src = element.src;
-			imgs.alt = '';
+			imgs.alt = 'listProfileFotos';
 
 			lists.appendChild(imgs);
 			lists.appendChild(pTags);

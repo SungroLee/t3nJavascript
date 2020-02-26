@@ -11,7 +11,7 @@ const initNav = () => {
 	const imgAnchor = SetElement.setElements('a');
 
 	navLogoFoto.src = './foto/t3n-logo.png';
-	navLogoFoto.alt = '';
+	navLogoFoto.alt = 'navLogo';
 	navText.href = '#';
 	navButton.href = '#';
 	navText.innerText = 't3n.de';
