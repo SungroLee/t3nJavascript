@@ -17,7 +17,7 @@
   overflow: hidden;
   transition-property: transform, max-height, min-height;
   transition-duration: 1s;
-  min-height: 70px;
+  min-height: 75px;
 }
 #faq .faq-question:hover {
   box-shadow: 5px 5px 10px 10px #c7c7c7;

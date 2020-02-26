@@ -1,5 +1,6 @@
 @lightGrey1: #f4f4f4;
 @white-color : #fff;
+@faqMinHeigt: 75px;
 
 #faq {
     background-color: @lightGrey1;
@@ -21,7 +22,7 @@
         overflow: hidden;
         transition-property: transform, max-height, min-height;
         transition-duration: 1s;
-        min-height: 70px;
+        min-height: @faqMinHeigt;
 
         &:hover {
             box-shadow: 5px 5px 10px 10px rgb(199, 199, 199);

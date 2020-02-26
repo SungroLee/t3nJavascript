@@ -45,7 +45,6 @@
   transform: rotateZ(0deg);
 }
 #faq .question-heading {
-  padding: 5px 0;
   font-size: 1.1rem;
   text-align: left;
   width: 95%;
