@@ -347,41 +347,75 @@ body {
     z-index: 100;
     outline: none;
     cursor: pointer;
-    width: 20px;
-    height: 20px;
+    transform: scale(1,1);
+    // width: 20px;
+    // height: 20px;
     &:hover {
         box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 0px 30px inset;
     }
     &:active {
        box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 30px inset;
+       
     }
     #cloudIcon {
-        visibility: visible;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-image: url(../foto/svg/chatCloud.svg);
-        background-size: 8px;
-        background-position: center;
-        background-repeat: no-repeat;
-        transition: transform 230ms ease-in;
-        -webkit-font-smoothing: antialiased;
+        svg {
+            visibility: visible;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-image: url(../foto/svg/chatCloud.svg);
+            background-size: 26px;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: transform 230ms ease-in;
+            -webkit-font-smoothing: antialiased;
+        }
+        // visibility: visible;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // display: block;
+        // width: 100%;
+        // height: 100%;
+        // background-image: url(../foto/svg/chatCloud.svg);
+        // background-size: 8px;
+        // background-position: center;
+        // background-repeat: no-repeat;
+        // transition: transform 230ms ease-in;
+        // -webkit-font-smoothing: antialiased;
+        
+        
     }
     #xIcon {
-        visibility: hidden;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-image: url(../foto/svg/cross_white.svg);
-        background-size: 6px;
-        background-position: center;
-        background-repeat: no-repeat;
-        transition: transform 180ms ease-in;
-        transform: rotate(40deg);
-        -webkit-font-smoothing: antialiased;
+        svg {
+            visibility: hidden;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-image: url(../foto/svg/cross_white.svg);
+            background-size: 26px;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: transform 180ms ease-in;
+            transform: rotate(40deg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        // visibility: hidden;
+        // display: block;
+        // width: 100%;
+        // height: 100%;
+        // background-image: url(../foto/svg/cross_white.svg);
+        // background-size: 6px;
+        // background-position: center;
+        // background-repeat: no-repeat;
+        // transition: transform 180ms ease-in;
+        // transform: rotate(40deg);
+        // -webkit-font-smoothing: antialiased;
+        // -ms-transform: rotate(40deg);
     }
 }
 
