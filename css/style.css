@@ -142,6 +142,14 @@ button:hover {
     max-height: 300px;
   }
 }
+@keyframes faqCollaps {
+  from {
+    height: 150px;
+  }
+  to {
+    height: 0;
+  }
+}
 #footer {
   box-sizing: content-box !important;
   background-color: black;
@@ -922,7 +930,7 @@ body {
 #chatButton {
   background-color: #f9423a;
   position: fixed;
-  bottom: -67px;
+  bottom: -87px;
   right: 60px;
   margin-bottom: 126px;
   border: none;
