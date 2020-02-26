@@ -17,7 +17,7 @@
   overflow: hidden;
   transition-property: transform, max-height, min-height;
   transition-duration: 1s;
-  min-height: 70px;
+  min-height: 75px;
 }
 #faq .faq-question:hover {
   box-shadow: 5px 5px 10px 10px #c7c7c7;
@@ -45,6 +45,7 @@
   transform: rotateZ(0deg);
 }
 #faq .question-heading {
+  padding: 5px 0;
   font-size: 1.1rem;
   text-align: left;
   width: 95%;
@@ -929,7 +930,6 @@ body {
   z-index: 100;
   outline: none;
   cursor: pointer;
-  transform: scale(1, 1);
 }
 #chatButton:hover {
   box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 0px 30px inset;
@@ -973,13 +973,13 @@ body {
     box-shadow: 0 0 0 0 rgba(249, 66, 58, 0.7), 0 0 0 0 rgba(249, 66, 58, 0.7);
   }
   40% {
-    box-shadow: 0 0 0 50px rgba(249, 66, 58, 0), 0 0 0 0 rgba(249, 66, 58, 0.7);
+    box-shadow: 0 0 0 120px rgba(249, 66, 58, 0), 0 0 0 0 rgba(249, 66, 58, 0.7);
   }
   80% {
-    box-shadow: 0 0 0 50px rgba(249, 66, 58, 0), 0 0 0 30px rgba(249, 66, 58, 0);
+    box-shadow: 0 0 0 120px rgba(249, 66, 58, 0), 0 0 0 80px rgba(249, 66, 58, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(249, 66, 58, 0), 0 0 0 30px rgba(249, 66, 58, 0);
+    box-shadow: 0 0 0 0 rgba(249, 66, 58, 0), 0 0 0 80px rgba(249, 66, 58, 0);
   }
 }
 @media screen and (min-width: 200px) {

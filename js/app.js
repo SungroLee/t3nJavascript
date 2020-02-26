@@ -609,8 +609,6 @@ const initChatButton = () => {
 
 	const scaleHandler = num => {
 		button.style.transform = 'scale(' + num + ',' + num + ')';
-		button.style.msTransform = 'scale(' + num + ',' + num + ')';
-		button.style['msTransform'] = 'scale(' + num + ',' + num + ')';
 		button.style.transition = 'transform 400ms ease';
 	};
 
