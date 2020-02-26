@@ -9,7 +9,7 @@ export const init = function () {
 }
 
 class AskedQuestion {
-    constructor(quest, answer, link,href,target) {
+    constructor(quest, answer, link, href, target) {
         this.quest = quest;
         this.answer = answer;
         this.link = link;
@@ -22,7 +22,7 @@ class AskedQuestion {
 
 
     get getAnswer() {
-        return String(this.answer).replace(this.link, "<a href='"+this.href+"'target='"+this.target+"' >" + this.link + "</a>");
+        return String(this.answer).replace(this.link, "<a href='" + this.href + "'target='" + this.target + "' >" + this.link + "</a>");
     }
 }
 const faqFinaliser = function () {
@@ -37,10 +37,10 @@ const faqHeading = function () {
 }
 const faqElements = function () {
     const faqAr = [
-        new AskedQuestion("Warum gibt es das Pioneers Network?", "Mit dem Pioneers Network wollen wir sichtbar machen, wer die digitalen Pioniere sind, die tagtäglich daran arbeiten, die Chancen der Digitalisierung zu nutzen, statt die Gefahren zu beschwören. Und wir wollen Antworten auf die folgenden Fragen liefern: Was treibt sie an? Was ist ihre Motivation? Welche Ziele verfolgen sie? Und ganz praktisch: Welche Tools setzen sie ein, um ihre Arbeit besser und effizienter zu bewerkstelligen? Hier findest du mehr Informationen.", "Informationen",'#'),
-        new AskedQuestion("Wie werde ich Mitglied im Pioneers Network?", "Das geht mit wenigen Klicks. Dafür registrierst du dich auf t3n.de und füllst dann im Pioneers Network dein Profil aus. Je vollständiger dein Profil ausgefüllt ist, umso eher erscheinst du auch in der Suche.", "registrierst du dich auf t3n.de ",'#'),
-        new AskedQuestion("Kostet ein Profil im Pioneers Network Geld?", "Nein, das Pioneers-Network-Profil ist und bleibt kostenlos. Der aktuelle Funktionsumfang und weitere Features werden auch in Zukunft kein Geld kosten. Denkbar sind zukünftige Pro-Accounts bzw. Premium-Features.",'#'),
-        new AskedQuestion("Warum sollte ich mich beim Pioneers Network anmelden?", "Im Pioneers Network kannst du andere digitale Pioniere entdecken und Einblicke in ihre Arbeit bekommen. Sie geben dir Tipps aus ihrem Umgang mit E-Mails, nehmen dich mit in ihren Tagesablauf und du erhältst Empfehlungen für Bücher und Podcasts. Der Funktionsumfang wird in den kommenden Versionen noch erweitert, sodass es sich lohnt, immer wieder reinzuschauen und von Anfang an dabei zu sein!",'#')
+        new AskedQuestion("Warum gibt es das Pioneers Network?", "Mit dem Pioneers Network wollen wir sichtbar machen, wer die digitalen Pioniere sind, die tagtäglich daran arbeiten, die Chancen der Digitalisierung zu nutzen, statt die Gefahren zu beschwören. Und wir wollen Antworten auf die folgenden Fragen liefern: Was treibt sie an? Was ist ihre Motivation? Welche Ziele verfolgen sie? Und ganz praktisch: Welche Tools setzen sie ein, um ihre Arbeit besser und effizienter zu bewerkstelligen? Hier findest du mehr Informationen.", "Informationen", '#'),
+        new AskedQuestion("Wie werde ich Mitglied im Pioneers Network?", "Das geht mit wenigen Klicks. Dafür registrierst du dich auf t3n.de und füllst dann im Pioneers Network dein Profil aus. Je vollständiger dein Profil ausgefüllt ist, umso eher erscheinst du auch in der Suche.", "registrierst du dich auf t3n.de ", '#'),
+        new AskedQuestion("Kostet ein Profil im Pioneers Network Geld?", "Nein, das Pioneers-Network-Profil ist und bleibt kostenlos. Der aktuelle Funktionsumfang und weitere Features werden auch in Zukunft kein Geld kosten. Denkbar sind zukünftige Pro-Accounts bzw. Premium-Features.", '#'),
+        new AskedQuestion("Warum sollte ich mich beim Pioneers Network anmelden?", "Im Pioneers Network kannst du andere digitale Pioniere entdecken und Einblicke in ihre Arbeit bekommen. Sie geben dir Tipps aus ihrem Umgang mit E-Mails, nehmen dich mit in ihren Tagesablauf und du erhältst Empfehlungen für Bücher und Podcasts. Der Funktionsumfang wird in den kommenden Versionen noch erweitert, sodass es sich lohnt, immer wieder reinzuschauen und von Anfang an dabei zu sein!", '#')
     ];
     faqAr.forEach(e => {
         const container = getQuestContainer();
@@ -66,13 +66,40 @@ const faqElements = function () {
 }
 
 const clickFunction = function (container) {
+    const expandAnimation = getAnimationRuleByName("faqExpand");
+    const changedAnimation = changeAnimation(expandAnimation, container);
+    console.log(changedAnimation);
+    console.log(container.offsetHeight)
+
     container.classList.toggle('open');
+    container.style.webkitAnimationName = changedAnimation;
     if (!container.classList.contains('open')) {
         container.classList.toggle('closing');
         setTimeout(() => {
             container.classList.toggle('closing')
         }, 1000)
+    } else {
     }
+}
+function changeAnimation(animation, container) {
+    const copyAnimation = animation;
+    copyAnimation.deleteRule('0%');
+    copyAnimation.deleteRule('100%');
+    copyAnimation.appendRule('0% { max-height: ' + container.offsetHeight + 'px }')
+    copyAnimation.appendRule('100% { max-height: 500px}');
+    return copyAnimation;
+}
+function getAnimationRuleByName(name) {
+    const ss = document.styleSheets;
+    for (var i = 1; i < ss.length - 1; ++i) {
+        const le = ss[i].cssRules.length;
+        for (var j = 0; j < ss[i].cssRules.length; j++) {
+            if (ss[i].cssRules[j].name === name) {
+                return ss[i].cssRules[j];
+            }
+        }
+    }
+    return null;
 }
 const faqButton = function () {
     const button = document.createElement('button');
