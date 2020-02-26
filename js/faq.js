@@ -5,7 +5,6 @@ export const init = function () {
     faqElements();
     faqButton();
     faqFinaliser();
-    //test
 }
 
 class AskedQuestion {
@@ -68,8 +67,6 @@ const faqElements = function () {
 const clickFunction = function (container) {
     const expandAnimation = getAnimationRuleByName("faqExpand");
     const changedAnimation = changeAnimation(expandAnimation, container);
-    console.log(changedAnimation);
-    console.log(container.offsetHeight)
 
     container.classList.toggle('open');
     container.style.webkitAnimationName = changedAnimation;
@@ -123,4 +120,3 @@ const getAnswerEl = function (question) {
     paragraph.innerHTML = question.getAnswer;
     return paragraph;
 }
-// export { init };
