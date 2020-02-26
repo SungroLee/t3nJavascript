@@ -30,6 +30,8 @@ const footerSocialMedia = function () {
         anker.className = 'image-container';
         const imageElement = document.createElement('img');
         imageElement.src = mapEntry;
+        var String = mapEntry;
+        imageElement.alt = getAltfromMap(mapEntry)
         anker.appendChild(imageElement);
         socialMediaIcons.appendChild(anker);
     })
@@ -37,6 +39,11 @@ const footerSocialMedia = function () {
 
 }
 
+function getAltfromMap(string){
+    var tmp = string.replace(/([.]\/)(.{6})/,'')
+    tmp = tmp.replace(/_.*/,' icon');
+    return tmp;
+}
 const footerUsefulLinks = function () {
     const outerDiv = document.createElement('div');
     outerDiv.className = 'usefulLinks-outer';
