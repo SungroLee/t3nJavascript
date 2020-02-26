@@ -1,6 +1,6 @@
 const faq = document.createElement('div');
 
-const init = function () {
+export const init = function () {
     faqHeading();
     faqElements();
     faqButton();
@@ -96,4 +96,4 @@ const getAnswerEl = function (question) {
     paragraph.innerHTML = question.getAnswer;
     return paragraph;
 }
-export { init };
+// export { init };
