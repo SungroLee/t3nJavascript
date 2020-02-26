@@ -395,7 +395,7 @@ const initPioniereInListenFinden = () => {
 		{ title: 'Medien' },
 		{ title: 'PR&Kommunikation' },
 		{
-			name: 'Drik von Gehlen',
+			name: 'Dirk von Gehlen',
 			src:
 				'https://storage.googleapis.com/t3n-de/pioneers/4b52a4383475faa6ebfdd8a37ccf85f53694f522/fullsizeoutput_787.jpeg'
 		},
