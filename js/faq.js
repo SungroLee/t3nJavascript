@@ -46,7 +46,7 @@ const faqElements = function () {
         const marker = getQuestMarker();
         const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         marker.appendChild(svg);
-        const questHeading = document.createElement('div');
+        const questHeading = document.createElement('section');
         questHeading.classList = 'faq-questHeadContainer';
 
         const head = document.createElement('h5');
