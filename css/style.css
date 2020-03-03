@@ -448,13 +448,20 @@ body {
   line-height: 1.8;
   font-weight: bold;
 }
+.PioneersDivDefault h1:before {
+  content: '';
+  position: absolute;
+  top: 100px;
+  background-color: #2a2a2a;
+  display: block;
+  height: 8px;
+}
 .PioneersDivDefault h1:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 45px;
   background-color: #2a2a2a;
   display: block;
-  width: 100%;
   height: 8px;
 }
 .PioneersDivDefault h2 {
@@ -641,7 +648,6 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  font-weight: bolder;
 }
 .pioneersInListenDefault #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists {
   display: flex;
@@ -684,13 +690,20 @@ body {
   line-height: 1.8;
   font-weight: bold;
 }
+#pioneersDiv h1:before {
+  content: '';
+  position: absolute;
+  top: 100px;
+  background-color: #2a2a2a;
+  display: block;
+  height: 8px;
+}
 #pioneersDiv h1:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 45px;
   background-color: #2a2a2a;
   display: block;
-  width: 100%;
   height: 8px;
 }
 #pioneersDiv h2 {
@@ -900,7 +913,6 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  font-weight: bolder;
 }
 #pioneersInListen #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists {
   display: flex;
@@ -926,8 +938,6 @@ body {
 #chatButton {
   background-color: #f9423a;
   position: fixed;
-  bottom: -87px;
-  right: 60px;
   margin-bottom: 126px;
   border: none;
   border-radius: 50%;
@@ -992,6 +1002,13 @@ body {
   }
   #pioneersDiv h1 {
     font-size: 1.6rem;
+    width: 170px;
+  }
+  #pioneersDiv h1:before {
+    width: 8.25rem;
+  }
+  #pioneersDiv h1:after {
+    width: 8.25rem;
   }
   #pioneersDiv h2 {
     margin-top: 1rem;
@@ -1079,9 +1096,12 @@ body {
     padding-top: 4px;
     padding-left: 4px;
   }
-  #section4_middleDiv #section4_listDiv .section4_uls h3 {
+  #section4_middleDiv #section4_listDiv .section4_uls #section4_title {
     font-size: 0.6rem;
     margin-top: 4px;
+    margin-bottom: 15px;
+    list-style: none;
+    font-weight: normal;
   }
   #section4_middleDiv #section4_listDiv .section4_uls a {
     font-size: 0.5rem;
@@ -1092,23 +1112,34 @@ body {
     flex-direction: column;
   }
   #section4_middleDiv #section4_textDiv h2 {
-    margin: 0;
+    width: 7.95rem;
+    display: inline;
     text-align: left;
     font-size: 1.6rem;
+    line-height: 60px;
     margin: 0.3rem 0 0.6rem 0.25rem;
     position: relative;
+    background-image: url('https://t3n.de/pioneers/_Resources/Static/Packages/Yeebase.Pioneers.Site/Images/teaser-border-small.svg');
+    background-repeat: repeat-x;
+    background-position: 0 45px;
+  }
+  #section4_middleDiv #section4_textDiv h2:before {
+    content: '';
+    position: absolute;
+    top: 165px;
+    background-color: #f9423a;
+    display: block;
+    width: 6rem;
+    height: 8px;
   }
   #section4_middleDiv #section4_textDiv h2:after {
-    content: "";
+    content: '';
     position: absolute;
-    top: 35px;
+    top: 105px;
     background-color: #f9423a;
     display: block;
     width: 7.9rem;
     height: 8px;
-  }
-  #section4_middleDiv #section4_textDiv h2:last-child:after {
-    width: 6rem;
   }
   #section5_middleDiv {
     padding: 2rem 1rem;
@@ -1123,28 +1154,42 @@ body {
     padding-top: 2.65rem;
   }
   #section5_middleDiv #section5_textDiv h2 {
+    width: 10.4rem;
     position: relative;
-    margin: 0;
     text-align: left;
     font-size: 1.6rem;
+    line-height: 60px;
     margin: 0.3rem 0 0.6rem 0.25rem;
+    background-image: url('https://t3n.de/pioneers/_Resources/Static/Packages/Yeebase.Pioneers.Site/Images/teaser-border-small.svg');
+    background-repeat: repeat-x;
+    background-position: 0 165px;
   }
-  #section5_middleDiv #section5_textDiv h2:after {
-    content: "";
+  #section5_middleDiv #section5_textDiv h2:before {
+    content: '';
     position: absolute;
-    top: 35px;
+    top: 105px;
     background-color: #f9423a;
     display: block;
     width: 4rem;
     height: 8px;
   }
-  #section5_middleDiv #section5_textDiv h2:last-child:after {
-    width: 10.3rem;
+  #section5_middleDiv #section5_textDiv h2:after {
+    content: '';
+    position: absolute;
+    top: 45px;
+    background-color: #f9423a;
+    display: block;
+    width: 4.2rem;
+    height: 8px;
+  }
+  #chatButton {
+    right: 10px;
+    bottom: -120px;
   }
 }
 @media screen and (min-width: 378px) {
   #pioneersDiv {
-    height: 14.15rem;
+    height: 16.15rem;
     padding: 2.5rem 1rem;
     text-align: center;
   }
@@ -1179,12 +1224,19 @@ body {
     height: 21.45rem;
   }
   #pioneersDiv h1 {
+    width: 17.8rem;
     font-size: 3.5rem;
     line-height: 1.4;
+  }
+  #pioneersDiv h1::before {
+    top: 180px;
+    height: 12px;
+    width: 100%;
   }
   #pioneersDiv h1:after {
     top: 80px;
     height: 12px;
+    width: 100%;
   }
   #pioneersDiv h2 {
     margin-top: 2.5rem;
@@ -1213,45 +1265,62 @@ body {
     margin-top: 0;
   }
   #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists p {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     margin-top: 2px;
     margin-left: 0.3rem;
   }
-  #section4_middleDiv #section4_listDiv .section4_uls h3 {
+  #section4_middleDiv #section4_listDiv .section4_uls #section4_title {
     font-size: 0.8rem;
     margin: 0.4rem 0 0.4rem 0.65rem;
   }
   #section4_middleDiv #section4_listDiv .section4_uls a {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     margin-left: 0.65rem;
     margin-top: 0px;
   }
   #section4_middleDiv #section4_textDiv h2 {
     font-size: 3.5rem;
     margin-bottom: 0.7rem;
+    background-position: 0 45px;
+    line-height: 100px;
+    width: 17.35rem;
+    background-position: 0 80px;
+    background-size: 2px;
   }
-  #section4_middleDiv #section4_textDiv h2:after {
-    top: 77px;
-    width: 17rem;
+  #section4_middleDiv #section4_textDiv h2:before {
+    top: 280px;
+    width: 13rem;
     height: 15px;
   }
-  #section4_middleDiv #section4_textDiv h2:last-child:after {
-    width: 13rem;
+  #section4_middleDiv #section4_textDiv h2:after {
+    top: 180px;
+    width: 17.3rem;
+    height: 15px;
   }
   #section5_middleDiv #section5_textDiv {
     padding-bottom: 3.3rem;
   }
   #section5_middleDiv #section5_textDiv h2 {
+    width: 22.5rem;
+    line-height: 100px;
     margin-bottom: 0.7rem;
     font-size: 3.5rem;
+    background-position: 0 280px;
+    background-size: 2px;
+  }
+  #section5_middleDiv #section5_textDiv h2:before {
+    top: 177px;
+    width: 8.5rem;
+    height: 15px;
   }
   #section5_middleDiv #section5_textDiv h2:after {
     top: 77px;
     width: 8.8rem;
     height: 15px;
   }
-  #section5_middleDiv #section5_textDiv h2:last-child:after {
-    width: 22.5rem;
+  #chatButton {
+    bottom: -87px;
+    right: 40px;
   }
 }
 @media screen and (min-width: 723px) {
@@ -1279,15 +1348,15 @@ body {
     height: 2.4rem;
   }
   #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists p {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin-top: 10px;
   }
-  #section4_middleDiv #section4_listDiv .section4_uls h3 {
-    font-size: 1.2rem;
+  #section4_middleDiv #section4_listDiv .section4_uls #section4_title {
+    font-size: 1.4rem;
     margin: 0.8rem 0 1rem 0.65rem;
   }
   #section4_middleDiv #section4_listDiv .section4_uls a {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 }
 @media screen and (min-width: 798px) {
@@ -1295,7 +1364,11 @@ body {
     height: 21.4rem;
   }
   #pioneersDiv h1 {
+    width: 740px;
     padding-top: 2.5rem;
+  }
+  #pioneersDiv h1::before {
+    display: none;
   }
   #pioneersDiv h1:after {
     top: 130px;
@@ -1384,11 +1457,12 @@ body {
   }
   #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists p {
     font-size: 0.65rem;
+    font-weight: normal;
     margin-top: 5px;
     padding-top: 0px;
   }
-  #section4_middleDiv #section4_listDiv .section4_uls h3 {
-    font-size: 0.8rem;
+  #section4_middleDiv #section4_listDiv .section4_uls #section4_title {
+    font-size: 1rem;
   }
   #section4_middleDiv #section4_listDiv .section4_uls a {
     font-size: 0.6rem;
@@ -1417,6 +1491,23 @@ body {
   #teileDeinWissen {
     padding-top: 2rem;
     padding-bottom: 0.9rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls {
+    height: 14rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls #section4_title {
+    font-size: 1rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists img {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls .section4_profilLists p {
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+  #section4_middleDiv #section4_listDiv .section4_uls a {
+    font-size: 0.9rem;
   }
 }
 @media screen and (min-width: 1370px) {

@@ -58,19 +58,19 @@ class Aq {
 const initPioneersNetwork = () => {
 	const pioneersDiv = SetElement.setElements('section', 'pioneersDiv');
 	const pioneersH1 = SetElement.setElements('h1', '', 'pioneersH1');
-	const pioneersH12 = SetElement.setElements('h1', '', 'pioneersH1');
+	// const pioneersH12 = SetElement.setElements('h1', '', 'pioneersH1');
 	const pioneersH2 = SetElement.setElements('h2');
 	const pioneersButton = SetElement.setElements('a', 'pioneersButton');
 
 	pioneersButton.href = '../register.html';
-	pioneersH1.innerHTML = 'PIONEERS&nbsp;';
-	pioneersH12.innerHTML = 'NETWORK';
+	pioneersH1.innerHTML = 'PIONEERS NETWORK';
+	// pioneersH12.innerHTML = 'NETWORK';
 	pioneersH2.innerHTML = 'Gestalte mit uns eine positive digitale Zukunft';
 	pioneersButton.innerHTML = 'Jetzt kostenlos anmelden';
 
 	document.body.appendChild(pioneersDiv);
 	pioneersDiv.appendChild(pioneersH1);
-	pioneersDiv.appendChild(pioneersH12);
+	// pioneersDiv.appendChild(pioneersH12);
 	pioneersDiv.appendChild(pioneersH2);
 	pioneersDiv.appendChild(pioneersButton);
 };
@@ -161,21 +161,18 @@ const initSlider = () => {
 
 const currentSliderSizeHandler = () => {
 	// um eine Aktuelle Größe über sliderProfiles zu zugreifen.
+	const slider = document.querySelector('#slider');
+	const profiles = document.querySelectorAll('.profilInfos a');
+	const sliderWidht = slider.clientWidth;
 
-	setInterval(() => {
-		const slider = document.querySelector('#slider');
-		const profiles = document.querySelectorAll('.profilInfos a');
-		const sliderWidht = slider.clientWidth;
-
-		for (let i = 0; i < profiles.length; i++) {
-			if (sliderWidht <= 482) profiles[i].style.width = sliderWidht / 2 + 'px';
-			else if (sliderWidht >= 483 && sliderWidht <= 782)
-				profiles[i].style.width = sliderWidht / 3 + 'px';
-			else if (sliderWidht >= 783 && sliderWidht <= 996)
-				profiles[i].style.width = sliderWidht / 4 + 'px';
-			else profiles[i].style.width = sliderWidht / 5 + 'px';
-		}
-	}, 500);
+	for (let i = 0; i < profiles.length; i++) {
+		if (sliderWidht <= 482) profiles[i].style.width = sliderWidht / 2 + 'px';
+		else if (sliderWidht >= 483 && sliderWidht <= 782)
+			profiles[i].style.width = sliderWidht / 3 + 'px';
+		else if (sliderWidht >= 783 && sliderWidht <= 996)
+			profiles[i].style.width = sliderWidht / 4 + 'px';
+		else profiles[i].style.width = sliderWidht / 5 + 'px';
+	}
 };
 
 const sliderButtonInit = () => {
@@ -192,21 +189,21 @@ const sliderButtonInit = () => {
 	sliderDiv.style.transform =
 		'translateX(' + -sliderDiv.clientWidth * 1 + 'px)';
 
-	const rightSlider = () => {
+	const rightSliderClickButton = () => {
 		counter--;
 		sliderDiv.style.transform =
 			'translateX(' + -sliderDiv.clientWidth * counter + 'px)';
 		sliderDiv.style.transition = 'transform 400ms ease-in-out';
 	};
 
-	const leftSlider = () => {
+	const leftSliderClickButton = () => {
 		counter++;
 		sliderDiv.style.transform =
 			'translateX(' + -sliderDiv.clientWidth * counter + 'px)';
 		sliderDiv.style.transition = 'transform 400ms ease-in-out';
 	};
 
-	const mousedownTouchStartFunction = e => {
+	const mousedownTouchStartFunction = (e) => {
 		if (e.type == 'mousedown') {
 			isClicked = true;
 			mousedownPosition = e.clientX;
@@ -216,14 +213,14 @@ const sliderButtonInit = () => {
 		}
 	};
 
-	const mouseupTouchEndFunction = e => {
+	const mouseupTouchEndFunction = (e) => {
 		if (e.type == 'mouseup') {
 			mouseUpPosition = e.clientX;
 
 			if (mousedownPosition - mouseUpPosition < -200) {
-				rightSlider();
+				rightSliderClickButton();
 			} else if (mousedownPosition - mouseUpPosition > 200) {
-				leftSlider();
+				leftSliderClickButton();
 			} else {
 				sliderDiv.style.transform =
 					'translateX(' + -sliderDiv.clientWidth * counter + 'px)';
@@ -234,9 +231,9 @@ const sliderButtonInit = () => {
 			mouseUpPosition = event.changedTouches[0].clientX;
 
 			if (mousedownPosition - mouseUpPosition < -200) {
-				rightSlider();
+				rightSliderClickButton();
 			} else if (mousedownPosition - mouseUpPosition > 200) {
-				leftSlider();
+				leftSliderClickButton();
 			} else {
 				sliderDiv.style.transform =
 					'translateX(' + -sliderDiv.clientWidth * counter + 'px)';
@@ -246,7 +243,7 @@ const sliderButtonInit = () => {
 		}
 	};
 
-	const mousemoveTouchmoveFunction = e => {
+	const mousemoveTouchmoveFunction = (e) => {
 		if (isClicked && e.type == 'mousemove') {
 			sliderDiv.style.transform =
 				'translateX(' +
@@ -264,38 +261,38 @@ const sliderButtonInit = () => {
 	};
 
 	for (let i = 0; i < profileInfos.length; i++) {
-		profileInfos[i].addEventListener('mousedown', event => {
+		profileInfos[i].addEventListener('mousedown', (event) => {
 			mousedownTouchStartFunction(event);
 		});
 
-		profileInfos[i].addEventListener('mouseup', event => {
+		profileInfos[i].addEventListener('mouseup', (event) => {
 			mouseupTouchEndFunction(event);
 		});
 
-		profileInfos[i].addEventListener('mousemove', event => {
+		profileInfos[i].addEventListener('mousemove', (event) => {
 			mousemoveTouchmoveFunction(event);
 		});
 	}
 
 	for (let i = 0; i < profileInfos.length; i++) {
-		profileInfos[i].addEventListener('touchstart', event => {
+		profileInfos[i].addEventListener('touchstart', (event) => {
 			mousedownTouchStartFunction(event);
 		});
 
-		profileInfos[i].addEventListener('touchend', event => {
+		profileInfos[i].addEventListener('touchend', (event) => {
 			mouseupTouchEndFunction(event);
 		});
 
-		profileInfos[i].addEventListener('touchmove', event => {
+		profileInfos[i].addEventListener('touchmove', (event) => {
 			mousemoveTouchmoveFunction(event);
 		});
 	}
 
 	buttons[0].addEventListener('click', () => {
-		rightSlider();
+		rightSliderClickButton();
 	});
 	buttons[1].addEventListener('click', () => {
-		leftSlider();
+		leftSliderClickButton();
 	});
 
 	sliderDiv.addEventListener('transitionend', () => {
@@ -443,13 +440,13 @@ const initPioniereInListenFinden = () => {
 
 	jSon.forEach((element, index) => {
 		if (element.title != null) {
-			const h3Tag = SetElement.setElements('h3');
-			h3Tag.innerHTML = element.title;
+			const liTitle = SetElement.setElements('li', 'section4_title');
+			liTitle.innerHTML = element.title;
 
-			if (h3Tag.textContent == 'Medien') {
-				profilList[0].appendChild(h3Tag);
-			} else if (h3Tag.textContent == 'PR&Kommunikation') {
-				profilList[1].appendChild(h3Tag);
+			if (liTitle.textContent == 'Medien') {
+				profilList[0].appendChild(liTitle);
+			} else if (liTitle.textContent == 'PR&Kommunikation') {
+				profilList[1].appendChild(liTitle);
 			}
 		} else if (element.title == undefined && index < 10) {
 			const imgs = SetElement.setElements('img');
@@ -484,15 +481,19 @@ const initPioniereInListenFinden = () => {
 	middleDiv.appendChild(listDiv);
 	middleDiv.appendChild(textDiv);
 
-	profilList.forEach(element => {
+	profilList.forEach((element) => {
 		listDiv.appendChild(element);
 	});
 
-	for (let i = 0; i < textArr.length; i++) {
-		const h2Text = SetElement.setElements('h2');
-		h2Text.innerHTML = textArr[i];
-		textDiv.appendChild(h2Text);
-	}
+	const h2Title = SetElement.setElements('h2');
+	h2Title.innerHTML = 'PIONIERE <br/> IN LISTEN <br/> FINDEN';
+	textDiv.appendChild(h2Title);
+
+	// for (let i = 0; i < textArr.length; i++) {
+	// 	const h2Text = SetElement.setElements('h2');
+	// 	h2Text.innerHTML = textArr[i];
+	// 	textDiv.appendChild(h2Text);
+	// }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -531,11 +532,9 @@ const initLassDichInspirieren = () => {
 		}
 	});
 
-	text.forEach(element => {
-		const h2 = SetElement.setElements('h2');
-		h2.innerHTML = element;
-		section5[2].appendChild(h2);
-	});
+	const h2 = SetElement.setElements('h2');
+	h2.innerHTML = 'LASS <br/> DICH <br/> INSPIRIEREN';
+	section5[2].appendChild(h2);
 
 	for (let i = 0; i < section5.length; i++) {
 		if (i == 0) {
@@ -588,7 +587,7 @@ const initChatButton = () => {
 		button.style.transition = 'transform 200ms ease';
 	}, 900);
 
-	const svgHandler = time => {
+	const svgHandler = (time) => {
 		setTimeout(() => {
 			if (!isClicked) {
 				svgs[0].style.transform = 'scale(0.2, 0.2)';
@@ -610,7 +609,7 @@ const initChatButton = () => {
 		}, time);
 	};
 
-	const scaleHandler = num => {
+	const scaleHandler = (num) => {
 		button.style.transform = 'scale(' + num + ',' + num + ')';
 		button.style.transition = 'transform 400ms ease';
 	};
@@ -636,7 +635,7 @@ const initBecomePionier = function() {
 	outerDiv.id = 'becomePionier';
 	const hAr = ['JETZT', 'PIONIER', 'WERDEN'];
 	const sectionHeading = document.createElement('div');
-	hAr.forEach(e => {
+	hAr.forEach((e) => {
 		const h = document.createElement('h2');
 		h.innerHTML = e;
 		h.className = 'heading-head';
